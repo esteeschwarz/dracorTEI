@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="insertID" xml:lang="ger">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Der Tod Abels</title>
+        <title type="sub">Ein Trauerspiel</title>
+        <author>Margarete Klopstock</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher xml:id="dracor">DraCor</publisher>
+        <idno type="URL">https://dracor.org</idno>
+        <availability>
+          <licence>
+            <ab>CC0 1.0</ab>
+            <ref target="https://creativecommons.org/publicdomain/zero/1.0/">Licence</ref>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="digitalSource">
+          <name>ENTER SOURCE NAME HERE</name>
+          <idno type="URL">ENTER SOURCE URL HERE</idno>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person sex="TODO" xml:id="#title iwanette und stormond">
+            <persName>title Iwanette und Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="#subtitle ein trauerspiel, in drey handlungen">
+            <persName>subtitle ein Trauerspiel, in drey Handlungen</persName>
+          </person>
+          <person sex="TODO" xml:id="#cite so spricht iwanette! act 2">
+            <persName>cite So spricht Iwanette! Act 2</persName>
+          </person>
+          <person sex="TODO" xml:id="#publisher wetzlar, gedruckt bey georg ernst winkler 2:: vorrede das stück, welches ich der weit hierdurch bekant mache, ist auf dem hiesigen theater in drey und in fünf acten mehrmalen vorgestellet worden ich weiß nicht, warum man weder das eine noch das andere im druck gesehen vermuthlich hat der herr verfasser es verhindert er mag mir indessen verzeihen, daß da ich gelegenheit gehabt eine abschrift von der ersten ausarbeitung, nemlich in drey handlungen, an mich zu bringen, ich die ausgabe desselben besorge so viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine sylbe darin abzuändern unterfangen ist eine fehlerhafte 4:: abschrift in in meine hände gerathen, so ersuche ich den herrn verfasser, selbst eine ausgabe seiner iwanette zu besorgen ich verlange nicht der lobredner des stücks zu werden aber der vorwurf ist nach meiner einsicht interessant, und ganz gemacht, um von einem glücklichen genie dramatisch ausgearbeitet zu werden arnand und marmontel gaben den stof dazu her — er ist voller moral wie manches junges frauenzimmer, welches vieleicht seine tugend dennoch zu bewahren weiß, ist dem schein nach strafbar; zumal in unseren zeiten, da die freyere lebensart vom wohlstande unzertrennlich, gehalten wird iwanette mag diesen ein beyspiel werden, daß eine handlung, die anfänglich höchstens als eine unbesonnenheit betrachtet wurde, in verbindung mit einigen nebenumständen die traurigsten folgen haben kan jedoch es ist überflüßig, eine moral dem trauerspiel voranzusetzen, welche bey 5:: geringer aufmerksamkeit sogleich einleuchten wird ich werde nur noch meine gedanken äußern, die ich von der vermehrung dieses stücks, da es in fünf aufzügen aufgeführet wurde, hegte bender wurde bey dieser veränderung der vertraute des jüngeren stormonds, und also eine interessantere person die unterredungen dieser freunde, die monologen des stormonds, worin dessen heftige leidenschaft, und unentschlossenheit hervorleuchtet, sind rührende scenen von dieser seite hätte also das trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf handlungen zu einem vollkommenen trauerspiel fordert hingegen fiel auf der andern seite die genaue einheit des orts weg es musten wenigstens zwey zimmer in einem hause vorkommen und eben das sonderbare dieses stücks, [man weiß, daß das neue gefällt] ist, daß die heldin des trauerspiels nie aus den augen des zuschauers komt 6:: jeder, der zu ihr ins zimmer tritt, muste bey der lage der umstände erscheinen keine überflüßige oder zwischen=scene welch ein vorzug eines drama ich wünschte, daß der herr verfasser sich entschlöße, seine iwanette in fünf acten herauszugeben das urtheil des publicums solte mich sodann belehren, welches von beyden den vorzug verdiente der anhang ist ein grundriß zu einem singspiel von dem nemlichen herrn verfasser es wurde, wie es hier ist, an dem geburtsfeste ihro kaiserlichen majestät als ein zwischenspiel aufgeführet auf diese weise ist es in meine hände gerathen und weil ich es einmal wage, fremde arbeiten herauszugeben, so habe ich es der iwanette hinzugefügt wetzlar, den 20 may 1770 der herausgeber 7::">
+            <persName>publisher Wetzlar, gedruckt bey Georg Ernst Winkler 2:: Vorrede Das Stück, welches ich der Weit hierdurch bekant mache, ist auf dem hiesigen Theater in drey und in fünf Acten mehrmalen vorgestellet worden Ich weiß nicht, warum man weder das eine noch das andere im Druck gesehen Vermuthlich hat der Herr Verfasser es verhindert Er mag mir indessen verzeihen, daß da ich Gelegenheit gehabt eine Abschrift von der ersten Ausarbeitung, nemlich in drey Handlungen, an mich zu bringen, ich die Ausgabe desselben besorge So viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine Sylbe darin abzuändern unterfangen Ist eine fehlerhafte 4:: Abschrift in in meine Hände gerathen, so ersuche ich den Herrn Verfasser, selbst eine Ausgabe seiner Iwanette zu besorgen Ich verlange nicht der Lobredner des Stücks zu werden Aber der Vorwurf ist nach meiner Einsicht interessant, und ganz gemacht, um von einem glücklichen Genie dramatisch ausgearbeitet zu werden Arnand und Marmontel gaben den Stof dazu her — Er ist voller Moral Wie manches junges Frauenzimmer, welches vieleicht seine Tugend dennoch zu bewahren weiß, ist dem Schein nach strafbar; zumal in unseren Zeiten, da die freyere Lebensart vom Wohlstande unzertrennlich, gehalten wird Iwanette mag diesen ein Beyspiel werden, daß eine Handlung, die anfänglich höchstens als eine Unbesonnenheit betrachtet wurde, in Verbindung mit einigen Nebenumständen die traurigsten Folgen haben kan Jedoch es ist überflüßig, eine Moral dem Trauerspiel voranzusetzen, welche bey 5:: geringer Aufmerksamkeit sogleich einleuchten wird Ich werde nur noch meine Gedanken äußern, die ich von der Vermehrung dieses Stücks, da es in fünf Aufzügen aufgeführet wurde, hegte Bender wurde bey dieser Veränderung der Vertraute des jüngeren Stormonds, und also eine interessantere Person Die Unterredungen dieser Freunde, die Monologen des Stormonds, worin dessen heftige Leidenschaft, und Unentschlossenheit hervorleuchtet, sind rührende Scenen Von dieser Seite hätte also das Trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf Handlungen zu einem vollkommenen Trauerspiel fordert Hingegen fiel auf der andern Seite die genaue Einheit des Orts weg Es musten wenigstens zwey Zimmer in einem Hause vorkommen Und eben das Sonderbare dieses Stücks, [man weiß, daß das neue gefällt] ist, daß die Heldin des Trauerspiels nie aus den Augen des Zuschauers komt 6:: Jeder, der zu ihr ins Zimmer tritt, muste bey der Lage der Umstände erscheinen Keine überflüßige oder Zwischen=Scene Welch ein Vorzug eines Drama Ich wünschte, daß der Herr Verfasser sich entschlöße, seine Iwanette in fünf Acten herauszugeben Das Urtheil des Publicums solte mich sodann belehren, welches von beyden den Vorzug verdiente Der Anhang ist ein Grundriß zu einem Singspiel von dem nemlichen Herrn Verfasser Es wurde, wie es hier ist, an dem Geburtsfeste Ihro Kaiserlichen Majestät als ein Zwischenspiel aufgeführet Auf diese Weise ist es in meine Hände gerathen Und weil ich es einmal wage, fremde Arbeiten herauszugeben, so habe ich es der Iwanette hinzugefügt Wetzlar, den 20 May 1770 Der Herausgeber 7::</persName>
+          </person>
+          <person sex="TODO" xml:id="#iwanette">
+            <persName>Iwanette</persName>
+          </person>
+          <person sex="TODO" xml:id="#stormond">
+            <persName>Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="#wolsey">
+            <persName>Wolsey</persName>
+          </person>
+          <person sex="TODO" xml:id="#golowin">
+            <persName>Golowin</persName>
+          </person>
+          <person sex="TODO" xml:id="#der ältere stormond">
+            <persName>Der ältere Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="#bender">
+            <persName>Bender</persName>
+          </person>
+          <person sex="TODO" xml:id="#der medicus">
+            <persName>Der Medicus</persName>
+          </person>
+        </listPerson>
+      </particDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <castList>
+        <head>Personen.</head>
+        <castItem>@Iwanette</castItem>
+        <castItem>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8:: !personal!Personen.</castItem>
+      </castList>
+    </front>
+    <body>
+      <div type="act">
+        <head>Erste Handlung.</head>
+      </div>
+      <div type="act">
+        <head>Zweyte Handlung.</head>
+      </div>
+      <div type="act">
+        <head>Dritte Handlung.</head>
+      </div>
+    </body>
+  </text>
+</TEI>

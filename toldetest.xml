@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="insertID" xml:lang="ger">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Der Tod Abels</title>
+        <title type="sub">Ein Trauerspiel</title>
+        <author>Margarete Klopstock</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher xml:id="dracor">DraCor</publisher>
+        <idno type="URL">https://dracor.org</idno>
+        <availability>
+          <licence>
+            <ab>CC0 1.0</ab>
+            <ref target="https://creativecommons.org/publicdomain/zero/1.0/">Licence</ref>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="digitalSource">
+          <name>ENTER SOURCE NAME HERE</name>
+          <idno type="URL">ENTER SOURCE URL HERE</idno>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person sex="TODO" xml:id="#subtitle ein trauerspiel, in drey handlungen">
+            <persName>subtitle ein Trauerspiel, in drey Handlungen</persName>
+          </person>
+          <person sex="TODO" xml:id="#cite so spricht iwanette! act">
+            <persName>cite So spricht Iwanette! Act</persName>
+          </person>
+          <person sex="TODO" xml:id="#publisher wetzlar, gedruckt bey georg ernst winkler">
+            <persName>publisher Wetzlar, gedruckt bey Georg Ernst Winkler</persName>
+          </person>
+          <person sex="TODO" xml:id="#iwanette">
+            <persName>Iwanette</persName>
+          </person>
+          <person sex="TODO" xml:id="#stormond">
+            <persName>Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="#wolsey">
+            <persName>Wolsey</persName>
+          </person>
+          <person sex="TODO" xml:id="#golowin">
+            <persName>Golowin</persName>
+          </person>
+          <person sex="TODO" xml:id="#der ältere stormond">
+            <persName>Der ältere Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="#bender">
+            <persName>Bender</persName>
+          </person>
+          <person sex="TODO" xml:id="#der medicus">
+            <persName>Der Medicus</persName>
+          </person>
+        </listPerson>
+      </particDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <castList>
+        <head>Personen.</head>
+        <castItem>@Iwanette.</castItem>
+        <castItem>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8:: ^Personen.</castItem>
+      </castList>
+    </front>
+    <body>
+      <div type="act">
+        <head>Erste Handlung.</head>
+      </div>
+      <div type="act">
+        <head>Zweyte Handlung.</head>
+      </div>
+      <div type="act">
+        <head>Dritte Handlung.</head>
+      </div>
+    </body>
+  </text>
+</TEI>

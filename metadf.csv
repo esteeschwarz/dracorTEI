@@ -1,0 +1,35 @@
+key	id	string1	string2	comment	lfd
+author	1	August Siegfried von Goué	NA	NA	1
+title	NA	NA	NA	NA	2
+subtitle	NA	NA	NA	NA	3
+personal	1	Iwanette	NA	NA	4
+personal	2	Stormond	NA	NA	5
+personal	3	Golowin	NA	NA	6
+personal	4	Wolsey	NA	NA	7
+personal	5	Bender	NA	NA	8
+personal	6	Der Medicus	NA	NA	9
+personal	7	Der ältere Stormond	NA	NA	10
+personal	8	Der jüngere Stormond	NA	NA	11
+header_decl	1	NA	NA	NA	12
+header_decl	2	NA	NA	NA	13
+repl	1	W.l.ey	Wolsey	W.l.ey	14
+repl	1	J(h|w|c|s)	I\1	J(h|w|c|s)	15
+repl	1	G.l.w.n	Golowin	G.l.w.n	16
+repl	1	.wane..e	Iwanette	.wane..e	17
+repl	1	#[(]#	[	#[(]#	18
+repl	1	#[)]#	]	#[)]#	19
+repl	1	 	 	 	20
+repl	1	  	 	  	21
+repl	1	#unclear	[unclear]	#unclear	22
+repl	2	([a-zA-ZÄÜÖäüö])(¬|=|-)
+	\1	NA	23
+repl	2	((?<!spknl)
+)(?![@#$])	 	NA	24
+repl	2	\) \(	[.-.]	NA	25
+repl	3	\.spknl		NA	26
+repl	4	¬
+	&lb	NA	27
+repl	4	¬	&lb	NA	28
+repl	5	(&lb)
+		NA	29
+NA	NA	NA	NA	NA	30

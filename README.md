@@ -1,5 +1,6 @@
 # 15317.info
-essai to transform raw transkribus transkript source (via API) from transkribus collection to complete dracor TEI.
+essai to transform raw transkribus transkript source (via API) from transkribus collection to complete dracor TEI.   
+test app [here](https://ada-sub.dh-index.org/shiny/work/essais/dracorTEI/).
 
 ## notes
 the markup and conversion wks so far, still... / theres minimal markup in the transcript necessary defining the castlist.

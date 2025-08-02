@@ -39,14 +39,14 @@
           <person sex="TODO" xml:id="#iwanette">
             <persName>Iwanette</persName>
           </person>
-          <person sex="TODO" xml:id="#stormond">
-            <persName>Stormond</persName>
-          </person>
           <person sex="TODO" xml:id="#wolsey">
             <persName>Wolsey</persName>
           </person>
           <person sex="TODO" xml:id="#golowin">
             <persName>Golowin</persName>
+          </person>
+          <person sex="TODO" xml:id="#stormond">
+            <persName>Stormond</persName>
           </person>
           <person sex="TODO" xml:id="#der ältere stormond">
             <persName>Der ältere Stormond</persName>
@@ -64,9 +64,13 @@
   <text>
     <front>
       <castList>
-        <head>Personen.</head>
-        <castItem>@Iwanette.</castItem>
-        <castItem>^Personen.</castItem>
+        <head>Personen. Iwanette.</head>
+        <castItem>Stormond.</castItem>
+        <castItem>Der ältere Stormond, dessen Vater.</castItem>
+        <castItem>Bender, des ältern Stormonds Vertrauter.</castItem>
+        <castItem>Graf von Golowin.</castItem>
+        <castItem>Frau Wolsey.</castItem>
+        <castItem>Ein Medicus.</castItem>
       </castList>
       <p>2.</p>
       <p>@front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler. 2::</p>

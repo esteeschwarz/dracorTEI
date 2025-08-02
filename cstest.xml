@@ -33,9 +33,13 @@
   <text>
     <front>
       <castList>
-        <head>Personen.</head>
-        <castItem>@Iwanette.</castItem>
-        <castItem>^Personen.</castItem>
+        <head>Personen. Iwanette.</head>
+        <castItem>Stormond.</castItem>
+        <castItem>Der ältere Stormond, dessen Vater.</castItem>
+        <castItem>Bender, des ältern Stormonds Vertrauter.</castItem>
+        <castItem>Graf von Golowin.</castItem>
+        <castItem>Frau Wolsey.</castItem>
+        <castItem>Ein Medicus.</castItem>
       </castList>
       <p>2.</p>
       <p>@front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler. 2::</p>

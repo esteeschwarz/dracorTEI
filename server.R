@@ -152,7 +152,8 @@ function(input, output, session) {
     h1.sf = "",
     h2.sf = "",
     sp.sf = "",
-    id.sf = NULL
+    id.sf = NULL,
+    cast = NULL
   )
   
   observeEvent(input$defaults.save,{
@@ -160,7 +161,8 @@ function(input, output, session) {
     rv$sp.sf<-input$speaker
     rv$h1.sf<-input$h1
     rv$h2.sf<-input$h2
-    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf)
+    rv$cast<-input$cast
+    rvdf<-data.frame(id=rv$id.sf,cast=rv$cast,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf)
     cat("observe sf...\n")
     print(head(rvdf))
     save_defaults(rvdf)
@@ -175,6 +177,7 @@ function(input, output, session) {
     updateTextInput(session, "speaker", value = defaults$speaker)
     updateTextInput(session, "h1", value = defaults$h1)
     updateTextInput(session, "h2", value = defaults$h2)
+    updateTextInput(session, "cast", value = defaults$cast)
     
   })
   # Observe the submit button for fetching the transcript
@@ -208,6 +211,8 @@ function(input, output, session) {
     vario.1 <- input$h1
     vario.2<-input$h2
     print("getting H1")
+    print(vario.1)
+    print(vario.2)
     t <- get.heads.s(rv$t1, vario.1,vario.2)  # Use the transcript stored in reactiveValues
     rv$t2 <- t$text  # Store the updated text in reactiveValues
     rv$heads <- t$vario  # Store the act headers in reactiveValues
@@ -245,8 +250,11 @@ function(input, output, session) {
     print("getting speaker")
     #t <- get.speakers(t3, vario)  # Use the transcript stored in reactiveValues
     
-    t <- get.speakers(rv$t2, vario)  # Use the transcript stored in reactiveValues
-    t2 <- t$text  # Store the updated text in reactiveValues
+    # t <- get.speakers(rv$t2, vario)  # Use the transcript stored in reactiveValues
+    t4 <- get.castlist(rv$t2,input$cast)
+    t5 <- get.speakers(t4, vario)  # Use the transcript stored in reactiveValues
+    t2 <- t5  # Store the updated text in reactiveValues
+    #t2<-t4
     rv$speaker <- append(rv$speaker,t$vario,after = length(rv$vario)) # Store the act headers in reactiveValues
     rv$speaker<-unique(rv$speaker)
     rv$speaker<-rv$speaker[!is.na(rv$speaker)]
@@ -256,7 +264,7 @@ function(input, output, session) {
     # Update the UI with the processed act headers
    # output$acts <- renderText(paste(rv$heads, collapse = "\n"))
     ### remove linebreaks
-    t3<-clean.t(t2,F)
+    t3<-clean.t(t2$text,F)
     rv$t3<-t3
     output$apidoc <- renderUI({
       div(

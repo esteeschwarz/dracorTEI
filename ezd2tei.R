@@ -280,6 +280,8 @@ parse_drama_text <- function(input_tx, output_file) {
     }
     # 5. Texte continu
     if (str_trim(line) != ""&!line.true%in%c("stage","speaker","act","scene","author","title","subtitle","personal")) {
+      #write(processed,"debug.txt",append = T)
+      
       if (!is.null(current_scene)) {
         # Appliquer les mêmes transformations que pour le texte des personnages
         processed <- line %>%
@@ -288,9 +290,10 @@ parse_drama_text <- function(input_tx, output_file) {
         
         #        p <- xml_add_child(current_scene, "p")
         # p <- xml_add_child(sp, "p")
+        write(processed,"debug.txt",append = T)
+        
         xml_text(p) <- processed
         line.true<-"p"
-        write(processed,"debug.txt",append = T)
         
       }
     }

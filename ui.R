@@ -26,10 +26,11 @@ fluidPage(
       textInput("title","Title",""),
       textInput("subtitle","SubTitle, if vorhanden",""),
       textInput("author","Author",""),
+      textInput("cast","castlist declaration:","Personal."),
       helpText("set body begin and act definitions"),
-      textInput("h1","act header declarations:","Act|Akt|Handlung"),
+      textInput("h1","act header declarations:","Act|Akt|Handlung|.ufzug"),
       #actionButton("submit.h1","apply act definitions"),
-      textInput("h2","scene header declarations:","Scene|Szene"),
+      textInput("h2","scene header declarations:","Scene|Szene|.uftritt"),
       actionButton("submit.h","apply act|scene definitions"),
       
       helpText('enter the commonly used expressions that introduce a new act (header level 1) and scene (header level 2), like "Handlung|Akt|Act" or "Scene|Szene". This will be used as regex query for defining the sections.'),

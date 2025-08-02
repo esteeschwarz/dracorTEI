@@ -7,10 +7,13 @@
 @front-7
 @Iwanette.
 Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::
-^Personen.
-@Iwanette.
-@Stormond.
-Der ältere Stormond, dessen Vater. Bender, des ältern Stormonds Vertrauter. Graf von Golowin. Frau Wolsey. Ein Medicus.
+^Personen. Iwanette.
+Stormond.
+Der ältere Stormond, dessen Vater.
+Bender, des ältern Stormonds Vertrauter.
+Graf von Golowin.
+Frau Wolsey.
+Ein Medicus.
 $Die Scene ist im Zimmer der Iwanette. 9:: .
 #Erste Handlung.
 @Iwanette.

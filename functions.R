@@ -92,7 +92,7 @@ return(t3)
 #t3[548:570]
 }
 r<-F
-t<-t3
+#t<-t3
 
 clean.t<-function(t,r){
   txtemp<-tempfile("txraw.txt")
@@ -131,7 +131,25 @@ transform.ezd<-function(ezd){
   parse_drama_text(ezd,xmlout)
   return(readLines(xmlout))
 }
-get.heads<-function(t1,headx="(Akt|Act"){
+### preprocess raw text
+get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
+  numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")
+  #  ifelse(level==1,headx<-headx.1,headx<-headx.2)
+  # ifelse(level==1,ph<-"#",ph<-"##")
+  regx.1<-paste0("^.+?",numer,".+(",headx.1,")\\.")
+  regx.1
+  regx.2<-paste0("^.+?",numer,".+(",headx.2,")\\.")
+  regx.2
+  m1<-grep(regx.1,t1)
+  t2<-t1
+  t2[m1]<-paste0("#ACT ",t2[m1])
+  m2<-grep(regx.2,t1)
+  t2<-t1
+  t2[m2]<-paste0("##SZENE ",t2[m2])
+  #return(t1)
+  return(list(vario=t1[m1],text=t2))
+}
+get.heads.dep<-function(t1,headx="(Akt|Act"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")
   regx<-paste0("^.+?",numer,".+(",headx,")\\.")
   m<-grep(regx,t1)

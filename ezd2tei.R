@@ -241,7 +241,7 @@ parse_drama_text <- function(input_tx, output_file) {
         
       }
     } 
-    parts
+   # parts
     speaker.a
     # 2. Didascalies de bloc ($)
     if (str_detect(line, "^\\$")) {

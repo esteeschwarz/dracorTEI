@@ -27,11 +27,14 @@
     <profileDesc>
       <particDesc>
         <listPerson>
-          <person sex="TODO" xml:id="#cite so spricht iwanette! act">
-            <persName>cite So spricht Iwanette! Act</persName>
+          <person sex="TODO" xml:id="#front-1 so spricht iwanette! act">
+            <persName>front-1 So spricht Iwanette! Act</persName>
           </person>
-          <person sex="TODO" xml:id="#publisher wetzlar, gedruckt bey georg ernst winkler">
-            <persName>publisher Wetzlar, gedruckt bey Georg Ernst Winkler</persName>
+          <person sex="TODO" xml:id="#front-1-1 wetzlar, gedruckt bey georg ernst winkler">
+            <persName>front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler</persName>
+          </person>
+          <person sex="TODO" xml:id="#front-2 vorrede">
+            <persName>front-2 Vorrede</persName>
           </person>
           <person sex="TODO" xml:id="#iwanette">
             <persName>Iwanette</persName>
@@ -63,8 +66,26 @@
       <castList>
         <head>Personen.</head>
         <castItem>@Iwanette.</castItem>
-        <castItem>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8:: ^Personen.</castItem>
+        <castItem>^Personen.</castItem>
       </castList>
+      <p>2.</p>
+      <p>@front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler. 2::</p>
+      <p>@front-2 Vorrede. Das Stück, welches ich der Weit hierdurch bekant mache, ist auf dem hiesigen Theater in drey und in fünf Acten mehrmalen vorgestellet worden. Ich weiß nicht, warum man weder das eine noch das andere im Druck gesehen. Vermuthlich hat der Herr Verfasser es verhindert. Er mag mir indessen verzeihen, daß da ich Gelegenheit gehabt eine Abschrift von der ersten Ausarbeitung, nemlich in drey Handlungen, an mich zu bringen, ich die Ausgabe desselben besorge. So viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine Sylbe darin abzuändern unterfangen. Ist eine fehlerhafte 4:: Abschrift in in meine Hände gerathen, so ersuche ich den Herrn Verfasser, selbst eine Ausgabe seiner Iwanette zu besorgen. Ich verlange nicht der Lobredner des Stücks zu werden. Aber der Vorwurf ist nach meiner Einsicht interessant, und ganz gemacht, um von einem glücklichen Genie dramatisch ausgearbeitet zu werden. Arnand und Marmontel gaben den Stof dazu her. — Er ist voller Moral. Wie manches junges Frauenzimmer, welches vieleicht seine Tugend dennoch zu bewahren weiß, ist dem Schein nach strafbar; zumal in unseren Zeiten, da die freyere Lebensart vom Wohlstande unzertrennlich, gehalten wird. Iwanette mag diesen ein Beyspiel werden, daß eine Handlung, die anfänglich höchstens als eine Unbesonnenheit betrachtet wurde, in Verbindung mit einigen Nebenumständen die traurigsten Folgen haben kan. Jedoch es ist überflüßig, eine Moral dem Trauerspiel voranzusetzen, welche bey 5:: geringer Aufmerksamkeit sogleich einleuchten wird. Ich werde nur noch meine Gedanken äußern, die ich von der Vermehrung dieses Stücks, da es in fünf Aufzügen aufgeführet wurde, hegte. Bender wurde bey dieser Veränderung der Vertraute des jüngeren Stormonds, und also eine interessantere Person. Die Unterredungen dieser Freunde, die Monologen des Stormonds, worin dessen heftige Leidenschaft, und Unentschlossenheit hervorleuchtet, sind rührende Scenen. Von dieser Seite hätte also das Trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf Handlungen zu einem vollkommenen Trauerspiel fordert. Hingegen fiel auf der andern Seite die genaue Einheit des Orts weg. Es musten wenigstens zwey Zimmer in einem Hause vorkommen. Und eben das Sonderbare dieses Stücks, [man weiß, daß das neue gefällt] ist, daß die Heldin des Trauerspiels nie aus den Augen des Zuschauers komt. 6:: Jeder, der zu ihr ins Zimmer tritt, muste bey der Lage der Umstände erscheinen. Keine überflüßige oder Zwischen=Scene. Welch ein Vorzug eines Drama. Ich wünschte, daß der Herr Verfasser sich entschlöße, seine Iwanette in fünf Acten herauszugeben. Das Urtheil des Publicums solte mich sodann belehren, welches von beyden den Vorzug verdiente. Der Anhang ist ein Grundriß zu einem Singspiel von dem nemlichen Herrn Verfasser. Es wurde, wie es hier ist, an dem Geburtsfeste Ihro Kaiserlichen Majestät als ein Zwischenspiel aufgeführet. Auf diese Weise ist es in meine Hände gerathen. Und weil ich es einmal wage, fremde Arbeiten herauszugeben, so habe ich es der Iwanette hinzugefügt. Wetzlar, den 20. May 1770. Der Herausgeber. 7::</p>
+      <p>@front-7</p>
+      <p>@Iwanette.</p>
+      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
+      <p>2::</p>
+      <p>@front-2 Vorrede. Das Stück, welches ich der Weit hierdurch bekant mache, ist auf dem hiesigen Theater in drey und in fünf Acten mehrmalen vorgestellet worden. Ich weiß nicht, warum man weder das eine noch das andere im Druck gesehen. Vermuthlich hat der Herr Verfasser es verhindert. Er mag mir indessen verzeihen, daß da ich Gelegenheit gehabt eine Abschrift von der ersten Ausarbeitung, nemlich in drey Handlungen, an mich zu bringen, ich die Ausgabe desselben besorge. So viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine Sylbe darin abzuändern unterfangen. Ist eine fehlerhafte 4:: Abschrift in in meine Hände gerathen, so ersuche ich den Herrn Verfasser, selbst eine Ausgabe seiner Iwanette zu besorgen. Ich verlange nicht der Lobredner des Stücks zu werden. Aber der Vorwurf ist nach meiner Einsicht interessant, und ganz gemacht, um von einem glücklichen Genie dramatisch ausgearbeitet zu werden. Arnand und Marmontel gaben den Stof dazu her. — Er ist voller Moral. Wie manches junges Frauenzimmer, welches vieleicht seine Tugend dennoch zu bewahren weiß, ist dem Schein nach strafbar; zumal in unseren Zeiten, da die freyere Lebensart vom Wohlstande unzertrennlich, gehalten wird. Iwanette mag diesen ein Beyspiel werden, daß eine Handlung, die anfänglich höchstens als eine Unbesonnenheit betrachtet wurde, in Verbindung mit einigen Nebenumständen die traurigsten Folgen haben kan. Jedoch es ist überflüßig, eine Moral dem Trauerspiel voranzusetzen, welche bey 5:: geringer Aufmerksamkeit sogleich einleuchten wird. Ich werde nur noch meine Gedanken äußern, die ich von der Vermehrung dieses Stücks, da es in fünf Aufzügen aufgeführet wurde, hegte. Bender wurde bey dieser Veränderung der Vertraute des jüngeren Stormonds, und also eine interessantere Person. Die Unterredungen dieser Freunde, die Monologen des Stormonds, worin dessen heftige Leidenschaft, und Unentschlossenheit hervorleuchtet, sind rührende Scenen. Von dieser Seite hätte also das Trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf Handlungen zu einem vollkommenen Trauerspiel fordert. Hingegen fiel auf der andern Seite die genaue Einheit des Orts weg. Es musten wenigstens zwey Zimmer in einem Hause vorkommen. Und eben das Sonderbare dieses Stücks, [man weiß, daß das neue gefällt] ist, daß die Heldin des Trauerspiels nie aus den Augen des Zuschauers komt. 6:: Jeder, der zu ihr ins Zimmer tritt, muste bey der Lage der Umstände erscheinen. Keine überflüßige oder Zwischen=Scene. Welch ein Vorzug eines Drama. Ich wünschte, daß der Herr Verfasser sich entschlöße, seine Iwanette in fünf Acten herauszugeben. Das Urtheil des Publicums solte mich sodann belehren, welches von beyden den Vorzug verdiente. Der Anhang ist ein Grundriß zu einem Singspiel von dem nemlichen Herrn Verfasser. Es wurde, wie es hier ist, an dem Geburtsfeste Ihro Kaiserlichen Majestät als ein Zwischenspiel aufgeführet. Auf diese Weise ist es in meine Hände gerathen. Und weil ich es einmal wage, fremde Arbeiten herauszugeben, so habe ich es der Iwanette hinzugefügt. Wetzlar, den 20. May 1770. Der Herausgeber. 7::</p>
+      <p>@front-7</p>
+      <p>@Iwanette.</p>
+      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
+      <p>7::</p>
+      <p>@front-7</p>
+      <p>@Iwanette.</p>
+      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
+      <p>NA</p>
+      <p>@Iwanette.</p>
+      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
     </front>
     <body>
       <div type="act">

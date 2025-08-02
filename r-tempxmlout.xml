@@ -27,23 +27,11 @@
     <profileDesc>
       <particDesc>
         <listPerson>
-          <person sex="TODO" xml:id="#front-1 so spricht iwanette! act">
-            <persName>front-1 So spricht Iwanette! Act</persName>
-          </person>
-          <person sex="TODO" xml:id="#front-1-1 wetzlar, gedruckt bey georg ernst winkler">
-            <persName>front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler</persName>
-          </person>
-          <person sex="TODO" xml:id="#front-2 vorrede">
-            <persName>front-2 Vorrede</persName>
-          </person>
           <person sex="TODO" xml:id="#iwanette">
             <persName>Iwanette</persName>
           </person>
           <person sex="TODO" xml:id="#wolsey">
             <persName>Wolsey</persName>
-          </person>
-          <person sex="TODO" xml:id="#golowin">
-            <persName>Golowin</persName>
           </person>
           <person sex="TODO" xml:id="#stormond">
             <persName>Stormond</persName>
@@ -53,6 +41,9 @@
           </person>
           <person sex="TODO" xml:id="#bender">
             <persName>Bender</persName>
+          </person>
+          <person sex="TODO" xml:id="#golowin">
+            <persName>Golowin</persName>
           </person>
           <person sex="TODO" xml:id="#der medicus">
             <persName>Der Medicus</persName>
@@ -64,7 +55,8 @@
   <text>
     <front>
       <castList>
-        <head>Personen. Iwanette.</head>
+        <head>Personen.</head>
+        <castItem>Iwanette.</castItem>
         <castItem>Stormond.</castItem>
         <castItem>Der ältere Stormond, dessen Vater.</castItem>
         <castItem>Bender, des ältern Stormonds Vertrauter.</castItem>
@@ -72,24 +64,7 @@
         <castItem>Frau Wolsey.</castItem>
         <castItem>Ein Medicus.</castItem>
       </castList>
-      <p>2.</p>
-      <p>@front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler. 2::</p>
-      <p>@front-2 Vorrede. Das Stück, welches ich der Weit hierdurch bekant mache, ist auf dem hiesigen Theater in drey und in fünf Acten mehrmalen vorgestellet worden. Ich weiß nicht, warum man weder das eine noch das andere im Druck gesehen. Vermuthlich hat der Herr Verfasser es verhindert. Er mag mir indessen verzeihen, daß da ich Gelegenheit gehabt eine Abschrift von der ersten Ausarbeitung, nemlich in drey Handlungen, an mich zu bringen, ich die Ausgabe desselben besorge. So viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine Sylbe darin abzuändern unterfangen. Ist eine fehlerhafte 4:: Abschrift in in meine Hände gerathen, so ersuche ich den Herrn Verfasser, selbst eine Ausgabe seiner Iwanette zu besorgen. Ich verlange nicht der Lobredner des Stücks zu werden. Aber der Vorwurf ist nach meiner Einsicht interessant, und ganz gemacht, um von einem glücklichen Genie dramatisch ausgearbeitet zu werden. Arnand und Marmontel gaben den Stof dazu her. — Er ist voller Moral. Wie manches junges Frauenzimmer, welches vieleicht seine Tugend dennoch zu bewahren weiß, ist dem Schein nach strafbar; zumal in unseren Zeiten, da die freyere Lebensart vom Wohlstande unzertrennlich, gehalten wird. Iwanette mag diesen ein Beyspiel werden, daß eine Handlung, die anfänglich höchstens als eine Unbesonnenheit betrachtet wurde, in Verbindung mit einigen Nebenumständen die traurigsten Folgen haben kan. Jedoch es ist überflüßig, eine Moral dem Trauerspiel voranzusetzen, welche bey 5:: geringer Aufmerksamkeit sogleich einleuchten wird. Ich werde nur noch meine Gedanken äußern, die ich von der Vermehrung dieses Stücks, da es in fünf Aufzügen aufgeführet wurde, hegte. Bender wurde bey dieser Veränderung der Vertraute des jüngeren Stormonds, und also eine interessantere Person. Die Unterredungen dieser Freunde, die Monologen des Stormonds, worin dessen heftige Leidenschaft, und Unentschlossenheit hervorleuchtet, sind rührende Scenen. Von dieser Seite hätte also das Trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf Handlungen zu einem vollkommenen Trauerspiel fordert. Hingegen fiel auf der andern Seite die genaue Einheit des Orts weg. Es musten wenigstens zwey Zimmer in einem Hause vorkommen. Und eben das Sonderbare dieses Stücks, [man weiß, daß das neue gefällt] ist, daß die Heldin des Trauerspiels nie aus den Augen des Zuschauers komt. 6:: Jeder, der zu ihr ins Zimmer tritt, muste bey der Lage der Umstände erscheinen. Keine überflüßige oder Zwischen=Scene. Welch ein Vorzug eines Drama. Ich wünschte, daß der Herr Verfasser sich entschlöße, seine Iwanette in fünf Acten herauszugeben. Das Urtheil des Publicums solte mich sodann belehren, welches von beyden den Vorzug verdiente. Der Anhang ist ein Grundriß zu einem Singspiel von dem nemlichen Herrn Verfasser. Es wurde, wie es hier ist, an dem Geburtsfeste Ihro Kaiserlichen Majestät als ein Zwischenspiel aufgeführet. Auf diese Weise ist es in meine Hände gerathen. Und weil ich es einmal wage, fremde Arbeiten herauszugeben, so habe ich es der Iwanette hinzugefügt. Wetzlar, den 20. May 1770. Der Herausgeber. 7::</p>
-      <p>@front-7</p>
-      <p>@Iwanette.</p>
-      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
-      <p>2::</p>
-      <p>@front-2 Vorrede. Das Stück, welches ich der Weit hierdurch bekant mache, ist auf dem hiesigen Theater in drey und in fünf Acten mehrmalen vorgestellet worden. Ich weiß nicht, warum man weder das eine noch das andere im Druck gesehen. Vermuthlich hat der Herr Verfasser es verhindert. Er mag mir indessen verzeihen, daß da ich Gelegenheit gehabt eine Abschrift von der ersten Ausarbeitung, nemlich in drey Handlungen, an mich zu bringen, ich die Ausgabe desselben besorge. So viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine Sylbe darin abzuändern unterfangen. Ist eine fehlerhafte 4:: Abschrift in in meine Hände gerathen, so ersuche ich den Herrn Verfasser, selbst eine Ausgabe seiner Iwanette zu besorgen. Ich verlange nicht der Lobredner des Stücks zu werden. Aber der Vorwurf ist nach meiner Einsicht interessant, und ganz gemacht, um von einem glücklichen Genie dramatisch ausgearbeitet zu werden. Arnand und Marmontel gaben den Stof dazu her. — Er ist voller Moral. Wie manches junges Frauenzimmer, welches vieleicht seine Tugend dennoch zu bewahren weiß, ist dem Schein nach strafbar; zumal in unseren Zeiten, da die freyere Lebensart vom Wohlstande unzertrennlich, gehalten wird. Iwanette mag diesen ein Beyspiel werden, daß eine Handlung, die anfänglich höchstens als eine Unbesonnenheit betrachtet wurde, in Verbindung mit einigen Nebenumständen die traurigsten Folgen haben kan. Jedoch es ist überflüßig, eine Moral dem Trauerspiel voranzusetzen, welche bey 5:: geringer Aufmerksamkeit sogleich einleuchten wird. Ich werde nur noch meine Gedanken äußern, die ich von der Vermehrung dieses Stücks, da es in fünf Aufzügen aufgeführet wurde, hegte. Bender wurde bey dieser Veränderung der Vertraute des jüngeren Stormonds, und also eine interessantere Person. Die Unterredungen dieser Freunde, die Monologen des Stormonds, worin dessen heftige Leidenschaft, und Unentschlossenheit hervorleuchtet, sind rührende Scenen. Von dieser Seite hätte also das Trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf Handlungen zu einem vollkommenen Trauerspiel fordert. Hingegen fiel auf der andern Seite die genaue Einheit des Orts weg. Es musten wenigstens zwey Zimmer in einem Hause vorkommen. Und eben das Sonderbare dieses Stücks, [man weiß, daß das neue gefällt] ist, daß die Heldin des Trauerspiels nie aus den Augen des Zuschauers komt. 6:: Jeder, der zu ihr ins Zimmer tritt, muste bey der Lage der Umstände erscheinen. Keine überflüßige oder Zwischen=Scene. Welch ein Vorzug eines Drama. Ich wünschte, daß der Herr Verfasser sich entschlöße, seine Iwanette in fünf Acten herauszugeben. Das Urtheil des Publicums solte mich sodann belehren, welches von beyden den Vorzug verdiente. Der Anhang ist ein Grundriß zu einem Singspiel von dem nemlichen Herrn Verfasser. Es wurde, wie es hier ist, an dem Geburtsfeste Ihro Kaiserlichen Majestät als ein Zwischenspiel aufgeführet. Auf diese Weise ist es in meine Hände gerathen. Und weil ich es einmal wage, fremde Arbeiten herauszugeben, so habe ich es der Iwanette hinzugefügt. Wetzlar, den 20. May 1770. Der Herausgeber. 7::</p>
-      <p>@front-7</p>
-      <p>@Iwanette.</p>
-      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
-      <p>7::</p>
-      <p>@front-7</p>
-      <p>@Iwanette.</p>
-      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
-      <p>NA</p>
-      <p>@Iwanette.</p>
-      <p>Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
+      <p>So spricht Iwanette! Act. 2. front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler. 2:: front-2 Vorrede. Das Stück, welches ich der Weit hierdurch bekant mache, ist auf dem hiesigen Theater in drey und in fünf Acten mehrmalen vorgestellet worden. Ich weiß nicht, warum man weder das eine noch das andere im Druck gesehen. Vermuthlich hat der Herr Verfasser es verhindert. Er mag mir indessen verzeihen, daß da ich Gelegenheit gehabt eine Abschrift von der ersten Ausarbeitung, nemlich in drey Handlungen, an mich zu bringen, ich die Ausgabe desselben besorge. So viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine Sylbe darin abzuändern unterfangen. Ist eine fehlerhafte 4:: Abschrift in in meine Hände gerathen, so ersuche ich den Herrn Verfasser, selbst eine Ausgabe seiner Iwanette zu besorgen. Ich verlange nicht der Lobredner des Stücks zu werden. Aber der Vorwurf ist nach meiner Einsicht interessant, und ganz gemacht, um von einem glücklichen Genie dramatisch ausgearbeitet zu werden. Arnand und Marmontel gaben den Stof dazu her. — Er ist voller Moral. Wie manches junges Frauenzimmer, welches vieleicht seine Tugend dennoch zu bewahren weiß, ist dem Schein nach strafbar; zumal in unseren Zeiten, da die freyere Lebensart vom Wohlstande unzertrennlich, gehalten wird. Iwanette mag diesen ein Beyspiel werden, daß eine Handlung, die anfänglich höchstens als eine Unbesonnenheit betrachtet wurde, in Verbindung mit einigen Nebenumständen die traurigsten Folgen haben kan. Jedoch es ist überflüßig, eine Moral dem Trauerspiel voranzusetzen, welche bey 5:: geringer Aufmerksamkeit sogleich einleuchten wird. Ich werde nur noch meine Gedanken äußern, die ich von der Vermehrung dieses Stücks, da es in fünf Aufzügen aufgeführet wurde, hegte. Bender wurde bey dieser Veränderung der Vertraute des jüngeren Stormonds, und also eine interessantere Person. Die Unterredungen dieser Freunde, die Monologen des Stormonds, worin dessen heftige Leidenschaft, und Unentschlossenheit hervorleuchtet, sind rührende Scenen. Von dieser Seite hätte also das Trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf Handlungen zu einem vollkommenen Trauerspiel fordert. Hingegen fiel auf der andern Seite die genaue Einheit des Orts weg. Es musten wenigstens zwey Zimmer in einem Hause vorkommen. Und eben das Sonderbare dieses Stücks, [man weiß, daß das neue gefällt] ist, daß die Heldin des Trauerspiels nie aus den Augen des Zuschauers komt. 6:: Jeder, der zu ihr ins Zimmer tritt, muste bey der Lage der Umstände erscheinen. Keine überflüßige oder Zwischen=Scene. Welch ein Vorzug eines Drama. Ich wünschte, daß der Herr Verfasser sich entschlöße, seine Iwanette in fünf Acten herauszugeben. Das Urtheil des Publicums solte mich sodann belehren, welches von beyden den Vorzug verdiente. Der Anhang ist ein Grundriß zu einem Singspiel von dem nemlichen Herrn Verfasser. Es wurde, wie es hier ist, an dem Geburtsfeste Ihro Kaiserlichen Majestät als ein Zwischenspiel aufgeführet. Auf diese Weise ist es in meine Hände gerathen. Und weil ich es einmal wage, fremde Arbeiten herauszugeben, so habe ich es der Iwanette hinzugefügt. Wetzlar, den 20. May 1770. Der Herausgeber. 7:: front-7 Iwanette. Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
     </front>
     <body>
       <div type="act">
@@ -140,107 +115,7 @@
         </sp>
         <sp who="#wolsey">
           <speaker>Wolsey</speaker>
-          <p>Hat er nicht Ursache genug zu diesem Zweifel bekommen? -- Ein zu frühzeitig gebornes Kind. -- Ich muß es Ihnen gestehen, Iwanette, daß aller &lt;pb n="13"/&gt; der Betheurungen Ihrer Liebe zum Stormond ungeachtet, mir selbst diese Zweifel nicht verschwinden. Er verdient aber dennoch Verachtung. Wenn er Sie auch verlassen wolte, warum sezte er Sie in den erbarmenswürdigen Zustand in dem Sie sich befinden, und den er leicht voraus sehen konte? —</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Fahren Sie nur fort mir Vorwürfe dieser entsezlichen Art zu machen; vieleicht beschleunigen diese das Ende meiner Qualen. Aber hören Sie auf, den Stormond verachtenswürdig zu finden. Wenn Sie mich für eine Ungetreue halten, verdiene ich da die geringste Rücksicht?</p>
-        </sp>
-        <sp who="#wolsey">
-          <speaker>Wolsey</speaker>
-          <p>Lassen Sie uns hiervon abbrechen. Es war nicht meine Absicht Ihnen Vorwürfe zu machen. Was hilft aber Ihre gegenwärtige Eingezogenheit, was der Mangel und der Schmerz, von denen Sie verzehret werden? Sie werden nicht den Stormond aus fremden Ländern dadurch zurücke rufen. Vieleicht ist er lange mit einem andern Herzen verbunden, an dessen Treue er weniger zweifelt. Bey Ihnen kömt es darauf an, Mittel, schleunige Mittel zu Verbesserung Ihres Zustandes zu finden. Ich kenne den Graf Golowin.. Ich werde mit ihm reden. Sie mögen nun seine Großmuth schätzen oder verachten, so weiß ich, daß er allemal, auch wider Ihren Willen, Ihrer Dürftigkeit abzuhelfen bereit ist. und ich hoffe immer, daß sodann das übrige — &lt;pb n="14"/&gt;</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>O quälen Sie mich nicht. Wie oft soll ich Ihnen es sagen, daß ich noch nicht Zeit hatte, meine Dürftigkeit zu fühlen. Ich habe ohnehin den Schein genug gegen mich. Es ist nicht nöthig ihn noch zu vermehren. --- Aber, wer kömt da?</p>
-        </sp>
-        <sp who="#wolsey">
-          <speaker>Wolsey</speaker>
-          <p>Er selbst, der Graf Golowin.</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>&lt;stage&gt;im Hereintreten.&lt;/stage&gt; In welchem erschrecklichen Zustande sehe ich Iwanetten. und dennoch ist der Gram, der ihren Körper verzehret, nicht vermögend die Anmuth auszulöschen, die noch auf ihrer ausgebleichten Lippe lacht. &lt;stage&gt;laut:&lt;/stage&gt; Iwanette, erschrecken Sie nicht über meine Gegenwart. Ich komme nicht Ihnen von meiner Liebe vorzusagen. Ihr Zustand, ach Ihr beklagenswürdiger Zustand läßt mir nur das Gefühl eines thränenvollen Mitleids übrig. Nicht, als wenn ich Sie jezt weniger schön, weniger anbetenswürdig fände, sondern ich verlange Ihnen nicht weiter durch Anträge beschwerlich zu fallen, die Ihre Tugend verabscheuet. Sehen Sie in mir nicht einen ungestümen Liebhaber, sondern einen solchen, dessen ganzer Wunsch es ist, Ihre Freundschaft zu gewinnen und Ihren Kummer zu theilen.</p>
-        </sp>
-        <sp who="#wolsey">
-          <speaker>Wolsey</speaker>
-          <p>&lt;stage&gt;für sich.&lt;/stage&gt; Der arme Golowin verdient selbst Mitleiden. &lt;pb n="15"/&gt;</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Lassen Sie, Herr Graf, lassen Sie eine Unglückliche, zu deren gänzlichen Untergang sich tausend widrige Zufälle vereinigen musten, — überlassen Sie diese ihrer martervollen Bestimmung. Ich verdanke Ihre Großmuth; aber aller Beystand der Erden ist zu schwach, die Ruhe in diesem Herzen herzustellen; in diesem Herzen das geflohen wird, von dem vermieden wird, der einig in demselben herschen konte.</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Wäre ich vermögend Madame, Ihnen das Herz, uber dessen Verlust Sie klagen, zurückzuführen; glauben Sie gewiß, daß ich alles daran wagen und mich selbst darüber vergessen würde. Ich weiß mehr als jemand, daß Sie desselben noch würdig sind. O könte ich dem Stormond diese Ueberzeugung beybringen, und ihn bald zu Ihren Füßen sehen.</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Ach! diese schmeichlerische Hofnung darf in meiner Seele nicht weiter Plaz greifen.</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Und warum nicht? Ich habe gehört, daß Stormond in kurzen hier seyn wird. Einer seiner Freunde hat es ubernommen, seine Aussöhnung bey dem Vater zu bewürken. &lt;pb n="16"/&gt;</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Und bin ich sodann nicht ohnfehlbar das Opfer dieser Versöhnung? Hat nicht Stormond seines Vaters Zorn eben dadurch besänftiget, daß er sich mir entzogen hat? Jedoch ich bin es gern zufrieden das Opfer zu seyn, das Stormonds Glücks-Umstände erfordern. Die Tage, die mir etwa noch übrig sind, sie werden auch dahin fließen, mit dem Strome, der die übrigen fortriß.</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Glauben Sie, daß Stormond, wenn er von Ihrer Unschuld überzeugt würde, Sie aufopfern könte. Ich kenne ihn zwar nicht: Aber er müste sehr unedel denken, wenn er Ihnen nicht Gerechtigkeit wiederfahren ließe. Ich behalte mir es vor über diesen Gegenstand noch eine besondere Unterredung mit Ihnen zu haben.</p>
-        </sp>
-        <sp who="#wolsey">
-          <speaker>Wolsey</speaker>
-          <p>Sie können es gleich. Ich will Sie allein lassen. &lt;stage&gt;Im Weggehen&lt;/stage&gt; Ich bekomme Hofnung. Das Zutrauen eines Frauenzimmers gewonnen zu haben, ist schon der halbe Besiz ihres Herzens. &lt;stage&gt;geht ab.&lt;/stage&gt;</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Ihr Schicksal Iwanette, ist von der Art, daß man Ihnen billig jede Betrachtung ersparet, die neuen Schmerz in Ihrer Seele erregen kan. Aber Sie vergeben mir, daß ich Ihnen dennoch etwas &lt;pb n="17"/&gt; entdecke, das sie betrüben wird. Nehmen sie daraus den Beweis meiner aufrichtigen Freundschaft. Ich wünschte, die Welt wäre wie ich von Ihrer edlen Denkungsart überzeugt. Aber verzeyhen Sie, Sie haben den Schein gegen sich, und die Menschen sind gewohnt, diesen zum Prüfstein fremder Handlungen zu machen.</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Ich weiß es, Herr Graf. Ich weiß auch, daß mein Verbrechen darin besteht, den gegen mich redenden Schein nicht sorgfältiger vermieden zu haben.</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Dieser Schein wird durch Ihre gegenwärtige Wohnung vermehret. Ich glaube kaum, daß Sie wissen, was Wolsey für eine Frau ist.</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Und wie?</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Ich will Sie Ihnen aufrichtig schildern: Wolsey war in ihren jungern Jahren ein Frauenzimmer, das mehrere Liebhaber annahm. Jezt da ihre Schönheit verblühet, steht sie in dem Ruf, fremden Liebesgeschichten mit Freuden die Hände zu bieten. Ich weiß diesen Ruf am besten zu beurtheilen. Er ist gegründet. Ich habe nie einem Herzen Gewalt zu thun, weniger die Tugend in Gefahr zu setzen oder zu bestürmen getrachtet. Aber verzeyhen Sie Madame, nicht immer schienen Sie mir das zu seyn &lt;pb n="18"/&gt; wofür ich Sie jezt ansehe. Sie werden mich gleich rechtfertigen. — Die Wolsey gab mir Nachricht, daß in ihrem Hause ein Frauenzimmer von großer Schönheit sich befinde, die von ihren Eheherrn Untreu halber verlassen sey. Ich kam Sie zu sehen. Ein gewisses Edles, daß ich in Ihrer Miene sogleich zu finden glaubte, würde mich abgehalten haben, die unbescheidene Erklärung, die ich mir jezt verweise, zu thun. Aber Ihre Wohnung und die Nachricht die ich von Ihnen erhalten --</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Ach! was höre ich, Unglückliche! Müssen denn alle Umstände beytragen, deine Ehre vor der Welt völlig zu Grunde zu richten. -- Wolsey, nun verstehe ich die schmeichlerischen Lobsprüche, die du bey einer Unglücklichen verschwendetest. Nun sehe ich es ein, warum du in dem Zeitpunkt, da mich die ganze Welt verließ, dich meiner annahmest. Nun merke ich die Kunstgriffe, durch welche du ein dir ähnliches Geschöpf aus mir zu machen versuchtest. Ach! jezt verschwindet alle Hofnung mich jemals gerechtfertiget zu sehen.</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Ich dachte es wohl, daß Sie die Wolsey nicht wie ich kennten. Sagen Sie mir aber, wie machten Sie die unglückliche Bekantschaft?</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Ich will es Ihnen sagen. Wie ich die unglückliche Nachricht von der Abreise meines Mannes, und &lt;pb n="19"/&gt; die für mich so traurige Ursache desselben, aus seinem hinterlassenen Schreiben erfahe; so überließ ich mich ganz dem Schmerz, der die traurige Würkung desselben war. Menschenflüchtig gieng ich oft in einen Wald, entfernt vom Getümmel der Erde mein Unglück dahin weinen zu können. Ich weiß nicht durch welchen Zufall sich Wolsey eines Tages im Walde befand. Ich suchte ihr auszuweichen, aber sie schien es zu verhindern. Sie sähe freylich bald, daß sie mit einer Unglücklichen zu thun hatte. Sie schien meinen Kummer theilen zu wollen, und das war hinlänglich mich zu bestimmen, ihr meine Geschichte zu erzehlen. Sie klagte, Sie weinte mit mir. O, ein sichrer Weg, das ganze Zutrauen eines Bedrängten zu gewinnen. Sie besuchte mich in der Folge, bot mir ihre Wohnung an, welche zu beziehen, da meine Dürftigkeit zu ihrer jezigen Tiefe herabsank, ich in die Nochwendigkeit gerieth. Dies, Herr Graf, ist der Ursprung meiner Verbindung mit Wolsey. Konte ich es vermuthen, daß in der Einöde des Waldes eine Schlange auf mich warten würde, und konte ich die dafür ansehen, die allein menschlich genug schien, mein Elend theilen zu wollen?</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Ich bin unfähig, Ihnen alles auszudrücken, was ich bey Ihrer Erzählung empfunden. Aber wenn ich Mittel entdecke, Sie dieser Unmenschlichen zu entziehen, die nur Ihres Kummers lachet; Sie werden doch diese Mittel nicht ausschlagen? &lt;pb n="20"/&gt;</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>&lt;stage&gt;unentschlossen.&lt;/stage&gt; O Herr Graf! - Sie sind großmüthig - Aber — solte nicht —</p>
-        </sp>
-        <sp who="#golowin">
-          <speaker>Golowin</speaker>
-          <p>Ich sehe Ihre Unentschlossenheit. Ich bin entfernt Sie darüber zu tadeln. - Aber wenn ich Mittel fände Sie diesem Hause zu entziehen, ohne daß ich dabey mit zu würken schiene; würden Sie alsdenn nicht dieselben annehmen? — Ich verlasse Sie; In kurzem hoffe ich wieder bey Ihnen zu seyn. &lt;stage&gt;geht ab.&lt;/stage&gt;</p>
-        </sp>
-        <sp who="#iwanette">
-          <speaker>Iwanette</speaker>
-          <p>Welch ein erschrecklicher Zustand! -- Ach, diese lezte Entdeckung zeigt mir das Grab meiner zertrümmerten Ehre! — Ich bin eine Unglückliche von der Art, die von dem widrigen Verhängniß mit keinem Streich verschonet wird! -- Ich glaube nicht Ursach zu haben, die Großmuth des Golowin in Zweifel ziehen zu dürfen. Aber, in welche Labyrinthe hat mein zu voreiliges Zutrauen mich bereits gestürzet. - Zwar kan ich freylich nicht tiefer mehr sinken. Allein, wenn man sich einer Mörderhöle entziehet und einer andern zufliehet, wird man dadurch gebessert? und vermehrt man dadurch nicht den Schein, diese Wohnungen aufzusuchen. Ach! unfähig zu jeder Entschliessung, finde ich keine Stütze, um mich aus den Trümmern, die mich bedecken, zu erheben; keine Aussicht als den Tod! Aber warum fliehet er mich, die ihm mit Lächeln &lt;pb n="21"/&gt; und ausgestreckten Armen entgegen eilen würde, und sucht andre auf, denen er erschrecklich ist? -- Stormond kömt mit seinem Vater sich auszusöhnen. Er wird meine Wohnung erfahren, und ich werde von ihm mit so vielem Recht verabscheuet werden, als je ein Sterblicher es wurde. — Und doch schlägt dieses Herz für ihn, kennt kein Glück als mit dem seinigen verbunden zu seyn, und vergehet im Schmerz darüber, weil er sich ihm entriß. Jene, die von Theseus verlassen, ihr Unglück den Felsen und Wellen klagte, wie gering war ihr Elend gegen das meinige. Ihr verbothen nicht die Gründe ihrer Religion es zu endigen, und sich ins Meer zu stürzen. Sie hatte sich keine Vorwurfe zu machen. Ihr Ungetreuer, von ihr durch nichts beleidiget, ward ihrer aus Leichtsinn überdrußig. Aber dem Stormond, kostete der Entschluß mich zu fliehen viel. Und war gleich mein Herz unfähig ihn zu beleidigen, so war dennoch mein unachtsames Betragen Beleidigung genug für ihn. So habe ich den besten Jüngling behandelt, dessen Zärtlichkeit für mich, ihn den Zorn seiner Eltern, und die Drohungen der Enterbung nicht achten machte. Ja, ich verdiene alles Unglück, das mich jezt verfolgt. &lt;stage&gt;Sie ist eine zeitlang still.&lt;/stage&gt; Ist diese Empfindung die sich meiner bemeistert, ein drohender Schlaf, oder vieleicht der herannahende Tod. — Sey mir gesegnet. -- Ich -- &lt;stage&gt;Sie geräth in Schlaf.[.-.]Ende des ersten Acts.[.-.]Der Vorhang bleibt offen.&lt;/stage&gt; &lt;pb n="22"/&gt;</p>
+          <p>&lt;pb n="22"/&gt;</p>
         </sp>
       </div>
       <div type="act">

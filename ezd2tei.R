@@ -168,7 +168,16 @@ parse_drama_text <- function(input_tx, output_file) {
       parts 
     }
     if(str_detect(line,"@front",)){
-      parts<-str_match(line,"(@front(.*) )(.*)")
+      parts<-str_match(line,"(@front(.+?) )(.+)")
+      print(parts)
+      lp<-length(parts)-1
+      for(part in parts[2:lp]){
+        print(part)
+        line<-gsub(part,"",line)
+        print(line)
+      }
+      line
+      
       p4<-parts[4]
       n<-unlist(strsplit(parts[2],"-"))
       p1<-
@@ -188,32 +197,33 @@ parse_drama_text <- function(input_tx, output_file) {
       for(p in front.t){
         xml_add_child(xml_doc$front, "p", p)
       }
+      line.true<-"front"
     }
     # get cast
-    if(str_detect(line,"^depr",)){
-      parts<-str_match(line,"[\\^](.*)")
-      desc<-parts[2]
-      r<-k:length(lines)
-      m<-str_detect(lines[r],"[$#@]",)
-      mw<-which(m)
-      mw<-mw[1]
-      mw<-(k+1):r[mw-1]
-      castlist.r<-mw
-      castlist.t<-lines[castlist.r]
-      castlist.t
-      #      castList<-xml_find_all(xml_doc$,"//castList")
-      xml_add_child(xml_doc$castList, "head", desc)
-      
-      for(item in castlist.t){
-        xml_add_child(xml_doc$castList,"castItem",item)
-      }
-      line.true<-"personal"
-      write(castlist.t,"debug.txt",append = T)
-      
-    }
-    line.true
+    # if(str_detect(line,"^depr",)){
+    #   parts<-str_match(line,"[\\^](.*)")
+    #   desc<-parts[2]
+    #   r<-k:length(lines)
+    #   m<-str_detect(lines[r],"[$#@]",)
+    #   mw<-which(m)
+    #   mw<-mw[1]
+    #   mw<-(k+1):r[mw-1]
+    #   castlist.r<-mw
+    #   castlist.t<-lines[castlist.r]
+    #   castlist.t
+    #   #      castList<-xml_find_all(xml_doc$,"//castList")
+    #   xml_add_child(xml_doc$castList, "head", desc)
+    #   
+    #   for(item in castlist.t){
+    #     xml_add_child(xml_doc$castList,"castItem",item)
+    #   }
+    #   line.true<-"personal"
+    #   write(castlist.t,"debug.txt",append = T)
+    #   
+    # }
+    # line.true
     
-    if (str_detect(line, "^@[^.]+\\.", )&!line.true%in%c("title","subtitle","author")) {
+    if (str_detect(line, "^@[^.]+\\.", )&!line.true%in%c("title","subtitle","author","front")) {
       parts <- str_match(line, "^@([^.]+?)\\.(.*)")
       speaker <- gsub("[@.]","",str_trim(parts[2]))
       speaker.id<-paste0("#",tolower(speaker))
@@ -279,7 +289,7 @@ parse_drama_text <- function(input_tx, output_file) {
       line.true<-"scene"
     }
     # 5. Texte continu
-    if (str_trim(line) != ""&!line.true%in%c("stage","speaker","act","scene","author","title","subtitle","personal")) {
+    if (str_trim(line) != ""&!line.true%in%c("stage","speaker","act","scene","author","title","subtitle","personal","front")) {
       #write(processed,"debug.txt",append = T)
       
       if (!is.null(current_scene)) {

@@ -93,7 +93,7 @@ return(t3)
 }
 r<-F
 #t<-t3
-
+r<-F
 clean.t<-function(t,r){
   txtemp<-tempfile("txraw.txt")
   writeLines(t,txtemp)
@@ -106,7 +106,8 @@ clean.t<-function(t,r){
   #repldf[11,]
   if(sum(r)>0)
     repldf<-repldf[repldf$id==r,]
-  r<-11
+  repldf
+  #r<-11
   m1<-grepl("%cast%",t2)
   print(m1)
   for(r in 1:length(repldf$id)){
@@ -115,6 +116,7 @@ clean.t<-function(t,r){
   writeLines(t2,txtemp)
   
   t3<-readLines(txtemp)
+  t3[1:150]
   t3<-gsub("%spknl%|%cast%","",t3)
   return(t3)
 }
@@ -138,7 +140,7 @@ transform.ezd<-function(ezd){
 ### preprocess raw text
 headx.1<-"Aufzug"
 headx.2<-"Auftritt"
-t1<-t3
+#t1<-t3
 get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")
   #  ifelse(level==1,headx<-headx.1,headx<-headx.2)
@@ -174,88 +176,93 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
 # line<-text[15]
 # line<-"Personen"
 # lines<-sp1$text
-# k<-97
+ k<-89
 # # t3
 # # cast<-"Personen."
 # lines[1:100]
 # line<-lines[k]
-get.castlist<-function(lines,cast){
-  for (line in lines){
+#line
+ l<-89
+ get.front<-function(lines){
+  for (l in 1:length(lines)){
+    line<-lines[l]
+    line
+    if(str_detect(line,"^@front.*",)){
+      r1<-l+1
+      r<-r1:length(lines)
+      m<-str_detect(lines[r],"^[$#^]",)
+      mw<-which(m)
+      mwl<-r[mw]
+      mw<-mwl[1]-1
+      mw<-r1:mw
+      lines[mw]
+      lines[mw]<-paste0(lines[mw],"%front%")
+      m2<-grepl("^@",lines[mw])
+      lines[mw]<-gsub("@","",lines[mw])
+      #castlist.t<-lines[mw]
+      #castlist.t
+   }
+  }
+  return(lines)
+ }
+# lines<-readLines("ezdmarkup.txt")
+ l<-97
+#line<-lines[l]
+# cast<-"Personal"
+ # lines<-t2
+ # t2[1:100]
+ # line<-lines[l]
+ # line
+ # lines[1:150]
+ get.castlist<-function(lines,cast){
+  for (l in 1:length(lines)){
+    line<-lines[l]
     if(str_detect(line,paste0("^",cast,".?$"),)){
-      #parts<-str_match(line,"\\^(.*)")
-      #write(parts,"debug.txt",append = T)
-      
-      #desc<-parts[2]
-      r<-k:length(lines)
-      
-      m<-str_detect(lines[r],"[$#]",)
+      parts<-str_match(line,"\\^(.*)")
+      parts
+      write(parts,"debug.txt",append = T)
+      desc<-parts[2]
+      desc
+      r<-l:length(lines)
+      m<-str_detect(lines[r],"^[$#]",)
       mw<-which(m)
       mw<-mw[1]
-      mw<-(k+1):r[mw-1]
+      mw<-l:r[mw-1]
+      mw
       lines[mw]<-paste0(lines[mw],"%cast%")
       lines[mw]<-gsub("%spknl%","",lines[mw])
-      m2<-str_detect(lines[r[mw]],"^@",)
-      lines[r[mw[m2]]]<-gsub("@","",lines[r[mw[m2]]])
-      #castlist.r<-mw
-      write("---catslist.r","debug.txt",append = T)
-      
       write(mw,"debug.txt",append = T)
-      
-      castlist.t<-lines[mw]
-      castlist.t
-      #      castList<-xml_find_all(xml_doc$,"//castList")
-      #  xml_add_child(xml_doc$castList, "head", desc)
-      #castlist.ez<-paste0("%cast%",castlist.t)
-      #lines[mw]<-castlist.ez
-      # 
-      # for(item in castlist.t){
-      #   xml_add_child(xml_doc$castList,"castItem",item)
-      # }
-      # line.true<-"personal"
-      write(castlist.t,"debug.txt",append = T)
-      # xml_text(xml_doc$castList)
-      #write_xml(xml_doc$doc,"cstest.xml")
+      m2<-str_detect(lines[mw],"^@",)
+      sum(m2)
+      lines[mw[m2]]
+      lines[mw[m2]]<-gsub("@|%spknl%","",lines[mw[m2]])
     }
+    lines[1:100]
     if(str_detect(line,"\\^",)){
     parts<-str_match(line,"\\^(.*)")
     parts
     write(parts,"debug.txt",append = T)
-    
     desc<-parts[2]
-    r<-k:length(lines)
-    m<-str_detect(lines[r],"[$#]",)
+    desc
+    r<-l:length(lines)
+    m<-str_detect(lines[r],"^[$#]",)
     mw<-which(m)
     mw<-mw[1]
-    mw<-(k+1):r[mw-1]
+    mw<-l:r[mw-1]
+    mw
     lines[mw]<-paste0(lines[mw],"%cast%")
     lines[mw]<-gsub("%spknl%","",lines[mw])
-    #castlist.r<-mw
-    write("---catslist.r","debug.txt",append = T)
-    
     write(mw,"debug.txt",append = T)
-    m2<-str_detect(lines[r[mw]],"^@",)
+    m2<-str_detect(lines[mw],"^@",)
     sum(m2)
-    lines[r[mw[m2]]]
-    lines[r[mw[m2]]]<-gsub("@|%spknl%","",lines[r[mw[m2]]])
-    
-    castlist.t<-lines[mw]
-    castlist.t
-    #      castList<-xml_find_all(xml_doc$,"//castList")
-  #  xml_add_child(xml_doc$castList, "head", desc)
-    # castlist.ez<-paste0("%cast%",castlist.t)
-    # lines[mw]<-castlist.ez
-    # 
-    # for(item in castlist.t){
-    #   xml_add_child(xml_doc$castList,"castItem",item)
-    # }
-    # line.true<-"personal"
-    write(castlist.t,"debug.txt",append = T)
-   # xml_text(xml_doc$castList)
-    #write_xml(xml_doc$doc,"cstest.xml")
+    lines[mw[m2]]
+    lines[mw[m2]]<-gsub("@|%spknl%","",lines[mw[m2]])
   }
   }
+   lines[1:100]
   return(lines)
-}
+ }
+ #lines[1:150]
 # t6<-get.castlist(text)
 # t6
 get.speakers<-function(t1,sp){

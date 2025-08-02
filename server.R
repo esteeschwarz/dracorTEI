@@ -252,19 +252,27 @@ function(input, output, session) {
     
     # t <- get.speakers(rv$t2, vario)  # Use the transcript stored in reactiveValues
     t4 <- get.castlist(rv$t2,input$cast)
-    t5 <- get.speakers(t4, vario)  # Use the transcript stored in reactiveValues
-    t2 <- t5  # Store the updated text in reactiveValues
+    print("got cast...")
+    t5<-get.front(t4)
+    print("got front...")
+    t6 <- get.speakers(t5, vario)# Use the transcript stored in reactiveValues
+    t2 <- t6  # Store the updated text in reactiveValues
     #t2<-t4
-    rv$speaker <- append(rv$speaker,t$vario,after = length(rv$vario)) # Store the act headers in reactiveValues
+    print("got speakers...")
+    rv$speaker <- append(rv$speaker,t2$vario,after = length(rv$vario)) # Store the act headers in reactiveValues
     rv$speaker<-unique(rv$speaker)
     rv$speaker<-rv$speaker[!is.na(rv$speaker)]
-    rv$speaker.crit<-append(rv$speaker.crit,t$eval,after=length(rv$speaker.crit))
+    rv$speaker.crit<-append(rv$speaker.crit,t2$eval,after=length(rv$speaker.crit))
     rv$speaker.crit<-rv$speaker.crit[!is.na(rv$speaker.crit)]
     rv$sp.sf<-input$speaker
     # Update the UI with the processed act headers
    # output$acts <- renderText(paste(rv$heads, collapse = "\n"))
     ### remove linebreaks
-    t3<-clean.t(t2$text,F)
+    sp6<-gsub("%front%","",t2$text)
+   # sp6<-t2$text
+    t3<-clean.t(sp6,F)
+    print("clean.t...")
+   # t3<-get.front(t3)
     rv$t3<-t3
     output$apidoc <- renderUI({
       div(

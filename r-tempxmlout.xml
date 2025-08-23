@@ -27,25 +27,25 @@
     <profileDesc>
       <particDesc>
         <listPerson>
-          <person sex="TODO" xml:id="#iwanette">
+          <person sex="TODO" xml:id="iwanette">
             <persName>Iwanette</persName>
           </person>
-          <person sex="TODO" xml:id="#wolsey">
+          <person sex="TODO" xml:id="wolsey">
             <persName>Wolsey</persName>
           </person>
-          <person sex="TODO" xml:id="#stormond">
+          <person sex="TODO" xml:id="stormond">
             <persName>Stormond</persName>
           </person>
-          <person sex="TODO" xml:id="#der ältere stormond">
+          <person sex="TODO" xml:id="der_ältere_stormond">
             <persName>Der ältere Stormond</persName>
           </person>
-          <person sex="TODO" xml:id="#bender">
+          <person sex="TODO" xml:id="bender">
             <persName>Bender</persName>
           </person>
-          <person sex="TODO" xml:id="#golowin">
+          <person sex="TODO" xml:id="golowin">
             <persName>Golowin</persName>
           </person>
-          <person sex="TODO" xml:id="#der medicus">
+          <person sex="TODO" xml:id="der_medicus">
             <persName>Der Medicus</persName>
           </person>
         </listPerson>

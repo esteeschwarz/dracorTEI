@@ -15,10 +15,27 @@ escape_xml_dep <- function(text) {
     str_replace_all("\"", "&quot;") %>% 
     str_replace_all("'", "&apos;")
 }
+#schema: <?xml-model href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 # Initialiser un nouveau document XML
 create_tei_document <- function() {
   doc <- xml_new_document()
+  # root <- xml_root(doc)
+  # 
+  # # Ajouter les processing instructions dans l'ordre inverse
+  # # (car on les ajoute "before" le root)
+  # 
+  # # D'abord xml-stylesheet
+  # xml_add_sibling(root,
+  #                 xml_new_processing_instruction("xml-stylesheet",
+  #                                                'type="text/css" href="../css/tei.css"'),
+  #                 .where = "before")
+  # 
+  # # Puis xml-model
+  # xml_add_sibling(root,
+  #                 xml_new_processing_instruction("xml-model",
+  #                                                'href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"'),
+  #                 .where = "before")  
   tei <- xml_add_child(doc, "TEI", 
                        `xml:id` = "insertID",
                        `xml:lang` = "ger",
@@ -226,10 +243,11 @@ parse_drama_text <- function(input_tx, output_file) {
     if (str_detect(line, "^@[^.]+\\.", )&!line.true%in%c("title","subtitle","author","front")) {
       parts <- str_match(line, "^@([^.]+?)\\.(.*)")
       speaker <- gsub("[@.]","",str_trim(parts[2]))
-      speaker.id<-paste0("#",tolower(speaker))
+      speaker.id<-paste0(tolower(speaker))
+      speaker.id<-gsub(" ","_",speaker.id)
       speaker.a<-append(speaker.a,speaker,after = k)
       speaker.a<-speaker.a[!is.na(speaker.a)]
-      speaker.a
+      speaker.a<-gsub(" ","_",speaker.a)
       text <- str_trim(parts[3])
       line.true<-"speaker"
       # Traitement des numéros de page (150::)
@@ -241,9 +259,9 @@ parse_drama_text <- function(input_tx, output_file) {
       
       # Ajouter au XML
       if (!is.null(current_scene)) {
-        sp <- xml_add_child(current_scene, "sp", who = paste0("#", tolower(speaker)))
+        sp <- xml_add_child(current_scene, "sp", who = paste0("#", speaker.id))
         xml_add_child(sp, "speaker", speaker)
-        write(speaker,"debug.txt",append = T)
+        write(speaker.id,"debug.txt",append = T)
         
         p <- xml_add_child(sp, "p")
         #xml_text(p) <- text
@@ -295,8 +313,8 @@ parse_drama_text <- function(input_tx, output_file) {
       if (!is.null(current_scene)) {
         # Appliquer les mêmes transformations que pour le texte des personnages
         processed <- line %>%
-          str_replace_all("(\\d{1,4})::", "<pb n=\"\\1\"/>") %>%
-          str_replace_all("\\(([^)]+)\\)", "<stage>\\1</stage>")
+          str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"/{cright") %>%
+          str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
         
         #        p <- xml_add_child(current_scene, "p")
         # p <- xml_add_child(sp, "p")
@@ -310,7 +328,7 @@ parse_drama_text <- function(input_tx, output_file) {
   }
   speaker.a<-unique(speaker.a)
   speaker.a
-  speaker.ids<-paste0("#",tolower(speaker.a))
+  speaker.ids<-paste0(tolower(speaker.a))
   for(sp in 1:length(speaker.a)){
     person<-xml_add_child(xml_doc$listPerson,"person",sex="TODO",`xml:id`=speaker.ids[sp])
     xml_add_child(person,"persName",speaker.a[sp])
@@ -320,9 +338,14 @@ parse_drama_text <- function(input_tx, output_file) {
   xml_text(xml_doc$body)
   # Écrire le fichier XML de sortie
   write_xml(xml_doc$doc, output_file)
+  xmltx<-readLines(output_file)
+  xmltx<-gsub("\\{cleft","<",xmltx)
+  xmltx<-gsub("\\{cright",">",xmltx)
+  writeLines(xmltx,output_file)
 }
 output_file<-"r-output.xml"
-#input_tx<-readLines("ezdmarkup.txt")
+input_tx<-readLines("ezdmarkup.txt")
 # Exemple d'utilisation
-#parse_drama_text(input_tx, "toldetest.xml")
+parse_drama_text(input_tx, "toldetest.xml")
 #parse_drama_text("klopstock_tod-abels_ezd.txt", "toldetest.xml")
+

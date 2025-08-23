@@ -1,0 +1,14 @@
+#xml p {
+color: red;
+
+}
+#xml speaker{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#xml stage {
+  font-weight:italic;
+}
+#xml head {
+  font-size: 1.6em;
+}

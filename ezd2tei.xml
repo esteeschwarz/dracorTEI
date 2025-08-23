@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../css/tei.css"?>
+<?xml-model href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="insertID" xml:lang="ger">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Iwanette und Stormond</title>
+        <title type="sub">ein Trauerspiel, in drey Handlungen.</title>
+        <author>Margarete Klopstock</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher xml:id="dracor">DraCor</publisher>
+        <idno type="URL">https://dracor.org</idno>
+        <availability>
+          <licence>
+            <ab>CC0 1.0</ab>
+            <ref target="https://creativecommons.org/publicdomain/zero/1.0/">Licence</ref>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="digitalSource">
+          <name>ENTER SOURCE NAME HERE</name>
+          <idno type="URL">ENTER SOURCE URL HERE</idno>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person sex="TODO" xml:id="iwanette">
+            <persName>Iwanette</persName>
+          </person>
+          <person sex="TODO" xml:id="wolsey">
+            <persName>Wolsey</persName>
+          </person>
+          <person sex="TODO" xml:id="stormond">
+            <persName>Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="der_ältere_stormond">
+            <persName>Der_ältere_Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="bender">
+            <persName>Bender</persName>
+          </person>
+          <person sex="TODO" xml:id="golowin">
+            <persName>Golowin</persName>
+          </person>
+          <person sex="TODO" xml:id="der_medicus">
+            <persName>Der_Medicus</persName>
+          </person>
+        </listPerson>
+      </particDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <castList>
+        <head>Personen.%cast%</head>
+        <castItem>Iwanette.%cast%</castItem>
+        <castItem>Stormond.%cast%</castItem>
+        <castItem>Der ältere Stormond, dessen Vater.%cast%</castItem>
+        <castItem>Bender, des ältern Stormonds Vertrauter.%cast%</castItem>
+        <castItem>Graf von Golowin.%cast%</castItem>
+        <castItem>Frau Wolsey.%cast%</castItem>
+        <castItem>Ein Medicus.%cast%</castItem>
+      </castList>
+      <p>So spricht Iwanette! Act. 2.</p>
+      <p>front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler.%front%</p>
+      <p>2::%front%</p>
+      <p>front-2 Vorrede.%front%</p>
+      <p>Das Stück, welches ich der Weit hier=%front%</p>
+      <p>durch bekant mache, ist auf dem%front%</p>
+      <p>hiesigen Theater in drey und in fünf Acten%front%</p>
+      <p>mehrmalen vorgestellet worden. Ich weiß%front%</p>
+      <p>nicht, warum man weder das eine noch das%front%</p>
+      <p>andere im Druck gesehen. Vermuthlich hat%front%</p>
+      <p>der Herr Verfasser es verhindert. Er mag%front%</p>
+      <p>mir indessen verzeihen, daß da ich Gelegen=%front%</p>
+      <p>heit gehabt eine Abschrift von der ersten Aus=%front%</p>
+      <p>arbeitung, nemlich in drey Handlungen, an%front%</p>
+      <p>mich zu bringen, ich die Ausgabe desselben be=%front%</p>
+      <p>sorge. So viel kan ich jedoch aufrichtig ver=%front%</p>
+      <p>sichern, daß ich mir nicht eine Sylbe darin%front%</p>
+      <p>abzuändern unterfangen. Ist eine fehlerhafte%front%</p>
+      <p>4::%front%</p>
+      <p>Abschrift in in meine Hände gerathen, so ersuche%front%</p>
+      <p>ich den Herrn Verfasser, selbst eine Ausgabe%front%</p>
+      <p>seiner Iwanette zu besorgen.%front%</p>
+      <p>Ich verlange nicht der Lobredner des%front%</p>
+      <p>Stücks zu werden. Aber der Vorwurf ist%front%</p>
+      <p>nach meiner Einsicht interessant, und ganz%front%</p>
+      <p>gemacht, um von einem glücklichen Genie%front%</p>
+      <p>dramatisch ausgearbeitet zu werden. Arnand%front%</p>
+      <p>und Marmontel gaben den Stof dazu her. —%front%</p>
+      <p>Er ist voller Moral. Wie manches junges%front%</p>
+      <p>Frauenzimmer, welches vieleicht seine Tu=%front%</p>
+      <p>gend dennoch zu bewahren weiß, ist dem%front%</p>
+      <p>Schein nach strafbar; zumal in unseren Zei=%front%</p>
+      <p>ten, da die freyere Lebensart vom Wohl=%front%</p>
+      <p>stande unzertrennlich, gehalten wird. Iwa=%front%</p>
+      <p>nette mag diesen ein Beyspiel werden, daß%front%</p>
+      <p>eine Handlung, die anfänglich höchstens als%front%</p>
+      <p>eine Unbesonnenheit betrachtet wurde, in%front%</p>
+      <p>Verbindung mit einigen Nebenumständen die%front%</p>
+      <p>traurigsten Folgen haben kan.%front%</p>
+      <p>Jedoch es ist überflüßig, eine Moral%front%</p>
+      <p>dem Trauerspiel voranzusetzen, welche bey%front%</p>
+      <p>5::%front%</p>
+      <p>geringer Aufmerksamkeit sogleich einleuchten%front%</p>
+      <p>wird. Ich werde nur noch meine Gedanken%front%</p>
+      <p>äußern, die ich von der Vermehrung dieses%front%</p>
+      <p>Stücks, da es in fünf Aufzügen aufgeführet%front%</p>
+      <p>wurde, hegte. Bender wurde bey dieser%front%</p>
+      <p>Veränderung der Vertraute des jüngeren%front%</p>
+      <p>Stormonds, und also eine interessantere Per¬%front%</p>
+      <p>son. Die Unterredungen dieser Freunde, die%front%</p>
+      <p>Monologen des Stormonds, worin dessen%front%</p>
+      <p>heftige Leidenschaft, und Unentschlossenheit%front%</p>
+      <p>hervorleuchtet, sind rührende Scenen. Von%front%</p>
+      <p>dieser Seite hätte also das Trauerspiel gewon¬%front%</p>
+      <p>nen; ohne zu gedenken, daß mancher fünf%front%</p>
+      <p>Handlungen zu einem vollkommenen Trauer¬%front%</p>
+      <p>spiel fordert.%front%</p>
+      <p>Hingegen fiel auf der andern Seite die%front%</p>
+      <p>genaue Einheit des Orts weg. Es musten%front%</p>
+      <p>wenigstens zwey Zimmer in einem Hause%front%</p>
+      <p>vorkommen. Und eben das Sonderbare die¬%front%</p>
+      <p>ses Stücks, [man weiß, daß das neue ge¬%front%</p>
+      <p>fällt] ist, daß die Heldin des Trauerspiels%front%</p>
+      <p>nie aus den Augen des Zuschauers komt.%front%</p>
+      <p>6::%front%</p>
+      <p>Jeder, der zu ihr ins Zimmer tritt, muste%front%</p>
+      <p>bey der Lage der Umstände erscheinen. Keine%front%</p>
+      <p>überflüßige oder Zwischen=Scene. Welch%front%</p>
+      <p>ein Vorzug eines Drama.%front%</p>
+      <p>Ich wünschte, daß der Herr Verfasser%front%</p>
+      <p>sich entschlöße, seine Iwanette in fünf Acten%front%</p>
+      <p>herauszugeben. Das Urtheil des Publicums%front%</p>
+      <p>solte mich sodann belehren, welches von bey=%front%</p>
+      <p>den den Vorzug verdiente.%front%</p>
+      <p>Der Anhang ist ein Grundriß zu einem%front%</p>
+      <p>Singspiel von dem nemlichen Herrn Verfas=%front%</p>
+      <p>ser. Es wurde, wie es hier ist, an dem Ge=%front%</p>
+      <p>burtsfeste Ihro Kaiserlichen Majestät als ein%front%</p>
+      <p>Zwischenspiel aufgeführet. Auf diese Weise%front%</p>
+      <p>ist es in meine Hände gerathen. Und weil%front%</p>
+      <p>ich es einmal wage, fremde Arbeiten heraus=%front%</p>
+      <p>zugeben, so habe ich es der Iwanette hinzu=%front%</p>
+      <p>gefügt. Wetzlar, den 20. May 1770.%front%</p>
+      <p>Der Herausgeber.%front%</p>
+      <p>7::%front%</p>
+      <p>front-7%front%</p>
+      <p>Iwanette.%front%</p>
+      <p>Denken Sie, daß die Gattin eines zärtlichen und%front%</p>
+      <p>verdienstvollen Mannes strafbar genug ist,%front%</p>
+      <p>wenn sie es zu seyn mit einigem Grunde%front%</p>
+      <p>scheinet.%front%</p>
+      <p>Act. 2.%front%</p>
+      <p>8::%front%</p>
+    </front>
+    <body>
+      <div type="act">
+        <head>Erste Handlung.</head>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><pb n="10"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>der ihrer ungewohnt ist, Aber --</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><pb n="11"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>selben zu bedienen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Und was für Mittel Madame?</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>sich über seine Flucht in Gram zu verzehren?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>fähig, dir dieses Herz zu rauben.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>ewig verbannet!</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Nichts weiter von Golowin! -- O Stormond!</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Ursach, Sie zu fliehen?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>er ewig seyn wird.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><pb n="22"/>%cast%</p>
+        </sp>
+      </div>
+      <div type="act">
+        <head>Zweyte Handlung.</head>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Welche Flüche wird er gegen mich ausschütten?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>zen zuzogest.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>sie sinkt in Ohnmacht.</stage></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ohnmacht.)</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><pb n="24"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>mond erblickt.)</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Sie gefällig etwas zurück.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>der Tugend das Laster beben zu sehen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Geschöpfen?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ihr Zustand erschüttert meine Seele.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>über Sie fluchen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>wurde, soll mir jezt fluchen?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><pb n="26"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>tragen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>als Sie verabscheuen, Wolsey.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>war, als ich ihn glaubte.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Iwanettens Sprache?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Gesinnung und der meinigen ist.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>sey, darf ich Sie bitten, sich ein wenig zu entfernen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Wie? Stormond noch hier?</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>nettens Augen bin.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><pb n="28"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>finden könte.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>nicht entsagen kan.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>zärtliches Herz verhängt war.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>geringste davon auszudrucken.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>unserer Trennung war?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>nein, ich war es, die ihm das Leben nahm.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>ses mein Kind war?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>dieses Kind vollkommener als gewöhnlich.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><pb n="30"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ihnen schuldig bin, erhalten hat.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>dung zuzog, verachtete.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ihre Thränen bürge.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>mich lieben, und mir alles verzeyhen?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>zu machen geschaffen war.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Anblick auf ewig vermeiden wilst? Rede!</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><pb n="33"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>ihrer gleichfalls zu verändern:</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Ist möglich alles dieses noch auszustehen?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Beleidigungen überhäufen.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>leidigte Tugend von ihm.</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p>schen mit mir dieses Haus.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>(der ältere Stormend und Bender gehen ab.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>ausgesetzet seyn.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>harrend zu glauben.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>lichste liebet.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><pb n="37"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>Bender und Stormond gehen ab.</stage></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>muth und Zärtlichkeit gleich käme?</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><pb n="38"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>bin in seinen Augen gerechtfertiget.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>gangen?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>fen kan.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Stormonds Vater?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Er ist auch hier gewesen.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><pb n="39"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>und meinen Umgang zu vermeiden.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>er ging sie ein? —</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>denn ich glaube zu fühlen,</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>schaft zu verdienen.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><pb n="40"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Sie scheinen aufgebracht, mein Stormond!</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>der Vollkommenheit zu besitzen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Unglück nicht steigen.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>als den Liebhaber Ihrer Gemahlin ansehen.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><pb n="41"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>dem Ungestüm Herr Graf.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><stage>geht ab.</stage></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>durch kan ich Ihnen nüzlich werden?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>nicht. Ich werde bald andre Hülfe erhalten.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><pb n="43"/></p>
+        </sp>
+      </div>
+      <div type="act">
+        <head>Dritte Handlung.</head>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>liegt todt auf dem Ruhebette.</stage></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Sie schlummert wie ich sehe.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>geführet.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Sie wäre todt?</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p><pb n="44"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>eher geruffen.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>muß sie erlitten haben?</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>die Nachricht davon zu bringen.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>Ihr Schmerz</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>schlug mich mächtig zu Boden.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p><pb n="46"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>tödtlichen Schmerz um deinen Verlust.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Was höre ich? Iwanette wäre todt.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>in ihrem Untergange verzehrte.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><pb n="48"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>für Sie.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>die Bestätigung der traurigen Zeitung ihres Todes.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Sie hat leider ihre vollkommne Richtigkeit.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>zurückgehalten.)</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><pb n="49"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>zu ziehen.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>endige seine Qual.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>unvermerkt entwafnet.)</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Glück machen konte.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><pb n="50"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>wohl nicht in deiner Gewalt stund.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>nie von Iwanetten geliebt.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ach! Und ich</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>nicht geliebt wurde.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>sucht!</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>auf den Cörper der Iwanette.)</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>bekümmerte Miene mir zu geben anfieng.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Ihrem Beystande.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>nug, das Unglück dieses Tages zu verhüten.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>einige in seiner Art.</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p><pb n="53"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>von den grösten Folgen.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>tigkeit seiner Neigung.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>geraubt.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Man sagte der Graf Golowin sey hier:</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><pb n="54"/></p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>siehest nicht deinen Vater?</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p>streuet gewönlich und dauert selten lange.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>keit er liebte! --</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p>geben.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>machen; keine Furien die mich verfolgen?</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Ende des Trauerspiels.</p>
+        </sp>
+      </div>
+    </body>
+  </text>
+</TEI>

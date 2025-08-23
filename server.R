@@ -6,6 +6,7 @@ source("ezd2tei.R")
 source("functions.R")
 #sp.default<-"Iwanette,Golowin,Wolsey,Stormond,Bender"
 transcript<-"iwanette"
+output_file<-"ezd2tei.xml"
 # get.transcript<-function(transcript){
 #   r<-GET(paste0("https://ids.dh-index.org/api/trans?transcript=",transcript))
 #   t<-content(r,"text")
@@ -155,7 +156,10 @@ function(input, output, session) {
     id.sf = NULL,
     cast = NULL
   )
-  
+  output$downloadXML<-downloadHandler(
+    filename="ezdxmlout.xml",
+    content=function(file){writeLines(readLines(output_file),file)}
+  )
   observeEvent(input$defaults.save,{
     rv$id.sf<-input$id.defaults.save
     rv$sp.sf<-input$speaker
@@ -286,9 +290,9 @@ function(input, output, session) {
   })
   observeEvent(input$submit.xml, {
     xml.t<-transform.ezd(rv$t3)
-    valid<-validate_tei(output_file,"dracor-scheme.rng")
+  #  valid<-validate_tei(output_file,"dracor-scheme.rng") # not on M7, cant install jing
     #t2<-xml.t
-    print(valid$ok)
+   # print(valid$ok)
     output$apidoc <- renderUI({
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
@@ -296,9 +300,13 @@ function(input, output, session) {
                  paste(xml.t, collapse = "\n"))
       )
     })
-    output$spoutput<-renderText({
-          paste(paste0("validation success: ",valid$ok),valid$log, collapse = "\n")
+    output$xmlrendered <- renderUI({
+      tags$div(id="#xml", HTML(paste(xml.t, collapse = "\n")))
     })
+    
+    # output$spoutput<-renderText({
+    #       paste(paste0("validation success: ",valid$ok),valid$log, collapse = "\n")
+    # })
   })
   # Initialize the outputs
   output$spoutput<- renderText("configure variables left...")

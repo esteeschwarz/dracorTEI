@@ -1,5 +1,5 @@
 library(shiny)
-
+css<-readtext("render.css")$text
 # Define UI for application
 fluidPage(
   tags$style(HTML("
@@ -10,6 +10,22 @@ fluidPage(
       padding-right: 10px; /* Add some padding for better appearance */
     }
   ")),
+  tags$style(HTML(css)),
+  tags$style(HTML("
+                  #xml p {
+color: red;
+
+}
+#xml speaker{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#xml stage {
+  font-weight:italic;
+}
+#xml head {
+  font-size: 1.6em;
+}")),
   # Application title
   titlePanel("dracor TEI refactoring"),
   
@@ -26,7 +42,7 @@ fluidPage(
       textInput("title","Title",""),
       textInput("subtitle","SubTitle, if vorhanden",""),
       textInput("author","Author",""),
-      textInput("cast","castlist declaration:","Personal."),
+      textInput("cast","castlist declaration:","Personen."),
       helpText("set body begin and act definitions"),
       textInput("h1","act header declarations:","Act|Akt|Handlung|.ufzug"),
       #actionButton("submit.h1","apply act definitions"),
@@ -53,13 +69,26 @@ fluidPage(
     textInput("id.defaults.load","load settings from ID"),
     actionButton("defaults.load","load defaults"),
     actionButton("submit.xml", "create XML"),
+    downloadButton("downloadXML","downdload .xml"),
     hr(),
     helpText("if you satisfied with the preprocessed text, start transformation.")
   ),
-    mainPanel(
-      h4("Processed Output"),
+  mainPanel(
+    tabsetPanel(id="tabset",
+                tabPanel("process",
+      h4("processing"),
       verbatimTextOutput("spoutput"),
+                ),
+      tabPanel("view",
+              h4("output"),
+              
       uiOutput("apidoc")
+      ),
+      tabPanel("render",h4("rendered view"),
+               uiOutput("xmlrendered")
+               )
     )
+  
   )
+)
 )

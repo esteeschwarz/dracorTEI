@@ -22,20 +22,20 @@ create_tei_document <- function() {
   doc <- xml_new_document()
   # root <- xml_root(doc)
   # 
-  # # Ajouter les processing instructions dans l'ordre inverse
-  # # (car on les ajoute "before" le root)
-  # 
-  # # D'abord xml-stylesheet
-  # xml_add_sibling(root,
-  #                 xml_new_processing_instruction("xml-stylesheet",
-  #                                                'type="text/css" href="../css/tei.css"'),
+  # xml_add_sibling(root, 
+  #                 "?xml-model", 
+  #                 href="https://dracor.org/schema.rng", 
+  #                 type="application/xml", 
+  #                 schematypens="http://relaxng.org/ns/structure/1.0",
   #                 .where = "before")
   # 
-  # # Puis xml-model
+  # # Ajouter xml-stylesheet avant l'élément racine  
   # xml_add_sibling(root,
-  #                 xml_new_processing_instruction("xml-model",
-  #                                                'href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"'),
-  #                 .where = "before")  
+  #                 "?xml-stylesheet",
+  #                 type="text/css", 
+  #                 href="../css/tei.css",
+  #                 .where = "before")
+  # NO: wrong element syntax written
   tei <- xml_add_child(doc, "TEI", 
                        `xml:id` = "insertID",
                        `xml:lang` = "ger",
@@ -335,17 +335,51 @@ parse_drama_text <- function(input_tx, output_file) {
   }
   write(speaker.a,"debug.txt",append = T)
   
-  xml_text(xml_doc$body)
+ # xml_text(xml_doc$body)
+  xmltemp<-tempfile("temp.xml")
   # Écrire le fichier XML de sortie
-  write_xml(xml_doc$doc, output_file)
-  xmltx<-readLines(output_file)
+  write_xml(xml_doc$doc, xmltemp)
+  # xmltx<-readLines(output_file)
+  # xmltx<-gsub("\\{cleft","<",xmltx)
+  # xmltx<-gsub("\\{cright",">",xmltx)
+  # writeLines(xmltx,xmltemp)
+  # 
+  library(XML)
+  
+  doc  <- xmlParse(xmltemp, useInternalNodes = TRUE, encoding = "UTF-8")
+  root <- xmlRoot(doc)
+  
+  # add PIs before the root element (order matters: stylesheet first, then model)
+  addSibling(root, newXMLPINode("xml-stylesheet", 'type="text/css" href="../css/tei.css"'), after = FALSE)
+  addSibling(root, newXMLPINode("xml-model",
+                                'href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"'),
+             after = FALSE)
+  
+  saveXML(doc, file = xmltemp, encoding = "UTF-8")
+  xmltx<-readLines(xmltemp)
   xmltx<-gsub("\\{cleft","<",xmltx)
   xmltx<-gsub("\\{cright",">",xmltx)
-  writeLines(xmltx,output_file)
+  writeLines(xmltx,xmltemp)
+  xm<-read_xml(xmltemp)
+  schema<-"https://dracor.org/schema.rng"
+  download.file(schema,"dracor-scheme.rng")
+  system("trang dracor-scheme.rng dracor.xsd")
+  
+  sch<-read_xml("dracor.xsd")
+  #r1<-xml_validate(xm,"https://dracor.org/schema.rng")
+  r1<-xml_validate(xm,sch)
+  if (r1) {
+    print("Document valide")
+  } else {
+    # Obtenir les détails des erreurs
+    errors <- attr(r1, "errors")
+    print(head(errors))
+  }
+  
 }
-output_file<-"r-output.xml"
+output_file<-"testheaders.xml"
 input_tx<-readLines("ezdmarkup.txt")
 # Exemple d'utilisation
-parse_drama_text(input_tx, "toldetest.xml")
+parse_drama_text(input_tx, output_file)
 #parse_drama_text("klopstock_tod-abels_ezd.txt", "toldetest.xml")
 

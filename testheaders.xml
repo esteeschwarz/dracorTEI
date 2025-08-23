@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../css/tei.css"?>
+<?xml-model href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="insertID" xml:lang="ger">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Iwanette und Stormond</title>
+        <title type="sub">ein Trauerspiel, in drey Handlungen.</title>
+        <author>Margarete Klopstock</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher xml:id="dracor">DraCor</publisher>
+        <idno type="URL">https://dracor.org</idno>
+        <availability>
+          <licence>
+            <ab>CC0 1.0</ab>
+            <ref target="https://creativecommons.org/publicdomain/zero/1.0/">Licence</ref>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="digitalSource">
+          <name>ENTER SOURCE NAME HERE</name>
+          <idno type="URL">ENTER SOURCE URL HERE</idno>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person sex="TODO" xml:id="iwanette">
+            <persName>Iwanette</persName>
+          </person>
+          <person sex="TODO" xml:id="wolsey">
+            <persName>Wolsey</persName>
+          </person>
+          <person sex="TODO" xml:id="stormond">
+            <persName>Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="der_ältere_stormond">
+            <persName>Der_ältere_Stormond</persName>
+          </person>
+          <person sex="TODO" xml:id="bender">
+            <persName>Bender</persName>
+          </person>
+          <person sex="TODO" xml:id="golowin">
+            <persName>Golowin</persName>
+          </person>
+          <person sex="TODO" xml:id="der_medicus">
+            <persName>Der_Medicus</persName>
+          </person>
+        </listPerson>
+      </particDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <castList>
+        <head>Personen.</head>
+        <castItem>Iwanette.</castItem>
+        <castItem>Stormond.</castItem>
+        <castItem>Der ältere Stormond, dessen Vater.</castItem>
+        <castItem>Bender, des ältern Stormonds Vertrauter.</castItem>
+        <castItem>Graf von Golowin.</castItem>
+        <castItem>Frau Wolsey.</castItem>
+        <castItem>Ein Medicus.</castItem>
+      </castList>
+      <p>So spricht Iwanette! Act. 2. front-1-1 Wetzlar, gedruckt bey Georg Ernst Winkler. 2:: front-2 Vorrede. Das Stück, welches ich der Weit hierdurch bekant mache, ist auf dem hiesigen Theater in drey und in fünf Acten mehrmalen vorgestellet worden. Ich weiß nicht, warum man weder das eine noch das andere im Druck gesehen. Vermuthlich hat der Herr Verfasser es verhindert. Er mag mir indessen verzeihen, daß da ich Gelegenheit gehabt eine Abschrift von der ersten Ausarbeitung, nemlich in drey Handlungen, an mich zu bringen, ich die Ausgabe desselben besorge. So viel kan ich jedoch aufrichtig versichern, daß ich mir nicht eine Sylbe darin abzuändern unterfangen. Ist eine fehlerhafte 4:: Abschrift in in meine Hände gerathen, so ersuche ich den Herrn Verfasser, selbst eine Ausgabe seiner Iwanette zu besorgen. Ich verlange nicht der Lobredner des Stücks zu werden. Aber der Vorwurf ist nach meiner Einsicht interessant, und ganz gemacht, um von einem glücklichen Genie dramatisch ausgearbeitet zu werden. Arnand und Marmontel gaben den Stof dazu her. — Er ist voller Moral. Wie manches junges Frauenzimmer, welches vieleicht seine Tugend dennoch zu bewahren weiß, ist dem Schein nach strafbar; zumal in unseren Zeiten, da die freyere Lebensart vom Wohlstande unzertrennlich, gehalten wird. Iwanette mag diesen ein Beyspiel werden, daß eine Handlung, die anfänglich höchstens als eine Unbesonnenheit betrachtet wurde, in Verbindung mit einigen Nebenumständen die traurigsten Folgen haben kan. Jedoch es ist überflüßig, eine Moral dem Trauerspiel voranzusetzen, welche bey 5:: geringer Aufmerksamkeit sogleich einleuchten wird. Ich werde nur noch meine Gedanken äußern, die ich von der Vermehrung dieses Stücks, da es in fünf Aufzügen aufgeführet wurde, hegte. Bender wurde bey dieser Veränderung der Vertraute des jüngeren Stormonds, und also eine interessantere Person. Die Unterredungen dieser Freunde, die Monologen des Stormonds, worin dessen heftige Leidenschaft, und Unentschlossenheit hervorleuchtet, sind rührende Scenen. Von dieser Seite hätte also das Trauerspiel gewonnen; ohne zu gedenken, daß mancher fünf Handlungen zu einem vollkommenen Trauerspiel fordert. Hingegen fiel auf der andern Seite die genaue Einheit des Orts weg. Es musten wenigstens zwey Zimmer in einem Hause vorkommen. Und eben das Sonderbare dieses Stücks, [man weiß, daß das neue gefällt] ist, daß die Heldin des Trauerspiels nie aus den Augen des Zuschauers komt. 6:: Jeder, der zu ihr ins Zimmer tritt, muste bey der Lage der Umstände erscheinen. Keine überflüßige oder Zwischen=Scene. Welch ein Vorzug eines Drama. Ich wünschte, daß der Herr Verfasser sich entschlöße, seine Iwanette in fünf Acten herauszugeben. Das Urtheil des Publicums solte mich sodann belehren, welches von beyden den Vorzug verdiente. Der Anhang ist ein Grundriß zu einem Singspiel von dem nemlichen Herrn Verfasser. Es wurde, wie es hier ist, an dem Geburtsfeste Ihro Kaiserlichen Majestät als ein Zwischenspiel aufgeführet. Auf diese Weise ist es in meine Hände gerathen. Und weil ich es einmal wage, fremde Arbeiten herauszugeben, so habe ich es der Iwanette hinzugefügt. Wetzlar, den 20. May 1770. Der Herausgeber. 7:: front-7 Iwanette. Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn mit einigem Grunde scheinet. Act. 2. 8::</p>
+    </front>
+    <body>
+      <div type="act">
+        <head>Erste Handlung.</head>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>auf einem Ruhebett sizend.</stage> War es möglich Madame, daß ein Mensch, ein Frauenzimmer leiden konte, so viele und mannigfaltige Leiden ertragen, und so lang sie ertragen, wie ich Unglückliche? Mit jeder untergehenden Sonne, hoffe ich meine Qualen verschwinden zu sehen; aber, wie viele erschreckliche Nächte haben bereits diese Hofnung vereitelt! Ich will Sie nicht mit den schreckenden Phantasien und Träumen unterhalten, die mir auch das einige Labsal anderer Unglücklichen, den Schlaf, rauben. Aber sagen Sie mir, o sagen Sie mir, Madame, kan dieser mein beklagenswürdiger Zustand lang dauern? <pb n="10"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><stage>neben dem Ruhebette auf einem Stuhl.</stage> Ich finde Ihren Zustand gar nicht entsezlich. Die Dürftigkeit ist freylich eine harte Sache für den, der ihrer ungewohnt ist, Aber --</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>O Wolsey! man kan dürftig seyn, verachtet seyn; ich bin beydes. Aber suchen Sie nicht hierin den Grund meiner mich verzehrenden Plagen. -- Sie finden meinen Zustand nicht entsezlich? Denken Sie sich einen Unglücklichen, verurtheilt unter Martern die einen Tag hindurch dauern, den Geist aufzugeben; er wird das Schauspiel seiner Gegend, in der vieleicht mancher größere Verbrecher, jezt Zuschauer seiner Qualen, die zeitlichen Strafen nicht zu besorgen hat. Noch wüten die Schmerzen der vorigen Marter in seinem Cörper, und schon wartet eine neue, höher steigende Pein auf ihn. Durch das Gedränge des gedankenlos gaffenden Pöbels wird er dem tragisch hervorprangenden Gerüste entgegen geführet. Ach, sein Unglück ist dem meinigen nicht zu vergleichen! Er sieht schon dem Ende seiner Martern entgegen. Man vergist sein Verbrechen, und sucht bey der Unmöglichkeit die Strafe von ihm abzuwenden, durch mitleidsvolle Zähren, Balsam in seine Wunden zu giessen. Die feierlich langsam tönende Glocke, scheint in der umliegenden Gegend dies Mitleid verbreiten zu wollen. Aber ich! -- Nennen Sie mir einen Menschen, der Antheil an meinem Zustand nähme, der nicht selbst mich verabscheuete, und meiner Qualen nicht achtend, mir größere zuzutheilen bereit wäre. <pb n="11"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Die erschrecklichen Bilder, die Sie sich schaffen, vollenden Ihr Unglück. Gegen das übrige sind Mittel vorhanden. Es steht in Ihrer Gewalt, sich derselben zu bedienen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Und was für Mittel Madame?</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Können Sie mich noch fragen? Warum schlagen Sie die großmüthigen Anerbietungen des Grafen Golowin aus? Ist er es, der von Ihnen mit Verachtung begegnet werden solte? Jung seyn, vom Stande seyn und großmüthig seyn, findet sich nicht oft so glücklich als in ihm vereinet. Und verdient es endlich ein Unmensch wie Ihr Stormond, daß man seiner schone, und ihm die grausame Freude schaffe, sich über seine Flucht in Gram zu verzehren?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Welche Reden führen Sie, Madame? Golowin mag schön seyn, wie ein Liebesgott schön seyn, Iwanette hat keine Augen seine Schönheit zu bemerken. O Stormond! selbst deine Gransamkeit ist unfähig, dir dieses Herz zu rauben.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Nun, so besize er denn dieses Herz! es wird ihm gleichgültig seyn, ob es schläget oder erstarret <pb n="12"/> ist. Vieleicht will er das lezte. Und Golowin, der ganz Zärtlichkeit für Sie ist, sey dann auf ewig verbannet!</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Nichts weiter von Golowin! -- O Stormond!</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Wenn Sie denn würklich den Stormond lieben, warum gaben Sie durch Ihr Betragen ihm Ursach, Sie zu fliehen?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ob ich ihn liebe! — Dieses Herz hätte vieleicht nie die Zärtlichkeit kennen gelernt, wenn kein Stormond seine Wunsche erregt hätte. Ihn kaum gesehen zu haben und auf ewig fur Ihn entschieden seyn, war eins für mich. Ach! er war liebenswerth, mein Stormond. -- Jene schüchterne Miene, mit der sein schmachtend siegerisches Auge zuerst Liebe von mir flehte, sicherte ihm dieses Herz auf ewig. Mein Betragen verdient freylich Vorwürfe. Sie können mir nicht härter gemacht werden, als ich sie mir vorhalte. Aber wie konte ich glauben, daß er einen Augenblick zweifeln würde, das bey mir zu seyn, was er ewig seyn wird.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><pb n="22"/></p>
+        </sp>
+      </div>
+      <div type="act">
+        <head>Zweyte Handlung.</head>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>erwachend.</stage> Ich, noch am Leben! Es war also nicht die Unterwelt, in der ich jene Schreckbilder sahe? Ein Traum war es also, der mir neue Labyrinthe des Jammers zeigte? O möchtest du ein prophetischer Traum seyn! denn du zeigtest auch das Ende meiner Qualen. -- Stormond! dich sahe ich im Traume. Erst eben so schön, so holdselig, wie in dem Augenblick, da sich dein Abdruck meinem Herzen einprägte. Dann bleich, mit zerstreueten Haaren. Noch zittre ich für dieser grausamen Vorstellung. Aber eine heitere folgte drauf: weiß gekleidet und rein wie das Licht, nicht schwarz, wie ich der Welt jezt scheine, stand ich da auf blumenreichen Fluren, und reichte meinem Stormond die Hand zu mir herüber zu kommen. — Aber was ist dieses? fahre ich fort zu träumen, oder sehe ich die Erfüllung meines Traums. Stormond ist hier! Wie kömt er hieher? Was wird er mir sagen wollen? Welche Flüche wird er gegen mich ausschütten?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>im Hereingehen.</stage> Warum kan ich nicht unterlassen, die Ungetreue, die mir durch die Falschheit ihres Herzens <pb n="23"/> mein ganzes Glück entzog, warum kan ich nicht unterlassen, sie wieder zu sehen? Werde ich auch standhaft genug seyn, alles zu reden, was ich ihr zu sagen beschloß. <stage>laut, indem er Iwanetten ansiehet:</stage> Siehest du nun, Ungetreue, das Wetter des Unglücks, das dein Betragen über dich zusammen zog? Fühlst du die Schmach und das Elend, in das du dich stürztest? Fühle es ganz, und dann kenst du einen Theil der Leiden, die du dem getreuesten Herzen zuzogest.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>O Himmel! <stage>sie sinkt in Ohnmacht.</stage></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>betrachtet sie.</stage> Sie sinkt in Schrecken dahin. So sehr sie auch meinen Zorn verdiente, so darf ich dennoch das Mitleiden ihr nicht entziehen. Ich werde Hülfe suchen. <stage>er geht heraus. Iwanette bleibt in Ohnmacht.</stage></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><stage>tritt herein und beschäftiget sich, die Iwanette zu sich zu bringen.</stage> Madame, sehen Sie mich nicht? Sehen Sie nicht Ihre Freundin? <pb n="24"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>tritt wieder ins Zimmer.[.-.]für sich, indem sich Wolsey mit Iwanetten beschäftiget.</stage> Diese Freundschaft ist eine Brut der Hölle; -- Unglücklicher Stormond! Umsonst suchtest du Iwanettens Freund zu seyn. Nur solche Freundschaften wählete sie, die Gottlosigkeiten zum Zweck haben; nur solche Gesellschaften, in denen das Laster thronet. <stage>Iwanette schlägt die Augen auf, sinkt aber in Ohnmacht zurück, da sie den Stormond erblickt.</stage></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Herr Stormond verzeihen Sie Iwanette ist nicht fähig, Ihren Anblick zu ertragen. Treten Sie gefällig etwas zurück.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>tritt zurück, daß ihn Iwanette nicht sehen kan.</stage> Ich will es thun. — Das ist der Triumph der Tugend das Laster beben zu sehen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>erholet sich eine Zeit hernach.</stage> O Wolsey, was ist dieses? Unaufhörlich verfolgt mich Stormonds Bild. Ich kan meinen Zustand nicht entwickeln. Wie ist mir? Lebe ich? <pb n="25"/> Wache ich? Träume ich? Stand Stormond würklich da und fluchte mir? Oder ist es sein Schatten der mich verfolgt? -- In welcher Lage befinde ich mich? Und das ist alles noch Leben. Soll ich immer neue Arten der Qualen kennen lernen? Hat niemand Mitleiden mit dem unglücklichsten unter allen Geschöpfen?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>für sich.</stage> Ihr Zustand erschüttert meine Seele.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Hören Sie mich Iwanette. Stormond ist würklich bey Ihnen gewesen. Er wird nicht mehr über Sie fluchen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Mag er es immer. Ich kan doch jezt nicht ferne vom Grabe seyn. Ein so gewaltsamer Zustand kan ohnmöglich noch lang dauern. Aber was sage ich? Stormond soll mir fluchen. Kan ich mir auch einen erschrecklichern Gedanken denken? Stormond den ich einig liebe, und von dem ich ehemals geliebt wurde, soll mir jezt fluchen?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>weinet.</stage> Ich kan meinen Empfindungen nicht wehren in Zähren auszustießen. <pb n="26"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Beruhigen Sie sich Iwanette; Ihre Freundin wird suchen, alles mögliche zu Ihrem Troste beyzutragen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Wer? — Sie? Meine Freundin! O hätte ich Sie nie gekant. Der Umgang mit Ihnen ist mein gröstes Verbrechen. Heute habe ich erst erfahren von welcher Niederträchtigen ich Wohlthaten empfange. Ich kan nicht anders als Sie verabscheuen, Wolsey.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><stage>für sich.</stage> Ich erschrecke. <stage>laut.</stage> und was kan ich denn dafür, wenn jener weniger grosmüthig war, als ich ihn glaubte.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>wird aufmerksam.[.-.]für sich.</stage> Was höre ich da von Niederträchtigkeit und minderer Grosmuth. Ist dieses Iwanettens Sprache?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ich weiß nicht ob der Graf großmüthig ist oder nicht. Darin aber hat er edel gegen mich gehandelt; daß er mir entdeckte, mit welcher Frau ich zu thun habe. Nahmen Sie sich meiner darum an; wie mich jedermann verließ; theilten Sie darum <pb n="27"/> meinen Kummer, und Ihre Wohnung mit mir, um mich würklich in die Laster zu stürzen, die ich nur bis jezt dem Schein nach begangen habe. Ich weiß alles Wolsey. Ob ich gleich der Welt nicht tugendhaft scheine, so fordere ich dennoch, meiner Unschuld mir bewust, daß Sie vor mir erzittern. Die Tugend behält immer ihre Rechte. Ich bin so tief erniedriget, wie man es seyn kan und scheine zu Ihrer Classe zu gehören. Aber ich überlasse es Ihrer Seele, den Unterschied zu entdecken, der zwischen Ihrer Gesinnung und der meinigen ist.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>für sich.</stage> Wie? So spricht Iwanette; und Wolsey schweigt. Wenn es noch möglich seyn kan, daß Iwanette unschuldig ist, wie vieles Unrecht habe ich ihr in diesem Fall zugefüget. <stage>laut.</stage> Frau Wolsey, darf ich Sie bitten, sich ein wenig zu entfernen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Wie? Stormond noch hier?</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><stage>erschrocken.</stage> Ich gehe. — Aber glauben Sie nicht, daß ich in der That so strafbar sey, wie ich es in Iwanettens Augen bin.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ich bitte nochmals, entfernen Sie sich. <stage>Wolsey geht ab.</stage> <pb n="28"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Erschrecken Sie nicht über meine Gegenwart, Iwanette. Erwarten Sie keine weitere Vorwürfe von mir. Ich würde in diesem Augenblick der glückseligste Mensch seyn, wenn ich Sie unschuldig finden könte.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Stormond, Ihre Härte schien meinem Leben den lezten Stoß zu geben. Und schon da waren meine Wünsche erreicht. Nun bin ich über meine Wünsche befriediget. Ich kan nun entzückt sterben, weil Stormond meinem Zustande das Mitleiden nicht entsagen kan.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Mitleiden! — Selbst wenn Sie strafbar sind, o so kan dieses Herz, das sich vergebens zwang, Sie zu fliehen, Ihnen es nicht versagen. Aber Iwanette. Ich kan Ihnen nichts weiter sagen. Mein Schicksal ist das grausamste, das je über ein zärtliches Herz verhängt war.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Tausend Empfindungen bestürmen mich in diesem Augenblick. Aber ich bin zu schwach, Ihnen die geringste davon auszudrucken.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ich wäre es gern überhoben Iwanette, Ihnen neuen Schmerz durch eine Frage zu verursachen. <pb n="29"/> Aber ich muß sie thun diese unangenehme Frage. Wo ist das unglückselige Kind, das die nähere Ursach unserer Trennung war?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Dieses beklagenswürdige Geschöpf, ward gleich nach Ihrer Entfernung, das traurige Opfer meiner Unbesonnenheiten und Ihres Zornes. Ich reichte ihm mit meiner Brust den Tod. Aber ich schwöre Ihnen bey der reinesten Liebe bey dem Himmel, bey meinem nahen Tode schwore ich es Ihnen, daß es sein Leben von Ihnen hatte. Und Sie sind es, -- nein, ich war es, die ihm das Leben nahm.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Und wie kan es möglich seyn Iwanette, daß dieses mein Kind war?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Hören Sie mich Stormond: In meiner Schwangerschaft that ich einen Fall. Ich verschwieg Ihnen denselben, um Ihnen den Schmerz zu ersparen, den Sie bey Ihrer mir bekanten Zärtlichkeit, darüber empfunden haben würden. Der Fall beschleunigte die Geburt des Kindes, ohne daß dieses durch den Zufall litt. Zu meinem Nachtheil war dieses Kind vollkommener als gewöhnlich.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Und auch dieses schwören Sie mir bey allem das Ihnen jemals schäzbar, heilig und schreckhaft seyn konte? <pb n="30"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ja, ich schwöre es Stormond. Ich schwöre es nochmals bey meinem Uebergang in die Ewigkeit, daß es ihr Kind war. Und ich schwöre Ihnen, daß nie eine Mannsperson außer Ihnen meine Liebe oder meine Vertraulichkeit, weniger das, was ich Ihnen schuldig bin, erhalten hat.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Aber, wenn dieses ist, warum suchten Sie den Umgang verschiedener meines Geschlechts, denen ich eben den Vorzug nicht streitig machen konte? Ach, Iwanette! wenn ich Ihnen sagen solte, was ich dabey empfand, wenn dieser oder jener von Ihnen erwählet wurde, Sie in die öffentlichen Lustbarkeiten zu begleiten; was ich über Ihre herschende Neigung, bey allen Festen zu seyn, fühlte; wie grausam für mich die Nächte waren, die Sie ohne Ermüdung den rauschenden Ergözlichkeiten widmeten; dann, dann würden Sie mir es nicht verargen, daß ich einige mehrere Gefälligkeit von einer Frau wünschte, um deren Besitz ich jede Betrachtung und den offenbaren Nachtheil, den mir unsere Verbindung zuzog, verachtete.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Stormond, alle die Vorwürfe die ich hierüber verdiene, habe ich mir lang und wiederholt gemacht. Freylich hätte ich Gründe genug, die mir gebieten konten, Ihnen mich gefälliger zu machen. Aber stolz auf eine Tugend, die ich mitten im Geräusch der <pb n="31"/> Welt, und meines Leichtsinns ohnerachtet, erhielt; zweifelte ich auch an ihrer Ueberzeugung von meiner zärtlichen Liebe und Erkentlichkeit nicht, bis Sie mir den furchtbaren Entschluß entdeckten, den Sie ausgeführet haben. Ach Stormond, hätten sie damals in meinem Herzen lesen können; Sie würden sowohl meine Unschuld als die gegenwärtigen traurigen Folgen unsers Mißverständnisses entdeckt haben. Nun habe ich Ihnen alles gesagt. Vieleicht bleibt immer der Schein zu gros gegen mich. Verlassen Sie mich also, und nehmen Sie von dieser zitternden Hand die Versicherung, daß ich nur mir die Vorwürfe über mein Unglück mache, und dann gern sterbe, wenn ich Sie recht glücklich weiß. Versöhnen Sie sich mit Ihren Vater. und vergessen Sie mich. Denken Sie, daß die Gattin eines zärtlichen und verdienstvollen Mannes strafbar genug ist, wenn sie es zu seyn, mit einigem Grunde scheinet. Ich verlange blos Ihr Mitleid, und für dieses sind mir Ihre Thränen bürge.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ich, Sie verlassen! — Nein Iwanette, Sie sind in meinen Augen gerechtfertiget, und keine Betrachtung wird fähig seyn, mich zu einer Trennung von Ihnen zu bestimmen. Mein Vater wird die Pflichten einsehen, die ich gegen eine Ehegattin habe, deren Zärtlichkeit ihr fast das Grab zubereitete, und wenn er es nicht einsehen will, so wird sein Eigensinn mich nicht irre machen. Ich bin schuldig, Ihnen Genugthuung für die Schmach zu verschaffen, in die meine übereilte Entweichung Sie stürzte. Ich kan dieses nicht besser, als wenn ich der Welt es <pb n="32"/> zeige, daß ich Sie für tugendhaft, und mich schuldig erkenne. Sie versichern es also Iwanette, daß Sie mich lieben, und mir alles verzeyhen?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>will ihm zu Füssen fallen, er hält sie.</stage> Großmüthiger Sterblicher! Sie müssen verzeihen. Für mich bleibt es übrig, Ihre Liebe nunmehr zu verdienen. Glauben Sie indes, daß in diesem Herzen der Eindruck nie erlöschen konte, noch verlöschen wird, den nur Stormond auf selbiges zu machen geschaffen war.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p><stage>tritt herein von Bender begleitet.</stage> Dies ist also der Aufenthalt der Nichtswürdigen, die mich die Reugier zu sehen antrieb, weil sie meinem Hause so viel Unglück zubereitete. — Aber wen werde ich gewahr? Mein Sohn hier! Himmel! so wird meine ganze Freude auf einmal vereitelt. <stage>zum Stormond.</stage> Ist dieses die Erfüllung der heiligen Versicherungen, die du mir gabest? Verräther! So grausam gedenkst du mich zu hintergehen? Aber wisse, daß dein Vater seiner nicht spotten lässet. Du must dich sofort erklären, ob du dieser Verbrecherin auf ewig entsagen, oder meinen Anblick auf ewig vermeiden wilst? Rede!</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>für sich.</stage> Ein heiterer Augenblick! Und schon ziehen sich neue Wetter zusammen. <pb n="33"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Herr Vater! Es war nicht meine Absicht, Ihnen Versicherungen zu geben, die ich zu brechen gesonnen war. Ich kam hieher, der Iwanette meine endliche Meynung zu eröfnen. Aber wenn sich nun die Aussicht veränderte, und Iwanette so liebenswürdig, so tugendhaft, so zärtlich und so treu wäre, als sie lasterhaft und ungetreu schien; Würden Sie alsdenn nicht fähig seyn, Ihre Gesinnung in Ansehung ihrer gleichfalls zu verändern:</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Wie? So schwach bist du, daß du nicht einzusehen vermagst, wie entsezlich du hintergangen wirst, oder vielmehr dich selber hintergehest. Hat jemals eine rasendere Verblendung gedacht werden können? Sind nicht Beweise genug gegen diese verabscheuungswürdige Creatur vorhanden? Laß ihn mich doch genauer betrachten, diesen Abschaum seines Geschlechts. <stage>er betrachtet die Iwanette.</stage> Dies bleiche Todtengerippe hat also für dich Reize genug, dich deiner Pflichten gegen deinen Vater und gegen dich selbst vergessen zu machen; dich, deine Ehre und dein Glück hintan setzen zu heissen. Pfui, Nichtswürdiger! verschweige es ewig wessen Sohn du bist. Und wodurch glaubst du, daß dieses niedrige Geschöpf sich rechtfertigen könne? Etwa durch ihren Aufenthalt? Weist du, was Wolsey für ein Weib ist? Doch warum erniedrige ich mich dir noch Vorstellungen zu thun. Lebe dann glücklich und sey stolz auf deine Wahl. Sey das Gespött der Menschen und traue deinen Sinnen nicht ferner. Ein Blick, eine buhlerische Rede, sey dir mehr als die augen<pb n="34"/> scheinlichsten Beweise. Ich aber hoffe dich jezt zum lezten male zu sehen. Iwanette <stage>für sich.</stage> Ist möglich alles dieses noch auszustehen?</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Sie wollen mich nicht hören, Herr Vater! Sie sind im Eyfer. O wüsten Sie, wie verehrungswürdig meine Iwanette ist, und wie ungerecht ich gegen sie verfuhr; — Sie würden sie nicht mit solchen Beleidigungen überhäufen.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p><stage>spöttisch.</stage> Sehr schön! Entrüste dich noch gegen deinen Vater. Fordere eine Ehrenerklärung für diese beleidigte Tugend von ihm.</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p><stage>zum ältern Stormond.</stage> Ereifern Sie sich nicht ferner, Herr Stormond. Ihr Sohn wird sich besinnen. Verlassen Sie inzwischen mit mir dieses Haus.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Ja, ich will mich nicht weiter in dieser niedrigen Behausung entweyhen. <stage>zum Sohn.</stage> Sie kennen mich Herr Sohn. Mein Entschluß ist ge<pb n="35"/> nommen. <stage>zur Iwanette.</stage> und Sie meine schöne Dame, verzeyhen Sit, daß ich Sie in Ihrem Zeitvertreibe gestöhret. Ich muß es zu Ihrem Ruhm gestehen, daß Sie Ihre Handthierung vollkommen ausgelernet haben. (der ältere Stormend und Bender gehen ab.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Iwanette, welche Empfindungen, welche schrekliche Beängstigungen habe ich jezt Ihrentwegen ausgestanden. Verzeyhen Sie, Es war mein Vater. — Von niemand anders konten Sie in meiner Gegenwart solcher unanständigen Begegnung ausgesetzet seyn.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Machen Sie sich keine Sorge um nich. Ich habe dergleichen Vorwürfe wohl verschuldet. Aber verstatten Sie mir eine Bitte, Stormond. Ich bin gerührt, unendlich gerührt, über die bessere Meynung die Sie großmuthig von mir angenommen haben. Ich sterbe, — und sterbe beglückt, weil ich von Ihnen Verzeihung habe und weil Sie mich  lieben. Nur die Sorge für Ihr Glück würde mir den Tod schwer machen. Sie können mich derselben entledigen. Es war Ihr Vater der hier redete. Er urtheilte dem Schein nach richtig von mir. Werfen Sie sich ihm zu Füssen. Entsagen Sie meinem Umgang. Ich bin durch das Bewustseyn Ihrer noch fortdaurenden Zärtlichkeit dennoch beglückt genug. Nur suchen Sie mich diesem Hause zu entziehen, damit die Welt, wenn sie auch nicht aufhöret <pb n="36"/> mich lasterhaft zu finden, nicht das Aergerniß habe, eine Verbrecherin in der Bosheit bis ans Ende beharrend zu glauben.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ich habe schon daran gedacht, Ihnen eine anständige Wohnung zu geben. Aber warum flehen Sie mich Ihren Umgang zu meiden? Ist dieses eine Bitte, die man an einen Geliebten richten soll? O Iwanette! Wenn jemals Ihr Herz gegen mich gleichgültig zu seyn aufhörte, so verschonen Sie mich mit einer so grausamen Forderung. Jn alle Länder, die ich besuchte, verfolgte mich Ihr Bild. Glauben Sie daß ich eine glückliche Stunde durchlebte? Und nun gebieten Sie mir selbst, ferner traurige Tage mir zu schaffen. Nein Iwanette; Hören Sie auf das Herz nicht blos Ihres Mannes, sondern des treuesten, des zärtlichsten Liebhabers zu kränken. Den Zorn eines Vaters werde ich zu ertragen wißen. Vieleicht giebt es auch noch Wege, ihn zu besänftigen. Wie! Bender kömt! Was haben Sie mir zu sagen, mein Freund? Bender <stage>kömt dazu.</stage> Ich habe alles versucht, Ihren Herrn Vater zu besänftigen. Wenn Sie selbst da wären, so hofte ich wohl zu Stande zu kommen. Bedenken Sie, daß Sie mit einem Vater zu thun haben, der nur über Ihren Ungehorsam entrüstet ist, Sie selbst aber auf das zärtlichste liebet.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>O Stormond, geben Sie der Vorstellung Ihres Freundes Gehör. <pb n="37"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ich folge Ihnen, Bender. -- Iwanette, sorgen Sie für Ihre Gesundheit, und versichern Sie sich, daß ich Ihnen und meinem Herzen nicht fehlen werde <stage>Bender und Stormond gehen ab.</stage></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>allein.</stage> Welch ein Tag! Theils schön, theils schrecklich und mit lauter unerwarteten Begebenheiten für mich ausgerüstet. Ich glaube daß die Vorsehung deswegen mein Elend verlängerte, um mich bis zu diesem Tage noch aufzubehalten. — Aber jezt fühle ich die Abnahm meiner Kräfte — Tausend Empfindungen verschiedener Arten, durchströmen meine Seele. Doch ich kan Ihnen nicht nachhängen. Nur meinen geliebten Stormond will ich denken. Ist auch ein zweyter Sterblicher vorhanden, der ihm an Groß= muth und Zärtlichkeit gleich käme?</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><stage>im Hereintreten.</stage> Theureste Iwanette! Ich habe alles eingerichtet. Sie kommen zu einer Dame ins Haus, die Sie auf das liebreichste empfangen wird, und der Sie sicher Ihr ganzes Herz eröfnen durfen. Es ist keine Wolsey. Sie ist ein Muster der Tugend. Ihr widriges Schicksal, Madame und Ihre edle Gesinnung haben so viel Eindtuck auf Sie gemacht, daß sie sehnlichst wünscht, Sie bald um sich zu sehen. <pb n="38"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ich bin Ihnen für Ihre Bemühung sehr verbunden. Sie werden aber noch nicht wissen, wie gnädig der Himmel auf mein Elend herabgeblickt Stormond ist hier, sein Zorn ist besänftiget und ich bin in seinen Augen gerechtfertiget.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Stormond hier, und Sie in seinen Augen gerechfertiget! Sagen Sie mir, wie ist dieses zugegangen?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>So wunderbar, daß ich es selbst kaum begreifen kan.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><stage>zärtlich.</stage> Es kostet mir etwas den Antheil an Ihrem Glück zu nehmen, zu dem ich verbunden bin. Aber dennoch freue ich mich über die gute Nachricht. und Stormonds Vater?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Er ist auch hier gewesen.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Also mit seinem Sohn und mit Ihnen versöhnt? -- <pb n="39"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Nein Herr Graf, erzürnt war er. Ich habe den Stormond gebeten, sich mit ihm auszusöhnen, und meinen Umgang zu vermeiden.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Wie! — Welche Bitte Madame! — und er ging sie ein? —</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ich wünsche zu seinem Vortheil, daß er sie eingehen mag. Genug, daß ich seines Herzens versichert bin. Die wenigen Augenblicke, — — denn ich glaube zu fühlen,</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Nein, Madame! Sie müssen leben, recht glücklich mit ihrem Stormond leben. Ich, der Sie vielleicht eben so zärtlich liebe, wie Sie es verdienen und wie Sie vom Stormond geliebt werden; Aber nicht lieben darf: — werde mich bemühen — Sie verstatten mir es doch <stage>er küst ihr die Hand</stage> Ihres Umgangs würdig zu seyn und Ihre Freundschaft zu verdienen.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>im Hereintreten.[.-.]für sich</stage> Ja, Bender hat mich nicht unrecht berichtet.  Der Verwegene küst ihr die Hand und sie scheint entzückt. Das ist zu grausam hintergangen. <pb n="40"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Sie scheinen aufgebracht, mein Stormond!</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Nicht Ihr Stormond. Einmal war ich noch schwach genug Verrätherin, durch dein falsches Lächeln gerührt zu werden. Aber das war auch gewiß das leztemal. Mein Vater hatte recht, wie er dich beschuldigte, alle Eigenschaften einer Buhlerin, in der Vollkommenheit zu besitzen.</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Das war der Dolch ins Herz! Höher kan mein Unglück nicht steigen.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Sie irren sich Herr Stormond, wenn Sie mich als den Liebhaber Ihrer Gemahlin ansehen.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Schweig, Niedriger! Was hält mich ab, dir das Leben zu rauben? <stage>er zieht den Degen, besinnet sich, wirft ihn zu Golowins Füssen, und geht zornig ab.</stage> <pb n="41"/></p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Ach! welch ein Auftritt! — Verzeihn Sie dem Ungestüm Herr Graf.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>O den kan ich ertragen. — Aber Sie Iwanette, Sie werden ohnmächtig. Ich eile Ihnen Hülfe herbey zu schaffen. <stage>geht ab.</stage></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><stage>kömmt Herein.</stage> Was fehlet Ihnen theureste Madame? Wodurch kan ich Ihnen nüzlich werden?</p>
+        </sp>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p>Entfernen Sie sich Wolsey. Ich bedarf Ihrer nicht. Ich werde bald andre Hülfe erhalten.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Das ist eine eigensinnige Person. — Wenn die Tugend solche Leute bildet; so bin ich froh, daß ich mich nie sehr um sie bekümmerte. <pb n="42"/> Iwanette [unclear] Was habe ich alles erduldet, das zu ertragen möglich war. -- Dieses Gefühl —ach! dieses herbe Gefühl — wird mich vieleicht erlösen. Ewiger! — der mit verzieh, gieb mir jezt Muth, und segne den Stormond. <stage>Ende des zweyten Acts.[.-.]Der Vorhang bleibt wieder offen.</stage> <pb n="43"/></p>
+        </sp>
+      </div>
+      <div type="act">
+        <head>Dritte Handlung.</head>
+        <sp who="#iwanette">
+          <speaker>Iwanette</speaker>
+          <p><stage>liegt todt auf dem Ruhebette.</stage></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><stage>von einem Medicus begleitet.</stage> Sehen Sie hier die kranke Dame. Argwöhnen Sie nichts darüber, daß sie in dem Hause der Wolsey ist. Sie ist vom Stande, tugendhaft, aber unglücklich. Thun Sie alles ihre Gesundheit bald herzustellen. <stage>Er betrachtet sie.</stage> Sie schlummert wie ich sehe.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p><stage>besiehet sie genau</stage> Ach, das ist ein Todes=Schlummer! Hier kömt meine Hülfe zu spät. Sie haben mich zu einer Leiche geführet.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Sie wäre todt?</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>Ja, sie ist todt. <pb n="44"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Iwanette todt! O! warum hat man Sie nicht eher geruffen.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>Ich glaube nicht, daß ich dieser Dame das Leben erhalten hätte, wenn ich auch früher gerufen wäre. Sie haben hier das Beyspiel einer Person, die durch den Gram verzehret wurde. Was muß sie erlitten haben?</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p><stage>geht im Zimmer umher.</stage> Iwanette ist todt! und ich kan den Gedanken ertragen? Ich kan ihn einen Augenblick überleben? O Beste, deines Geschlechts, von der ich nicht geliebt wurde, die aber mein ganzes Herz beherschte, wo bist du, Iwanette? Grausamer Stormond; du wurdest ihr Mörder. Jezt sollen alle die Donner auf dein Haupt herabrollen mit denen du drohetest. Unmensch, den sie liebte, der nie dieses Glück verdiente, was hast du gethan? Gieb Iwanetten der Welt zurück; diese verliert zu viel mit ihr. Laß mir wenigstens eine Freundin, wenn du die beste Gattin nicht zu schäzzen wustest. Aber es ist zu spät. Du hast deine schwarze That vollendet. Siehe es ein, daß du alle Martern verdientest, die je einen Verbrecher peinigten. Ja, du verdienest sie zehnfach, und nach ihnen eine Ewigkeit fortdauernder Qua<pb n="45"/> O wärest du für mich geschaffen gewesen, Iwanette. Doch was nutzen diese Klagen! Warum folge ich dir nicht Iwanette? Was verweile ich in einer Welt, deren Hölen mit Tygern und deren Städte mit Menschen angefüllt sind, die jene an Grausamkeit weit übertreffen. <stage>er betrachtet den Cörper der Iwanette.</stage> O Iwanette! — Iwanette! Forderst du Rache durch mich? — Ja Golowin wird sie schaffen! Und denn mit eben dem blutigen Eisen, mit dem er sie schafte, sich den Weg bahnen, dir die Nachricht davon zu bringen.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>Herr Graf, verlassen Sie dieses Zimmer. — Ihr Schmerz</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Lassen Sie mich Elender! Sie wissen nicht wer Iwanette war. Ich weiß es. Ich war auch ihr Verfolger: aber ihre unüberwindliche Tugend schlug mich mächtig zu Boden.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>Ich gehe Hülfe zu suchen, um den Grafen aus diesem Zimmer zu schaffen. <stage>geht ab.</stage> <pb n="46"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Iwanette, du sahest meine Reue, und lächeltest mir: — nicht mit einem Blick voll Zärtlichkeit; der war nur für den Barbaren deinen Stormond; sondern mit einem Blick voll Hoheit. Und dieser gewann nicht weniger mein Herz. Nun bist du dahin: Ein Opfer der Zärtlichkeit, die durch Mord erwiedert wurde. Noch schicktest du einen Blick voll mitleidsvollem Lächeln auf deinen Mörder, aber er prelte von einen undurchdringlichen Felsen zurück. Und jezt trank ein dreyfachschneidendes Schwerd das kostbare Blut an deinem Herzen hinweg. O Welt! du vermagst nicht ein zweytes Herz dieser Art aufzuweisen! Ach! du bist nicht mehr Iwanette, und siehest nicht meinen tödtlichen Schmerz um deinen Verlust.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p><stage>tritt herein von dem Medicus begleitet.</stage> Was höre ich? Iwanette wäre todt.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Ja todt ist sie die vollkommenste ihres Geschlechts: und Sie Nichtswürdige leben. O welch ein grausames Schicksal wütet gegen mich. Sie machten es Wolsey, daß auch ich diesen Engel beleidigte. Ich habe es bereuet. Aber nun ist sie dahin, die liebenswürdige Iwanette. Ich kan nicht noch einmal Verzeyhung von ihr flehen. <pb n="47"/> Kein Strahl einiger Berühigung scheinet mir. Ach Iwanette! du mustest mich im lezten Augenblick deines Lebens noch verabscheuen. Dein Wüterich, dein Stormend hielt mich für seinen Nebenbuhler; und dieser unglückliche Jrthum be schleunigte deinen Tod. Ich bin also die Ursach deines Todes. Ich muß also bestraft seyn. Mich Unglücklichen! Warum zwang mich die Heftigkeit meiner Liebe, dir bis zur lezten Minute durch meine Gegenwart, Lasten und Schmerzen zu verursachen? Du warest aufrichtig genug, es mir zu entdecken, daß für mich keine Hofnung übrig sey. O hätte ich nur das erlangt, daß du durch einen Augenblick, Mitleid über meine Qual gefühlet hättest, über die Qual, von der du wider deine Absicht die Schöpferin warest. Aber hierzu war deine Tugend zu sehr erhaben. Du billigtest keine Famme um dich als diejenige, die am Altar geheiliget war. Und ach! Hättest du diese nur aus Pflicht geschäzet. Aber es war keine andre auf dich zu würken fähig, als die Flamme deines Barbaren, die in dem Augenblick, da sie am heftigsten zu brennen schien, erlosch, und dich in ihrem Untergange verzehrte.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Beruhigen Sie sich Herr Graf. Folgen Sie mir in ein anderes Zimmer. Ich will mit Ihnen den Verlust der Iwanette daselbst beklagen. <pb n="48"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Unglückliche! Unternehmen Sie nicht diesen geheiligten Ueberrest der Iwanette durch Ihre Zähren zu entweyhen. — Entfernen Sie sich. — Schon der Ort, wo er sich befindet, ist zu heilig für Sie.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>tritt ins Zimmer.</stage> Wie stehts um Iwanetten. Ich hoffe nicht die Bestätigung der traurigen Zeitung ihres Todes.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Sie hat leider ihre vollkommne Richtigkeit.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Wie, Barbar! Du unternimst, dich hier noch sehen zu lassen, an dem Orte, wo du deine Grausamkeiten vollführet hast, an dem Orte, wo du mir drohetest. Jezt ist es an mir, Rache zu verüben. Ich habe es bey dieser heiligen Leiche geschworen. Zittre und erwarte die Folgen meines Zornes und die gerechte Strafe deiner unerhörten Verbrechen. <stage>er will den Degen ziehen, wird aber von dem Medico und der Wolsey zurückgehalten.</stage></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Jezt ist es zu spät, mir den Besiz eines Herzens streitig zu machen; eines Herzens, das, — ach: das schon erstarret ist. <pb n="49"/></p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Ich konte dir ihn niemals streitig machen. Die Rechte der Ehe, und mehr, die unverdiente Zärtlichkeit; die dieses nun erstarte Herz gegen dich trug, redeten zu stark für dich! Aber jezt hast du dich aller dieser Rechte durch deine Grausamkeit verlustig gemacht. Diese muß jezt gerächt werden. (er bemüht sich wiederum den Degen zu ziehen.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Räche sie dann! durchstos dieses Herz und endige seine Qual.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Du fühlest jezt Qual? Und welch eine Qual? die Pein der Höllen fühlest du. Sehe ich nicht Furien um dich, die dich verfolgen? <stage>er läst die Hand vom Degen und wird unvermerkt entwafnet.</stage></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Ja, Furien, die mich verfolgen. und du bist eine dieser Furien. Ohne dich hätte ich wohl den Besitz eines Herzens hoffen können, das allein mein Glück machen konte.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Was wilt du jezt mit deiner Eifersucht? Glaubst du, daß ich mich gegen dich rechtfertigen werde? Mehr als du, verdiente ich wenigstens von Iwanetten geliebt zu werden. <pb n="50"/></p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Du möchtest es seyn, wenn nur Iwanette noch da wäre. O Iwanette! Warum machte ich die Vorwürfe über eine Neigung, die zu vertilgen wohl nicht in deiner Gewalt stund.</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Was höre ich Stormond? Sie glauben noch immer, daß ich von Iwanetten geliebt wurde? Ich bin dieser, ihre Rechtfertigung zu geben schuldig, so ungern ich auch gegen Sie es thue. Ach! ich ward nie von Iwanetten geliebt.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p>Sie, nie von Iwanetten geliebt! — Dieses Geständniß, unter Umständen gethan, durch die es seine höchste Glaubwürdigkeit erhält, ist mehr als zehn tödliche Stiche. Golowin, Sie haben Ihrem Schwur ein Genüge gethan, Sie haben sich und Iwanetten gerächt. Iwanette liebts also mich und nicht Sie: Ach! Und ich</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Ja, Iwanette liebte Sie. Sie verdienen nicht weiter geschonet zu werden. Hören Sie alles: Ich habe Ihre Gattin geliebt. Aber nie verstattete ihr der Gram, den Ihre Grausamkeit, Ihre unvernünftige Eifersucht und Ihre Entweichung ihr verursachten, nur einen Augenblick mich zu hören. Ich ward davon überzeugt, und flehte Freundschaft. Ich erbot mich selbst Ihre Aussöhnung zu übernehmen. Aber ich lernte erst in dem Augenblick Sie kennen, in dem Sie den Mord der Iwanette vollen<pb n="51"/> deten. Nun wissen Sie alles. Ich bin durch Iwanettens Tod nicht minder unglücklich, obgleich ich nicht geliebt wurde.</p>
+        </sp>
+        <sp who="#stormond">
+          <speaker>Stormond</speaker>
+          <p><stage>geht verwirt im Zimmer umher.</stage> O Stormond! die Martern und Gewissensbisse aller Verbrecher des ganzen Erdbodens zusammen genommen, sind nichts gegen das, was du jezt fühlest. Aber es verdiente auch kein Mensch mehr gestraft zu seyn als du. Du wurdest von dem zärtlichsten Herzen geliebet und deine unselige Eifersucht!</p>
+        </sp>
+        <sp who="#golowin">
+          <speaker>Golowin</speaker>
+          <p>Er ist weniger strafbar als er es schien. Doch immer strafbar genug. Seine Eifersucht und meine unglückliche Neigung vollendeten den Mord des liebenswürdigsten Frauenzimmers. — Aber ich werde mich entfernen. Stormond mag sich seinem Schmerz überlassen. Er hat Ursach genug dazu. Ich werde dem meinigen mich ganz ergeben. <stage>Golowin geht ab und blickt noch einmal auf den Cörper der Iwanette.</stage></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Ach welch ein Tag für mich! Ich weiß nicht die ohngewöhnliche Beängstigung meines Herzens zu entwickeln. O! wenn schon der Schein des Lasters so viel Unglück gebieret, welche traurige Folgen muß nicht das Laster selbst nach sich ziehen. Iwanette, — ihr Andenken wird mir unvergeßlich bleiben. Verflucht sey die Unternehmung, die Ihre <pb n="52"/> Tugend zu erschüttern gedachte! Verflucht der Gedanke, der sie einiger Niederträchtigkeit beschuldigte. Ihr Tod vollendet die Lehren in mir, die ihre sanfte bekümmerte Miene mir zu geben anfieng.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p><stage>von Bender begleitet.</stage> Ich eile, mich von den Geschichten zu belehren die man mir erzählt, und die mich so nahe betreffen würden. Ach! Sie scheinen keine Erdichtung zu seyn. Mein Sohn. — Ich weiß nicht wie ich den Zustand ansehen soll, in dem ich ihn finde. Er siehet mich nicht. O! hemme deinen ungerechten Schmerz und fordere von mir was du begehrest. Du antwortest nicht. <stage>Zum Medico.</stage> Mein Herr, sagen Sie mir wie meinem Sohn zu helfen ist, daß er nicht in Tiefsinn verfällt. Ich erwarte alles von Ihrem Beystande.</p>
+        </sp>
+        <sp who="#der_medicus">
+          <speaker>Der Medicus</speaker>
+          <p>Für Ihren Sohn, haben Sie wie ich hoffe, nichts zu fürchten. Sein Schmerz scheint mir nicht ungewöhnlich. Aber übrigens war ich nicht Gott genug, das Unglück dieses Tages zu verhüten.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Freylich ein unglücklicher Tag! vieleicht der einige in seiner Art.</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p><stage>zur Wolsey.</stage> Sagen Sie mir doch, ist Iwanette todt? — <pb n="53"/></p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Ja, sie ist todt, und ihr Tod ist lehrreich und von den grösten Folgen.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Sie möchte immer todt seyn, wenn sie nur meinen Sohn nicht mit ins Grab nimt. Ich kenne die Heftigkeit seiner Neigung.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Sie wissen es nicht was Iwanette für ein Verlust ist: Wäre sie so lästerhaft gewesen, als sie es schien; so hätte gewiß der Gram ihr das Leben nicht geraubt.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Sie mag tugendhaft oder lasterhaft gewesen seyn; Sie ist nun todt. Aber mein Sohn! — Bender (zur Wolsey. Man sagte der Graf Golowin sey hier:</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Ja, er ist hier, er befindet sich in einem andern Zimmer, ohngefehr in eben dem Zustande, wie der jüngere Herr Stormond. Der jüngere Stormond. <stage>besinnt sich.</stage> Wie? Mein Vater hier! Kommen Sie mich zu verfolgen, so gesellen Sie sich nur zu jenen Furien, die dort mich erwarten. <pb n="54"/></p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Was sagt er? Ich verstehe nichts davon. O mein Sohn! Ich komme nicht dich zu verfolgen. Mich ganz mit dir auszusöhnen, ist mein vollkomner Wille. Traue deinem Vater alles zu. Erhalte ihm nur einen Sohn und er wünscht keine Freude der Erden weiter. Aber du antwortest mir nicht? — du siehest nicht deinen Vater?</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p><stage>zum älteren Stormond.</stage> Beruhigen Sie sich: Ein heftiger Schmerz zerstreuet gewönlich und dauert selten lange.</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Aber ich befürchte alles von dem Uebermaas des Schmerzens, in dem mein Sohn den Tod seiner Gattin empfindet. Er war stets nur heftiger Leidenschaften fähig. Und ich weiß mit welcher Heftigkeit er liebte! --</p>
+        </sp>
+        <sp who="#bender">
+          <speaker>Bender</speaker>
+          <p>Ich weiß es auch. Aber Sie haben sich nie Vorwürfe zu machen. Was konten Sie dafür, daß er eine Ungetreue liebte, die ihm Schande zuzog: Als Vater konten Sie ja ohnmöglich, einer Verbindurg dieser Art, Ihren Beyfall geben.</p>
+        </sp>
+        <sp who="#wolsey">
+          <speaker>Wolsey</speaker>
+          <p>Ein unglückliche Irthum hat alle diese Lelden verursacht. <pb n="55"/> Der jüngere Stormond. Wo bin ich nun? — Wer ist hier? -- Kein Vater, kein Golowin, die mir Vorwürfe machen; keine Furien die mich verfolgen?</p>
+        </sp>
+        <sp who="#der_ältere_stormond">
+          <speaker>Der ältere Stormond</speaker>
+          <p>Keine Vorwürfe mein Sohn! von mir keine Vorwürfe. Fasse dich, beruhige dich und beglücke dadurch deinen Väter. Der jüngere Stormond. Meinen Vater! und wer ist er? Ich kenne keinen Vater. Warum muste ich erwachen! Wo ist Iwanette? — <stage>er sieht sich im Zichmer um.</stage> sie muß ja hier seyn. — Da ist sie: aber nicht mehr die holdselige Iwanette, — bleich, erstart ist sie, <stage>er zeigt auf die Stelle wo Golowin stand.</stage> und dort weg ihr tyrannischen Menschen: Ich war auch einer wie ihr; Aber euer Umgang wird mir verhaßt. Ich will seyn, wo Geister wandeln; wenn es auch Schreckbilder sind; -- sie sind doch nicht so schrecklich wie ihr. Mitleid fordre ich! -- Nein, nicht Mitleid Grausamkeiten! dazu seyd ihr fähig. -- Tödtet mich. -- Ist hier kein Stahl, der mitleidiger wie Menschen, mir das Leben raubte? <stage>er siehet den Medicus.</stage> Was für ein Ungeheuer? Bist du ein Bewohner der Schattenwelt? O dann vereinige dich mit mir. Führe mich hin, wo Iwanette verweilet. Sie soll mich tödten. Zehnfach will ich von ihr getödtet seyn. Dies habe ich um sie verdienet. — Iwanette tödten — Nein sie war nicht wie ich. Ich tödtete, sie konte nur lächeln. — Golowin, auch du <pb n="56"/> solt mich ermorden! Füge diese kleine Rache zu deiner größeren hinzu: du hast ja Rache geschworen; an dem Leichnam der Iwanette hast du Rache geschworen! -- Leichnam! Geschwind einen Altar! Ein Todtenopfer. Ich will das Opfer seyn. — O meine Freunde erbarmt euch meiner. <stage>Er zeigt auf sein Herz.</stage> Hier den Stich, — und dann, dann sey versöhnt Iwanette, mit deinem Mörder ausgesöhnt. Aber Golowin! den wirst du lieben: Er hat dich gerächt. Da der Schwur <stage>er zeigt auf die Stelle wo Iwanette liegt.</stage> und hier die Rache! <stage>auf die Stelle wo Golowin sich gegen ihn erklärte.</stage> Iwanette, ich war von dir geliebt? — der einige unter allen Menschen, und der Unwürdigste unter allen. <stage>Er ist eine zeitlang still.</stage> Welch ein feierlicher Zug kömt daher? — Geister Schaaren und Iwanette unter ihnen! Drohest du Iwanette? Ja du drohest, ach Iwanette, du drohest! <stage>Er fällt nieder, und der Vorhang fällt zu</stage> Ende des Trauerspiels.</p>
+        </sp>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -286,13 +286,18 @@ function(input, output, session) {
   })
   observeEvent(input$submit.xml, {
     xml.t<-transform.ezd(rv$t3)
+    valid<-validate_tei(output_file,"dracor-scheme.rng")
     #t2<-xml.t
+    print(valid$ok)
     output$apidoc <- renderUI({
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
         tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
                  paste(xml.t, collapse = "\n"))
       )
+    })
+    output$spoutput<-renderText({
+          paste(paste0("validation success: ",valid$ok),valid$log, collapse = "\n")
     })
   })
   # Initialize the outputs

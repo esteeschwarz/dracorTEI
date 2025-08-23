@@ -16,6 +16,12 @@ escape_xml_dep <- function(text) {
     str_replace_all("'", "&apos;")
 }
 #schema: <?xml-model href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+validate_tei <- function(xmlfile, schema = "schema.rng") {
+  res <- system2("jing", args = c(schema, xmlfile), stdout = TRUE, stderr = TRUE)
+  list(ok = attr(res, "status") %||% 0 == 0,
+       log = res)
+}
+# validate_tei("testheaders.xml","dracor-scheme.rng")
 
 # Initialiser un nouveau document XML
 create_tei_document <- function() {
@@ -359,23 +365,11 @@ parse_drama_text <- function(input_tx, output_file) {
   xmltx<-readLines(xmltemp)
   xmltx<-gsub("\\{cleft","<",xmltx)
   xmltx<-gsub("\\{cright",">",xmltx)
-  writeLines(xmltx,xmltemp)
-  xm<-read_xml(xmltemp)
-  schema<-"https://dracor.org/schema.rng"
-  download.file(schema,"dracor-scheme.rng")
-  system("trang dracor-scheme.rng dracor.xsd")
+  writeLines(xmltx,output_file)
   
-  sch<-read_xml("dracor.xsd")
-  #r1<-xml_validate(xm,"https://dracor.org/schema.rng")
-  r1<-xml_validate(xm,sch)
-  if (r1) {
-    print("Document valide")
-  } else {
-    # Obtenir les détails des erreurs
-    errors <- attr(r1, "errors")
-    print(head(errors))
-  }
+ # validate_tei(output_file,"dracor-scheme.rng")
   
+
 }
 output_file<-"testheaders.xml"
 input_tx<-readLines("ezdmarkup.txt")

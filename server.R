@@ -290,6 +290,14 @@ function(input, output, session) {
   })
   observeEvent(input$submit.xml, {
     xml.t<-transform.ezd(rv$t3)
+    xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
+   # xml.test<-list.files(".")
+#    xml.str<-paste0("<div>",paste0(xml.t),"</div>")
+    xml.str<-paste0(xml.t,collapse = "")
+    print("----- xmlstr ------")
+    print(xml.str)
+    b64 <- jsonlite::base64_enc(charToRaw(xml.str))
+    
   #  valid<-validate_tei(output_file,"dracor-scheme.rng") # not on M7, cant install jing
     #t2<-xml.t
    # print(valid$ok)
@@ -301,12 +309,24 @@ function(input, output, session) {
       )
     })
     output$xmlrendered <- renderUI({
-      tags$div(id="xml", HTML(paste(xml.t, collapse = "\n")))
+   # div(id="xml",
+     # style="width:100%; height:100%;",
+      tags$iframe(
+        src = paste0("data:application/xml;base64,", b64),
+      # src = "cstest.xml",
+        style="width:100%; height:100%; border:none;"
+      )
     })
+    #)
+    
+    # output$xmlrendered <- renderUI({
+    #   tags$div(id="xml", HTML(paste(xml.t, collapse = "\n")))
+    # })
     
     # output$spoutput<-renderText({
     #       paste(paste0("validation success: ",valid$ok),valid$log, collapse = "\n")
     # })
+  # })
   })
   # Initialize the outputs
   output$spoutput<- renderText("configure variables left...")

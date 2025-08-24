@@ -1,0 +1,32 @@
+<html>
+  <body>
+  <!--<style>
+    #xml p {
+color: black;
+
+}
+#xml speaker{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#xml stage {
+  font-style:italic;
+  color: blue;
+}
+#xml head[type="act"] {
+  font-size: 1.6em;
+  color:red;
+}
+#xml castList {
+  color:red;
+}
+  </style>-->
+  <h1>testrender xml</h1>
+    <div id="xml"><?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<root>
+    <head type="act">erste handlung</head>
+    <p>Some paragraph text</p>
+    <stage>Stage direction</stage>
+</root>
+</div></body></html>

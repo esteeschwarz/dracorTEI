@@ -356,7 +356,7 @@ parse_drama_text <- function(input_tx, output_file) {
   root <- xmlRoot(doc)
   
   # add PIs before the root element (order matters: stylesheet first, then model)
-  addSibling(root, newXMLPINode("xml-stylesheet", 'type="text/css" href="../css/tei.css"'), after = FALSE)
+  addSibling(root, newXMLPINode("xml-stylesheet", 'type="text/css" href="/tei.css"'), after = FALSE)
   addSibling(root, newXMLPINode("xml-model",
                                 'href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"'),
              after = FALSE)

@@ -1,5 +1,5 @@
 library(shiny)
-css<-readtext("render.css")$text
+#css<-readtext("render.css")$text
 # Define UI for application
 fluidPage(
   tags$style(HTML("
@@ -10,23 +10,8 @@ fluidPage(
       padding-right: 10px; /* Add some padding for better appearance */
     }
   ")),
-  tags$style(HTML(css)),
-  tags$style(HTML("
-                  #xml p {
-color: black;
+  # tags$style(HTML(css)),
 
-}
-#xml speaker{
-  font-size: 1.1em;
-  font-weight: bold;
-}
-#xml stage {
-  font-style:italic;
-  color: blue;
-}
-#xml head {
-  font-size: 1.6em;
-}")),
   # Application title
   titlePanel("dracor TEI refactoring"),
   
@@ -85,9 +70,12 @@ color: black;
               
       uiOutput("apidoc")
       ),
-      tabPanel("render",h4("rendered view"),
+      tabPanel("render",h4("rendered xml view"),
                uiOutput("xmlrendered")
-               )
+      )
+      # tabPanel("render",h4("rendered view"),
+      #          uiOutput("xmlrendered")
+      #          )
     )
   
   )

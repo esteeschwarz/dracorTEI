@@ -6,7 +6,7 @@ source("ezd2tei.R")
 source("functions.R")
 #sp.default<-"Iwanette,Golowin,Wolsey,Stormond,Bender"
 transcript<-"iwanette"
-output_file<-"ezd2tei.xml"
+output_file<-"r-tempxmlout.xml"
 # get.transcript<-function(transcript){
 #   r<-GET(paste0("https://ids.dh-index.org/api/trans?transcript=",transcript))
 #   t<-content(r,"text")
@@ -301,7 +301,7 @@ function(input, output, session) {
       )
     })
     output$xmlrendered <- renderUI({
-      tags$div(id="#xml", HTML(paste(xml.t, collapse = "\n")))
+      tags$div(id="xml", HTML(paste(xml.t, collapse = "\n")))
     })
     
     # output$spoutput<-renderText({

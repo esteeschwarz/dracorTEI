@@ -102,7 +102,7 @@ create_tei_document <- function() {
 }
 
 #input_file<-"klopstock_tod-abels_ezd.txt"
-input_file<-"ezdmarkup.txt"
+#input_file<-"ezdmarkup.txt"
 parse_drama_text <- function(input_tx, output_file) {
   # Lire le fichier d'entrée
   lines<-input_tx
@@ -371,7 +371,7 @@ parse_drama_text <- function(input_tx, output_file) {
   
 
 }
-output_file<-"testheaders.xml"
+#output_file<-"testheaders.xml" # in server.R
 input_tx<-readLines("ezdmarkup.txt")
 # Exemple d'utilisation
 parse_drama_text(input_tx, output_file)

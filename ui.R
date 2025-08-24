@@ -13,7 +13,7 @@ fluidPage(
   tags$style(HTML(css)),
   tags$style(HTML("
                   #xml p {
-color: red;
+color: black;
 
 }
 #xml speaker{
@@ -21,7 +21,8 @@ color: red;
   font-weight: bold;
 }
 #xml stage {
-  font-weight:italic;
+  font-style:italic;
+  color: blue;
 }
 #xml head {
   font-size: 1.6em;

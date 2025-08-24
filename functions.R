@@ -128,11 +128,12 @@ save_defaults<-function(rvdf){
   print("saved")
   
 }
-transform.ezd<-function(ezd){
+transform.ezd<-function(ezd,output_file){
   #ezdtemp<-tempfile("ezd.txt")
   #writeLines(ezd,ezdtemp)
   #xmlout<-tempfile("xmlout.xml")
   xmlout<-"r-tempxmlout.xml"
+  xmlout<-output_file
   writeLines(ezd,"ezdmarkup.txt")
   parse_drama_text(ezd,xmlout)
   return(readLines(xmlout))

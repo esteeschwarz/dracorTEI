@@ -356,7 +356,7 @@ parse_drama_text <- function(input_tx, output_file) {
   root <- xmlRoot(doc)
   
   # add PIs before the root element (order matters: stylesheet first, then model)
-  addSibling(root, newXMLPINode("xml-stylesheet", 'type="text/css" href="/tei.css"'), after = FALSE)
+  addSibling(root, newXMLPINode("xml-stylesheet", 'type="text/css" href="tei.css"'), after = FALSE)
   addSibling(root, newXMLPINode("xml-model",
                                 'href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"'),
              after = FALSE)
@@ -372,8 +372,8 @@ parse_drama_text <- function(input_tx, output_file) {
 
 }
 #output_file<-"testheaders.xml" # in server.R
-input_tx<-readLines("ezdmarkup.txt")
+#input_tx<-readLines("ezdmarkup.txt")
 # Exemple d'utilisation
-parse_drama_text(input_tx, output_file)
+#parse_drama_text(input_tx, output_file)
 #parse_drama_text("klopstock_tod-abels_ezd.txt", "toldetest.xml")
 

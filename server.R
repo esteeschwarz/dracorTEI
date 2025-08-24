@@ -6,7 +6,7 @@ source("ezd2tei.R")
 source("functions.R")
 #sp.default<-"Iwanette,Golowin,Wolsey,Stormond,Bender"
 transcript<-"iwanette"
-output_file<-"r-tempxmlout.xml"
+output_file<-"www/r-tempxmlout.xml"
 # get.transcript<-function(transcript){
 #   r<-GET(paste0("https://ids.dh-index.org/api/trans?transcript=",transcript))
 #   t<-content(r,"text")
@@ -289,7 +289,7 @@ function(input, output, session) {
                                        "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
   })
   observeEvent(input$submit.xml, {
-    xml.t<-transform.ezd(rv$t3)
+    xml.t<-transform.ezd(rv$t3,output_file)
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
    # xml.test<-list.files(".")
 #    xml.str<-paste0("<div>",paste0(xml.t),"</div>")
@@ -312,9 +312,9 @@ function(input, output, session) {
    # div(id="xml",
      # style="width:100%; height:100%;",
       tags$iframe(
-        src = paste0("data:application/xml;base64,", b64),
-      # src = "cstest.xml",
-        style="width:100%; height:100%; border:none;"
+#        src = paste0("data:application/xml;base64,", b64),
+       src = "r-tempxmlout.xml",
+        style="width:100%; height:100vH; border:none;"
       )
     })
     #)

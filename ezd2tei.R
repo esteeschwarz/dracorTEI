@@ -103,6 +103,8 @@ create_tei_document <- function() {
 
 #input_file<-"klopstock_tod-abels_ezd.txt"
 #input_file<-"ezdmarkup.txt"
+#input_tx<-readLines("ezdmarkup.txt")
+
 parse_drama_text <- function(input_tx, output_file) {
   # Lire le fichier d'entrée
   lines<-input_tx
@@ -126,7 +128,7 @@ parse_drama_text <- function(input_tx, output_file) {
   scenes.t<-F
   # Traiter chaque ligne
   #line<-l1
-  k<-4
+  k<-39 # only for test
   line<-lines[k]
   line
   for (k in 1:length(lines)) {
@@ -134,6 +136,7 @@ parse_drama_text <- function(input_tx, output_file) {
     # ?str_detect
     line.true<-""
     line<-lines[k]
+    line
     write(k,"debug.txt",append = T)
     if(str_detect(line,"\\^",)){
       parts<-str_match(line,"\\^(.*)")
@@ -222,29 +225,6 @@ parse_drama_text <- function(input_tx, output_file) {
       }
       line.true<-"front"
     }
-    # get cast
-    # if(str_detect(line,"^depr",)){
-    #   parts<-str_match(line,"[\\^](.*)")
-    #   desc<-parts[2]
-    #   r<-k:length(lines)
-    #   m<-str_detect(lines[r],"[$#@]",)
-    #   mw<-which(m)
-    #   mw<-mw[1]
-    #   mw<-(k+1):r[mw-1]
-    #   castlist.r<-mw
-    #   castlist.t<-lines[castlist.r]
-    #   castlist.t
-    #   #      castList<-xml_find_all(xml_doc$,"//castList")
-    #   xml_add_child(xml_doc$castList, "head", desc)
-    #   
-    #   for(item in castlist.t){
-    #     xml_add_child(xml_doc$castList,"castItem",item)
-    #   }
-    #   line.true<-"personal"
-    #   write(castlist.t,"debug.txt",append = T)
-    #   
-    # }
-    # line.true
     
     if (str_detect(line, "^@[^.]+\\.", )&!line.true%in%c("title","subtitle","author","front")) {
       parts <- str_match(line, "^@([^.]+?)\\.(.*)")
@@ -319,9 +299,9 @@ parse_drama_text <- function(input_tx, output_file) {
       if (!is.null(current_scene)) {
         # Appliquer les mêmes transformations que pour le texte des personnages
         processed <- line %>%
-          str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"/{cright") %>%
+          str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"{cright[\\1]{cleft/pb{cright") %>%
           str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
-        
+        # <pb n="11">[11]</pb>
         #        p <- xml_add_child(current_scene, "p")
         # p <- xml_add_child(sp, "p")
         write(processed,"debug.txt",append = T)

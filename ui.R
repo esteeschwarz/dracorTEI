@@ -61,14 +61,18 @@ fluidPage(
   ),
   mainPanel(
     tabsetPanel(id="tabset",
-                tabPanel("process",
+                tabPanel("progress",
       h4("processing"),
-      verbatimTextOutput("spoutput"),
+      verbatimTextOutput("proutput"),
                 ),
-      tabPanel("view",
+      tabPanel("raw",
+               h4("raw text"),
+               
+               uiOutput("apidoc")),
+      tabPanel("processed",
               h4("output"),
               
-      uiOutput("apidoc")
+      uiOutput("processed")
       ),
       tabPanel("render",h4("rendered xml view"),
                uiOutput("xmlrendered")

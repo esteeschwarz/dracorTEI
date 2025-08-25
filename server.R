@@ -2,6 +2,7 @@ library(shiny)
 library(readr)
 library(httr)
 library(jsonlite)
+# takes 9.40min to install packages on silver
 source("ezd2tei.R")
 source("functions.R")
 #sp.default<-"Iwanette,Golowin,Wolsey,Stormond,Bender"

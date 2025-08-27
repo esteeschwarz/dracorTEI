@@ -2,7 +2,7 @@ library(shiny)
 library(readr)
 library(httr)
 library(jsonlite)
-library(diffobj)
+#library(diffobj)
 library(diffr)
 # takes 9.40min to install packages on silver
 source("ezd2tei.R")

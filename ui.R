@@ -1,4 +1,6 @@
 library(shiny)
+library(diffr)
+
 #css<-readtext("render.css")$text
 # Define UI for application
 fluidPage(

@@ -2,6 +2,8 @@ library(shiny)
 library(readr)
 library(httr)
 library(jsonlite)
+library(diffobj)
+library(diffr)
 # takes 9.40min to install packages on silver
 source("ezd2tei.R")
 source("functions.R")
@@ -66,6 +68,7 @@ function(input, output, session) {
   # Observe the submit button for fetching the transcript
   observeEvent(input$submit.doc, {
     output$apidoc <- renderUI({ div(tags$pre("Processing...")) })  # Show a loading message
+    output$proutput <- renderText("processing...\n")
     
     # Fetch the transcript
     transcript <- input$transcript
@@ -182,6 +185,69 @@ function(input, output, session) {
       )
     })
   })
+  
+ observeEvent(input$compare, {
+    text1 <- rv$t1
+    text1<-paste0(text1,collapse = " ")
+    text2 <- paste0(rv$t3,collapse = "<nl>")
+    tempapi<-tempfile("api.txt")
+    writeLines(text1,tempapi)
+    tempproc<-tempfile("proc.txt")
+    writeLines(text2,tempproc)
+    # Split into lines for better diff display
+    # lines1 <- unlist(strsplit(text1, "\n"))
+    # lines2 <- unlist(strsplit(text2, "\n"))
+    # 
+?    renderDiffr
+    tryCatch(({
+      output$diff_output <- renderDiffr({
+       # input$compare
+        #text1 <- rv$t1
+        #text2 <- rv$t3
+        # tempapi<-tempfile("api.txt")
+        # writeLines(rv$t1,tempapi)
+        # tempproc<-tempfile("proc.txt")
+        # writeLines(rv$t3,tempproc)
+        # div(id="diff",style="width:100%;height:100vH;",
+        isolate({
+          diffr(
+            file1 = tempapi,
+            file2 = tempproc,
+            before = "Original",
+            after = "Corrected",
+            contextSize = 3,
+            wordWrap = TRUE
+          )
+        })
+        # )
+      })
+    }))
+  })
+    # Create diff object
+    # tryCatch({
+    #   diff <- diffobj::diffChr(
+    #     lines1, 
+    #     lines2,
+    #     mode = "sidebyside",
+    #     format = "html",
+    #     #contextSize = input$context_size,
+    #     style = list(html.output = "page")
+    #   )
+    #   
+  #     # Convert to HTML
+  #     htmltools::HTML(as.character(diff))
+  #   }, error = function(e) {
+  #     HTML(paste0("<div class='alert alert-danger'>Error: ", e$message, "</div>"))
+  #   })
+  # })
+  # 
+  # output$diff_output <- renderUI({
+  #   if (input$compare == 0) {
+  #     return(HTML("<div class='alert alert-info'>Click 'Compare Texts' to see the differences</div>"))
+  #   }
+  #   
+  #   diff_result()
+  # })
   # Initialize the outputs
   output$proutput<- renderText("configure variables left...")
   output$acts <- renderText(paste(rv$heads, collapse = "\n"))

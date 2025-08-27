@@ -10,6 +10,37 @@ fluidPage(
       padding-right: 10px; /* Add some padding for better appearance */
     }
   ")),
+  tags$head(
+    tags$style(HTML('
+     /* .td.code.replace.after {
+       white-space: pre !important;
+        overflow-x: auto !important;
+      }*/
+      /*td[class~="code"][class~="replace"][class~="after"] {
+  white-space: pre !important;
+        overflow-x: auto !important;
+      }*/ /*wks!*/
+      .diff-container { 
+        border: 1px solid #ddd; 
+        border-radius: 5px; 
+        padding: 10px; 
+        margin: 10px 0; 
+        background: #f8f9fa;
+        overflow-x: auto;
+        width:100%;
+        height:100vH;
+      }
+      .diff-header {
+        background: #e9ecef;
+        padding: 10px;
+        border-radius: 3px;
+        margin-bottom: 10px;
+      }
+      .ace_editor {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    ')),
   # tags$style(HTML(css)),
 
   # Application title
@@ -54,6 +85,8 @@ fluidPage(
     actionButton("defaults.save","save defaults"),
     textInput("id.defaults.load","load settings from ID"),
     actionButton("defaults.load","load defaults"),
+    actionButton("compare", "Compare Texts", class = "btn-primary", icon = icon("code-compare")),
+    
     actionButton("submit.xml", "create XML"),
     downloadButton("downloadXML","downdload .xml"),
     hr(),
@@ -61,7 +94,7 @@ fluidPage(
   ),
   mainPanel(
     tabsetPanel(id="tabset",
-                tabPanel("progress",
+      tabPanel("progress",
       h4("processing"),
       verbatimTextOutput("proutput"),
                 ),
@@ -76,11 +109,17 @@ fluidPage(
       ),
       tabPanel("render",h4("rendered xml view"),
                uiOutput("xmlrendered")
-      )
+      ),
+      tabPanel("diff",
+      div(class = "diff-container",
+          h4("diff compare"),
+          diffrOutput("diff_output")
+      ))
+      
       # tabPanel("render",h4("rendered view"),
       #          uiOutput("xmlrendered")
       #          )
-    )
+    ))
   
   )
 )

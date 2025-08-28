@@ -94,14 +94,14 @@ return(t3)
 r<-F
 #t<-t3
 r<-F
-clean.t<-function(t,r){
+clean.t<-function(t,r,repldf){
   txtemp<-tempfile("txraw.txt")
   writeLines(t,txtemp)
   library(readtext)
   t2<-readtext(txtemp)$text
   # metadf<-read.table("metadf.csv",sep = "\t")
-  metadf<-fromJSON("repldf.json",flatten = T)
-  repldf<-metadf$repl
+  # metadf<-fromJSON("repldf.json",flatten = T)
+  # repldf<-metadf$repl
   repldf
   #repldf[11,]
   if(sum(r)>0)
@@ -218,6 +218,7 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
  get.castlist<-function(lines,cast){
   for (l in 1:length(lines)){
     line<-lines[l]
+    cast<-cast[!is.na(cast)]
     if(str_detect(line,paste0("^",cast,".?$"),)){
       parts<-str_match(line,"\\^(.*)")
       parts
@@ -290,6 +291,19 @@ get.speakers<-function(t1,sp){
   print(crit.sp)
   wc<-which(!crit)
   print(wc)
+  ### find speakerstages (introduction at scene head)
+  #m2<-grepl(sp1,t1) #all speaker occurences in text
+  regx<-paste0("^",sp1,", \\(.+\\.?\\)$")
+  m2<-grep(regx,t2)
+  tx<-"Orchan, (zu Therise.)"
+  #sp1<-"Orchan|Zapor|Welwood"
+  mreg<-paste0("(",sp1,"), (\\(.+\\.?\\))") # extract stage in speakerline
+  #parts <- str_match(tx, mreg)
+  
+  #t2[m2]<-paste0("@",parts[2],"%spknl%")
+  
+  
+ # m3<-grepl()
   sp.move<-function(){
     for (k in wc){
       p<-m[k]

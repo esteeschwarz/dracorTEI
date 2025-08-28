@@ -55,8 +55,10 @@ fluidPage(
       helpText("SNC:15307.save issue.2.3.4"),
       h4("CONFIGURATION"),
       helpText("get transcript file..."),
-      textInput("transcript","transcript","iwanette"),
+      textInput("transcript","transcript from transkribus db","iwanette"),
       actionButton("submit.doc","fetch transcript"),
+      fileInput("upload_tr","upload local transcript",accept = ".txt",buttonLabel = "browse..."),
+      fileInput("upload_repl","upload replacements",accept = ".csv",buttonLabel = "browse..."),
       helpText("set title and author"),
       textInput("title","Title",""),
       textInput("subtitle","SubTitle, if vorhanden",""),
@@ -69,8 +71,8 @@ fluidPage(
       actionButton("submit.h","apply act|scene definitions"),
       
       helpText('enter the commonly used expressions that introduce a new act (header level 1) and scene (header level 2), like "Handlung|Akt|Act" or "Scene|Szene". This will be used as regex query for defining the sections.'),
-      helpText('we have found the following acts declarations:'),
-      verbatimTextOutput("acts"),
+     # helpText('we have found the following acts declarations:'),
+      #verbatimTextOutput("acts"),
      # actionButton("sumbit.keep.act","use act definitions"),
       helpText("declare speaker"),
       textInput(
@@ -95,10 +97,11 @@ fluidPage(
     helpText("if you satisfied with the preprocessed text, start transformation.")
   ),
   mainPanel(
+    verbatimTextOutput("proutput"),
     tabsetPanel(id="tabset",
       tabPanel("progress",
       h4("processing"),
-      verbatimTextOutput("proutput"),
+      verbatimTextOutput("pr-progress"),
                 ),
       tabPanel("raw",
                h4("raw text"),

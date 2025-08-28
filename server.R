@@ -4,6 +4,7 @@ library(httr)
 library(jsonlite)
 #library(diffobj)
 library(diffr)
+library(tools)
 # takes 9.40min to install packages on silver
 source("ezd2tei.R")
 source("functions.R")
@@ -26,6 +27,7 @@ function(input, output, session) {
   # Reactive values to store intermediate states
   rv <- reactiveValues(
     t1 = "input docname...",
+    repl = NULL,
     t2 = NULL,
     t3 = NULL,
     heads = "not defined...",
@@ -37,6 +39,10 @@ function(input, output, session) {
     id.sf = NULL,
     cast = NULL
   )
+  metadf<-fromJSON("repldf.json",flatten = T)
+  repldf<-metadf$repl
+  rv$repl<-repldf
+  
   output$downloadXML<-downloadHandler(
     filename="ezdxmlout.xml",
     content=function(file){writeLines(readLines(output_file),file)}
@@ -47,12 +53,15 @@ function(input, output, session) {
     rv$h1.sf<-input$h1
     rv$h2.sf<-input$h2
     rv$cast<-input$cast
-    rvdf<-data.frame(id=rv$id.sf,cast=rv$cast,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf)
+    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
     cat("observe sf...\n")
     print(head(rvdf))
     save_defaults(rvdf)
     updateTextInput(session, "id.defaults.save", value = "settings saved...")
-    
+    # defaults$h1[4]<-".ufzug"
+    # defaults$h2[4]<-".uftritt"
+    # defaults$cast<-"Personen."
+    #  save(defaults,file = "default-values.RData")
   })
   observeEvent(input$defaults.load,{
     defaults<-load_defaults(input$id.defaults.load)
@@ -63,7 +72,57 @@ function(input, output, session) {
     updateTextInput(session, "h1", value = defaults$h1)
     updateTextInput(session, "h2", value = defaults$h2)
     updateTextInput(session, "cast", value = defaults$cast)
+    rv$sp.sf<-defaults$speaker
+    rv$h1.sf<-defaults$h1
+    rv$h2.sf<-defaults$h2
+    rv$cast<-defaults$cast
+  })
+  observeEvent(input$upload_repl,{
+    file<-input$upload_repl$datapath
+    repldf<-read.csv(file)
+    print(head(repldf))
+#    rv$repl<-repldf
+    # metadf<-fromJSON("repldf.json",flatten = T)
+    repl1<-rv$repl
+    print(colnames(repl1)[1:3])
+    print(head(repl1))
+    repldf$id<-1
+    mode(repl1$id)<-"double"
+    mode(repl1$string1)<-"character"
+    mode(repl1$string2)<-"character"    
+    colnames(repl1)[2:3]<-c("find","replace")
     
+    repl2<-bind_rows(repl1[,1:3],repldf)
+    colnames(repl2)[2:3]<-c("string1","string2")
+    print(head(repl2))
+    rv$repl<-repl2
+  })
+  #test
+ # repldf<-read.csv("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/repldf.csv")
+  # mode(repl1$id)<-"double"
+  # mode(repl1$string1)<-"character"
+  # mode(repl1$string2)<-"character"
+  observeEvent(input$upload_tr,{
+    output$proutput <- renderText("processing...\n")
+    file<-input$upload_tr
+    # ext<-tools::file_ext(file$datapath)
+    # req(file)
+    # validate(need(ext=="txt","please upload a plain text file"))
+    t4<-readLines(file$datapath)
+    print(t4)
+    t3<-repl.um(t4)
+    t3
+    t3<-clean.t(t3,1,rv$repl)
+    t3
+    rv$t1<-t3
+    output$apidoc <- renderUI({
+      div(
+        style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
+        tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
+                 paste(rv$t1, collapse = "\n"))
+      )
+    })
+    output$proutput <- renderText("transcript fetched...\n")
   })
   # Observe the submit button for fetching the transcript
   observeEvent(input$submit.doc, {
@@ -78,7 +137,7 @@ function(input, output, session) {
     t4
     t3<-repl.um(t4)
     t3
-    t3<-clean.t(t3,1)
+    t3<-clean.t(t3,1,rv$repl)
     t3
     #rv$t3<-clean.t(t1,2)
     rv$t1<-t3
@@ -120,7 +179,7 @@ function(input, output, session) {
     vario <- input$speaker
     print("getting speaker")
     #t <- get.speakers(t3, vario)  # Use the transcript stored in reactiveValues
-    
+    print(rv$cast)
     # t <- get.speakers(rv$t2, vario)  # Use the transcript stored in reactiveValues
     t4 <- get.castlist(rv$t2,input$cast)
     print("got cast...")
@@ -141,7 +200,7 @@ function(input, output, session) {
     ### remove linebreaks
     sp6<-gsub("%front%","",t2$text)
    # sp6<-t2$text
-    t3<-clean.t(sp6,F)
+    t3<-clean.t(sp6,F,rv$repl)
     print("clean.t...")
    # t3<-get.front(t3)
     rv$t3<-t3
@@ -161,8 +220,8 @@ function(input, output, session) {
    # xml.test<-list.files(".")
 #    xml.str<-paste0("<div>",paste0(xml.t),"</div>")
     xml.str<-paste0(xml.t,collapse = "")
-    print("----- xmlstr ------")
-    print(xml.str)
+    #print("----- xmlstr ------")
+   # print(xml.str)
     b64 <- jsonlite::base64_enc(charToRaw(xml.str))
     
   #  valid<-validate_tei(output_file,"dracor-scheme.rng") # not on M7, cant install jing

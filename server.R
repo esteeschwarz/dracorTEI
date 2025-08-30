@@ -4,7 +4,8 @@ library(httr)
 library(jsonlite)
 #library(diffobj)
 library(diffr)
-library(tools)
+library(xml2)
+#library(tools)
 # takes 9.40min to install packages on silver
 source("ezd2tei.R")
 source("functions.R")
@@ -37,11 +38,55 @@ function(input, output, session) {
     h2.sf = "",
     sp.sf = "",
     id.sf = NULL,
-    cast = NULL
+    cast = NULL,
+    nb.tags = list()
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
   rv$repl<-repldf
+  
+  output$md_html <- renderUI({
+    md_file <- "about-md.md"
+    html <- markdown::markdownToHTML(md_file, fragment.only = TRUE)
+    HTML(html)
+  })
+  output$nb <- renderUI({
+    # div(id="xml",
+    # style="width:100%; height:100%;",
+    tags$iframe(
+      #        src = paste0("data:application/xml;base64,", b64),
+      src = "about-nb.nb.html",
+      style="width:100%; height:100vH; border:none;"
+    )
+  })
+  output$nb <- renderUI({
+    rmd_file <- "about-nb.Rmd"
+    html_file <- tempfile(fileext = ".nb.html")
+    html_file <- "www/about-nb.html"
+    rmarkdown::render(rmd_file, output_file = html_file, output_format = "html_notebook", quiet = TRUE)
+#    html <- paste(readLines(html_file, warn = FALSE), collapse = "\n")
+    #html <- paste(readLines(, warn = FALSE), collapse = "\n")
+    tags$iframe(
+ #     src = paste0("data:application/xml;base64,", html),
+      src = "about-nb.nb.html",
+      style="width:100%; height:100vH; border:none;"
+    )
+    # html_file<-"about-nb.nb.html"
+    # ht2<-read_html(html_file)
+    # nodes <- xml_find_all(ht2, "//*[self::script or self::link]")
+    # #all.scr<-xml_find_all(ht2,"//script")
+    # #all.link<-xml_find_all(ht2,"//link")
+    # rv$nb.tags<-nodes
+    # #rv$nb.tags$link<-all.link
+    #all.scr[1]
+   # HTML(html)
+  })
+  # output$dynamic_head <- renderUI({
+  #   deps<-rv$nb.tags
+  #   deps <- extract_head_nodes("about-nb.nb.html")
+  #  # print(deps)
+  #   tagList(deps)
+  # })
   
   output$downloadXML<-downloadHandler(
     filename="ezdxmlout.xml",

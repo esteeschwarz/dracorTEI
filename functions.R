@@ -1,3 +1,10 @@
+
+extract_head_nodes <- function(html_file) {
+  doc <- read_html(html_file)
+  nodes <- xml_find_all(doc, "//*[self::script or self::link]")
+  lapply(nodes, function(node) HTML(as.character(node)))
+}
+
 get.transcript<-function(transcript){
   r<-GET(paste0("https://ids.dh-index.org/api/trans?transcript=",transcript))
   t<-content(r,"text")

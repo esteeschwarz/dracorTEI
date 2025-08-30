@@ -13,6 +13,9 @@ fluidPage(
     }
   ")),
   tags$head(
+    #tags$head(
+      # Dynamically insert dependencies
+      uiOutput("dynamic_head"),
     tags$style(HTML('
      /* .td.code.replace.after {
        white-space: pre !important;
@@ -99,6 +102,7 @@ fluidPage(
   mainPanel(
     verbatimTextOutput("proutput"),
     tabsetPanel(id="tabset",
+      
       tabPanel("progress",
       h4("processing"),
       verbatimTextOutput("pr-progress"),
@@ -119,7 +123,13 @@ fluidPage(
       div(class = "diff-container",
           h4("diff compare"),
           diffrOutput("diff_output")
-      ))
+      )),
+      tabPanel("about",
+               htmlOutput("md_html")
+      ),
+      tabPanel("helper",
+               htmlOutput("nb")
+      )
       
       # tabPanel("render",h4("rendered view"),
       #          uiOutput("xmlrendered")

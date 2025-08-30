@@ -25,6 +25,15 @@ get.transcript<-function(transcript){
 # traw<-tlist$txraw
 # defaults<-data.frame(id=1,h1="Act|Akt|Handlung",h2="Szene|Scene",speaker="Stormond,Iwanette,Golowin,Bender,Wolsey")
 # save(defaults,file = "default-values.RData")
+save_defaults<-function(rvdf){
+  load("default-values.RData")
+  print(head(defaults))
+  id<-rvdf[["id"]]
+  defaults[id,]<-rvdf
+  save(defaults,file="default-values.RData")
+  print("saved")
+  
+}
 load_defaults <- function(id=F) {
   # Replace this with your actual database query
   # Example database connection and query:
@@ -126,14 +135,6 @@ clean.t<-function(t,r,repldf){
   t3[1:150]
   t3<-gsub("%spknl%|%cast%","",t3)
   return(t3)
-}
-save_defaults<-function(rvdf){
-  load("default-values.RData")
-  print(head(defaults))
-  defaults[rvdf$id,]<-rvdf
-  save(defaults,file="default-values.RData")
-  print("saved")
-  
 }
 transform.ezd<-function(ezd,output_file){
   #ezdtemp<-tempfile("ezd.txt")

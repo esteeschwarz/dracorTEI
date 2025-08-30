@@ -12,7 +12,7 @@ source("functions.R")
 #sp.default<-"Iwanette,Golowin,Wolsey,Stormond,Bender"
 transcript<-"iwanette"
 output_file<-"www/r-tempxmlout.xml"
-
+output_file_ezd<-"www/ezdmarkup.txt"
 # Load defaults when app starts
 observe({
   # Load default speaker names from database
@@ -22,6 +22,8 @@ observe({
   updateTextInput(session, "speaker", value = defaults$speaker)
   updateTextInput(session, "h1", value = defaults$h1)
   updateTextInput(session, "h2", value = defaults$h2)
+  updateTextInput(session, "cast", value = defaults$cast)
+  
 })
 # Define server logic
 function(input, output, session) {
@@ -92,21 +94,28 @@ function(input, output, session) {
     filename="ezdxmlout.xml",
     content=function(file){writeLines(readLines(output_file),file)}
   )
+  output$downloadEZD<-downloadHandler(
+    filename="ezdmarkup.txt",
+    content=function(file){writeLines(readLines(output_file_ezd),file)}
+  )
   observeEvent(input$defaults.save,{
     rv$id.sf<-input$id.defaults.save
     rv$sp.sf<-input$speaker
     rv$h1.sf<-input$h1
     rv$h2.sf<-input$h2
     rv$cast<-input$cast
-    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
+#    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
+    #rvdf<-c(id=1,bla1="zwei")
+    #rvdf[["id"]]
+    rvdf<-c(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
     cat("observe sf...\n")
-    print(head(rvdf))
+    print(rvdf)
     save_defaults(rvdf)
     updateTextInput(session, "id.defaults.save", value = "settings saved...")
     # defaults$h1[4]<-".ufzug"
-    # defaults$h2[4]<-".uftritt"
+     #defaults$h2[4]<-".uftritt"
     # defaults$cast<-"Personen."
-    #  save(defaults,file = "default-values.RData")
+  #    save(defaults,file = "default-values.RData")
   })
   observeEvent(input$defaults.load,{
     defaults<-load_defaults(input$id.defaults.load)
@@ -121,6 +130,26 @@ function(input, output, session) {
     rv$h1.sf<-defaults$h1
     rv$h2.sf<-defaults$h2
     rv$cast<-defaults$cast
+  })
+  observeEvent(input$upload_repl,{
+    file<-input$upload_repl$datapath
+    repldf<-read.csv(file)
+    print(head(repldf))
+#    rv$repl<-repldf
+    # metadf<-fromJSON("repldf.json",flatten = T)
+    repl1<-rv$repl
+    print(colnames(repl1)[1:3])
+    print(head(repl1))
+    repldf$id<-1
+    mode(repl1$id)<-"double"
+    mode(repl1$string1)<-"character"
+    mode(repl1$string2)<-"character"    
+    colnames(repl1)[2:3]<-c("find","replace")
+    
+    repl2<-bind_rows(repl1[,1:3],repldf)
+    colnames(repl2)[2:3]<-c("string1","string2")
+    print(head(repl2))
+    rv$repl<-repl2
   })
   observeEvent(input$upload_repl,{
     file<-input$upload_repl$datapath
@@ -169,6 +198,28 @@ function(input, output, session) {
     })
     output$proutput <- renderText("transcript fetched...\n")
   })
+  observeEvent(input$upload_ezd,{
+    output$proutput <- renderText("processing...\n")
+    file<-input$upload_ezd
+    # ext<-tools::file_ext(file$datapath)
+    # req(file)
+    # validate(need(ext=="txt","please upload a plain text file"))
+    t4<-readLines(file$datapath)
+    #print(t4)
+   # t3<-repl.um(t4)
+    #t3
+    #t3<-clean.t(t3,1,rv$repl)
+    #t3
+    rv$t3<-t4
+    output$processed <- renderUI({
+      div(
+        style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
+        tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
+                 paste(rv$t3, collapse = "\n"))
+      )
+    })
+    output$proutput <- renderText("markup transcript fetched...\n")
+  })
   # Observe the submit button for fetching the transcript
   observeEvent(input$submit.doc, {
     output$apidoc <- renderUI({ div(tags$pre("Processing...")) })  # Show a loading message
@@ -210,6 +261,7 @@ function(input, output, session) {
     rv$heads <- t$vario  # Store the act headers in reactiveValues
     rv$h1.sf<-vario.1
     rv$h2.sf<-vario.2
+    writeLines(rv$t2,"www/ezdmarkup.txt")
     # Update the UI with the processed act headers
     output$proutput <- renderText(paste("level 1 headers found:\n",paste(rv$heads, collapse = "\n"),collapse = "\n"))
     output$processed <- renderUI({
@@ -249,6 +301,8 @@ function(input, output, session) {
     print("clean.t...")
    # t3<-get.front(t3)
     rv$t3<-t3
+    writeLines(rv$t3,"www/ezdmarkup.txt")
+    
     output$processed <- renderUI({
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",

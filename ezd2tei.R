@@ -303,7 +303,7 @@ parse_drama_text <- function(input_tx, output_file) {
           str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
         # <pb n="11">[11]</pb>
         #        p <- xml_add_child(current_scene, "p")
-        # p <- xml_add_child(sp, "p")
+       # p <- xml_add_child(sp, "p")
         write(processed,"debug.txt",append = T)
         
         xml_text(p) <- processed

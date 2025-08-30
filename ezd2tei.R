@@ -125,6 +125,8 @@ parse_drama_text <- function(input_tx, output_file) {
   current_scene <- NULL
   #line<-lines[length(lines)-2]
   speaker.a<-array()
+  speaker.b<-array()
+  speaker.ids<-array()
   scenes.t<-F
   # Traiter chaque ligne
   #line<-l1
@@ -136,6 +138,9 @@ parse_drama_text <- function(input_tx, output_file) {
     # ?str_detect
     line.true<-""
     line<-lines[k]
+    line<-gsub("^[ ]{1,5}","",line)
+    line<-gsub("[ ]{1,5}$","",line)
+    line<-gsub("[ ]{2,10}"," ",line)
     line
     write(k,"debug.txt",append = T)
     if(str_detect(line,"\\^",)){
@@ -232,10 +237,35 @@ parse_drama_text <- function(input_tx, output_file) {
       speaker <- gsub("[@.]","",str_trim(parts[2]))
       speaker.id<-paste0(tolower(speaker))
       speaker.id<-gsub(" ","_",speaker.id)
+      # speaker.id<-gsub(" ","_",speaker.id)
+      # speaker.id<-gsub("Ä","Ae",speaker.id)
+      # speaker.id<-gsub("Ä","Ae",speaker.id)
+      # speaker.id<-gsub("Ü","Ue",speaker.id)
+      # speaker.id<-gsub("Ö","Oe",speaker.id)
+      speaker.id<-gsub("ä","ae",speaker.id)
+      speaker.id<-gsub("ü","ue",speaker.id)
+      speaker.id<-gsub("ö","oe",speaker.id)
+      speaker.id<-gsub("ß","ss",speaker.id)
+      speaker.id<-gsub("[^a-zA-Z_]",".",speaker.id)
+      speaker.ids<-append(speaker.ids,speaker.id,after = k)
+      speaker.ids<-speaker.ids[!is.na(speaker.ids)]
+      
       speaker.a<-append(speaker.a,speaker,after = k)
       speaker.a<-speaker.a[!is.na(speaker.a)]
-      speaker.a<-gsub(" ","_",speaker.a)
-     # text <- str_trim(parts[3])
+#      speaker.b<-speaker.a
+      # speaker.a<-gsub(" ","_",speaker.a)
+      # speaker.a<-gsub("Ä","Ae",speaker.a)
+      # speaker.a<-gsub("Ä","Ae",speaker.a)
+      # speaker.a<-gsub("Ü","Ue",speaker.a)
+      # speaker.a<-gsub("Ö","Oe",speaker.a)
+      # speaker.a<-gsub("ä","ae",speaker.a)
+      # speaker.a<-gsub("ü","ue",speaker.a)
+      # speaker.a<-gsub("ö","oe",speaker.a)
+      # speaker.a<-gsub("ß","ss",speaker.a)
+      # speaker.a<-gsub("[^a-zA-Z_]",".",speaker.a)
+      
+      
+      # text <- str_trim(parts[3])
       line.true<-"speaker"
       # Traitement des numéros de page (150::)
       # text <- str_replace_all(text, "(\\d{1,4})::", "</p><pb n=\"\\1\"/><p>")
@@ -314,9 +344,11 @@ parse_drama_text <- function(input_tx, output_file) {
     }
   }
   speaker.a<-unique(speaker.a)
-  speaker.a
-  speaker.ids<-paste0(tolower(speaker.a))
-  for(sp in 1:length(speaker.a)){
+  #speaker.b<-unique(speaker.b)
+  speaker.ids<-unique(speaker.ids)
+#  speaker.a
+ # speaker.ids<-paste0(tolower(speaker.a))
+  for(sp in 1:length(speaker.ids)){
     person<-xml_add_child(xml_doc$listPerson,"person",sex="TODO",`xml:id`=speaker.ids[sp])
     xml_add_child(person,"persName",speaker.a[sp])
   }

@@ -35,6 +35,7 @@ function(input, output, session) {
     t3 = NULL,
     heads = "not defined...",
     speaker = array(),
+    sp.guess = NULL,
     speaker.crit = array(),
     h1.sf = "",
     h2.sf = "",
@@ -279,13 +280,21 @@ function(input, output, session) {
       )
     })
   })
-  observeEvent(input$submit.sp, {
+  observeEvent(input$guess.sp, {
+    print("guess speakers")
+    sp.guess<-guess_speaker(rv$t2,input$cast)
+    rv$sp.guess<-sp.guess
+    output$proutput<- renderText(paste("SPEAKERS guessed:\n",paste(sp.guess,collapse = "\n")))
+    updateTextInput(session, "speaker", value = paste0(sp.guess,collapse = ","))
+  })
+    observeEvent(input$submit.sp, {
     vario <- input$speaker
     print("getting speaker")
     #t <- get.speakers(t3, vario)  # Use the transcript stored in reactiveValues
     print(rv$cast)
     # t <- get.speakers(rv$t2, vario)  # Use the transcript stored in reactiveValues
     t4 <- get.castlist(rv$t2,input$cast)
+    t4<-t4$lines
     print("got cast...")
     t5<-get.front(t4)
     print("got front...")

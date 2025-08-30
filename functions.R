@@ -1,4 +1,27 @@
 
+guess_speaker<-function(t1,cast){
+  # t1 is character
+  ttemp<-tempfile("sp.txt")
+  writeLines(t1,ttemp)
+  t1<-readLines(ttemp)
+  t1<-readLines("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/breithaupt_renegat_exc.txt")
+  m<-grep("^.{3,30}\\.$",t1)
+  
+  m2<-grepl("[)(,]",t1[m])
+  m<-m[!m2]
+  sp.guess<-unique(t1[m])
+  sp.guess<-gsub("[@.]","",sp.guess)
+  sp.guess
+  sp.cast<-get.castlist(t1,cast)$cast
+  print(sp.cast)
+ # sp.cast<-gsub("(%cast%|")
+  sp.guess<-sp.guess[sp.guess%in%sp.cast]
+  #sp.return<-paste0(sp.guess,collapse = ",")
+  print(sp.guess)
+  return(sp.guess)
+  
+}
+
 extract_head_nodes <- function(html_file) {
   doc <- read_html(html_file)
   nodes <- xml_find_all(doc, "//*[self::script or self::link]")
@@ -257,9 +280,9 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
     r<-l:length(lines)
     m<-str_detect(lines[r],"^[$#]",)
     mw<-which(m)
-    mw<-mw[1]
-    mw<-l:r[mw-1]
-    mw
+    mw<-mw[1]-1
+    mw<-l:r[mw]
+    print(lines[mw])
     lines[mw]<-paste0(lines[mw],"%cast%")
     lines[mw]<-gsub("%spknl%","",lines[mw])
     write(mw,"debug.txt",append = T)
@@ -270,7 +293,7 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
   }
   }
    lines[1:100]
-  return(lines)
+  return(list(lines=lines,cast=lines[mw]))
  }
  #lines[1:150]
 # t6<-get.castlist(text)

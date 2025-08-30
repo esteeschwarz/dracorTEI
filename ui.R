@@ -79,6 +79,7 @@ fluidPage(
       #verbatimTextOutput("acts"),
      # actionButton("sumbit.keep.act","use act definitions"),
       helpText("declare speaker"),
+     actionButton("guess.sp","guess speakers"),
       textInput(
         "speaker",
         "speaker names:",

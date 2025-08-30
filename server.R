@@ -134,8 +134,12 @@ function(input, output, session) {
   observeEvent(input$upload_repl,{
     file<-input$upload_repl$datapath
     repldf<-read.csv(file)
-    print(head(repldf))
-#    rv$repl<-repldf
+    print(repldf)
+    repldf$replace<-gsub("\\\\n","\\\\\n",repldf$replace)
+    #  repldf$replace<-gsub("W","dummy",repldf$replace)
+    
+    print(repldf$replace)
+    #    rv$repl<-repldf
     # metadf<-fromJSON("repldf.json",flatten = T)
     repl1<-rv$repl
     print(colnames(repl1)[1:3])
@@ -146,31 +150,34 @@ function(input, output, session) {
     mode(repl1$string2)<-"character"    
     colnames(repl1)[2:3]<-c("find","replace")
     
-    repl2<-bind_rows(repl1[,1:3],repldf)
+    repl2<-bind_rows(repldf,repl1[,1:3])
     colnames(repl2)[2:3]<-c("string1","string2")
     print(head(repl2))
     rv$repl<-repl2
+    t3<-clean.t(rv$t1,1,rv$repl)
+    #t3
+    rv$t1<-t3
   })
-  observeEvent(input$upload_repl,{
-    file<-input$upload_repl$datapath
-    repldf<-read.csv(file)
-    print(head(repldf))
-#    rv$repl<-repldf
-    # metadf<-fromJSON("repldf.json",flatten = T)
-    repl1<-rv$repl
-    print(colnames(repl1)[1:3])
-    print(head(repl1))
-    repldf$id<-1
-    mode(repl1$id)<-"double"
-    mode(repl1$string1)<-"character"
-    mode(repl1$string2)<-"character"    
-    colnames(repl1)[2:3]<-c("find","replace")
-    
-    repl2<-bind_rows(repl1[,1:3],repldf)
-    colnames(repl2)[2:3]<-c("string1","string2")
-    print(head(repl2))
-    rv$repl<-repl2
-  })
+#   observeEvent(input$upload_repl,{
+#     file<-input$upload_repl$datapath
+#     repldf<-read.csv(file)
+#     print(head(repldf))
+# #    rv$repl<-repldf
+#     # metadf<-fromJSON("repldf.json",flatten = T)
+#     repl1<-rv$repl
+#     print(colnames(repl1)[1:3])
+#     print(head(repl1))
+#     repldf$id<-1
+#     mode(repl1$id)<-"double"
+#     mode(repl1$string1)<-"character"
+#     mode(repl1$string2)<-"character"    
+#     colnames(repl1)[2:3]<-c("find","replace")
+#     
+#     repl2<-bind_rows(repl1[,1:3],repldf)
+#     colnames(repl2)[2:3]<-c("string1","string2")
+#     print(head(repl2))
+#     rv$repl<-repl2
+#   })
   #test
  # repldf<-read.csv("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/repldf.csv")
   # mode(repl1$id)<-"double"

@@ -3,9 +3,9 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title type="main">Iwanette und Stormond</title>
-        <title type="sub">ein Trauerspiel, in drey Handlungen.</title>
-        <author>August Siegfried von Goué</author>
+        <title type="main">Der Renegat</title>
+        <title type="sub">ein bürgerliches Trauerspiel in fünf Aufzügen</title>
+        <author>Carl Theodor Breithaupt</author>
       </titleStmt>
       <publicationStmt>
         <publisher xml:id="dracor">DraCor</publisher>
@@ -34,14 +34,14 @@
     <front>
       <castList>
         <head>Personen.</head>
-        <castItem>Iwanette.</castItem>
-        <castItem>Stormond.</castItem>
-        <castItem>Der ältere Stormond, dessen Vater.</castItem>
-        <castItem>Bender, des ältern Stormonds Vertrauter.</castItem>
-        <castItem>Graf von Golowin.</castItem>
-        <castItem>Frau Wolsey.</castItem>
-        <castItem>Ein Medicus.</castItem>
+        <castItem>Zapor.</castItem>
+        <castItem>Orchan.</castItem>
+        <castItem>Grandlove.</castItem>
+        <castItem>Therise.</castItem>
+        <castItem>Welwood.</castItem>
+        <castItem>Einige Türken.</castItem>
       </castList>
+      <p>Auf der K. K. privilegirten Schaubühne zu Wien aufgeführet. Zu finden in Kraußens Buchladen nächst der kaiserl. könsgl. Burg. 1764.</p>
     </front>
     <body/>
   </text>

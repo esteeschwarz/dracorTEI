@@ -231,6 +231,8 @@ parse_drama_text <- function(input_tx, output_file) {
      line.true<-"front"
     }
    # line<-"@Iwanette."
+    #if (str_detect(line, "^@[^.]+\\.?", )&!line.true%in%c("title","subtitle","author","front")) {
+      
     if (str_detect(line, "^@[^.]+\\.?", )&!line.true%in%c("title","subtitle","author","front")) {
       parts <- str_match(line, "^@([^.]+?)\\.(.*)") #wks. wt transkribus
       parts <- str_match(line, "^@([^.]*)(.*)") # > in some former ezd markedup texts, the . after the speaker was removed before sending to ezd.py

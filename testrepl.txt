@@ -2,73 +2,74 @@
 @subtitle ein bürgerliches Trauerspiel in fünf Aufzügen
 @author Carl Theodor Breithaupt
 @front-1 Auf der
-K. K. privilegirten Schaubühne%front%
-zu Wien%front%
-aufgeführet.%front%
-Zu finden in Kraußens Buchladen%front%
-nächst der%front%
-kaiserl. könsgl. Burg.%front%
-1764.%front%
-%front%
-%front%
-^Personen.%cast%
-Zapor.%cast%
-Orchan.%cast%
-Grandlove.%cast%
-Therise.%cast%
-Welwood.%cast%
-Einige Türken.%cast%
-%cast%
-%cast%
-# Erster Aufzug.
-## Erster Auftritt.
+K. K. privilegirten Schaubühne
+zu Wien
+aufgeführet.
+Zu finden in Kraußens Buchladen
+nächst der
+kaiserl. könsgl. Burg.
+1764.
+
+
+^Personen.
+Zapor.
+Orchan.
+Grandlove.
+Therise.
+Welwood.
+Einige Türken.
+
+
+Erster Aufzug.
+Erster Auftritt.
 $Zapor, Welwood.
 Zapor. (zu Welwood, der ihm nachfolgt.)
 Schweig. Keinen Vorwurf mehr / wen
 ich dich hören soll.
 Was will dein Ungestüm
-@Welwood.%spknl%
+Welwood.
 Nichts, als dein wahres Wol
-@Zapor.%spknl%
+Zapor.
 Mein Wohl? du scheust dich nicht, mir dieses noch zu sagen
 Und überfällst mich stets mit unverschämten Klagen?
 3::
 
 
-@Welwood.%spknl%
+Welwood.
 So hör dies wenigstens, es ist der Klage werth=
 Was ich --
-@Zapor.%spknl%
-Entferne dich. Ich habe gnug gehört.
-@Welwood.%spknl%
+Zapor.
+Entferne dich. Jch habe gnug gehört.
+Welwood.
 Dieß foderst du , mein Freund? Darf ich dich noch so nen=
 nen,
 Dich, welchen Thränen schon nicht mehr erweichen können.
 Der so des Vaterlands, wie seiner Freunde, Feind,
 Den Vater selbst vergißt, der in der Ferne weint?
-@Zapor.%spknl%
+Zapor.
 Vergaß ich ihn zuerst? Er hat ja mich vergessen.
-@Welwood.%spknl%
+Welwood.
 Ach! stets hast du sein Herz, sein ganzes Herz besessen.
 Dies Herz, ganz Huld für dich, dem es stets offen war,
 Beut sich dir heute noch mit seiner Liebe dar.
-@Zapor.%spknl%
+Zapor.
 O hätt' es nicht für mich ein ewger Haß geschlossen,
 Er hätte mich gehört, als meine Thränen flossen,
 Denn welchen Vater giebts, dem nicht sein reuig Kind.
 Durch Thränen wahrer Noth Erbarmen abgewinnt?
-Ich flehte, seufzte, rang, mich wieder auszusöhnen
+Jch flehte, seufzte, rang, mich wieder auszusöhnen
 Umsonst. Er hörte nicht und fruchtlos waren Thränen.
 Starr, wie ein Fels, stand er und unerweichlich da,
 4::
 
 
+ein Trauerspiel.
 Da war kein holder Blick, der auf mich niedersah=
 Da schlug kein Vaterherz, als nur den Sohn zu hassen.
 Blieb mir da andrer Trost, als der, ihn zu verlassen?
 Hätt er mich je geliebt, so hätt er meiner Flucht
 Durch Nachsicht, und Verzeihn ein Hinderniß gesucht.
-@Welwood.%spknl%
+Welwood.
 Wär ihm sein Sohn so nah am Herzen nicht gesessen=
 Er würde sich bemühn, ganz seiner zu vergessen;
 So aber seufzet noch sein väterliches Ach,
@@ -85,13 +86,13 @@ Und ach! was fand ich denn? für mich Gefahr und Ketten,
 Am Abgrund einen Freund, ohn Hofnung, ihn zu retten.
 Da jeder treue Rath, der seine Pflicht ihm zeigt,
 Beleidigt, wenn er spricht, und sündigt, wenn er schweigt,
-@Zapor.%spknl%
+Zapor.
 Die Pflicht die du mir zeigst, kann ich getrost verlachen,
 Des Menschen erste Pflicht ist die, sein Glück zu machen.
 5::
 
 
-@Welwood.%spknl%
+Welwood.
 Ja mach es, mach dein Glück; doch gründe den Genuß
 Nicht auf des Freundes Qual, nicht, daß er seufzen muß,
 Wenn Freude dich berauscht. Sprich, was sind meine Schulden.
@@ -105,7 +106,7 @@ Mit welchem Stolz sah ich des Kindes Unschuld zu,
 Der frühen Tugend zu, voll Hofnung, mit Entzücken
 Sie dermaleinst gereift im Manne zu erblicken!
 Doch ach du bist dahin, du Himmel frommer Lust=
-Den sich mein Geist erschuf! In diese alte Brust,
+Den sich mein Geist erschuf! Jn diese alte Brust,
 Des bangen Athmens satt, kehrt solche Lust nie wieder,
 Der mich erfreuen soll, schlägt selbst den Trost mir nieder.
 Statt dieser Seligkeit, schreckt mich der Zukunft Nacht=
@@ -114,28 +115,29 @@ Mein Elend, hier/ wo mich der Tugend Feinde quälen
 Die schon durch Drohungen Unglückliche entseelen /
 Wo jedes Antlitz schreckt, Furcht und Gefahr sich mehrt,
 Und-Uebermas der Qual ! mich auch mein Freund nicht hört.
-@Zapor.%spknl%
+Zapor.
 Was überhäufst du mich mit diesen eitlen Klagen
 Verändre dein Geschick, wo nicht, so lern es tragen.
 6::
 
 
+ein Trauerspiel.
 Hier lebt, wo Fremde stets ein gleiches Schicksal traf,
 Der Muselman beglückt, und nur der Christ als Sklav.
-Ich selbst erlag, wie du gleich elend, meinen Banden,
+Jch selbst erlag, wie du gleich elend, meinen Banden,
 Eh ich mein Glück erkannt, mein wahres Heil verstanden.
 Wie grausam, dacht ich oft, fährt das Geschick mir mit,
 Das, taub bey allem Flehn, mich tiefer niedertritt!
 So lang ich dies gedacht, da blieben meine Tage
 Nur eine einzige nie unterbrochne Klage.
-Ich klagte. Klagen trieb nur Orchan mehr zur Wuth,
+Jch klagte. Klagen trieb nur Orchan mehr zur Wuth,
 Stets wuchs mein Gram, und stets entfiel mir mehr der Muth
 Noch hofft ich und schon lang hatt ich nichts mehr zu hoffen
 Allein Zeit und Vernunft macht uns die Augen offen,
 Worüber Vorurtheil des Irrthums Vorhang zieht=
 Gestärkt vom äussern Schein, bis Traum und Blendwerk flieht
 Aus Uebereilung ist von mir noch nichts geschehen,
-Ich habe Grund, was ich beschlossen, einzugehen.
+Jch habe Grund, was ich beschlossen, einzugehen.
 Dort eil ich zu der Qual, und jeder, der sich Freund,
 Der sich mein Vater nennt, ist heimlich doch mein Feind
 Hier weis ich es gewiß, daß ich mein Glück empfange,
@@ -143,12 +145,12 @@ Es krönet mich bereits, noch eh ich es verlange=
 Hier zeigt ein Paradies= und dort ein Abgrund sich.
 Sieh es, prüf meine Wahl, und nun verdamme mich.
 Grausamer! tadelst du, daß ich mein Glücke wähle?
-@Welwood.%spknl%
+Welwood.
 Welch ein Verführungsgeist verfinstert deine Seele!
 7::
 
 
-@Zapor.%spknl%
+Zapov.
 Was du Verführung nennst, ist wahres Heil für mich.
 Ein Heuchler schimpft aufs Glück und heimlich wünscht ers sich.
 Wer schilt den, der dem Ort, wo er Verdruß empfindet
@@ -162,57 +164,58 @@ Warum gab er uns denn ein Freuden fühlbar Herz?
 Den Trieben folget meins, die es beglückter machen;
 Die andern sind ein Traum, der flieht, wenn wir erwachen.
 Der wahre GOtt heischt nicht, daß ihn mein Herz verehrt,
-Ihn ehrend elend ist, sich selbst nicht angehört,
+Jhn ehrend elend ist, sich selbst nicht angehört,
 Nach andrer Wahne lebt. Daß wir uns quälen sollen.
 Für einen, der uns haßt, kann er unmöglich wollen.
 Der Schöpfer, dessen Zweck nur unsre Qual ersann,
-Ist der Geschöpfe GOtt nicht, er ist ihr Tyrann.
+Jst der Geschöpfe GOtt nicht, er ist ihr Tyrann.
 Heil mir! ihr seyd besiegt, ihr Träume blinder Jugend;
 Verleugnung seiner selbst ist eines Schwärmers Tugend.
-Ich nehme jedes Glück, das Klugheit uns vergönnt,
+Jch nehme jedes Glück, das Klugheit uns vergönnt,
 Drum thu ich eine That, die uns auf ewig trennt,
 Mich und --
-@Welwood.%spknl%
+Welwood.
 Was sagst du? ach! du eilst in dein Verderben.
 8::
 
 
+ein Trauerspiel.
 9::
-@Zapor.%spknl%
+Zapor.
 Nein, ewig meine Ruh von heut an zu erwerben,
 und
 —— Wie? du staunst?
-@Welwood.%spknl%
-Ist dies mein Freund, der mit mir spricht,
+Welwood.
+Jst dies mein Freund, der mit mir spricht,
 Der so voll Unschuld war! — GOtt! nein er ist es nicht!
-@Zapor.%spknl%
+Zapor.
 Er ists, den man verfolgt, und der in seinen Nöthen
 Zum Glücke Mittel fand, und nun durch den Propheten
 Noch heut —
-@Welwood.%spknl%
+Welwood.
 Nicht weiter! ach! verschone dieses Herz,
 Wenn du es einst geliebt. Mehr nicht noch seinen Schmerz!
 Was treibt, Elender, dich, zu so unseelgen Thaten?
 Ach Freund, du wirst doch nicht, — nicht deinen GOtt verra=
 then!
 Was seh ich? du wirst bleich. — Verräther, ists geschehn?
-@Zapor.%spknl%
+Zapor.
 Nein. Aber --
-@Welwood.%spknl%
+Welwood.
 O so hör annoch das letzte Flehn!
-Ich flehe nicht für mich, ich fleh für deine Seele.
+Jch flehe nicht für mich, ich fleh für deine Seele.
 
 
 10::
 O mögtest du es sehn, wie sich dein Vater quäle!
 Du warst sonst seine Lust, und bist nunmehr sein Schmerz,
 Sein Kummer. Stoß ihm nicht dazu den Dolch ins Herz!
-@Zapor.%spknl%
+Zapor.
 Stets ist der Vater da. Gnug! ich will ihn vergessen.
 Bestürme mich nicht mehr. Hatt ich sein Herz besessen,
 So hab ichs itzt doch nicht, was mir dein Mund auch sagt,
 So sehr dein Ungestüm mich quält und ihn beklagt.
-@Welwood.%spknl%
+Welwood.
 Freund, wenn je ein Gefühl von kindlich treuen Trieben
 Dich denen zugeneigt, die dich so zärtlich lieben;
 Wenn je dein Herz versucht, Verbrechen zu bereun,
@@ -225,33 +228,34 @@ Hast du dies je gefühlt, dies Selige, dies Glücke,
 O so beschwör ich dich, Freund, komm mit mir zurücke.
 Gönn deinem Vater doch, den nichts, als du, erfreut,
 Noch diesen letzten Trost, noch diese Seligkeit.
-@Zapor.%spknl%
+Zapor.
 So eilt ich denn dahin,
 hier alles einzubüssen!
 Er hat ja Freunde gnug
 er hat ja noch Therisen.
 
 
+ein Trauerspiel.
 11::
 Mit diesen tröst er sich. Mich lasse man allein,
 Was ich bey ihm nicht bin, hier ohn ihn glücklich seyn.
-@Welwood.%spknl%
+Welwood.
 Bewegt dich dieses nicht, kann es dich nicht erwecken,
 Abtrünniger! so laß dich denn den Abgrund schrecken,
 Der vor dir offen liegt, auch nur ein flüchtger Blick,
 Wenn du noch sehen kannst, zieht deinen Fuß zurück.
-@Zapor.%spknl%
-Ich sah ihn allzuwohl,
+Zapor.
+Jch sah ihn allzuwohl,
 drum hab ich ihn vermieden,
 Um nicht sein Raub zu seyn, erwähl ich Heil und Frieden.
-@Welwood.%spknl%
+Welwood.
 Du ihn vermieden? Ach du stürzest ja hinein.
 Glaub, Lastern folget Reu, auf Reue folget Pein,
 Und der die Strafe nach. Laß doch die Rache schlafen,
 Bald donnert sie daher, den Frevel zu bestrafen.
 Bedenke noch einmal den Schritt, den du gethan,
 Noch thun willst, und schon thust.
-@Zapor.%spknl%
+Zapor.
 Der gütige Orchan
 Erheitert mir das Glück von meinen künftgen Tagen.
 So feind bin ich mir nicht, mein Glück selbst auszuschlagen,
@@ -260,14 +264,14 @@ Verlör ich auch den Gott, der so nur straft und dräut.
 
 12::
 Der Renergl.
-@Welwood.%spknl%
+Welwood.
 Erschrecklicher Entschluß! Um Nichts, um Kleinigkeit
 Verräthst du deinen Gott, und Vaterland und Vater!
-@Zapor.%spknl%
-Um Nichts! Ist Glück denn nichts? Bald wird Orchan
+Zapor.
+Um Nichts! Jst Glück denn nichts? Bald wird Orchan
 mein Vater,
 Und Mahomet mein Gott.
-@Welwood.%spknl%
+Welwood.
 O Schöpfer, o Natur!
 So fehlte dieses noch, daß er auch euch verschwur!
 Hör Edward, wenn vielleicht, wenn dich voreilge Freunde
@@ -276,21 +280,22 @@ So mag es seyn, daß du den aus dem Herzen bannst,
 Und den voll Haß verfolgst, den du nicht lieben kannst;
 Allein was hat dein Gott, wenn dich auch Menschen hassen,
 Was hat dein Gott gethan? und du willst ihn verlassen:
-@Zapor.%spknl%
+Zapor.
 Hinweg Nichtswürdiger! Entfliehe meinem Blick,
 Laß mich im Einsamen, und störe nicht mein Glück!
-@Welwood.%spknl%
-Dein Glück? Ist hier auch Glück, so ist Glück in der Hölle,
+Welwood.
+Dein Glück? Jst hier auch Glück, so ist Glück in der Hölle,
 Und du Tyrann verdienst, daß es dich treff und fälle!
 
 
+ein Trauerspiel.
 13::
-@Zapor.%spknl%
+Zapor.
 Flieh, fürchte meinen Zorn, erkenne wer ich bin
-@Welwood.%spknl%
+Welwood.
 O Gott! so ist er denn unwiderbringlich hin!
-## Zweyter Auftritt.
-@Zapor.%spknl%
+Zweyter Auftritt.
+Zapor.
 Das ist nun seine Wuth, mir meine Ruh zu rauben!
 und dennoch wagts dies Volk und pralt mit einem Glauben
 Den es die Liebe nennt, spricht andern Lehren Hohn,
@@ -314,9 +319,9 @@ Da kommt ein Würdigrer.
 
 Der Renegät
 14::
-## Dritter Auftritt.
+Dritter Auftritt.
 $Zapor, Orchan.
-@Zapor.%spknl%
+Zapor.
 Großmüthiger Orchan,
 Nimm heut den reinsten Dank des vollen Herzens an.
 O könnte doch dein Blick in seine Tiefen sehen.
@@ -329,17 +334,18 @@ Da meine Noth zuerst dein huldreichs Ohr gewann,
 Da du erbarmend sprachst: Christ, werd ein Muselmann,
 Dann stehst du dich befreyt, dann schweigen deine Leiden,
 Dann seufzt nicht Wehmuth mehr, dann tönen sanfte Freuden.
-Du sprachst. Es ist geschehn. Ich sehe mich befreyt,
+Du sprachst. Es ist geschehn. Jch sehe mich befreyt,
 Die Wehmuth seufzt nicht mehr, um mich schallt Freudigkeit.
 Ja laß mich, o Prophet! des grösten Glücks auf Erden,
 Der Muselmänner Glück, Orchanens würdig werden.
 Ein jeder Trieb in mir sey Lob, sey Dank für ihn,
 Und laß den letzten erst mit meinem Leben fliehn.
-@Orchan.%spknl%
+Orchan.
 Wie ist es Seligkeit, dich also anzuhören,
-Wie hast du mich entzückt! Den Irrthum abzuschwören,
+Wie hast du mich entzückt! Den Frrthum abzuschwören,
 
 
+ein Trauerspiel.
 15::
 Der dich bisher verführt, verdientest du allein,
 Du bist es werth, Zapor, ein Muselman zu seyn.
@@ -347,9 +353,9 @@ Doch da dein künft'ges Heyl sich mit dem heut'gen Tage
 Auf ewig gründen wird; so hör, was ich dir sage,
 Gelobe, was durch mich dir der Prophet gebeut,
 Erfahre deine Pflicht.
-@Zapor.%spknl%
+Zapor.
 Befiehl, ich bin bereit.
-@Orchan.%spknl%
+Orchan.
 So schwör mir, alle die, die je sich Christen nennen,
 Dies Volk, das wir hier nur durch seine Laster kennen,
 Das den Propheten schmäht, so oftmals ihn bestritt,
@@ -374,8 +380,8 @@ Der Renegat.
 16::
 Bey dem geweyhten Stein am Grabe des Propheten, *
 Beschwöre dies.
-@Zapor.%spknl%
-Ich schwörs. War dieser Schwur vonnöthen?
+Zapor.
+Jch schwörs. War dieser Schwur vonnöthen?
 Der Feind von Mahomet sey ewig auch mein Feind,
 Wer ihn verschmäht, mein Haß und wer ihn ehrt, mein Freund.
 Du, der du sonst mein Ach, itzt meinen Schwur gehöret,
@@ -388,23 +394,24 @@ Zur Qual der Ewigkeit, wenn sich ein sanft Gefühl,
 Wenn Mittleid sich in mir für Christen regen will.
 Wenn mich ihr Elend rührt, wenn ich von deiner Lehre,
 Wenn ich, dir ungetreu, zum Irrthum wiederkehre!
-@Orchan.%spknl%
+Orchan.
 Genug. Nun hast du mich vergnügt.
-## Vierter Auftritt.
+Vierter Auftritt.
 $Orchan, Zapor, ein Türk.
-@Der Türk.%spknl%
+Der Türk.
 Herr, alles scheint,
 Da heute sich Zapor auf ewig uns vereint,
 Auch diesen heitern Tag verherrlichen zu müssen;
 * Einer ihrer gewöhnlichsten Schwüre:
 
 
+ein Trauerspiel.
 17::
 So eben hat der Sturm ein fremdes Schiff zerrissen.
 Ohnmächtig rangen sie bereits mit Flut und Tod,
 Allein wir endeten mitleidig ihre Noth,
 Und brachten sie ans Land, den Alten und die Schöne,
-Ein unglücksvolles Paar. Ich sah die traurge Scene
+Ein unglücksvolles Paar. Jch sah die traurge Scene
 Und das Gewühl der Angst, die dringende Gefahr,
 Wie in den Mienen Tod und Schrecken sichtbar war.
 Herr! ich gesteh es dir, wenn es nicht Christen wären,
@@ -414,7 +421,7 @@ Wie glücklich sind wir, Freund. Sie mögen deine seyn;
 Warum besitz ich nicht die Welt, sie dir zu weihn!
 Zapor (zu dem Türken.)
 Hast du den Sklaven schon die Fessel zubereitet?
-@Der Türk.%spknl%
+Der Türk.
 Von deiner Knechte Schaar geführet und begleitet
 Nahn sie bereits dem Thor. Mit Unmuth und mit Müh
 Trägt sich der Alte fort. Es wankt sein zitternd Knie.
@@ -422,12 +429,12 @@ Es scheint, daß Leid und Gram ihn dem nicht fernen Grabe,
 Gram, Jahrelanger Gram schon zubereitet habe.
 Die Schöne, deren Reiz doch von dem Auge blitzt,
 Obgleich Melancholie tief in demselben sitzt,
-Lenkt seinen schwachen Tritt. Ihr Führer triumphiret.
+Lenkt seinen schwachen Tritt. Jhr Führer triumphiret.
 Und sie verstummt und seufzt.
 
 
 18::
-@Orchan.%spknl%
+Orchan.
 Du scheinst dadurch gerühret.
 Unedel ist ein Herz, das über einen Feind
 Des großen Mahomets aus niederm Mitleid weint.
@@ -438,8 +445,8 @@ Der Iman wartet schon. Man jauchzt, man will dich sehn.
 Um die Moschee wühlt das freudigste Gedränge,
 Erfüll die Hoffnungen von der entzückten Menge,
 Dein Glücke, meinen Stolz.
-## Fünfter Auftritt.
-@Zapor.%spknl%
+Fünfter Auftritt.
+Zapor.
 Welch Vater gegen den,
 Der mich von sich verstieß! Wie so voll Tugenden,
 Voll edler Menschlichkeit. Er trocknet meine Zähren,
@@ -454,6 +461,7 @@ Fleuch in die Nacht zurück, entsetzlicher Gedanke!
 Es muß einmal geschehn. Zu lang ists, daß ich wanke,
 
 
+ein Trauerspiel.
 19::
 Daß mich ein Schatten schreckt. Fleuch! durch dich mischt der
 Schmerz
@@ -461,9 +469,9 @@ Sich meinen Freuden ein, und schleichet in mein Herz.
 Werd ich dich, wildes Herz, denn nie besiegen können!
 Auf! sey ein Mann, Zapor! Willst du dein Glück verkennen
 Ende des ersten Aufzuges.
-# Zweyter Aufzug.
-## Erster Auftritt.
-@Zapor.%spknl%
+Zweyter Aufzug.
+Erster Auftritt.
+Zapor.
 Nun endlich ists geschehn. Wie ruhig bin ich nun!
 Jetzt kann mein wildes Herz mit seinen Zweifeln ruhn
 Und o daß mich auch noch unselge Zweifel beugten,
@@ -482,12 +490,12 @@ Der Renegat.
 20::
 Gieb mir auch Muth, Prophet! mich deinem Dienst zu weyhn,
 Laß mich ganz Muselman, laß mich ganz heilig seyn!
-Gieß deine Stärkungen ins Innre meiner Seelen!
+Gieß deine Stärkungen ins Jnnre meiner Seelen!
 Wer kömmt! (er sieht sich um.)
 ach! muß mich denn schon wieder Welwood quälen!
-## Zweyter Auftritt.
-Welwood, Zapor.
-@Welwood.%spknl%
+Zweyter Auftritt.
+Velwood, Zapor.
+Welwood.
 Treuloser, bebst du nicht für vor volbrachten That?
 Erst ein Undankbarer, und nun ein Renegat!
 Sieh, was ergreifest du, und was hast du verschworen,
@@ -497,7 +505,7 @@ und nunmehr rufst du gar die Rache auf dein Haupt?
 O fürchtest du denn nicht, daß dich die bange Erde,
 Bang über deine That, hinunterreissen werde?
 Ach Edward!
-@Zapor.%spknl%
+Zapor.
 Nenne mir den Namen itzt nicht mehr.
 Nicht einer war für mich unseliger, als der.
 Nunmehr beglücket mich ein weit erfreuter Name,
@@ -506,7 +514,8 @@ Geh Quäler!
 
 
 21::
-@Welwood.%spknl%
+ein Trauerspiel.
+Welwood.
 Da dein Herz der Menschlichkeit Gefühl
 Nun hierlängst nicht mehr kennt und auch nicht kennen wil
 Wenn nun einst das Geschick ermüdet, mich zu quälen,
@@ -515,7 +524,7 @@ Und ich mit einer Brust, gehäufter Wunden voll,
 Tief blutend über dir, zurückekehren soll,
 Und meinen Kummer dann zu deinem Vater trage,
 Was willst du, daß ich ihm von seinem Sohne sage?
-@Zapor.%spknl%
+Zapor.
 Sag ihm, daß mitten hier in wilder Barbarey,
 Ein Herz, das Großmuth fühlt, ein Vaterherze sey;
 Daß hier die Väter nicht schuldlose Söhne hassen,
@@ -523,12 +532,12 @@ Nicht unversöhnlich sind, nicht von sich fliehen lassen,
 Sag, daß du den Befehl, den er dir gab, erfüllst,
 Daß du mich quälst, daß du -- Geh, sag ihm, was du willst
 Verlaß mich.
-@Welwood.%spknl%
+Welwood.
 Grosser GOtt! wie wird ihn dies noch quälen!
 Ach meine Rückkehr wird den guten Greis entselen.
 O unbarmherzger Sohn!
-## Dritter Auftritt.
-@Zapor.%spknl%
+Dritter Auftritt.
+Zapor.
 Geh Bösewicht einmal!
 Unseliges Geschöpf, zu deines Freundes Qual
 
@@ -538,18 +547,18 @@ Warf dich dein Gott ans Licht! Er schuf dich mich zu kränken;
 Doch der Gedank' entehrt. Laßt uns was würd'gers denken!
 Die Fremde, -- welch ein Bild! Schwell, stolzes Herz, empor! Sie ist hier, sie ist dein, glückseliger Zapor!
 Doch eine Christin — ach! hab ich da viel zu hoffen?
-Ist hier nicht ein Gesetz? Was steh ich so betroffen?
-Ists Mitleid oder Furcht? -- Wer quält auch beftiger,
+Jst hier nicht ein Gesetz? Was steh ich so betroffen?
+Jsts Mitleid oder Furcht? -- Wer quält auch beftiger,
 Als dieser Welwood quält!
-## Vierter Auftritt.
+Vierter Auftritt.
 $Zapor, Orchan.
 Orchan. (sagt zu einem Türken der mit ihm ge=
 kommey ist.)
 Ja. Führe sie hieher.
 (Der Türk geht ab.)
-## Fünfter Auftritt.
-$Orchan. Zapor, (steht in Gedanken.)
-@Orchan.%spknl%
+Fünfter Auftritt.
+$Orchan. Zavor, (steht in Gedanken.)
+Orchan.
 Zapor, hier laß mich dir die Sklaven übergeben.
 Dein Wink beherrsche sie. Er sey ihr Tod und Leben.
 Doch wie so stumm! Was hat dich so bestürzt gemacht,
@@ -557,8 +566,9 @@ Hat dir der Tag nicht Reiz, der, allen heiter lacht?
 Heut, heut Zapor! muß ich, statt redendem Entzücken,
 
 
+ein Trauerspiel.
 23::
-In deinem Auge Gram und stillen Schmerz erblicken!
+Jn deinem Auge Gram und stillen Schmerz erblicken!
 Zu dir versah ich mich nicht dieser stummen Pein.
 Allein ich merk' es schon, die That wird dich gereun -
 Mit Wehmuth quälst du dich, die Deinen zu verlassen,
@@ -568,7 +578,7 @@ Vielleicht findt da dein Herz, was es bey uns nicht fand.
 Geh, du bist niedrig gnug, dein Unglück zu verdienen,
 Verlaß hier Ehr und Glück, und kriech dort unter ihnen.
 Sey elend, sey ein Christ.
-@Zapor.%spknl%
+Zapor.
 Erschröcklicher Verdacht!
 Was hat so plötzlich mich bey dir verhaßt gemacht?
 Herr, konntest du denn nicht in meinen Thaten lesen,
@@ -578,7 +588,7 @@ Und, alles auf einmal, was that ich itzt erst nicht!
 Nein weit ein andrer Gram nährt sich in meinem Herzen,
 Die Schmerzen, die er schlägt, sind unheilbare Schmerzen,
 Denn er ist selber Schmach.
-@Orchan.%spknl%
+Orchan.
 Hast du mich je geliebt,
 Je etwas werth geschätzt, so sprich, was dich betrübt.
 Hier, Freund, beschwör ich dich, mir diese Schmach zu nennen,
@@ -587,14 +597,14 @@ Zapor, sprich.
 
 Der Renegai
 24::
-@Zapor.%spknl%
+Zapor.
 Werd' ich es auch ohn Erröthen können?
-Ich liebe, wiß es dann.
-@Orchan.%spknl%
-Ist dieses deine Schmach?
+Jch liebe, wiß es dann.
+Orchan.
+Jst dieses deine Schmach?
 Wie sehr verkennst du mich wie unnütz war dein Ach!
 Verdiente dieses wohl , mich und dich selbst zu quälen!
-Ich habe Sklavinnen. Du brauchst ja nur zu wählen.
+Jch habe Sklavinnen. Du brauchst ja nur zu wählen.
 Entdecke deine Wahl. Ein Wink, so wird sie dein,
 Der du dein Herz geschenkt, so kannst du glücklich seyn.
 Dein Will' ist ihnen Pflicht. Die schönste der Cirkassen,
@@ -605,36 +615,37 @@ Zapor, warum willst du denn nie den Trost mir gönnen,
 Dein Glücke wenigstens etwas erhöhn zu können,
 Wenn etwas ist, das es annoch erhöhen kann,
 Da du rechtgläubig bist?
-@Zapor.%spknl%
+Zapor.
 So höre mich, Orchan.
 Herr, nicht durch Zulimen, nicht durch Adelaiden,
-Ist meine Glut erregt. Die hab ich stets gemieden.
+Jst meine Glut erregt. Die hab ich stets gemieden.
 Nein, mein zu schwaches Herz -- Ja, Orchan, sie ist schön,
 Die Fremde, die heut erst -- Wie konnt' ich widerstehn?
 Du sahst sie doch, o Herr? Ach um uns zu entzücken,
 
 
+ein Trauerspiel.
 25::
 Was braucht ihr Reiz wohl mehr, als daß wir ihn erblicken
 Er rührte mich zu sehr, wie konnt ich ihm entfliehn?
 Mein ganzer Stolz entsank vor ihren Blicken hin,
 Ward Liebe.
-@Orchan.%spknl%
+Orchan.
 Willst du dich entweihn und mich betrüben
 Für Muselmänner ists Schimpf, Christinnen zu lieben.
 Nein hassen mußt du sie, sie muß vergessen seyn,
 Sie muß nicht mehr ein Herz, wie deines ist, entweihn.
-@Zapor.%spknl%
+Zapor.
 So soll ich! — ach wie schwer wird dies mein Herz ertragen
 Doch nein, ich will nichts mehr zu meiner Schande sagen,
-Ich folge, du befielst. Doch soll ich ganz sie fliehn,
+Jch folge, du befielst. Doch soll ich ganz sie fliehn,
 So laß mich ihrem Blick und meine Schmach entziehn.
-Ich mögte, wenn sie kömmt, nicht widerstehen können,
+Jch mögte, wenn sie kömmt, nicht widerstehen können,
 Unwürdig deiner seyn, und meinen Werth verkennen,
 Denn einer Schönen Schmerz, wenn sie uns hülflos fleht,
 Hat eine Macht, Orchan, der man nicht widersteht.
 (er will gehen.)
-@Orchan.%spknl%
+Orchan.
 So hör, Zapor, du weißt den Sinn von den Gesetzen,
 Ein Bund mit diesem Volk der würde sie verletzen.
 Wenn die Ungläubigen sich unsrer Lehre weihn,
@@ -645,108 +656,109 @@ So mag es seyn. Geh nur, du wirst noch glücklich seyn.
 Ich prüfe sie hier selbst. Wenn Herr und Noth befehlen,
 Und man sein Glücke sieht, wer wird da lange wählen?
 Gewis --
-@Zapor.%spknl%
+Zapor.
 Gieb, o Prophet! ihr dazu Neigung ein!
 Ich kann nicht ohne sie, und will nicht glücklich seyn.
-## Sechster Auftritt.
+Sechster Auftritt.
 Orchan, Grandlove, Therise,
 von einigen Türken geführet.
-@Grandlove.%spknl%
+Grandlove.
 Warum führt man mich her? Mir meinen Tod zu geben?
 Wohl! Wütriche, nehmt nur mein kummervolles Leben!
 Gebt dem Elenden Ruh!
-@Orchan.%spknl%
+Orchan.
 Nein, Alter, dein Geschick
 Läßt dich noch glücklich seyn, erkenne nur dein Glück.
-@Grandlove.%spknl%
+Grandlove.
 Ach nein, es hat zu sehr sich wider mich verschworen,
 Für mich ist alles Glück und alle Ruh verloren.
 
 
 27::
-@Orchan.%spknl%
+ein Trauerspiel.
+Orchan.
 Der ist sein Unglück werth, dem Alles Unglück scheint,
 Der, wenn sich Freude zeigt, dennoch untröstbar weint,
 Sey ruhig.
-@Grandlove.%spknl%
+Grandlove.
 Ach wer hat mehr Grund, als ich, zu weinen!
-@Orchan.%spknl%
+Orchan.
 Du Grund? und dein Geschick fängt an, die froh zu scheinen?
-@Grandlove.%spknl%
+Grandlove.
 Kein einz'ger Tag vergeht, er gräbt mich in die Pein,
 Und o wie tief gräbt mich der heut'ge wieder ein!
-@Orchan.%spknl%
+Orchan.
 Der heutig? Er hat dich ja dem Sturm entrissen?
-@Grandlove.%spknl%
+Grandlove.
 Zu selig hätt ich nur durch ihn ertrinken müssen!
-@Orchan.%spknl%
-Du wünschest Tod und Flut? Ist denn für deine Noth
+Orchan.
+Du wünschest Tod und Flut? Jst denn für deine Noth
 Die einz'ge Rettung nur Verzweifelung und Tod?
-@Grandlove.%spknl%
+Grandlove.
 Ein Schicksal, meinem gleich, was kann das wohl versüssen!
 
 
 28::
 Der Renegat.
-@Orchan.%spknl%
+Orchan.
 So laß michs wissen.
-@Grandlove.%spknl%
+Grandlove.
 Ach! was hilft es dir, zu wissen?
 Was hilft es dir, daß du, du fühlst sie doch nicht mit,
 Daß du die Leiden hörst, die ein Elender litt?
-@Orchan.%spknl%
+Orchan.
 Wenn du sie nicht verdienst, so bist du zu beklagen.
 Es ist der Unschuld Trost, ihr Unglück vorzutragen.
 Sprich, auch das grösseste nimt ein'ge Lindrung an,
 Wenn man es gleich nicht hebt.
-@Grandlove.%spknl%
+Grandlove.
 Dein Mitleid, Muselman,
 Wenn du es fühlst, ist doch nur Lust, mich mehr zu hassn.
-@Orchan.%spknl%
+Orchan.
 So willst du elend seyn, und die nicht helfen lassen!
-@Grandlove.%spknl%
+Grandlove.
 Nun wohl, erfahr es dann. Mir schien das größte Glück,
 Und izt fehlt mir der Trost. Nun weißt du mein Geschik,
 Erwarte weiter nichts.
 
 
 29::
-@Orchan.%spknl%
+Orchan.
 Ein trauriges Geschicke;
 Allein verdamme noch das zu gerechte Glücke.
 Bist du Elender nicht mit von der frechen Schaar,
 Die stets der größte Feind von dem Propheten war?
 Beklage noch, daß du in solche Noth gekommen!
-@Grandlove.%spknl%
+Grandlove.
 Dies hätte nimmermehr mir meine Ruh genommen.
-@Orchan.%spknl%
+Orchan.
 Der war es dann, der dir dein Glück in Abgrund trat,
 Ein Feind, der --
-@Grandlove.%spknl%
+Grandlove.
 Himmel! nein. Das liebste, was man hat,
 Ein Sohn --
-@Orchan.%spknl%
+Orchan.
 Dein eigner Sohn?
-@Grandlove.%spknl%
-Ist Schuld an allem Leide.
-@Orchan.%spknl%
+Grandlove.
+Jst Schuld an allem Leide.
+Orchan.
 Du haßtest ihn vielleicht?
 
 
 30::
-@Grandlove.%spknl%
+Grandlove.
 Ach! er war meine Freude.
 O du, vor dem ich oft, ins Einsame gehüllt,
 Nach ihm mit Thränen rang, die noch kein Trost gestillt.
 Du kennst des Vaters Schmerz und hörest seine Klagen.
 Du weißt es, seine Flucht macht alle meine Plagen,
 GOtt! unsers Schickfals Gott! du weißt, daß nie ein Zug
-In meiner Brust entstand, der für den Sohn nicht schlug.
+Jn meiner Brust entstand, der für den Sohn nicht schlug.
 Und einen einz'gen Sohn, o GOtt! könnt ich den hassen!
-@Orchan.%spknl%
+Orchan.
 So hat dich denn dein Sohn, den du geliebt, verlassen?
-@Grandlove.%spknl%
-Ach! es ist nur zu wahr. Ich hab ihm nachgeweint,
+Grandlove.
+Ach! es ist nur zu wahr. Jch hab ihm nachgeweint,
 Untröstbar, wenn er fehlt, schick ich ihm einen Freund,
 Den treusten nach. Umsonst. Auch den läßt sein Geschicke
 Zu Häufung meiner Noth nicht wiederum zurücke.
@@ -755,20 +767,21 @@ Noch immer ohne Freund, noch immer ohne Sohn.
 Herr, diese Tochter nur, sonst nichts ist mir geblieben.
 Bis dahin hat das Glück mir Trost und Ruh vertrieben,
 Bis dahin mich verfolgt.
-@Orchan.%spknl%
+Orchan.
 Hör Christ! da deine Noth
 Dir unerträglich fällt, und da dein Ach! kein GOtt
 
 
+ein Trauerspiel.
 31::
 Erbarmungsvoll erhört, so soll Orchan dich hören,
 Kein treuer Freund, kein Sohn braucht dir zurück zu kehren.
-Ich gebe zwiefach dir, was du verlorst, zurück.
+Jch gebe zwiefach dir, was du verlorst, zurück.
 Du bist ein Sklav, sey frey. Dein Leben und dein Glück
 Steht itzt in deiner Wahl. Sey klug. Du kannst auf Erden
 Noch der Beglückteste durch diese Tochter werden.
-Ihr Reitz verdienet nicht, daß ihn der Gram verzehrt,
-Ist eines bessern Glücks, ist eines Gläubgen werth.
+Jhr Reitz verdienet nicht, daß ihn der Gram verzehrt,
+Jst eines bessern Glücks, ist eines Gläubgen werth.
 (zu Therisen.)
 Laß ihn nicht so verblühn.
 Entschließ dich, junge Schöne,
@@ -781,12 +794,12 @@ Ein Bund mit Christinnen entehrt den Muselman.
 Erkenne nun dein Glück. Entsage deinem Wahn.
 Erkenne, daß ich dich hier mehr als glücklich mache;
 Allein sey nicht verstockt, sonst fürchte meine Rache.
-@Therise.%spknl%
+Therise.
 O Herr, so treib doch nicht mit unserm Jammer Spott.
 Sieh meinen Vater hier, welch Bild der tiefsten Nothl
-Sein ganzes Leben ist ein Gram. In diesen Zügen
+Sein ganzes Leben ist ein Gram. Jn diesen Zügen
 Sieh Jahrelangen Schmerz und sichtbarn Kummer liegen
-Ich bin sein einzger Trost. Mein kindlich treues Herz
+Jch bin sein einzger Trost. Mein kindlich treues Herz
 Empfindet seine Noth und blutet seinen Schmerz.
 
 
@@ -795,11 +808,11 @@ Es ist der Meinige. Wie könnt ich so ihn kränken,
 Und, indem er sich quält, auf Lust und Liebe denken!
 Kann ich ihm ohne Schuld den letzten Trost entziehn,
 Und ohne Strafbarkeit mich retten und ihn fliehn?
-@Orchan.%spknl%
+Orchan.
 Euch beide krönet Glück, wollt ihr durch unsre Lehren
 Nur euch entsündigen und euren Wahn verschwören.
 Nichts weiter.
-@Therise.%spknl%
+Therise.
 Sind wir hier nicht in der Barbarey,
 Wo Mordsucht herscht, so gieb, Herr, ohne das uns frey:
 Zwing unsre Herzen nicht zu eines Glaubens Lehren,
@@ -808,7 +821,7 @@ Gönn Unglückseligen die Rückkehr in ein Land,
 Woraus kein Laster sie, nur ihr Geschick verbannt.
 Ach blutete dein Herz je mit der Unschuld Wunden,
 Hat es die Menschlichkeit nicht stets fühllos gefunden,
-Ist je durch sie in dir das Mitleid aufgewacht,
+Jst je durch sie in dir das Mitleid aufgewacht,
 Dies göttliche Gefühl, das Menschen Ehre macht;
 So hab ein menschlichs Herz, so las dich überwinden
 So laß Hülflose doch durch Thränen Gnade finden!
@@ -816,8 +829,9 @@ Denn was läßt uns die Hand, die uns danieder schlägt,
 Als Thränen und ein Herz, das ohne Schulden trägt!
 
 
+ein Trauerspiel.
 33::
-@Grandlove.%spknl%
+Grandlove.
 Warum, o Muselman, willst du mir meinen Glauben,
 Den letzten, einzigen, den Trost im Tode rauben?
 Wenn gleich zum Abfall hier des Himmels Rache schweigt,
@@ -831,10 +845,10 @@ Soll ich auch elend noch nach meinem Tode werden?
 Jtzt kömmt und schwindet noch mein Jammer mit der Zeit
 Dann aber ists die Last von einer Ewigkeit,
 Verschon uns!
-@Orchan.%spknl%
+Orchan.
 Niedrer Sklav! du willst nach Unglück ringen!
 Wohlan! gehorchst du nibt, so weiß ich dich zu zwingen.
-@Grandlove.%spknl%
+Grandlove.
 Gut. Nimm mein Leben hin, es ist mir so zur Last.
 Dies kannst du, da du es in deinen Händen hast;
 Doch mein Gewissen kann kein Grimm zum Abfall zwingen.
@@ -842,24 +856,24 @@ Versuch es, martre mich. Es soll dir nicht gelingen.
 
 
 34::
-@Orchan.%spknl%
+Orchan.
 Verstockter Bösewicht, weißt du es, das Orchan
 Dich martern und zur Qual doch leben lassen kann?
 Euch Sklaven steht es an, eur Glück noch auszuschlagen
 (zu den Türken.)
 Kommt, folgt mir und sogleich bereitet ihre Plagen.
 (er drehet sich zu Grandloven und Therisen.)
-Ich zeig euch Thoren Glück und ihr wählt eure Pein!
+Jch zeig euch Thoren Glück und ihr wählt eure Pein!
 Gut! Pein, endlose Pein soll eure Strafe seyn.
 Erwartet sie und bebt!
-## Siebenter Auftritt.
+Siebenter Auftritt.
 $Grandlove, Therise.
-@Grandlove.%spknl%
+Grandlove.
 Welch ein Barbarl Wenn Thränen
 Umsonst sind, wie ist denn ein Wütrich zu versöhnen!
 O Himmel, wenn mein Sohn auch unter solche kam,
 Wie elend ist er dann und wie gerecht mein Gram!
-@Therise.%spknl%
+Therise.
 Mein Vater, kann uns nicht der Wütrich schon entseelen,
 Warum muß dich dein Sohn noch in Gedanken quälen?
 Hat dieser Streich, der uns so tief heut niederschlug,
@@ -867,30 +881,31 @@ Uns nicht schon gnug gequält? Sind wir nicht elend gnug?
 Er ist hin.
 
 
+ein Trauerspiel.
 35::
-@Grandlove.%spknl%
-Ich will mir die falsche Ruh nicht rauben.
-Ja. Ich will ihn entseelt zu meinem Troste glauben;
+Grandlove.
+Jch will mir die falsche Ruh nicht rauben.
+Ja. Jch will ihn entseelt zu meinem Troste glauben;
 Obgleich — elender Trost! kann ich der Ruh mich weihn,
 Und dennoch ungewis von meinem Sohne seyn?
-Ich bin doch Vater.
-@Therise.%spknl%
+Jch bin doch Vater.
+Therise.
 Ja. Nicht aber dir zur Plage.
 So ende doch einmal die gar zu lange Klage
 Um den verlohrnen Sohn: O wenn verstummet sie,
 Mein Vater?
-@Grandlove.%spknl%
+Grandlove.
 Ach ich fühls. Nie, liebe Tochter, nie
 Schon oft hab ichs versucht; allein es ist vergebens,
 Mein letztes Ach ist auch der letzte Hauch des Lebens.
-@Therise.%spknl%
+Therise.
 Nur gar zu sehr hat es schon Gram und Leid verzehrt,
 Und doch ist dieser Sohn nicht einer Thräne werth
 Von dir, nicht werth, daß er dir so am Herzen liege,
 Vergiß ihn.
-@Grandlove.%spknl%
+Grandlove.
 Wenn nur hier kein Vaterherze schlüge!
-In welchem die Natur für ihn zu mächtig spricht.
+Jn welchem die Natur für ihn zu mächtig spricht.
 
 
 36::
@@ -900,35 +915,35 @@ Sechs Jahre waren dir in Unschuld kaum verflossen,
 Als er von mir entwich. Ach! Huld war meine Pflicht,
 Denn Strafen züchtigen, allein sie bessern nicht;
 Doch zürnt, ich — o mein Sohn!
-@Therise.%spknl%
-Indem wir uns so kränken,
+Therise.
+Jndem wir uns so kränken,
 Vergessen wir es ganz, der Rache nachzudenken,
 Womit Orchan gedroht. Komm, laß uns zu ihm gehn.
 Und noch einmal vor ihm um unsre Rettung flehn.
-@Grandlove.%spknl%
+Grandlove.
 Was soll die Rettung mir annoch für Trost erwerben?
 Säh ich nur meinen Sohn, so wollt ich gerne sterben!
 Ach!
-@Therise.%spknl%
+Therise.
 Laß uns ruhig seyn. Aus jedem Winkel hört
 Die Wuth. Komm! (sie gehen, Grandlove seufzt wieder.)
 Seufzest du dennoch so ungestöhrt?
 O schweig, sonst zwingt man uns, gleich itzo zu erblassen!
-@Grandlove.%spknl%
+Grandlove.
 Wo soll ich meinen Schmerz und meinen Kummer lassen!
 (Ende des zweyten Aufzuges.)
 
 
 37::
-# Dritter Aufzug.
-## Erster Auftritt.
+Dritter Bufzug.
+Erster Auftritt.
 $Welwood und hernach Grandlove.
 Welwood (der sich umsieht.)
 Elender Welwood stirb! da ist sein Vater! --ach!
 So eilt er bis hieher auch seinem Unglück nach!
-@Grandlove.%spknl%
+Grandlove.
 Hier Welwood! Grosser GOtt! wen seh ich?
-@Welwood.%spknl%
+Welwood.
 Einen Alten,
 Den sein Verhängnis nur, zu leiden, aufbehalten,
 Der müd' ist, hier den Tag, der ihn verdrüst, zu sehn,
@@ -936,61 +951,63 @@ Müd um sein Leben mehr den Himmel anzuflehn.
 So bist du, theurer Sir, auch in dies Land gekommen,
 Wo Huld und Menschlichkeit allein nicht Sitz genommen!
 Was treibt dich bis zu uns hier in des Unglücks Nacht?
-@Grandlove.%spknl%
+Grandlove.
 Freund, wozu hat mich nicht schon dieser Sohn gebracht!
 Allein gelang es dir hast du ihn ausgefunden?
 Und was war dein Geschick?
 
 
+3
 
 
 38::
-@Welwood.%spknl%
+Welwood.
 Du reißest meine Wunden
 Von neuem wieder auf. Das Schicksal, das mich traf?
 Was kann man hier sonst seyn, als elend und ein Sklav?
 Doch was mich sonst verfolgt, Verhängnis, Sturm und Winde
-Ist Glücke gegen das, was ich anizt empfinde.
-@Grandlove.%spknl%
+Jst Glücke gegen das, was ich anizt empfinde.
+Grandlove.
 So theile sie mit mir, du der für mich mit trägt,
 Die Wunden, die das Glück dir meinetwegen schlägt.
-@Welwood.%spknl%
+Welwood.
 Sir, alles kund zu thun, was ich bisher ertragen,
 Macht dich nicht ruhiger, nicht minder meine Plagen.
-@Grandlove.%spknl%
-Ich leide gern mit dir, der mein Verschulden trug.
-@Welwood.%spknl%
+Grandlove.
+Jch leide gern mit dir, der mein Verschulden trug.
+Welwood.
 Bist du durch dein Geschick denn nicht schon elend gnug?
-@Grandlove.%spknl%
-Ich bins, und nur zu sehr hat mich sein Zorn getroffen.
+Grandlove.
+Jch bins, und nur zu sehr hat mich sein Zorn getroffen.
 Dein Anblick liesse mich zwar heitre Tage hoffen,
 Er wäre Glück für mich. Doch daß du elend bist,
 Verräth mir ein Geschick, das unversöhnlich ist.
 Erzähle.
 
 
+ein Trauerspiel.
 39:
-@Welwood.%spknl%
+Welwood.
 Könnte dir doch dieses Trost gewähren,
 Allein ich bin bestimmt, dir deine Noth zu mehren.
 Jedweder Tag, den ich vorüber wandlen seh,
 Bezeichnet mein Geschick mit einem neuen Weh.
 Doch litt' ich alles gern, ich fodre keine Freuden,
-Ich litte mit Gedult, dürft' ich alleine leiden;
+Jch litte mit Gedult, dürft' ich alleine leiden;
 Kein Seufzer sollte mir, kein murrend Ach entfliehn,
-Ich gebe selbst dem Gram mein ganzes Leben hin:
+Jch gebe selbst dem Gram mein ganzes Leben hin:
 Wenn mir der Himmel nur den Trost im Tode gönnte,
 Daß ich, eh er mich trift, dich ruhig sehen könnte.
 Könnt ich mit deinem Sohn dich ausgesöhnet sehn,
 Und hätte diesen Trost, daß es durch mich geschehn;
 Dann würde meinen Geist das seligste Entzücken,
 Und Freuden über euch der Sterblichkeit entrücken.
-@Grandlove.%spknl%
+Grandlove.
 Mehr als grosmüthger Freund! schweig und bedaure mich,
 Je mehr du elend bist, je strafbarer bin ich.
 Gerechte Vorsehung! So kann ich nichts auf Erden,
 Als selbst mein eigenes und andrer Unglück werden!
-@Welwood.%spknl%
+Welwood.
 Sir, warum klagst du dich als meinen Pein'ger an
 Der Himmel, der uns guält, hat der es nicht gethan?
 
@@ -998,9 +1015,9 @@ Der Himmel, der uns guält, hat der es nicht gethan?
 40::
 So stark er seinen Zorn mich auch empfinden lassen,
 Was konnt' ich anderst thun, als schweigen und mich fassen!
-@Grandlove.%spknl%
+Grandlove.
 Ach! kann ich standhaft seyn, da aller Trost gebricht!
-@Welwood.%spknl%
+Welwood.
 Seit du mich ausgeschickt, GOtt! was litt ich da nicht!
 Damals schiens, als wär ich von meinem Vaterlande
 Zum Unglück ausgespien, sein Abscheu, seine Schande.
@@ -1010,7 +1027,7 @@ O Himmel welche Nacht! Betrübtes Angedenken!
 Nie wird die Seele dich, als mit Entsetzen denken.
 Welch Sterben, welch Gewühl! Mast, Segel, Ruder bricht,
 Man schwimmt gedankenlos, sieht Erd und Himmel nicht,
-Hört nichts als Sturm und Ach. In jeder drohnden Welle
+Hört nichts als Sturm und Ach. Jn jeder drohnden Welle
 Schreckt ein entsetzlichs Grab, furchtbarer als die Hölle,
 Gedankenlos vor Angst klimmt man Gebürg' hinan,
 Und ruft den Himmel noch mit halben Seufzern an,
@@ -1022,78 +1039,80 @@ Nur sah ich mit dem Tag in einem öden Lande
 Sich Barbarn um mich freun, und fühlte meine Bande.
 
 
+ein Trauerspiel.
 41::
-@Grandlove.%spknl%
+Grandlove.
 Die Thräne treuer Freund, die mir vom Auge fließt,
 Fließt zweymal heftiger, da du mit elend bist.
 Doch laß mich dein Geschick hier nun auch, Welwood, hören,
-@Welwood.%spknl%
-Ich eile weg. Man kömmt, hier unste Ruh zu stören.
-@Grandlove.%spknl%
+Welwood.
+Jch eile weg. Man kömmt, hier unste Ruh zu stören.
+Grandlove.
 Bleib. Du hast mir ja noch vom Edward nichts gesagt.
-Ist er?
-@Welwood.%spknl%
+Jst er?
+Welwood.
 Du weißt genug, und hast genug gefragt.
-@Grandlove.%spknl%
+Grandlove.
 Antworte.
-@Welwood.%spknl%
+Welwood.
 Laß mich fliehn, man wird uns ewig trennen,
 Denn man es ausgeforscht, daß wir uns sprechen können.
-## Zweyter Auftritt.
+Zweyter Auftritt.
 $Grandlove, Therise.
-@Grandlove.%spknl%
+Grandlove.
 Du siehest so bestürzt. Der zornige Barbar
 Wird unbeweglich seyn?
 
 
 42::
-@Therise.%spknl%
+Therise.
 Es ist mehr, als zu wahr,
 Daß sie uns beyde noch zu Tode martern wollen.
 Ohnfehlbar sinnen sie itzt, wie wir sterben sollen.
 Ach ist den Wüthenden nicht unsre Qual genug!
-Ich sah sie, wie der Zorn Tod auf der Stirne trug.
+Jch sah sie, wie der Zorn Tod auf der Stirne trug.
 Aus ihnen lächelte der Mordgier wilde Freude,
 Und als sie mich ersahn, verbargen sie sich beyde.
-Ich rief und rief umsonst. Warum verbargen sich
+Jch rief und rief umsonst. Warum verbargen sich
 Die Grimmigen vor mir, wenn sie nicht öffentlich
-Sich, uns zu tödten, scheun? Ich zittre!
-@Grandlove.%spknl%
+Sich, uns zu tödten, scheun? Jch zittre!
+Grandlove.
 Laß sie wüthen!
 Mein Tod kann ihrer Wuth ein schnelles Ziel gebieten.
 Jetzt, liebe Tochter, komm, empfang an deiner Brust
 Voll treuer Zärtlichkeit des alten Vaters Lust.
 Auf einen Augenblick versiegen meine Wunden,
-Ich hab ihn wiederum, den treusten Freund gefunden.
+Jch hab ihn wiederum, den treusten Freund gefunden.
 Noch lebt uns Welwood. Er, so mancher Tugend voll, --
-Ich weiß nicht, ob ich mich freun, oder weinen soll,
+Jch weiß nicht, ob ich mich freun, oder weinen soll,
 So hat er mich gerührt, der treugesinnte Alte!
-@Therise.%spknl%
+Therise.
 Daß ihn doch, dir zur Ruh, ein hold Geschick erhalte!
 O wie erfreut es mich, daß ich dein ewges Weh,
 Mein Vater wenigstens etwas beruhigt seh.
 
 
+ein Trauerspiel.
 43::
 O möchte dir einmal der Himmel Freude geben,
 Und fodert er dafür auch gleich Therisens Leben,
-Ich gäb es willig hin.
-@Grandlove.%spknl%
+Jch gäb es willig hin.
+Grandlove.
 Nein, lebe, theurer Rest,
 Von allem, was zum Trost der Himmel übrig läßt!
 Therise, du allein, du nur kannst durch dein Leben
 Mir einst, wenns möglich ist, die Ruhe wieder geben.
-@Therise.%spknl%
+Therise.
 Fast hoff' ich, da er uns den Welwood wieder schenkt.
 Daß auch der Himmel einst auf unsre Rettung denkt.
 Wenn doch --
-@Grandlove.%spknl%
+Grandlove.
 Er will vielleicht nur eine Hoffnung zeigen,
 Und desto schrecklicher uns nachmals niederbeugen.
-@Therise.%spknl%
+Therise.
 Was sagte Welwood dir von dem entsohnen Sohn,
 Entdeckt' er ihn und wo?
-@Grandlove.%spknl%
+Grandlove.
 Er gieng betrübt davon.
 Er wurde recht gerührt, der gute Alte! Zähren
 Umflossen sein Gesicht, er ließ nur Seufzer hören.
@@ -1102,183 +1121,187 @@ So mischt sich dennoch stets ein trauriges Gefühl
 
 
 44::
-In meine Freuden ein. Ob ich ihn gleich gefunden,
+Jn meine Freuden ein. Ob ich ihn gleich gefunden,
 So heilt dies dennoch nicht, es stillt nur meine Wunden.
-Ich fühl es, daß in mir der Kummer leiser spricht,
+Jch fühl es, daß in mir der Kummer leiser spricht,
 Doch rechte Seligkeit, o Tochter, fühl' ich nicht.
 So etwas ist es nicht, als wie ich damals fühlte,
 Da eure Unschuld noch um meine Winke spielte,
-Du und der Irrende, den itzt mein Ach beweint;
+Du und der Jrrende, den itzt mein Ach beweint;
 Allein ein Sohn ist auch schätzbarer als ein Freund.
 O GOtt! wenn deine Huld mir einmal gönnen wollte,
 Daß ihn mein Auge noch einmal erblicken sollte,
 Dies ausgeseufzte Herz wie würd' es sich erfreun!
 Entzücken würd' in uns, rund um uns Himmel seyn.
-Ich weint' in seinem Arm, mich gänzlich zu beglücken, --
+Jch weint' in seinem Arm, mich gänzlich zu beglücken, --
 Gedanken voller Ruh! wie seyd ihr schon Entzücken
 Noch in der Einbildung! Durch euch, durch euch allein
-[Ich will euch denken] schläft mein wilder Kummer ein.
+[Jch will euch denken] schläft mein wilder Kummer ein.
 Wenn mir nur so mein Sohn voll Reue wieder käme,
 Und seine Gegenwart mir alles Leid benäme,
 Mir einmal gönnete, nach ausgestandner Pein
-Ihn wieder väterlich zu lieben, zu verzeihn;
+Jhn wieder väterlich zu lieben, zu verzeihn;
 Dann schmeckt' ich allen Trost beglückter Väter wieder,
 Dann, meiner Nachwelt werth, entsänken meine Glieder,
 Des müden Lebens satt, in ihre kühle Gruft,
 Wohin sie vor der Zeit Gram und Betrübnis ruft.
-@Therise.%spknl%
+Therise.
 GOtt voll Barmherzigkeit! o stille seine Klagen,
 Wo nicht, so nim mich hin. Wie kann ich sie ertragen!
 
 
+ein Trauerspiel.
 45::
-@Grandlove.%spknl%
-Ich hör ein wild Geräusch. Man kömmt. Soll unsre Noth --
-@Therise.%spknl%
+Grandlove.
+Jch hör ein wild Geräusch. Man kömmt. Soll unsre Noth --
+Therise.
 Was will der Barbar hier? O GOtt! Er bringt den Tod.
-## Dritter Auftritt.
+Dritter Auftritt.
 $Grandlove, Therise, einige Türken.
-@Ein Türk.%spknl%
+Ein Türk.
 Elende, zittert nur, uns vor euch zu erblicken,
 Doch alles, was euch trift, verdanket euren Tücken,
 (zu Grandlove.)
 Orchan gebietet mir, du sollst gefangen seyn,
 Du solst mir folgen. Folg!
-@Therise.%spknl%
+Therise.
 Wohin? Zu neuer Pein?
 Barbar, bist du auch schon, wie er, versteinert worden?
 Ach könnt ihr weiter nichts, als fesseln und ermorden!
-@Türk.%spknl%
+Türk.
 Nein, Schöne, deine Noth und dieses Alten Schmerz,
-Ich will es dir gestehn, benahm mir längst das Herz,
+Jch will es dir gestehn, benahm mir längst das Herz,
 Doch ist Gehorsam Pflicht.
-@Therise.%spknl%
+Therise.
 Nicht aber bey Barbaren.
 Wo willst du mit ihm hin?
 
 
+Der Reuergt.
 46::
-@Türk.%spknl%
+Türk.
 Du wirst es bald erfahren.
-@Therise.%spknl%
-Ich seh es, Grausamel ihr wollet nur sein Blut.
+Therise.
+Jch seh es, Grausamel ihr wollet nur sein Blut.
 Entdecke wenigstens, was sparet Orchans Wuth
 Für ihn für Marter auf?
-@Türk.%spknl%
+Türk.
 Kann ich dir dieses sagen,
 Und darf ich seinen Rath mich zu ergründen wagen?
-Ich bin ein Krieger. Dem ist Forschen keine Pflicht;
-Ich thu, was man befiehlt und untersuche nicht.
+Jch bin ein Krieger. Dem ist Forschen keine Pflicht;
+Jch thu, was man befiehlt und untersuche nicht.
 (zu Grandlove.)
 Fort! du hast ihn getrotzt.
-@Grandlove.%spknl%
+Grandlove.
 Soll ich dafür erblassen,
 Daß ich mich nicht von ihm zum Wahn verführen lassen,
 So reißt mich, Mörder, nur zu meinem Tode hin,
-Ich habe so kein Glück, da ich ohn' Edward bin!
+Jch habe so kein Glück, da ich ohn' Edward bin!
 (sie greifen ihn.)
-@Therise.%spknl%
+Therise.
 Zurück, Unmenschliche! Mein Vater, der soll sterben!
 Nein, wenn er sterben soll, müßt ihr mich erst verderben.
 
 
+ein Trauerspiel.
 47::
-@Grandlove.%spknl%
+Grandlove.
 O meine Theureste, sey ruhig, lebe hier.
 Mein Leid vollbracht zu sehn, dies Glück misgönnst du mir?
-@Therise.%spknl%
-Ich soll es sehn, daß man dich hier in Fesseln lege!
+Therise.
+Jch soll es sehn, daß man dich hier in Fesseln lege!
 Der Türk, (zu den andern.)
 Eilt, ihr Geschrey macht sonst noch Mitleid in euch rege.
 (sie fesseln Grandlove.)
-@Therise.%spknl%
+Therise.
 Unmenschen! wenigstens würgt mich mit ihm zugleich.
-@Türk.%spknl%
+Türk.
 Man halte sie zurück. Fort mit ihm! du entweich!
 (Grandlove wird weggebracht.)
-@Therise.%spknl%
+Therise.
 GOtt! kann die Hölle selbst wohl ungerechter quälen!
 (Sie steht ein wenig still, dann läuft sie aus
 Angst nach der andern Seite, wo ihr Zapor
 begegnet, dem sie zu Fuße fällt.)
-## Vierter Auftritt.
+Vierter Auftritt.
 Therise, Zapor.
-@Therise.%spknl%
+Therise.
 Dir fleh ich, end o Herr, den Jammer meiner Seelen,
 Hilf meinem Vater! hilf!
 
 
 48::
-@Zapor.%spknl%
+Zapor.
 Wie?
-@Therise.%spknl%
-Ich beschwöre dich,
+Therise.
+Jch beschwöre dich,
 Errett ihn. Willst du Blut, nimm meines, tödte mich.
 Zapor, (richtet sie auf.)
 Sey ruhig, seinen Tod vermagst du aufzuhalten,
 Wenn du ihn retten willst, braucht er nicht zu erkalten.
-@Therise.%spknl%
+Therise.
 Sprich denn, was muß ich thun?
-@Zapor.%spknl%
+Zapor.
 Ein einzges Mittel ist
-In dem Gesetz erlaubt, dadurch hilft sich der Christ,
+Jn dem Gesetz erlaubt, dadurch hilft sich der Christ,
 Wenn er den Tod verdient. Und des Gesetzes Willen,
 Und dieses einzige kannst du allein erfüllen,
 Dadurch erhältst du dir, verschmäh nicht unsre Huld,
 Den Vater, den du liebst, und tilgest deine Schuld.
-@Therise.%spknl%
+Therise.
 Mit welchem Namen soll ich dich, mein Retter, nennen!
 So willst du mit das Glück, ihn zu befreyen, gönnen!
 O fodre, was du willst, großmüthger Muselman,
 Es sey auch, was es sey, wenn er nur leben kann.
 
 
+ein Trauerspiel.
 49::
 Zapor, (für sich.)
 Wie ist sie angenehm, wie reitzen ihre Klagen!
 (laut.)
 Du mußt dann, Schöne. --
-@Therise.%spknl%
+Therise.
 Was? des Vaters Fessel tragen?
-@Zapor.%spknl%
+Zapor.
 Nein dies befreyt ihn nicht, da er es heut gewagt, --
-@Therise.%spknl%
+Therise.
 Was kann ihn dann befreyn?
-@Zapor.%spknl%
+Zapor.
 Was euch Orchan gesagt.
-@Therise.%spknl%
-Ich mich entheiligen! ich meinen GOtt verschwören!
-Ich von der Wahrheit gar zu dem Betruge kehren!
-@Zapor.%spknl%
+Therise.
+Jch mich entheiligen! ich meinen GOtt verschwören!
+Jch von der Wahrheit gar zu dem Betruge kehren!
+Zapor.
 Sey nicht unnütz verstockt. Eröffne deinen Blick,
 Dein Glücke liegt vor dir; Verirrte, sieh dein Glück.
-@Therise.%spknl%
+Therise.
 Unmenschen! rettet sonst kein Mittel ihn vom Sterben?
-@Zapor.%spknl%
+Zapor.
 Dies ist das einzige, die andern sind Verderben.
-@Therise.%spknl%
+Therise.
 O Himmel!
 
 
 50::
-@Zapor.%spknl%
+Zapor.
 Unnütz ist dein Ach und dein Geschrey.
 Bekenne dich zu uns, so wird dein Vater frey,
 Sonst — Schöne, du allein mußt dem Propheten glauben,
-Ihm läßt man seinen Trotz und seinen Aberglauben.
+Jhm läßt man seinen Trotz und seinen Aberglauben.
 Verachtet er sein Glück, so mag er elend seyn,
 Dich soll das seligste in meiner Glut erfreun.
 Nun wähle. Liebst du mich? willst du dem Wahn entsagen?
 Wie? oder soll ich dir sein Haupt entgegen tragen?
-@Therise.%spknl%
+Therise.
 Hör, Muselman, ich bin unglücklich und betrübt,
 Sieht man sein Glück, wer ist, der nicht sein Glücke liebt?
 Durch dich, der du mich quälst, seufzt mein gefangner Vater,
-Inbrünstig lieb ich ihn, den allerbesten Vater
-Ihn, den ihr Wütriche zum Tod in Ketten führt,
+Jnbrünstig lieb ich ihn, den allerbesten Vater
+Jhn, den ihr Wütriche zum Tod in Ketten führt,
 Der itzo schon vielleicht den letzten Hauch verliehrt;
 Noch stürb ich gern für ihn, und hätt ich hundert Leben,
-So hätt ich sie darum, sie für ihn Aufzugeben.
+So hätt ich sie darum, sie für ihn aufzugeben.
 Und darum fleh ich dir, dies ist mein einzigs Wohl;
 Doch foderst du, das ich den GOtt verläugnen soll,
 Der mich ihn lieben heißt, daß ich die Wahrheit hassen,
@@ -1289,9 +1312,10 @@ Uns stärkt der Christen Muth; wir sterben unerschüttert.
 (geht ab.)
 
 
+ein Trauerspiel.
 51::
-## Fünfter Auftritt.
-@Zapor.%spknl%
+Fünfter Auftritt.
+Zapor.
 Ha! Niederträchtiger! durch dich ist sie verbittert!
 Dies, Welwood, ist dein Werk. So glückt mirs wieder nicht!
 Welch ein verstockter Sinn, den auch nicht Drohung bricht!
@@ -1303,13 +1327,13 @@ Die deiner werth mich macht. O laß es mir gelingen,
 Laß mich ein heiliges, ein großes Werk vollbringen!
 Er, der von seinem Wahn so sehr verblendet ist,
 Er, dein geschworner Feind, der allerfrechste Christ,
-Der Sklave stirbt durch mich. Ich will sein Blut dir weihen,
-Ich weiß es, höhre Ruh wird mich dafür erfreuen. *
-Ihr alter Vater soll von hier zurücke ziehn,
+Der Sklave stirbt durch mich. Jch will sein Blut dir weihen,
+Jch weiß es, höhre Ruh wird mich dafür erfreuen. *
+Jhr alter Vater soll von hier zurücke ziehn,
 Denn da mir dies mislang, wozu gebrauch ich ihn?
 Die Tochter bleibet nur: erst will ich ihr vergönnen,
 Zu glauben, daß auch sie von hier wird reisen können.
-Ist nur ihr Vater fort: so halt ich sie zurück,
+Jst nur ihr Vater fort: so halt ich sie zurück,
 und wiedersetzt sie sich, erzwing ich dann mein Glück.
 * Es ist ein bey den mehresten Mahometanern gewöhnlicher
 Aberglauben / daß sie eine Stuffe höher in der Seeligkeit zu
@@ -1326,9 +1350,9 @@ Und dann ist nichts, das mir mein Glück erhöhen kann;
 Hilf göttlicher Prophet! Der sterbe, jener ziehe!
 Zapor, eil, daß dir nicht der Bösewicht entfliehe.
 (Ende des dritten Aufzuges.)
-# Vierter Aufzug.
-## Erster Auftritt.
-@Grandlove.%spknl%
+Vierter Aufzug.
+Erster Auftritt.
+Grandlove.
 (Der Schauplatz ist nur ein wenig erleuchtet.)
 Bin ich denn immer noch in der verhasten Welt,
 Wo mein Verhängniß mich wie angefesselt hält?
@@ -1337,11 +1361,12 @@ Du, der du mir mein Herz und meine Ruh genommen,
 Sohn, ungetreuer Sohn! so wird es nie geschehn,
 So soll ich in der Welt dich niemals wieder sehn!
 Warum, wenn dieses ist, verlängert man mein Leben,
-Warum zwang man mich nicht, sogleich es Aufzugeben?
+Warum zwang man mich nicht, sogleich es aufzugeben?
 Noch immer bin ich hier, wo keine Marter ruht,
 Noch immer Grausamen ein Schauspiel seltner Wuth!
 
 
+ein Trauerspiel.
 53::
 Werd' ich nie eine Welt, wie die verlassen können,
 Wo nur Ungläubige von heisser Nachgier brennen,
@@ -1349,16 +1374,16 @@ Wo sich im Ueberfluß das kühne Laster bläht,
 Die Unschuld unterdrückt, gefesselt Tugend geht.
 O GOtt! traf ihn nicht längst schon ähnliches Verderben,
 So laß mich meinen Sohn erblicken oder sterben!
-## Zweyter Auftritt.
+Zweyter Auftritt.
 Grandlove, Welwood.
-@Welwood.%spknl%
+Welwood.
 Sir, liebster Sir! --
-@Grandlove.%spknl%
+Grandlove.
 Du weinst! Freund, weinest du um mich
 So sey getrost, wer stirbt zufriedener, als ich?
-Ich bin ein Greiß, ich kann mein Leben ruhig schließen,
-Ich habe gnug gelebt.
-@Welwood.%spknl%
+Jch bin ein Greiß, ich kann mein Leben ruhig schließen,
+Jch habe gnug gelebt.
+Welwood.
 Laß diese Zähre fließen,
 Es ist das erstemal, daß sie vor Freuden fließt.
 Wie so sehr glücklich du in dieser Tochter bist!
@@ -1372,7 +1397,7 @@ Zu ihrer Niedrigkeit Gefühle sie zurück.
 Sie knirschen voller Scham, die dich zu tödten ringen.
 Therise eilt hieher, die Nachricht dir zu bringen.
 Nun tröste dich einmal, es endet deine Pein.
-@Grandlove.%spknl%
+Grandlove.
 Dies sagst du, Grausamer? und du machst sie allein.
 So wie ich itzo bin, ist ein verlängert Leben
 Für mich kein Trost. Du nur vermagst ihn mir zu geben,
@@ -1381,19 +1406,19 @@ O so ereilt mich doch das Grab in kurzer Zeit.
 Ach diese kurze Zeit soll ich auch, Welwood, schließen,
 Und mindstens nicht einmahl des Sohnes Schicksal wissen!
 Kannst du noch grausam seyn, kannst du noch meine Noth --
-@Welwood.%spknl%
+Welwood.
 Laß ab Unglücklicher, du hörest deinen Tod,
 Wenn du mich weiter frägst
-@Grandlove.%spknl%
+Grandlove.
 Kann ich was härters hören,
 Als ich bereits gehört? Ach! kann mein Schmerz sich mehren,
 Bin ich nicht ohne Sohn? Hab ich nicht Tod und Schwert --
-@Welwood.%spknl%
+Welwood.
 Nein, was erst recht dich quält, hast du noch nicht gehört.
 
 
 55::
-@Grandlove.%spknl%
+Grandlove.
 Wie? ist er in die Macht der Wütriche gesunken,
 Und hat etwa sein Blut der Mörderstahl getrunken?
 Kam er auch so, wie ich, in ein barbarisch Land,
@@ -1403,75 +1428,76 @@ Von neuem hätte sonst die Reu ihn eingenommen.
 Er hätte, denn wer war versöhnlicher, als er,
 Sich mit mir ausgesöhnt; allein er ist nicht mehr!
 Tyrannisches Geschick! ich muste hier verweilen,
-Ich konnte, da er fiel, nicht ihn zu retten eilen!
+Jch konnte, da er fiel, nicht ihn zu retten eilen!
 Hier unter Barbarn, fremd, ereilt mich noch das Grab,
 Noch eh ich ihm verzieh und meinen Segen gab.
 Und nun, nun soll ich nicht des letzten Trosts genießen,
 Und nun soll seine Hand nicht meine Augen schließen!
-GOtt der Barmherzigkeit! Ist dies der Treue Lohn?
-Ist dies des Alters Trost? Ach Edward! ach mein Sohn!
+GOtt der Barmherzigkeit! Jst dies der Treue Lohn?
+Jst dies des Alters Trost? Ach Edward! ach mein Sohn!
 (sie weinen beyde.)
-Ich seh es, Grausamer, du willst es mir nicht sagen.
+Jch seh es, Grausamer, du willst es mir nicht sagen.
 Warum hältst du zurück? Dies mehrt nur meine Plagen
-Vollend nur. Ist es so? Erschlug ihn ein Tyrann?
+Vollend nur. Jst es so? Erschlug ihn ein Tyrann?
 Dies ist das ärgste doch, was ich erfahren kann.
 Sprich, Welwood, sollte dies den alten Vater quälen?
-@Welwood.%spknl%
+Welwood.
 Nein, was empfindlichers. Ach! es wird dich entseelen!
 
 
 
 
 56::
-@Grandlove.%spknl%
+Grandlove.
 So sucht er uns vielleicht, und unsers Schicksals Schluß
 Will, daß ihm weder ich noch du erscheinen muß?
 Wie? Oder wollt er nicht mit dir zurücke kehren,
 Nicht deine Warnungen, nicht deine Bitten hören?
 O rede nur, es mag auch, was es wolle, seyn,
 Nur länger häufe nicht durch Zögern meine Pein.
-@Welwood.%spknl%
+Welwood.
 Dein Sohn --
-@Grandlove.%spknl%
+Grandlove.
 Er ist nicht mehr?
-@Welwood.%spknl%
+Welwood.
 Nein, liebster Sir! Er lebet.
-@Grandlove.%spknl%
+Grandlove.
 Er lebt? Grausamer Freund, wie hat mein Herr gebebet!
 Ach ist er noch mein Sohn, o so entzieh ihn nicht,
 Laß dieses Aug ihn sehn, eh es im Tode bricht.
 Ach nein ich such ihn selbst, er wird mir doch nicht fluchen,
 Wenn du noch Mitleid hast, so komm und hilf ihn suchen,
 Wo ist er? wo? Komm mit.
-@Welwood.%spknl%
+Welwood.
 Wenn er gleich reuig ist,
 Weißt du denn, ob man nicht den Weg zu ihm verschließt?
 Ob sie ihn dir befreyn? ob dich die Barbarn hören?
 
 
+ein Trauerspiel.
 57::
-@Grandlove.%spknl%
+Grandlove.
 O wer kann einen Sohn dem Vater wohl verwehren!
-@Welwood.%spknl%
+Welwood.
 Wenn du ihn suchen willst, brauchst du nicht weit zu gehn
 Noch heute kannst du ihn an diesem Orte sehn.
-@Grandlove.%spknl%
+Grandlove.
 Hier? o so führ' ihn her, daß ich ihn gleich erblicke,
 Daß ich den liebsten Sohn an dieses Herze drücke,
 Damit sein Haß, worin er sich so schrecklich irrt,
 Durch unsre Umarmung einmal getilget wird.
-Geh, liebster Welwood, geh. Ich sterbe voller Freuden,
+Geh, liebster Welwood, geh. Jch sterbe voller Freuden,
 Die Barbarn sollens sehn und meinen Tod beneiden.
-@Welwood.%spknl%
+Welwood.
 Ja, guter Vater, ja. Dein Sohn lebt und ist hier,
 Allein ihn gleich zu sehn, begehre nicht von mir.
 Denn ach! ich bin verdammt, dir deine Noth zu mehren,
 Gieb Acht, du wirst von mir itzt was erschröcklichs hören.
-@Grandlove.%spknl%
-Ich zittre, rede.
-@Welwood.%spknl%
-GOtt! Ich kann nicht! --
-@Grandlove.%spknl%
+Grandlove.
+Jch zittre, rede.
+Welwood.
+GOtt! Jch kann nicht! --
+Grandlove.
 Ach er ist
 Doch seinem GOtte treu? er litt doch als ein Christ,
 
@@ -1485,50 +1511,51 @@ Soll einer elend seyn, so mag Zapor es seyn.
 (laut)
 So wisse dann, er ist seit den betrübten Tagen
 Nunmehro -- wiß, er ist -- ich kann es dir nicht sagen!
-@Grandlove.%spknl%
+Grandlove.
 Gerechter GOtt! war er den Prüfungen zu schwach,
 War ihro Wuth zu stark, und gab sein Glaube nach?
-@Welwood.%spknl%
+Welwood.
 Mein Grandlov, laß uns hier beid unsern Schmerz vereinen,
 Dein Sohn, dein Edward ist — ach laß mich gehn und weinen.
 Dritter Auftrit.
 Grandlove, Welwood, Therise.
-@Therise.%spknl%
+Therise.
 Mein Vater, freue dich, wir sind aus aller Noth!
-@Grandlove.%spknl%
+Grandlove.
 Und wie?
 
 
+ein Trauerspiel.
 59::
-@Therise.%spknl%
+Therise.
 Sie wollen nicht die Barbarn, deinen Tod.
 Dem Himmel sey gedankt für dein geschätztes Leben!
 Allein wir müssen uns gleich itzo weg begeben,
 Dies ist, was man befiehlt. Nun komm, laß alles Leid
 Sich einmal endigen.
-@Grandlove.%spknl%
-Ist Welwood auch befreyt?
+Grandlove.
+Jst Welwood auch befreyt?
 Darf er auch seiner Noth mit uns zugleich entfliehen?
-@Therise.%spknl%
-Ich gaube nicht, allein --
-@Grandlove.%spknl%
+Therise.
+Jch gaube nicht, allein --
+Grandlove.
 So will ich auch nicht ziehen.
-@Welwood.%spknl%
+Welwood.
 Zieh, eh man widerruft, denn ein Ungläubger hält
 Treu und Versprechungen, so lang es ihm gefällt.
 Mir ist es Trost genug, wenn du der Noth entrissen,
 GOtt wird zu rechter Zeit mich auch zu retten wissen,
 Wenn es mir heilsam ist. Entzieh dich künftiger Pein.
-@Grandlove.%spknl%
+Grandlove.
 Dies kannst du fodern!
-@Welwood.%spknl%
+Welwood.
 Ja.
 
 
 60::
-@Grandlove.%spknl%
+Grandlove.
 GOtt! du sollst elend seyn,
-Ich ziehen! Nimmermehr.
+Jch ziehen! Nimmermehr.
 Therise. (Zu Welwood.)
 So zieh du, ich will bleiben.
 Durch Marter sollen sie mich nicht zum Abfall treiben.
@@ -1540,18 +1567,19 @@ Verachten kann ich sie. Den GOtt, der uns erhält,
 Verlaß ich um kein Glück, um keine ganze Welt.
 Ach! ja mein Vater flieh, flieh nach den fernsten Ländern,
 Gleich itzt kann der Tyrann sich im Entschliessen ändern.
-@Grandlove.%spknl%
+Grandlove.
 Halt ein, geliebtes Kind! dein Vorsatz quälet mich.
-Ich wär ein Ungeheur, kein Vater, ließ ich dich
+Jch wär ein Ungeheur, kein Vater, ließ ich dich
 Zum Opfer ihrer Wuth, und flöh aus deinen Armen.
-@Therise.%spknl%
-Ihr schneller Uebergang vom Wüthen zum Erbarmen
+Therise.
+Jhr schneller Uebergang vom Wüthen zum Erbarmen
 Treibt mir Entsetzen aus. Sir, was mir den Verdacht,
 Der für dein Leben mir so bange Sorgen macht,
 Noch mehr bestärkt, ist dies. Jtzt, da ichs wagen wollte,
 Zum letztenmal zu flehn, daß er dich lassen sollte,
 
 
+ein Trauerspiel.
 61::
 Such' ich und find' ihn nicht. Bleich, keichend und betäubt,
 Wie ein unseliger, den sein Gewissen treibt,
@@ -1560,7 +1588,7 @@ Dreymal versuch ich es, nach Menschen laut zu schreyen
 Umsonst. Nichts läßt sich sehn. Nur wimmerte ein Laut
 Wie eines Sterbenden. Mir schauderte die Haut,
 Noch einmal seufzts mir nach, wie dumpfig aus der Höle.
-Ich starr ohnmächtig hin, Entsetzen in der Seele.
+Jch starr ohnmächtig hin, Entsetzen in der Seele.
 Auf einmal kömmt Zapor, und trägt uns Freyheit an,
 O wollt' er es im Ernst, er hätt es nicht gethan.
 So schnell wird Großmuth nicht bey Wütrichen erwachen,
@@ -1577,26 +1605,26 @@ Wie! wenn dies treue Aug' aus sichrer Ahndung weint,
 Wenn ich, mein Vater, dich! und dich getreuer Freund,
 Wie! wenn ich euch anitzt zum letztenmale sähe!
 Wenn ich! -- ach laßt uns fliehn!
-@Grandlove.%spknl%
+Grandlove.
 Hoffst du, daß dies geschehe?
 
 
 62::
-@Therise.%spknl%
-Ich hoff' es, guter Sir.
-@Grandlove.%spknl%
+Therise.
+Jch hoff' es, guter Sir.
+Grandlove.
 Nein, es wird nicht geschehn.
 Nein, ihn verlaß ich nicht, eh ich ihn nicht gesehn.
 Wiß, endlich hab ich dir was freudiges zu sagen.
 Nach so viel traurigen, so viel durchweinten Tagen
-Ist Edward wieder da. Er lebt noch und ist hier.
-@Therise.%spknl%
+Jst Edward wieder da. Er lebt noch und ist hier.
+Therise.
 Dein Sohn ist wieder da?
-@Grandlove.%spknl%
+Grandlove.
 Ja. Welwood sagt es mir.
-@Therise.%spknl%
+Therise.
 Mein Bruder? Grosser GOtt! welch unverhoftes Glücke!
-Ich geh, ich will ihm flehn, er soll mit uns zurücke.
+Jch geh, ich will ihm flehn, er soll mit uns zurücke.
 Er soll, der sie dir macht, von dieser tiefen Pein
 Dein Herz beruhigen und wieder unser seyn.
 Hört er mein Bitten nicht, so sollen Thränen fließen,
@@ -1607,21 +1635,22 @@ Um das, was heilig ist, und so gedacht kann werden,
 Bey aller seiner Pflicht, bey jedem Glück auf Erden,
 
 
+ein Trauerspiel.
 63::
 Bey seiner Seeligkeit, bey seines Vaters Ach
 Beschwör ich ihn, er soll. Er giebt doch endlich nach.
-Ich will ihn bitten, flehn, ermahnen und beschwören.
-Ich laß ihn nicht, er soll mich tödten oder hören.
-@Grandlove.%spknl%
+Jch will ihn bitten, flehn, ermahnen und beschwören.
+Jch laß ihn nicht, er soll mich tödten oder hören.
+Grandlove.
 Ja, eile, mich durch ihn ganz wieder zu erfreun,
 Er wird kein Unmensch doch und noch mein Edward seyn.
-@Therise.%spknl%
+Therise.
 Komm Welwood, hilf mir flehn, selbst unter den Barbaren
 Will ich --
-@Welwood.%spknl%
+Welwood.
 Unglückliche! was ringst du, zu erfahren!
-## Vierter Auftritt.
-@Grandlove.%spknl%
+Vierter Auftritt.
+Grandlove.
 Sie geht. Beredsamkeit vom Himmel geh ihr nach,
 Mach allen Widerstand vor ihren Thränen schwach,
 Gieb ihren Worten Kraft, Gewalt gieb ihrer Zähre,
@@ -1641,10 +1670,10 @@ Nur diesem Sohn gieb Reu, gieb ihn dem Vater wieder,
 Noch schleicht die Furcht für ihn durch alle meine Glieder.
 Ostille, mächt'ger GOtt! der unsre Thränen zählt,
 Die bangen Ahndungen, womit mein Herz sich quält!
-## Fünfter Auftritt.
+Fünfter Auftritt.
 $ Grandlove in der Ferne, Zapor tritt vorn aufs
 Theater, mit einem Dolche in der Hand.
-@Zapor.%spknl%
+Zapor.
 Hier blieb er, sagt man mir, als beyde weggegangen,
 Wart Bösewicht, du sollst gleich deinen Lohn empfangen!
 (er bleibt stehen.)
@@ -1658,6 +1687,7 @@ Zapor ach! eh du schlägst, laß doch die Rachgier ruhn,
 Was willst du? Einen Mord! Zapor, was willst du thun?
 
 
+ein Trauerspiel.
 65::
 Warum verfolgst du ihn mit diesem wilden Grimme!
 Was hat er dir gethan? — Ach! welche bange Stimme
@@ -1667,7 +1697,7 @@ Unseliges Gefühl, du darfst dich in mir regen?
 Dich Mitleid kenn ich nicht. Du sollst mich nicht bewegen;
 Verdient der nicht den Tod, der den Propheten schmäht?
 So ists. Unselig ist ein Herz, das widersteht!
-Ist Welwood nicht ein Christ, schmäht er nicht den Propheten?
+Jst Welwood nicht ein Christ, schmäht er nicht den Propheten?
 Elender Muselmann! und du bebst, ihn zu tödten!
 Geh, tödte! sey ganz Wuth! Straf ihn für deinen Schmerz!
 Geh und entreiß ihm gleich sein schmähsuchtsvolles Herz!
@@ -1676,7 +1706,7 @@ Mord ist Religion, geheiliget die Rache!
 Grandlove, (von weiten.)
 GOtt stärk ihn, wenn er wankt und nur noch zweifelnd glaubt!
 Daß mir sein edles Herz, nicht Wahn und Lüge raubt!
-@Zapor.%spknl%
+Zapor.
 Er lästert! -- Und er soll so ungestraft dies wagen?
 Zu lange säumt mein Arm.
 (er läuft einige Schritte, bebt aber plötz=
@@ -1692,7 +1722,7 @@ Was irrt ihr hier herum?
 Was wandelt ihr so bleich, so blutig vor mir um,
 Gespenster aus der Nacht! — Seyd ihr heraufgekommen,
 Die heiligfromme Wuth, die mich ganz eingenommen,
-Zu unterstützen! — Wohl. Ich bin allein zu schwach.
+Zu unterstützen! — Wohl. Jch bin allein zu schwach.
 Kommt, stärkt mich. O Prophet, du schicktest sie mir nach,
 Du billigest den Mord, hilf mir ihn auch vollbringen,
 Hilf unerbittlich seyn, hilf mir mein Herz bezwingen!
@@ -1701,12 +1731,12 @@ Nein. Nun ist alles aus. Von neuen lästert er!
 Auf! --
 (Er rafft den Dolch auf und läuft nach
 dem Orte, wo Grandlove betet.)
-Ach! was reißt mich fort! Ich halte mich nicht mehr!
+Ach! was reißt mich fort! Jch halte mich nicht mehr!
 (Man hört ein klägliches Geschrey.)
-@Grandlove.%spknl%
+Grandlove.
 Unmenschlicher Barbar! laß ab, mich zu verderben,
-Ich sterbe.
-@Zapor.%spknl%
+Jch sterbe.
+Zapor.
 Mögte doch die Seele mit dir sterben! --
 Dies Welwood ist dein Lohn: Dein Flehn wird nicht gehört.
 Ein Bösewicht, ein Christ, ist der des Mitleids werth?
@@ -1716,15 +1746,16 @@ Hört, er wird über mich, eh er stirbt, Rache schreyn,
 Und allen Gift als Christ im Tode von sich speyn.
 
 
+ein Trauerspiel.
 67::
 Itzt werden Schmähungen aus seinem Munde fahren,
 Wovor die Hölle bebt!
 Grandlove, (schwach.)
 Vergieb, GOtt! dem Barbaren,
 Dem Mörder, der mich schlägt. Laß ihn die That gereun!
-@Zapor.%spknl%
+Zapor.
 Was hör ich? Schmäht er nicht? Nein dieses kann nicht seyn,
-Ich höre nicht, daß ihn der Schlag ergrimmter mache,
+Jch höre nicht, daß ihn der Schlag ergrimmter mache,
 Er speyt nicht Schmähungen, schreyt über mich nicht Rache!
 Was hab ich denn gethan? Zapor, verirrst du dich.
 Ach wenn dies ist, wer ist unseliger, als ich!
@@ -1732,51 +1763,52 @@ Der hier stirbt, kann noch Huld für seinen Mörder suchen,
 Nein, dies ist Welwood nicht, der würde mich verfluchen,
 Der -- (er geht ein wenig.)
 GOtt! wo geh ich? wo! Welch Donner trift mein Ohr! --
-Ich kann nicht weiter gehn. -- Das Haar starrt mir einpor, --
+Jch kann nicht weiter gehn. -- Das Haar starrt mir einpor, --
 Ein ungeheurer Fels wälzt sich mir auf die Seele! --
 Die Erde zittert! -- Angst füllt ihre tiefste Höhle! --
 Ach diese Quaal soll fliehn, ich muß sehn, wer es ist.
 (Er geht an den Ort, wo Grandlove liegt.)
 Wer bist du, den ich schlug? Bist du etwa kein Christ,
 Daß du mir kannst verzeyhn, und für den Mörder bitten?
-@Grandlove.%spknl%
+Grandlove.
 Was hab ich dir gethan, mein Freund? warum dies Wüten?
 
 
 68::
-@Zapor.%spknl%
+Zapor.
 Wie! und du nennst mich Freund, Armselger! sprichst mir zu
 So liebreich! so voll Huld! — ach! warum drückest du
 Die mörderische Faust so zärtlich! rufst Erbarmen
-Im Tode über mich! Du willst mich noch umarmen!
+Jm Tode über mich! Du willst mich noch umarmen!
 Reichst zitternd mir die Hand! Du drückst mich an dein Herz,
 Laß ab, du tödtest mich.
-@Grandlove.%spknl%
+Grandlove.
 GOtt lindre seinen Schmerz,
 Verleih ihm Trost, verleih ihm Segen aus der Höhe!
-@Zapor.%spknl%
-O rettet, rettet mich! Ich sinke, ich vergehe,
-Ich flieh --
+Zapor.
+O rettet, rettet mich! Jch sinke, ich vergehe,
+Jch flieh --
 (er läuft vor Angst ab.)
-## Sechster Auftritt.
+Sechster Auftritt.
 Grandlove, Therise.
-@Grandlove.%spknl%
+Grandlove.
 Bist du es? Komm, ein Unmensch würget mich.
-@Therise.%spknl%
-Ich Unglückselige, warum verließ ich dich!
+Therise.
+Jch Unglückselige, warum verließ ich dich!
 O GOtt! dies konntest du von deinem Himmel sehen,
 Der Mörder muste nicht durch deinen Blitz vergehen,
 Eh er den Streich vollführt!
 
 
+ein Trauerspiel.
 69::
-@Grandlove.%spknl%
+Grandlove.
 O Tochter, fluch ihm nicht,
 Die Rache ist des HErrn, und heilig sein Gericht.
-@Therise.%spknl%
+Therise.
 Mein Vater, hab' ich denn nicht für dich sterben können?
 Warum nimmt GOtt mich nicht?
-@Grandlove.%spknl%
+Grandlove.
 Er wollte mir es gönnen.
 Verehre seine Huld, die nie uns ganz vergißt,
 Und, wenn sie tödtet, doch anbetungswürdig ist. --
@@ -1784,10 +1816,10 @@ O leite mich! die Kraft erstirbt in meinen Füßen.
 Verbindet mich nur nicht. — Laß diese Wunden fließen.
 Mein Leben hängt nur noch an einem Augenblick,
 Die Sehnsucht nach dem Sohn hält es allein zurück.
-Ich muß dahin, ich fühls. Ich muß an diesen Wunden
+Jch muß dahin, ich fühls. Jch muß an diesen Wunden
 Dahin! — wo ist mein Sohn? ach! hast du ihn gefunden,
 So führe mich zu ihm, damit mein letztes Ach
-Den Segen ihm erseufzt — Ich werde schwach, sehr schwach, --
+Den Segen ihm erseufzt — Jch werde schwach, sehr schwach, --
 Therise! — Großer GOttl gieb diesem Sohn Erbarmen,
 Und wenn ich sterben soll, so seys in seinen Armen!
 (Therise leitet ihn unter vielem
@@ -1797,9 +1829,9 @@ $Ende des vierten Aufzuges.
 
 Der Renegatz
 70::
-# Fünfter Aufzug.
-## Erster Auftritt.
-@Zapor.%spknl%
+Fünfter Aufzug.
+Erster Auftritt.
+Zapor.
 Kann ich denn nirgends dir, namlose Qual, entfliehn!
 Blut, des Erschlagnen Blut, wo treibst du mich noch
 hin!
@@ -1823,72 +1855,74 @@ Du machst, daß meine Qual nur schrecklicher erwacht!
 Den GOtt hab ich gehaßt, den GOtt hab ich verlassen,
 
 
+ein Trauerspiel.
 71::
 Den GOtt hab ich verschmäht, was kann er als mich hassen?
 So hört mich keiner dann, und lindert meine Noth!
-Ich Unglückseliger! hab ich denn keinen Gott! --
+Jch Unglückseliger! hab ich denn keinen Gott! --
 Du Elend bist mein Gott! du richtest meine Sache,
 Für mich ist GOtt nicht GOtt, für mich ist Tod und Rache!
-## Zweyter Auftritt.
+Zweyter Auftritt.
 Zapor, Welwood.
 Zapor, (als er ihn kommen sieht.)
 Ach nun ist alles klar!
-@Welwood.%spknl%
+Welwood.
 Du starrst mich zitternd an,
 Da du mich kommen siehst, beglückter Muselman?
 Hast du das Glück nicht mehr, das dich so ruhig machet?
 Fühlst du nun, daß in dir ein innrer Richter wachet?
 Fühlst du nun, daß dein GOtt --
-@Zapor.%spknl%
-Ich flehe dir, laß ab.
-In dieser Schreckenswelt, wird alles mir ein Grab.
+Zapor.
+Jch flehe dir, laß ab.
+Jn dieser Schreckenswelt, wird alles mir ein Grab.
 Schweig oder tödte mich!
-@Welwood.%spknl%
+Welwood.
 Was kann dich so erschüttern?
 Unseliger! so sehr sah ich noch keinen zittern.
 
 
 72
 Dein Auge starrt umher, die Wang ist tödtlich blaß,
-Im Herzen ringt die Angst.
-@Zapor.%spknl%
+Jm Herzen ringt die Angst.
+Zapor.
 O unglücksel'ger Haß!
 O übereilter Schlag!
-@Welwood.%spknl%
+Welwood.
 Was hast du denn begangen?
 Mich schrecket ein Verdacht. Achl! was hast du begangen,
 Daß dich mit solcher Wuth ein innrer Schauder faßt.
-@Zapor.%spknl%
+Zapor.
 Schweig. Jedes Wort von dir stürzt eine neue Last
 Von Qualen auf mein Haupt!
-@Welwood.%spknl%
+Welwood.
 So nenne dein Verbrechen.
-@Zapor.%spknl%
-Ich habe — doch umsonst, es ist nicht auszusprechen.
+Zapor.
+Jch habe — doch umsonst, es ist nicht auszusprechen.
 Die Zunge klebet mir am Gaumen. Fliehe Freund,
 Entreiß dich, fürchte mich.
-## Dritter Auftritt.
+Dritter Auftritt.
 $Zapor, Welwood, Therise (weinend.)
-@Welwood.%spknl%
+Welwood.
 Und Miß Therise weint?
 
 
+ein Trauerspiel.
 73::
-@Therise.%spknl%
+Therise.
 Ach! Welwood weine mit. Den besten aller Väter
 Hat ein Barbar erwürgt, und (sie zeigt auf Zapor) dieses ist
 der Thäter,
 er entfloh nach der vollbrachten That,
 Der Mörder
-Ich sah ihn — o mein GOtt!
-@Welwood.%spknl%
+Jch sah ihn — o mein GOtt!
+Welwood.
 Unsel'ger Renegat!
 Was hast du nun gethan? erzittre Feind der Deinen,
 Ach! mögten über dir doch selbst die Engel weinen!
 Der, den du tödtest, ist dein Vater!
 (Zapor steht wie vom Donner ge=
 troffen stumm und unbeweglich.)
-@Therise.%spknl%
+Therise.
 Grosser GOtt!
 Mein Bruder ein Barbar, ein Mörder! — gieb den Tod
 Mir auch, Elender!
@@ -1897,19 +1931,19 @@ Komm, laß uns hier nicht verweilen.
 Die Erde mögte sich zu seinen Füßen theilen.
 (er sieht nach dem Eingang.)
 Dein Vater!
-@Therise.%spknl%
+Therise.
 So stirb mit, wer kann ihn sterben sehn.
-@Zapor.%spknl%
+Zapor.
 Er ists! Wer rettet mich, ich muß vor ihm vergehn. (lauft ab.)
 
 
 74::
-## Vierter Auftritt.
+Vierter Auftritt.
 $Welwood, Therise, und der sterbende Grandlove
 (von einigen Türken geführet.)
-@Grandlove.%spknl%
+Grandlove.
 Er flieht. Ach! warum will der Arme mir nicht gönnen,
-Ihn sterbend sehn und ihm als Christ verzeihn zu können?
+Jhn sterbend sehn und ihm als Christ verzeihn zu können?
 (zu denen, die ihn führen.)
 Nicht weiter führet mich. Hier, Freunde, setzt mich her.
 Wie bin ich matt! — Wie wird — der Athemzug mir schwer!
@@ -1925,20 +1959,21 @@ Damit dein Jubel ihn in heitren Tagen preist.
 O kommt, in eurem Arm verhauch' ich meinen Geist.
 GOtt, der mir diesen Trost im Tode gönnen wollte, --
 Ach! wenn ich meinen Sohn hier nur gleich sehen sollte!
-## Fünfter Auftritt.
+Fünfter Auftritt.
 $Welwood, Therise, der sterbende Grandlove Zapor,
 (der mit einem Dolche in der Hand herein stürzt.)
-@Zapor.%spknl%
+Zapor.
 Sieh deinen Mörder hier und deinen Sohn zugleich!
 
 
+ein Trauerspiel.
 75::
-@Grandlove.%spknl%
+Grandlove.
 Was hör ich? ach! mein Sohn gab mir den Todesstreich! --
 So war mir dies, mein GOtt! zuletzt noch aufbehalten!
 O warum muste nicht dies Herze längst erkalten!
 (sieht Zapor wehmüthig an.)
-@Zapor.%spknl%
+Zapor.
 O blicke mich nicht an! Wend, wende dich von mir!
 Den Blick ertrag ich nicht, o wende dich von mir?
 Grandlove. (mit Wehmuth.)
@@ -1947,22 +1982,22 @@ Zapor. (fällt vor ihm nieder und überreicht ihn
 den Dolch.)
 Räche dich. Mir ist der Tod Erbarmer
 Schlag deinen Mörder!
-@Grandlove.%spknl%
+Grandlove.
 (wirft den Dolch weit von sich)
-Nein. Ich will den Sohn umarmen
+Nein. Jch will den Sohn umarmen
 Zapor. (springt auf.)
 Du nennest mich noch: Sohn? Umarmen willst du mich?
 Verzeihen willst du mir? Und ich ertödte dich!
-Ach bin ich noch dein Sohn! Ich habe GOtt verschworen,
-Und dich und Seligkeit. Ich bin für dich verlohren,
+Ach bin ich noch dein Sohn! Jch habe GOtt verschworen,
+Und dich und Seligkeit. Jch bin für dich verlohren,
 Verfluche deinen Feind. Fluch wird ihm Ruhe seyn.
-Ich bin dein Sohn nicht mehr, du kannst mir nicht verzeihn
+Jch bin dein Sohn nicht mehr, du kannst mir nicht verzeihn
 Du hast mich stets gehaßt.
 
 
 Der Renegak
 76::
-@Grandlove.%spknl%
+Grandlove.
 Noch kannst du widersteben!
 Verlaß doch diesen Wahn, er kostet mir mein Leben,
 Und dir dein ewigs Glück. Mein Eifer, dich zu sehn,
@@ -1977,7 +2012,7 @@ Nun so erhöre mich! — (springt plötzlich wieder auf.)
 Verworfner du willst bethen!
 Verstumm! du lästerst GOtt! Ein Fluch ist dein Gebeth --
 Ich kann nicht bethen!
-@Grandlove.%spknl%
+Grandlove.
 Sohn, da dir dein Vater fleht,
 Im Tode für dich fleht, warum willst du nicht hören?
 soll er mit Herzeleid zu seiner Grube kehren?
@@ -1989,6 +2024,7 @@ Noch scheints, mich stärkt der GOtt, der starb für unser Wohl,
 Mit höhrer Kraft, daß ich ihn dir verkünd'gen soll.
 
 
+ein Trauerspiel.
 77::
 Verzage nicht, o Sohn. Eil zu der Gnade Armen,
 Der du entflohen bist. Sie hat noch viel Erbarmen
@@ -2019,31 +2055,32 @@ Sey wiederum ein Christ, so sterb ich mit Vergnügen.
 
 
 78::
-@Zapor.%spknl%
+Zapor.
 Laß ab, Entsetzlicher! Laß ab, ichsterbe schon,
-Ich bin genug entselt.
-@Grandlove.%spknl%
+Jch bin genug entselt.
+Grandlove.
 O mein geliebter Sohn! --
-Ichkann nichtmehr! -- Die Welt zerfließt vor meinen Blicken
+Jchkann nichtmehr! -- Die Welt zerfließt vor meinen Blicken
 Tief hin ins Leere! GOtt! welch nie gefühlt Entzücken
 Strömt durch mein Herz! -- o Glück! -- Wie selig ist der Tod! --
-Ich höre Harmonien. -- Mein Mitler und mein GOtt,
+Jch höre Harmonien. -- Mein Mitler und mein GOtt,
 Nimm meine Seele auf
 (er stirbt)
-@Therise.%spknl%
+Therise.
 Er sinkt! er stirbt! o Leiden!
 O Angst!
-@Welwood.%spknl%
+Welwood.
 Unsterbliche, führt ihn zu euren Freuden.
 GOtt! gieb dem Sohn den Trost, um den sein Vater bat;
 Erhöre das Gebeth, das dieser Engel that!
-@Zapor.%spknl%
+Zapor.
 Wo ist mein Vater! ach ein Unmensch schlug ihn nieder
 Wo such ich ihn? wer giebt mir meinen Vater wieder?
 Mir, der ich ohne GOtt und ohne Väter bin?
 Wo soll ich hin? Zu wem? o GOtt! wo soll ich hin! --
 
 
+ein Trauerspiel.
 79::
 Dem Himmel sey gedankt! ich seh den Vater wieder.
 Doch welch ein Storm von Blut rauscht hinter ihm danieder!
@@ -2053,7 +2090,7 @@ Was zischet ihr mich an! mit welchen grimgen Blicken!
 Rachgeister, seyd ihr hier mich mit euch fortzurücken
 Hin an den Ort der Qual, wo endeloser Schmerz,
 Wo die Verzweiflung heult? Da ist es, nehmt mein Herz!
-Zerreist, zerfleischet es! Ich wills euch selbst gebieten. --
+Zerreist, zerfleischet es! Jch wills euch selbst gebieten. --
 Doch ach Entsetzliche! hört einmal auf zu wüthen!
 Entfernet euch! Laßt ihn nur machen, den ich schlug,
 Laßt ab! zu meiner Qual bleibt schon mein Vater gnug,
@@ -2062,7 +2099,7 @@ Doch seht! er starrt zurück, er zittert, es zu rächen!
 (er wird ein wenig ruhig,
 fängt
 aber gleich wieder an.)
-Was fühl ich! Bin ich noch? Ich bin vermaledeyt,
+Was fühl ich! Bin ich noch? Jch bin vermaledeyt,
 Ein Fluch! — Nein gegen dies ist Hölle Seligkeit.
 Du, Todter! rufst dein Blut. Ja, ja ich will erblassen,
 Will mich vernichten! Dann mußt du mir Ruhe lassen,
@@ -2075,17 +2112,17 @@ Halt ein!
 
 
 80::
-@Zapor.%spknl%
-Es ist geschehn. Ist dies Gefühl der Tod!
+Zapor.
+Es ist geschehn. Jst dies Gefühl der Tod!
 Welch Schauder reist mich fort! O Richter unsrer Thaten,
 GOtt, fürchterlicher GOtt! wo werd' ich hingerathen!
-Ists möglich, Gnade! — (er stirbt.)
-@Welwood.%spknl%
+Jsts möglich, Gnade! — (er stirbt.)
+Welwood.
 Hör, ach höre ihn diesmahl!
 Du Gott voll Gnad und Huld! O lindre seine Qual!
-@Therise.%spknl%
+Therise.
 Mein Bruder -- Vater, ach! o Tag voll Gram und Schrecken!
-@Welwood.%spknl%
+Welwood.
 Wie deutlich läßt sich hier des Höchsten Hand entdecken:
 Der wahren Christen stets, im Tode Trost verleiht,
 Und sich so schrecklich rächt, wenn ihn der Mensch entweiht.

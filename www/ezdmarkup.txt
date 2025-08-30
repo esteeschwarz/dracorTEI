@@ -12,7 +12,7 @@ kaiserl. könsgl. Burg.
 
 
 ^Personen.
-Zapor.
+ap.
 Orchan.
 Grandlove.
 Therise.
@@ -22,24 +22,23 @@ Einige Türken.
 
 # Erster Aufzug.
 ## Erster Auftritt.
-$Zapor, Welwood.
-Zapor. (zu Welwood, der ihm nachfolgt.)
+$ap, Welwood.
+ap. (zu Welwood, der ihm nachfolgt.)
 Schweig. Keinen Vorwurf mehr / wen
 ich dich hören soll.
 Was will dein Ungestüm
 Welwood.
 Nichts, als dein wahres Wol
-Zapor.
+ap.
 Mein Wohl? du scheust dich nicht, mir dieses noch zu sagen
 Und überfällst mich stets mit unverschämten Klagen?
 3::
 
 
-Der Renegat
 Welwood.
 So hör dies wenigstens, es ist der Klage werth=
 Was ich --
-Zapor.
+ap.
 Entferne dich. Ich habe gnug gehört.
 Welwood.
 Dieß foderst du , mein Freund? Darf ich dich noch so nen=
@@ -47,13 +46,13 @@ nen,
 Dich, welchen Thränen schon nicht mehr erweichen können.
 Der so des Vaterlands, wie seiner Freunde, Feind,
 Den Vater selbst vergißt, der in der Ferne weint?
-Zapor.
+ap.
 Vergaß ich ihn zuerst? Er hat ja mich vergessen.
 Welwood.
 Ach! stets hast du sein Herz, sein ganzes Herz besessen.
 Dies Herz, ganz Huld für dich, dem es stets offen war,
 Beut sich dir heute noch mit seiner Liebe dar.
-Zapor.
+ap.
 O hätt' es nicht für mich ein ewger Haß geschlossen,
 Er hätte mich gehört, als meine Thränen flossen,
 Denn welchen Vater giebts, dem nicht sein reuig Kind.
@@ -64,7 +63,6 @@ Starr, wie ein Fels, stand er und unerweichlich da,
 4::
 
 
-ein Trauerspiel.
 Da war kein holder Blick, der auf mich niedersah=
 Da schlug kein Vaterherz, als nur den Sohn zu hassen.
 Blieb mir da andrer Trost, als der, ihn zu verlassen?
@@ -87,13 +85,12 @@ Und ach! was fand ich denn? für mich Gefahr und Ketten,
 Am Abgrund einen Freund, ohn Hofnung, ihn zu retten.
 Da jeder treue Rath, der seine Pflicht ihm zeigt,
 Beleidigt, wenn er spricht, und sündigt, wenn er schweigt,
-Zapor.
+ap.
 Die Pflicht die du mir zeigst, kann ich getrost verlachen,
 Des Menschen erste Pflicht ist die, sein Glück zu machen.
 5::
 
 
-Der Renegat
 Welwood.
 Ja mach es, mach dein Glück; doch gründe den Genuß
 Nicht auf des Freundes Qual, nicht, daß er seufzen muß,
@@ -108,7 +105,7 @@ Mit welchem Stolz sah ich des Kindes Unschuld zu,
 Der frühen Tugend zu, voll Hofnung, mit Entzücken
 Sie dermaleinst gereift im Manne zu erblicken!
 Doch ach du bist dahin, du Himmel frommer Lust=
-Den sich mein Geist erschuf! Jn diese alte Brust,
+Den sich mein Geist erschuf! In diese alte Brust,
 Des bangen Athmens satt, kehrt solche Lust nie wieder,
 Der mich erfreuen soll, schlägt selbst den Trost mir nieder.
 Statt dieser Seligkeit, schreckt mich der Zukunft Nacht=
@@ -117,13 +114,12 @@ Mein Elend, hier/ wo mich der Tugend Feinde quälen
 Die schon durch Drohungen Unglückliche entseelen /
 Wo jedes Antlitz schreckt, Furcht und Gefahr sich mehrt,
 Und-Uebermas der Qual ! mich auch mein Freund nicht hört.
-Zapor.
+ap.
 Was überhäufst du mich mit diesen eitlen Klagen
 Verändre dein Geschick, wo nicht, so lern es tragen.
 6::
 
 
-ein Trauerspiel.
 Hier lebt, wo Fremde stets ein gleiches Schicksal traf,
 Der Muselman beglückt, und nur der Christ als Sklav.
 Ich selbst erlag, wie du gleich elend, meinen Banden,
@@ -152,8 +148,7 @@ Welch ein Verführungsgeist verfinstert deine Seele!
 7::
 
 
-Der Renegat
-Zapov.
+ap.
 Was du Verführung nennst, ist wahres Heil für mich.
 Ein Heuchler schimpft aufs Glück und heimlich wünscht ers sich.
 Wer schilt den, der dem Ort, wo er Verdruß empfindet
@@ -182,16 +177,15 @@ Was sagst du? ach! du eilst in dein Verderben.
 8::
 
 
-ein Trauerspiel.
 9::
-Zapor.
+ap.
 Nein, ewig meine Ruh von heut an zu erwerben,
 und
 —— Wie? du staunst?
 Welwood.
 Ist dies mein Freund, der mit mir spricht,
 Der so voll Unschuld war! — GOtt! nein er ist es nicht!
-Zapor.
+ap.
 Er ists, den man verfolgt, und der in seinen Nöthen
 Zum Glücke Mittel fand, und nun durch den Propheten
 Noch heut —
@@ -202,7 +196,7 @@ Was treibt, Elender, dich, zu so unseelgen Thaten?
 Ach Freund, du wirst doch nicht, — nicht deinen GOtt verra=
 then!
 Was seh ich? du wirst bleich. — Verräther, ists geschehn?
-Zapor.
+ap.
 Nein. Aber --
 Welwood.
 O so hör annoch das letzte Flehn!
@@ -210,11 +204,10 @@ Ich flehe nicht für mich, ich fleh für deine Seele.
 
 
 10::
-Der Renegat
 O mögtest du es sehn, wie sich dein Vater quäle!
 Du warst sonst seine Lust, und bist nunmehr sein Schmerz,
 Sein Kummer. Stoß ihm nicht dazu den Dolch ins Herz!
-Zapor.
+ap.
 Stets ist der Vater da. Gnug! ich will ihn vergessen.
 Bestürme mich nicht mehr. Hatt ich sein Herz besessen,
 So hab ichs itzt doch nicht, was mir dein Mund auch sagt,
@@ -232,14 +225,13 @@ Hast du dies je gefühlt, dies Selige, dies Glücke,
 O so beschwör ich dich, Freund, komm mit mir zurücke.
 Gönn deinem Vater doch, den nichts, als du, erfreut,
 Noch diesen letzten Trost, noch diese Seligkeit.
-Zapor.
+ap.
 So eilt ich denn dahin,
 hier alles einzubüssen!
 Er hat ja Freunde gnug
 er hat ja noch Therisen.
 
 
-ein Trauerspiel.
 11::
 Mit diesen tröst er sich. Mich lasse man allein,
 Was ich bey ihm nicht bin, hier ohn ihn glücklich seyn.
@@ -248,7 +240,7 @@ Bewegt dich dieses nicht, kann es dich nicht erwecken,
 Abtrünniger! so laß dich denn den Abgrund schrecken,
 Der vor dir offen liegt, auch nur ein flüchtger Blick,
 Wenn du noch sehen kannst, zieht deinen Fuß zurück.
-Zapor.
+ap.
 Ich sah ihn allzuwohl,
 drum hab ich ihn vermieden,
 Um nicht sein Raub zu seyn, erwähl ich Heil und Frieden.
@@ -259,7 +251,7 @@ Und der die Strafe nach. Laß doch die Rache schlafen,
 Bald donnert sie daher, den Frevel zu bestrafen.
 Bedenke noch einmal den Schritt, den du gethan,
 Noch thun willst, und schon thust.
-Zapor.
+ap.
 Der gütige Orchan
 Erheitert mir das Glück von meinen künftgen Tagen.
 So feind bin ich mir nicht, mein Glück selbst auszuschlagen,
@@ -271,7 +263,7 @@ Der Renergl.
 Welwood.
 Erschrecklicher Entschluß! Um Nichts, um Kleinigkeit
 Verräthst du deinen Gott, und Vaterland und Vater!
-Zapor.
+ap.
 Um Nichts! Ist Glück denn nichts? Bald wird Orchan
 mein Vater,
 Und Mahomet mein Gott.
@@ -284,7 +276,7 @@ So mag es seyn, daß du den aus dem Herzen bannst,
 Und den voll Haß verfolgst, den du nicht lieben kannst;
 Allein was hat dein Gott, wenn dich auch Menschen hassen,
 Was hat dein Gott gethan? und du willst ihn verlassen:
-Zapor.
+ap.
 Hinweg Nichtswürdiger! Entfliehe meinem Blick,
 Laß mich im Einsamen, und störe nicht mein Glück!
 Welwood.
@@ -292,14 +284,13 @@ Dein Glück? Ist hier auch Glück, so ist Glück in der Hölle,
 Und du Tyrann verdienst, daß es dich treff und fälle!
 
 
-ein Trauerspiel.
 13::
-Zapor.
+ap.
 Flieh, fürchte meinen Zorn, erkenne wer ich bin
 Welwood.
 O Gott! so ist er denn unwiderbringlich hin!
 ## Zweyter Auftritt.
-Zapor.
+ap.
 Das ist nun seine Wuth, mir meine Ruh zu rauben!
 und dennoch wagts dies Volk und pralt mit einem Glauben
 Den es die Liebe nennt, spricht andern Lehren Hohn,
@@ -314,7 +305,7 @@ Hat der Verräther mich in meines Vaters Macht,
 Erweicht durch sein Geseufz, erst mit sich fortgebracht;
 Dann werd ich Jahre dort für ein Versehen büssen,
 und hofnungslose Angst im Kerker leiden müssen.
-Mein Vater — o Zapor, wie du unglücklich bist!
+Mein Vater — o ap, wie du unglücklich bist!
 Daß auch dein Vater selbst mit dein Verfolger ist!
 Er schickt' ihn — doch auch er übt seines Volks Verbrechen
 Mich soll der heutge Tag an ihm und allen rächen!
@@ -324,8 +315,8 @@ Da kommt ein Würdigrer.
 Der Renegät
 14::
 ## Dritter Auftritt.
-$Zapor, Orchan.
-Zapor.
+$ap, Orchan.
+ap.
 Großmüthiger Orchan,
 Nimm heut den reinsten Dank des vollen Herzens an.
 O könnte doch dein Blick in seine Tiefen sehen.
@@ -346,18 +337,17 @@ Ein jeder Trieb in mir sey Lob, sey Dank für ihn,
 Und laß den letzten erst mit meinem Leben fliehn.
 Orchan.
 Wie ist es Seligkeit, dich also anzuhören,
-Wie hast du mich entzückt! Den Frrthum abzuschwören,
+Wie hast du mich entzückt! Den Irrthum abzuschwören,
 
 
-ein Trauerspiel.
 15::
 Der dich bisher verführt, verdientest du allein,
-Du bist es werth, Zapor, ein Muselman zu seyn.
+Du bist es werth, ap, ein Muselman zu seyn.
 Doch da dein künft'ges Heyl sich mit dem heut'gen Tage
 Auf ewig gründen wird; so hör, was ich dir sage,
 Gelobe, was durch mich dir der Prophet gebeut,
 Erfahre deine Pflicht.
-Zapor.
+ap.
 Befiehl, ich bin bereit.
 Orchan.
 So schwör mir, alle die, die je sich Christen nennen,
@@ -384,7 +374,7 @@ Der Renegat.
 16::
 Bey dem geweyhten Stein am Grabe des Propheten, *
 Beschwöre dies.
-Zapor.
+ap.
 Ich schwörs. War dieser Schwur vonnöthen?
 Der Feind von Mahomet sey ewig auch mein Feind,
 Wer ihn verschmäht, mein Haß und wer ihn ehrt, mein Freund.
@@ -401,15 +391,14 @@ Wenn ich, dir ungetreu, zum Irrthum wiederkehre!
 Orchan.
 Genug. Nun hast du mich vergnügt.
 ## Vierter Auftritt.
-$Orchan, Zapor, ein Türk.
+$Orchan, ap, ein Türk.
 Der Türk.
 Herr, alles scheint,
-Da heute sich Zapor auf ewig uns vereint,
+Da heute sich ap auf ewig uns vereint,
 Auch diesen heitern Tag verherrlichen zu müssen;
 * Einer ihrer gewöhnlichsten Schwüre:
 
 
-ein Trauerspiel.
 17::
 So eben hat der Sturm ein fremdes Schiff zerrissen.
 Ohnmächtig rangen sie bereits mit Flut und Tod,
@@ -420,10 +409,10 @@ Und das Gewühl der Angst, die dringende Gefahr,
 Wie in den Mienen Tod und Schrecken sichtbar war.
 Herr! ich gesteh es dir, wenn es nicht Christen wären,
 Die den Propheten schmähn, es flössen meine Zähren.
-Orchan (zu Zapor.)
+Orchan (zu ap.)
 Wie glücklich sind wir, Freund. Sie mögen deine seyn;
 Warum besitz ich nicht die Welt, sie dir zu weihn!
-Zapor (zu dem Türken.)
+ap (zu dem Türken.)
 Hast du den Sklaven schon die Fessel zubereitet?
 Der Türk.
 Von deiner Knechte Schaar geführet und begleitet
@@ -437,21 +426,20 @@ Lenkt seinen schwachen Tritt. Ihr Führer triumphiret.
 Und sie verstummt und seufzt.
 
 
-Der Renegat
 18::
 Orchan.
 Du scheinst dadurch gerühret.
 Unedel ist ein Herz, das über einen Feind
 Des großen Mahomets aus niederm Mitleid weint.
 Zu elend wird er nie. Doch komm und laß uns gehen,
-Und unserem Zapor des Himmels Gunst erflehen.
-Du folge bald, Zapor. Eil am Altar zu gehn.
+Und unserem ap des Himmels Gunst erflehen.
+Du folge bald, ap. Eil am Altar zu gehn.
 Der Iman wartet schon. Man jauchzt, man will dich sehn.
 Um die Moschee wühlt das freudigste Gedränge,
 Erfüll die Hoffnungen von der entzückten Menge,
 Dein Glücke, meinen Stolz.
 ## Fünfter Auftritt.
-Zapor.
+ap.
 Welch Vater gegen den,
 Der mich von sich verstieß! Wie so voll Tugenden,
 Voll edler Menschlichkeit. Er trocknet meine Zähren,
@@ -466,17 +454,16 @@ Fleuch in die Nacht zurück, entsetzlicher Gedanke!
 Es muß einmal geschehn. Zu lang ists, daß ich wanke,
 
 
-ein Trauerspiel.
 19::
 Daß mich ein Schatten schreckt. Fleuch! durch dich mischt der
 Schmerz
 Sich meinen Freuden ein, und schleichet in mein Herz.
 Werd ich dich, wildes Herz, denn nie besiegen können!
-Auf! sey ein Mann, Zapor! Willst du dein Glück verkennen
+Auf! sey ein Mann, ap! Willst du dein Glück verkennen
 Ende des ersten Aufzuges.
 # Zweyter Aufzug.
 ## Erster Auftritt.
-Zapor.
+ap.
 Nun endlich ists geschehn. Wie ruhig bin ich nun!
 Jetzt kann mein wildes Herz mit seinen Zweifeln ruhn
 Und o daß mich auch noch unselge Zweifel beugten,
@@ -495,11 +482,11 @@ Der Renegat.
 20::
 Gieb mir auch Muth, Prophet! mich deinem Dienst zu weyhn,
 Laß mich ganz Muselman, laß mich ganz heilig seyn!
-Gieß deine Stärkungen ins Jnnre meiner Seelen!
+Gieß deine Stärkungen ins Innre meiner Seelen!
 Wer kömmt! (er sieht sich um.)
 ach! muß mich denn schon wieder Welwood quälen!
 ## Zweyter Auftritt.
-Velwood, Zapor.
+Welwood, ap.
 Welwood.
 Treuloser, bebst du nicht für vor volbrachten That?
 Erst ein Undankbarer, und nun ein Renegat!
@@ -510,7 +497,7 @@ und nunmehr rufst du gar die Rache auf dein Haupt?
 O fürchtest du denn nicht, daß dich die bange Erde,
 Bang über deine That, hinunterreissen werde?
 Ach Edward!
-Zapor.
+ap.
 Nenne mir den Namen itzt nicht mehr.
 Nicht einer war für mich unseliger, als der.
 Nunmehr beglücket mich ein weit erfreuter Name,
@@ -519,7 +506,6 @@ Geh Quäler!
 
 
 21::
-ein Trauerspiel.
 Welwood.
 Da dein Herz der Menschlichkeit Gefühl
 Nun hierlängst nicht mehr kennt und auch nicht kennen wil
@@ -529,7 +515,7 @@ Und ich mit einer Brust, gehäufter Wunden voll,
 Tief blutend über dir, zurückekehren soll,
 Und meinen Kummer dann zu deinem Vater trage,
 Was willst du, daß ich ihm von seinem Sohne sage?
-Zapor.
+ap.
 Sag ihm, daß mitten hier in wilder Barbarey,
 Ein Herz, das Großmuth fühlt, ein Vaterherze sey;
 Daß hier die Väter nicht schuldlose Söhne hassen,
@@ -542,39 +528,37 @@ Grosser GOtt! wie wird ihn dies noch quälen!
 Ach meine Rückkehr wird den guten Greis entselen.
 O unbarmherzger Sohn!
 ## Dritter Auftritt.
-Zapor.
+ap.
 Geh Bösewicht einmal!
 Unseliges Geschöpf, zu deines Freundes Qual
 
 
-Der Renegat
 22::
 Warf dich dein Gott ans Licht! Er schuf dich mich zu kränken;
 Doch der Gedank' entehrt. Laßt uns was würd'gers denken!
-Die Fremde, -- welch ein Bild! Schwell, stolzes Herz, empor! Sie ist hier, sie ist dein, glückseliger Zapor!
+Die Fremde, -- welch ein Bild! Schwell, stolzes Herz, empor! Sie ist hier, sie ist dein, glückseliger ap!
 Doch eine Christin — ach! hab ich da viel zu hoffen?
 Ist hier nicht ein Gesetz? Was steh ich so betroffen?
 Ists Mitleid oder Furcht? -- Wer quält auch beftiger,
 Als dieser Welwood quält!
 ## Vierter Auftritt.
-$Zapor, Orchan.
+$ap, Orchan.
 Orchan. (sagt zu einem Türken der mit ihm ge=
 kommey ist.)
 Ja. Führe sie hieher.
 (Der Türk geht ab.)
 ## Fünfter Auftritt.
-$Orchan. Zavor, (steht in Gedanken.)
+$Orchan. ap, (steht in Gedanken.)
 Orchan.
-Zapor, hier laß mich dir die Sklaven übergeben.
+ap, hier laß mich dir die Sklaven übergeben.
 Dein Wink beherrsche sie. Er sey ihr Tod und Leben.
 Doch wie so stumm! Was hat dich so bestürzt gemacht,
 Hat dir der Tag nicht Reiz, der, allen heiter lacht?
-Heut, heut Zapor! muß ich, statt redendem Entzücken,
+Heut, heut ap! muß ich, statt redendem Entzücken,
 
 
-ein Trauerspiel.
 23::
-Jn deinem Auge Gram und stillen Schmerz erblicken!
+In deinem Auge Gram und stillen Schmerz erblicken!
 Zu dir versah ich mich nicht dieser stummen Pein.
 Allein ich merk' es schon, die That wird dich gereun -
 Mit Wehmuth quälst du dich, die Deinen zu verlassen,
@@ -584,7 +568,7 @@ Vielleicht findt da dein Herz, was es bey uns nicht fand.
 Geh, du bist niedrig gnug, dein Unglück zu verdienen,
 Verlaß hier Ehr und Glück, und kriech dort unter ihnen.
 Sey elend, sey ein Christ.
-Zapor.
+ap.
 Erschröcklicher Verdacht!
 Was hat so plötzlich mich bey dir verhaßt gemacht?
 Herr, konntest du denn nicht in meinen Thaten lesen,
@@ -598,12 +582,12 @@ Orchan.
 Hast du mich je geliebt,
 Je etwas werth geschätzt, so sprich, was dich betrübt.
 Hier, Freund, beschwör ich dich, mir diese Schmach zu nennen,
-Zapor, sprich.
+ap, sprich.
 
 
 Der Renegai
 24::
-Zapor.
+ap.
 Werd' ich es auch ohn Erröthen können?
 Ich liebe, wiß es dann.
 Orchan.
@@ -617,11 +601,11 @@ Dein Will' ist ihnen Pflicht. Die schönste der Cirkassen,
 Adelaide sey dir eigen überlassen.
 Wähl auch die Perserin, die holde Zulima.
 Sie alle, Freund, sind nur, dich zu vergnügen, da.
-Zapor, warum willst du denn nie den Trost mir gönnen,
+ap, warum willst du denn nie den Trost mir gönnen,
 Dein Glücke wenigstens etwas erhöhn zu können,
 Wenn etwas ist, das es annoch erhöhen kann,
 Da du rechtgläubig bist?
-Zapor.
+ap.
 So höre mich, Orchan.
 Herr, nicht durch Zulimen, nicht durch Adelaiden,
 Ist meine Glut erregt. Die hab ich stets gemieden.
@@ -630,7 +614,6 @@ Die Fremde, die heut erst -- Wie konnt' ich widerstehn?
 Du sahst sie doch, o Herr? Ach um uns zu entzücken,
 
 
-ein Trauerspiel.
 25::
 Was braucht ihr Reiz wohl mehr, als daß wir ihn erblicken
 Er rührte mich zu sehr, wie konnt ich ihm entfliehn?
@@ -641,7 +624,7 @@ Willst du dich entweihn und mich betrüben
 Für Muselmänner ists Schimpf, Christinnen zu lieben.
 Nein hassen mußt du sie, sie muß vergessen seyn,
 Sie muß nicht mehr ein Herz, wie deines ist, entweihn.
-Zapor.
+ap.
 So soll ich! — ach wie schwer wird dies mein Herz ertragen
 Doch nein, ich will nichts mehr zu meiner Schande sagen,
 Ich folge, du befielst. Doch soll ich ganz sie fliehn,
@@ -652,18 +635,17 @@ Denn einer Schönen Schmerz, wenn sie uns hülflos fleht,
 Hat eine Macht, Orchan, der man nicht widersteht.
 (er will gehen.)
 Orchan.
-So hör, Zapor, du weißt den Sinn von den Gesetzen,
+So hör, ap, du weißt den Sinn von den Gesetzen,
 Ein Bund mit diesem Volk der würde sie verletzen.
 Wenn die Ungläubigen sich unsrer Lehre weihn,
 
 
 26::
-Der Renegat
 So mag es seyn. Geh nur, du wirst noch glücklich seyn.
 Ich prüfe sie hier selbst. Wenn Herr und Noth befehlen,
 Und man sein Glücke sieht, wer wird da lange wählen?
 Gewis --
-Zapor.
+ap.
 Gieb, o Prophet! ihr dazu Neigung ein!
 Ich kann nicht ohne sie, und will nicht glücklich seyn.
 ## Sechster Auftritt.
@@ -682,7 +664,6 @@ Für mich ist alles Glück und alle Ruh verloren.
 
 
 27::
-ein Trauerspiel.
 Orchan.
 Der ist sein Unglück werth, dem Alles Unglück scheint,
 Der, wenn sich Freude zeigt, dennoch untröstbar weint,
@@ -752,7 +733,6 @@ Orchan.
 Du haßtest ihn vielleicht?
 
 
-Der Reneyat
 30::
 Grandlove.
 Ach! er war meine Freude.
@@ -761,7 +741,7 @@ Nach ihm mit Thränen rang, die noch kein Trost gestillt.
 Du kennst des Vaters Schmerz und hörest seine Klagen.
 Du weißt es, seine Flucht macht alle meine Plagen,
 GOtt! unsers Schickfals Gott! du weißt, daß nie ein Zug
-Jn meiner Brust entstand, der für den Sohn nicht schlug.
+In meiner Brust entstand, der für den Sohn nicht schlug.
 Und einen einz'gen Sohn, o GOtt! könnt ich den hassen!
 Orchan.
 So hat dich denn dein Sohn, den du geliebt, verlassen?
@@ -780,7 +760,6 @@ Hör Christ! da deine Noth
 Dir unerträglich fällt, und da dein Ach! kein GOtt
 
 
-ein Trauerspiel.
 31::
 Erbarmungsvoll erhört, so soll Orchan dich hören,
 Kein treuer Freund, kein Sohn braucht dir zurück zu kehren.
@@ -805,13 +784,12 @@ Allein sey nicht verstockt, sonst fürchte meine Rache.
 Therise.
 O Herr, so treib doch nicht mit unserm Jammer Spott.
 Sieh meinen Vater hier, welch Bild der tiefsten Nothl
-Sein ganzes Leben ist ein Gram. Jn diesen Zügen
+Sein ganzes Leben ist ein Gram. In diesen Zügen
 Sieh Jahrelangen Schmerz und sichtbarn Kummer liegen
 Ich bin sein einzger Trost. Mein kindlich treues Herz
 Empfindet seine Noth und blutet seinen Schmerz.
 
 
-Der Renenat
 32::
 Es ist der Meinige. Wie könnt ich so ihn kränken,
 Und, indem er sich quält, auf Lust und Liebe denken!
@@ -838,7 +816,6 @@ Denn was läßt uns die Hand, die uns danieder schlägt,
 Als Thränen und ein Herz, das ohne Schulden trägt!
 
 
-ein Trauerspiel.
 33::
 Grandlove.
 Warum, o Muselman, willst du mir meinen Glauben,
@@ -864,7 +841,6 @@ Doch mein Gewissen kann kein Grimm zum Abfall zwingen.
 Versuch es, martre mich. Es soll dir nicht gelingen.
 
 
-Der Renegat
 34::
 Orchan.
 Verstockter Bösewicht, weißt du es, das Orchan
@@ -891,7 +867,6 @@ Uns nicht schon gnug gequält? Sind wir nicht elend gnug?
 Er ist hin.
 
 
-ein Trauerspiel.
 35::
 Grandlove.
 Ich will mir die falsche Ruh nicht rauben.
@@ -915,10 +890,9 @@ Von dir, nicht werth, daß er dir so am Herzen liege,
 Vergiß ihn.
 Grandlove.
 Wenn nur hier kein Vaterherze schlüge!
-Jn welchem die Natur für ihn zu mächtig spricht.
+In welchem die Natur für ihn zu mächtig spricht.
 
 
-Der Renegat
 36::
 Du hast ihn nicht gekannt, drum rührt sein Fall dich nicht.
 Du hast nicht lang des Glücks, um ihn zu seyn, genossen.
@@ -927,7 +901,7 @@ Als er von mir entwich. Ach! Huld war meine Pflicht,
 Denn Strafen züchtigen, allein sie bessern nicht;
 Doch zürnt, ich — o mein Sohn!
 Therise.
-Jndem wir uns so kränken,
+Indem wir uns so kränken,
 Vergessen wir es ganz, der Rache nachzudenken,
 Womit Orchan gedroht. Komm, laß uns zu ihm gehn.
 Und noch einmal vor ihm um unsre Rettung flehn.
@@ -946,7 +920,7 @@ Wo soll ich meinen Schmerz und meinen Kummer lassen!
 
 
 37::
-# Dritter Bufzug.
+# Dritter Aufzug.
 ## Erster Auftritt.
 $Welwood und hernach Grandlove.
 Welwood (der sich umsieht.)
@@ -968,10 +942,8 @@ Allein gelang es dir hast du ihn ausgefunden?
 Und was war dein Geschick?
 
 
-3
 
 
-Der Renegat
 38::
 Welwood.
 Du reißest meine Wunden
@@ -997,7 +969,6 @@ Verräth mir ein Geschick, das unversöhnlich ist.
 Erzähle.
 
 
-ein Trauerspiel.
 39:
 Welwood.
 Könnte dir doch dieses Trost gewähren,
@@ -1024,7 +995,6 @@ Sir, warum klagst du dich als meinen Pein'ger an
 Der Himmel, der uns guält, hat der es nicht gethan?
 
 
-Der Renegat
 40::
 So stark er seinen Zorn mich auch empfinden lassen,
 Was konnt' ich anderst thun, als schweigen und mich fassen!
@@ -1040,7 +1010,7 @@ O Himmel welche Nacht! Betrübtes Angedenken!
 Nie wird die Seele dich, als mit Entsetzen denken.
 Welch Sterben, welch Gewühl! Mast, Segel, Ruder bricht,
 Man schwimmt gedankenlos, sieht Erd und Himmel nicht,
-Hört nichts als Sturm und Ach. Jn jeder drohnden Welle
+Hört nichts als Sturm und Ach. In jeder drohnden Welle
 Schreckt ein entsetzlichs Grab, furchtbarer als die Hölle,
 Gedankenlos vor Angst klimmt man Gebürg' hinan,
 Und ruft den Himmel noch mit halben Seufzern an,
@@ -1052,7 +1022,6 @@ Nur sah ich mit dem Tag in einem öden Lande
 Sich Barbarn um mich freun, und fühlte meine Bande.
 
 
-ein Trauerspiel.
 41::
 Grandlove.
 Die Thräne treuer Freund, die mir vom Auge fließt,
@@ -1078,7 +1047,6 @@ Wird unbeweglich seyn?
 
 
 42::
-Der Renegat
 Therise.
 Es ist mehr, als zu wahr,
 Daß sie uns beyde noch zu Tode martern wollen.
@@ -1106,7 +1074,6 @@ O wie erfreut es mich, daß ich dein ewges Weh,
 Mein Vater wenigstens etwas beruhigt seh.
 
 
-ein Trauerspiel.
 43::
 O möchte dir einmal der Himmel Freude geben,
 Und fodert er dafür auch gleich Therisens Leben,
@@ -1134,15 +1101,14 @@ Auch ich, so gern ich auch mein Leid bekämpfen will,
 So mischt sich dennoch stets ein trauriges Gefühl
 
 
-Der Renegat
 44::
-Jn meine Freuden ein. Ob ich ihn gleich gefunden,
+In meine Freuden ein. Ob ich ihn gleich gefunden,
 So heilt dies dennoch nicht, es stillt nur meine Wunden.
 Ich fühl es, daß in mir der Kummer leiser spricht,
 Doch rechte Seligkeit, o Tochter, fühl' ich nicht.
 So etwas ist es nicht, als wie ich damals fühlte,
 Da eure Unschuld noch um meine Winke spielte,
-Du und der Jrrende, den itzt mein Ach beweint;
+Du und der Irrende, den itzt mein Ach beweint;
 Allein ein Sohn ist auch schätzbarer als ein Freund.
 O GOtt! wenn deine Huld mir einmal gönnen wollte,
 Daß ihn mein Auge noch einmal erblicken sollte,
@@ -1165,7 +1131,6 @@ GOtt voll Barmherzigkeit! o stille seine Klagen,
 Wo nicht, so nim mich hin. Wie kann ich sie ertragen!
 
 
-ein Trauerspiel.
 45::
 Grandlove.
 Ich hör ein wild Geräusch. Man kömmt. Soll unsre Noth --
@@ -1192,7 +1157,6 @@ Nicht aber bey Barbaren.
 Wo willst du mit ihm hin?
 
 
-Der Reuergt.
 46::
 Türk.
 Du wirst es bald erfahren.
@@ -1218,7 +1182,6 @@ Zurück, Unmenschliche! Mein Vater, der soll sterben!
 Nein, wenn er sterben soll, müßt ihr mich erst verderben.
 
 
-ein Trauerspiel.
 47::
 Grandlove.
 O meine Theureste, sey ruhig, lebe hier.
@@ -1236,30 +1199,29 @@ Man halte sie zurück. Fort mit ihm! du entweich!
 Therise.
 GOtt! kann die Hölle selbst wohl ungerechter quälen!
 (Sie steht ein wenig still, dann läuft sie aus
-Angst nach der andern Seite, wo ihr Zapor
+Angst nach der andern Seite, wo ihr ap
 begegnet, dem sie zu Fuße fällt.)
 ## Vierter Auftritt.
-Therise, Zapor.
+Therise, ap.
 Therise.
 Dir fleh ich, end o Herr, den Jammer meiner Seelen,
 Hilf meinem Vater! hilf!
 
 
-Der Renegat
 48::
-Zapor.
+ap.
 Wie?
 Therise.
 Ich beschwöre dich,
 Errett ihn. Willst du Blut, nimm meines, tödte mich.
-Zapor, (richtet sie auf.)
+ap, (richtet sie auf.)
 Sey ruhig, seinen Tod vermagst du aufzuhalten,
 Wenn du ihn retten willst, braucht er nicht zu erkalten.
 Therise.
 Sprich denn, was muß ich thun?
-Zapor.
+ap.
 Ein einzges Mittel ist
-Jn dem Gesetz erlaubt, dadurch hilft sich der Christ,
+In dem Gesetz erlaubt, dadurch hilft sich der Christ,
 Wenn er den Tod verdient. Und des Gesetzes Willen,
 Und dieses einzige kannst du allein erfüllen,
 Dadurch erhältst du dir, verschmäh nicht unsre Huld,
@@ -1271,37 +1233,35 @@ O fodre, was du willst, großmüthger Muselman,
 Es sey auch, was es sey, wenn er nur leben kann.
 
 
-ein Trauerspiel.
 49::
-Zapor, (für sich.)
+ap, (für sich.)
 Wie ist sie angenehm, wie reitzen ihre Klagen!
 (laut.)
 Du mußt dann, Schöne. --
 Therise.
 Was? des Vaters Fessel tragen?
-Zapor.
+ap.
 Nein dies befreyt ihn nicht, da er es heut gewagt, --
 Therise.
 Was kann ihn dann befreyn?
-Zapor.
+ap.
 Was euch Orchan gesagt.
 Therise.
 Ich mich entheiligen! ich meinen GOtt verschwören!
 Ich von der Wahrheit gar zu dem Betruge kehren!
-Zapor.
+ap.
 Sey nicht unnütz verstockt. Eröffne deinen Blick,
 Dein Glücke liegt vor dir; Verirrte, sieh dein Glück.
 Therise.
 Unmenschen! rettet sonst kein Mittel ihn vom Sterben?
-Zapor.
+ap.
 Dies ist das einzige, die andern sind Verderben.
 Therise.
 O Himmel!
 
 
-Der Renegat
 50::
-Zapor.
+ap.
 Unnütz ist dein Ach und dein Geschrey.
 Bekenne dich zu uns, so wird dein Vater frey,
 Sonst — Schöne, du allein mußt dem Propheten glauben,
@@ -1314,11 +1274,11 @@ Therise.
 Hör, Muselman, ich bin unglücklich und betrübt,
 Sieht man sein Glück, wer ist, der nicht sein Glücke liebt?
 Durch dich, der du mich quälst, seufzt mein gefangner Vater,
-Jnbrünstig lieb ich ihn, den allerbesten Vater
+Inbrünstig lieb ich ihn, den allerbesten Vater
 Ihn, den ihr Wütriche zum Tod in Ketten führt,
 Der itzo schon vielleicht den letzten Hauch verliehrt;
 Noch stürb ich gern für ihn, und hätt ich hundert Leben,
-So hätt ich sie darum, sie für ihn aufzugeben.
+So hätt ich sie darum, sie für ihn Aufzugeben.
 Und darum fleh ich dir, dies ist mein einzigs Wohl;
 Doch foderst du, das ich den GOtt verläugnen soll,
 Der mich ihn lieben heißt, daß ich die Wahrheit hassen,
@@ -1329,10 +1289,9 @@ Uns stärkt der Christen Muth; wir sterben unerschüttert.
 (geht ab.)
 
 
-ein Trauerspiel.
 51::
 ## Fünfter Auftritt.
-Zapor.
+ap.
 Ha! Niederträchtiger! durch dich ist sie verbittert!
 Dies, Welwood, ist dein Werk. So glückt mirs wieder nicht!
 Welch ein verstockter Sinn, den auch nicht Drohung bricht!
@@ -1359,14 +1318,13 @@ sehe davon ein besonderes Beyspiel in der History of the py-
 ratical States §. 40.
 
 
-Der Renegat
 52::
 Sie wird, ist Welwood tod, mich dann viel leichter hören:
 Und durch nichts mehr verstockt zu deiner Lehre kehren.
 Ja, großer Mahomet! Dann läßt sie mir Orchan,
 Und dann ist nichts, das mir mein Glück erhöhen kann;
 Hilf göttlicher Prophet! Der sterbe, jener ziehe!
-Zapor, eil, daß dir nicht der Bösewicht entfliehe.
+ap, eil, daß dir nicht der Bösewicht entfliehe.
 (Ende des dritten Aufzuges.)
 # Vierter Aufzug.
 ## Erster Auftritt.
@@ -1379,12 +1337,11 @@ Du, der du mir mein Herz und meine Ruh genommen,
 Sohn, ungetreuer Sohn! so wird es nie geschehn,
 So soll ich in der Welt dich niemals wieder sehn!
 Warum, wenn dieses ist, verlängert man mein Leben,
-Warum zwang man mich nicht, sogleich es aufzugeben?
+Warum zwang man mich nicht, sogleich es Aufzugeben?
 Noch immer bin ich hier, wo keine Marter ruht,
 Noch immer Grausamen ein Schauspiel seltner Wuth!
 
 
-ein Trauerspiel.
 53::
 Werd' ich nie eine Welt, wie die verlassen können,
 Wo nur Ungläubige von heisser Nachgier brennen,
@@ -1465,7 +1422,6 @@ Nein, was empfindlichers. Ach! es wird dich entseelen!
 
 
 
-Der Renegat
 56::
 Grandlove.
 So sucht er uns vielleicht, und unsers Schicksals Schluß
@@ -1493,7 +1449,6 @@ Weißt du denn, ob man nicht den Weg zu ihm verschließt?
 Ob sie ihn dir befreyn? ob dich die Barbarn hören?
 
 
-ein Trauerspiel.
 57::
 Grandlove.
 O wer kann einen Sohn dem Vater wohl verwehren!
@@ -1521,13 +1476,12 @@ Ach er ist
 Doch seinem GOtte treu? er litt doch als ein Christ,
 
 
-Der Renegat
 58::
 Wenn ihn die Wütriche, den zu verläugnen, quälten,
 Und bey der Todesangst mit bittrem Spott entseelten?
 Welwood. (für sich.)
 O GOtt! entdeck ich ihm des Sohns Verbrechen? -- Nein,
-Soll einer elend seyn, so mag Zapor es seyn.
+Soll einer elend seyn, so mag ap es seyn.
 (laut)
 So wisse dann, er ist seit den betrübten Tagen
 Nunmehro -- wiß, er ist -- ich kann es dir nicht sagen!
@@ -1545,7 +1499,6 @@ Grandlove.
 Und wie?
 
 
-ein Trauerspiel.
 59::
 Therise.
 Sie wollen nicht die Barbarn, deinen Tod.
@@ -1573,7 +1526,6 @@ Ja.
 
 
 60::
-Der Renegat
 Grandlove.
 GOtt! du sollst elend seyn,
 Ich ziehen! Nimmermehr.
@@ -1600,7 +1552,6 @@ Noch mehr bestärkt, ist dies. Jtzt, da ichs wagen wollte,
 Zum letztenmal zu flehn, daß er dich lassen sollte,
 
 
-ein Trauerspiel.
 61::
 Such' ich und find' ihn nicht. Bleich, keichend und betäubt,
 Wie ein unseliger, den sein Gewissen treibt,
@@ -1610,7 +1561,7 @@ Umsonst. Nichts läßt sich sehn. Nur wimmerte ein Laut
 Wie eines Sterbenden. Mir schauderte die Haut,
 Noch einmal seufzts mir nach, wie dumpfig aus der Höle.
 Ich starr ohnmächtig hin, Entsetzen in der Seele.
-Auf einmal kömmt Zapor, und trägt uns Freyheit an,
+Auf einmal kömmt ap, und trägt uns Freyheit an,
 O wollt' er es im Ernst, er hätt es nicht gethan.
 So schnell wird Großmuth nicht bey Wütrichen erwachen,
 Dies ist vielleicht nur List, uns sicherer zu machen.
@@ -1631,7 +1582,6 @@ Hoffst du, daß dies geschehe?
 
 
 62::
-Der Renegat
 Therise.
 Ich hoff' es, guter Sir.
 Grandlove.
@@ -1657,7 +1607,6 @@ Um das, was heilig ist, und so gedacht kann werden,
 Bey aller seiner Pflicht, bey jedem Glück auf Erden,
 
 
-ein Trauerspiel.
 63::
 Bey seiner Seeligkeit, bey seines Vaters Ach
 Beschwör ich ihn, er soll. Er giebt doch endlich nach.
@@ -1683,7 +1632,6 @@ Hier will ich niederknien, hier will ich für ihn flehn.
 O Schöpfer würdige, nach mir herabzusehn;
 
 
-Der Renegat
 64::
 Vergieb, wenn mich der Schmerz zur Ungedult getrieben,
 O lehre mich hinfort in tiefster Demuth lieben,
@@ -1694,9 +1642,9 @@ Noch schleicht die Furcht für ihn durch alle meine Glieder.
 Ostille, mächt'ger GOtt! der unsre Thränen zählt,
 Die bangen Ahndungen, womit mein Herz sich quält!
 ## Fünfter Auftritt.
-$ Grandlove in der Ferne, Zapor tritt vorn aufs
+$ Grandlove in der Ferne, ap tritt vorn aufs
 Theater, mit einem Dolche in der Hand.
-Zapor.
+ap.
 Hier blieb er, sagt man mir, als beyde weggegangen,
 Wart Bösewicht, du sollst gleich deinen Lohn empfangen!
 (er bleibt stehen.)
@@ -1706,11 +1654,10 @@ Wie öde! wie so stumm! Hier — ach! hier soll ichs wagen! --
 Was wagen! es ist Pflicht, den Bösewicht zu schlagen.
 (Er will gehen, tritt aber wie=
 der zurück.)
-Zapor ach! eh du schlägst, laß doch die Rachgier ruhn,
-Was willst du? Einen Mord! Zapor, was willst du thun?
+ap ach! eh du schlägst, laß doch die Rachgier ruhn,
+Was willst du? Einen Mord! ap, was willst du thun?
 
 
-ein Trauerspiel.
 65::
 Warum verfolgst du ihn mit diesem wilden Grimme!
 Was hat er dir gethan? — Ach! welche bange Stimme
@@ -1729,7 +1676,7 @@ Mord ist Religion, geheiliget die Rache!
 Grandlove, (von weiten.)
 GOtt stärk ihn, wenn er wankt und nur noch zweifelnd glaubt!
 Daß mir sein edles Herz, nicht Wahn und Lüge raubt!
-Zapor.
+ap.
 Er lästert! -- Und er soll so ungestraft dies wagen?
 Zu lange säumt mein Arm.
 (er läuft einige Schritte, bebt aber plötz=
@@ -1740,7 +1687,6 @@ Wie pocht mein Herz! -- o GOtt! --
 (er sieht wild und ängstlich um sich)
 
 
-Der Renegat
 66::
 Was irrt ihr hier herum?
 Was wandelt ihr so bleich, so blutig vor mir um,
@@ -1760,7 +1706,7 @@ Ach! was reißt mich fort! Ich halte mich nicht mehr!
 Grandlove.
 Unmenschlicher Barbar! laß ab, mich zu verderben,
 Ich sterbe.
-Zapor.
+ap.
 Mögte doch die Seele mit dir sterben! --
 Dies Welwood ist dein Lohn: Dein Flehn wird nicht gehört.
 Ein Bösewicht, ein Christ, ist der des Mitleids werth?
@@ -1770,18 +1716,17 @@ Hört, er wird über mich, eh er stirbt, Rache schreyn,
 Und allen Gift als Christ im Tode von sich speyn.
 
 
-ein Trauerspiel.
 67::
 Itzt werden Schmähungen aus seinem Munde fahren,
 Wovor die Hölle bebt!
 Grandlove, (schwach.)
 Vergieb, GOtt! dem Barbaren,
 Dem Mörder, der mich schlägt. Laß ihn die That gereun!
-Zapor.
+ap.
 Was hör ich? Schmäht er nicht? Nein dieses kann nicht seyn,
 Ich höre nicht, daß ihn der Schlag ergrimmter mache,
 Er speyt nicht Schmähungen, schreyt über mich nicht Rache!
-Was hab ich denn gethan? Zapor, verirrst du dich.
+Was hab ich denn gethan? ap, verirrst du dich.
 Ach wenn dies ist, wer ist unseliger, als ich!
 Der hier stirbt, kann noch Huld für seinen Mörder suchen,
 Nein, dies ist Welwood nicht, der würde mich verfluchen,
@@ -1798,19 +1743,18 @@ Grandlove.
 Was hab ich dir gethan, mein Freund? warum dies Wüten?
 
 
-Der Renegat
 68::
-Zapor.
+ap.
 Wie! und du nennst mich Freund, Armselger! sprichst mir zu
 So liebreich! so voll Huld! — ach! warum drückest du
 Die mörderische Faust so zärtlich! rufst Erbarmen
-Jm Tode über mich! Du willst mich noch umarmen!
+Im Tode über mich! Du willst mich noch umarmen!
 Reichst zitternd mir die Hand! Du drückst mich an dein Herz,
 Laß ab, du tödtest mich.
 Grandlove.
 GOtt lindre seinen Schmerz,
 Verleih ihm Trost, verleih ihm Segen aus der Höhe!
-Zapor.
+ap.
 O rettet, rettet mich! Ich sinke, ich vergehe,
 Ich flieh --
 (er läuft vor Angst ab.)
@@ -1825,7 +1769,6 @@ Der Mörder muste nicht durch deinen Blitz vergehen,
 Eh er den Streich vollführt!
 
 
-ein Trauerspiel.
 69::
 Grandlove.
 O Tochter, fluch ihm nicht,
@@ -1856,7 +1799,7 @@ Der Renegatz
 70::
 # Fünfter Aufzug.
 ## Erster Auftritt.
-Zapor.
+ap.
 Kann ich denn nirgends dir, namlose Qual, entfliehn!
 Blut, des Erschlagnen Blut, wo treibst du mich noch
 hin!
@@ -1880,7 +1823,6 @@ Du machst, daß meine Qual nur schrecklicher erwacht!
 Den GOtt hab ich gehaßt, den GOtt hab ich verlassen,
 
 
-ein Trauerspiel.
 71::
 Den GOtt hab ich verschmäht, was kann er als mich hassen?
 So hört mich keiner dann, und lindert meine Noth!
@@ -1888,8 +1830,8 @@ Ich Unglückseliger! hab ich denn keinen Gott! --
 Du Elend bist mein Gott! du richtest meine Sache,
 Für mich ist GOtt nicht GOtt, für mich ist Tod und Rache!
 ## Zweyter Auftritt.
-Zapor, Welwood.
-Zapor, (als er ihn kommen sieht.)
+ap, Welwood.
+ap, (als er ihn kommen sieht.)
 Ach nun ist alles klar!
 Welwood.
 Du starrst mich zitternd an,
@@ -1897,46 +1839,44 @@ Da du mich kommen siehst, beglückter Muselman?
 Hast du das Glück nicht mehr, das dich so ruhig machet?
 Fühlst du nun, daß in dir ein innrer Richter wachet?
 Fühlst du nun, daß dein GOtt --
-Zapor.
+ap.
 Ich flehe dir, laß ab.
-Jn dieser Schreckenswelt, wird alles mir ein Grab.
+In dieser Schreckenswelt, wird alles mir ein Grab.
 Schweig oder tödte mich!
 Welwood.
 Was kann dich so erschüttern?
 Unseliger! so sehr sah ich noch keinen zittern.
 
 
-Der Renegat
 72
 Dein Auge starrt umher, die Wang ist tödtlich blaß,
-Jm Herzen ringt die Angst.
-Zapor.
+Im Herzen ringt die Angst.
+ap.
 O unglücksel'ger Haß!
 O übereilter Schlag!
 Welwood.
 Was hast du denn begangen?
 Mich schrecket ein Verdacht. Achl! was hast du begangen,
 Daß dich mit solcher Wuth ein innrer Schauder faßt.
-Zapor.
+ap.
 Schweig. Jedes Wort von dir stürzt eine neue Last
 Von Qualen auf mein Haupt!
 Welwood.
 So nenne dein Verbrechen.
-Zapor.
+ap.
 Ich habe — doch umsonst, es ist nicht auszusprechen.
 Die Zunge klebet mir am Gaumen. Fliehe Freund,
 Entreiß dich, fürchte mich.
 ## Dritter Auftritt.
-$Zapor, Welwood, Therise (weinend.)
+$ap, Welwood, Therise (weinend.)
 Welwood.
 Und Miß Therise weint?
 
 
-ein Trauerspiel.
 73::
 Therise.
 Ach! Welwood weine mit. Den besten aller Väter
-Hat ein Barbar erwürgt, und (sie zeigt auf Zapor) dieses ist
+Hat ein Barbar erwürgt, und (sie zeigt auf ap) dieses ist
 der Thäter,
 er entfloh nach der vollbrachten That,
 Der Mörder
@@ -1946,7 +1886,7 @@ Unsel'ger Renegat!
 Was hast du nun gethan? erzittre Feind der Deinen,
 Ach! mögten über dir doch selbst die Engel weinen!
 Der, den du tödtest, ist dein Vater!
-(Zapor steht wie vom Donner ge=
+(ap steht wie vom Donner ge=
 troffen stumm und unbeweglich.)
 Therise.
 Grosser GOtt!
@@ -1959,11 +1899,10 @@ Die Erde mögte sich zu seinen Füßen theilen.
 Dein Vater!
 Therise.
 So stirb mit, wer kann ihn sterben sehn.
-Zapor.
+ap.
 Er ists! Wer rettet mich, ich muß vor ihm vergehn. (lauft ab.)
 
 
-Der Renegat
 74::
 ## Vierter Auftritt.
 $Welwood, Therise, und der sterbende Grandlove
@@ -1987,32 +1926,31 @@ O kommt, in eurem Arm verhauch' ich meinen Geist.
 GOtt, der mir diesen Trost im Tode gönnen wollte, --
 Ach! wenn ich meinen Sohn hier nur gleich sehen sollte!
 ## Fünfter Auftritt.
-$Welwood, Therise, der sterbende Grandlove Zapor,
+$Welwood, Therise, der sterbende Grandlove ap,
 (der mit einem Dolche in der Hand herein stürzt.)
-Zapor.
+ap.
 Sieh deinen Mörder hier und deinen Sohn zugleich!
 
 
-ein Trauerspiel.
 75::
 Grandlove.
 Was hör ich? ach! mein Sohn gab mir den Todesstreich! --
 So war mir dies, mein GOtt! zuletzt noch aufbehalten!
 O warum muste nicht dies Herze längst erkalten!
-(sieht Zapor wehmüthig an.)
-Zapor.
+(sieht ap wehmüthig an.)
+ap.
 O blicke mich nicht an! Wend, wende dich von mir!
 Den Blick ertrag ich nicht, o wende dich von mir?
 Grandlove. (mit Wehmuth.)
 Ach Edward!
-Zapor. (fällt vor ihm nieder und überreicht ihn
+ap. (fällt vor ihm nieder und überreicht ihn
 den Dolch.)
 Räche dich. Mir ist der Tod Erbarmer
 Schlag deinen Mörder!
 Grandlove.
 (wirft den Dolch weit von sich)
 Nein. Ich will den Sohn umarmen
-Zapor. (springt auf.)
+ap. (springt auf.)
 Du nennest mich noch: Sohn? Umarmen willst du mich?
 Verzeihen willst du mir? Und ich ertödte dich!
 Ach bin ich noch dein Sohn! Ich habe GOtt verschworen,
@@ -2034,7 +1972,7 @@ So lehrt mein Glaube mich doch, alles zu vergessen.
 Versöhne dich mit GOtt, bereue deine That,
 Kehr um! ach! laß mich doch, armselger Renegat,
 Mit Wehmuth über dir nicht vor sein Antlitz treten!
-Zapor. (will niederknien.)
+ap. (will niederknien.)
 Nun so erhöre mich! — (springt plötzlich wieder auf.)
 Verworfner du willst bethen!
 Verstumm! du lästerst GOtt! Ein Fluch ist dein Gebeth --
@@ -2051,7 +1989,6 @@ Noch scheints, mich stärkt der GOtt, der starb für unser Wohl,
 Mit höhrer Kraft, daß ich ihn dir verkünd'gen soll.
 
 
-ein Trauerspiel.
 77::
 Verzage nicht, o Sohn. Eil zu der Gnade Armen,
 Der du entflohen bist. Sie hat noch viel Erbarmen
@@ -2081,9 +2018,8 @@ Laß die Verzweifelung doch nicht dein Herz besiegen,
 Sey wiederum ein Christ, so sterb ich mit Vergnügen.
 
 
-Der Renegat
 78::
-Zapor.
+ap.
 Laß ab, Entsetzlicher! Laß ab, ichsterbe schon,
 Ich bin genug entselt.
 Grandlove.
@@ -2101,14 +2037,13 @@ Welwood.
 Unsterbliche, führt ihn zu euren Freuden.
 GOtt! gieb dem Sohn den Trost, um den sein Vater bat;
 Erhöre das Gebeth, das dieser Engel that!
-Zapor.
+ap.
 Wo ist mein Vater! ach ein Unmensch schlug ihn nieder
 Wo such ich ihn? wer giebt mir meinen Vater wieder?
 Mir, der ich ohne GOtt und ohne Väter bin?
 Wo soll ich hin? Zu wem? o GOtt! wo soll ich hin! --
 
 
-ein Trauerspiel.
 79::
 Dem Himmel sey gedankt! ich seh den Vater wieder.
 Doch welch ein Storm von Blut rauscht hinter ihm danieder!
@@ -2139,9 +2074,8 @@ Er tödtet sich! o GOtt!
 Halt ein!
 
 
-Der Renegat
 80::
-Zapor.
+ap.
 Es ist geschehn. Ist dies Gefühl der Tod!
 Welch Schauder reist mich fort! O Richter unsrer Thaten,
 GOtt, fürchterlicher GOtt! wo werd' ich hingerathen!

@@ -137,6 +137,8 @@ function(input, output, session) {
     repldf<-read.csv(file)
     print(repldf)
     repldf$replace<-gsub("\\\\n","\\\\\n",repldf$replace)
+    # repldf$replace<-gsub("[\\\\]([1-9])","\\\\\\\\\1",repldf$replace)
+    repldf$replace<-gsub("[\\]([1-9])","\\\\1",repldf$replace)
     #  repldf$replace<-gsub("W","dummy",repldf$replace)
     
     print(repldf$replace)

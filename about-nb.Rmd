@@ -1,21 +1,23 @@
 ---
-title: "R Notebook"
+title: "helper page"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
-
 ```{r}
-plot(cars)
 # display toggle code
 print(sample(49,6))
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+# replacements
+you can upload a table (.csv) with replacements to apply to your transcript. the table has to be in the following format:
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+```{}
+,find,replace
+samplefind1,dummyreplace1
+samplefind2,dummyreplace2
+findthis(captured),thisis\1
+\nan a at the beginning,\nbegins with b now
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+```
 
+please mind that this 1st stage replacements are applied to the text as single character string, which means if you want to adress characters dependent on line beginnings or endings you have to adress these with `\n` in the table, and NOT with `^` or `$` like as for single line find/replacements. the rest is still pure regular expressions and capture groups are adressed as e.g. `\1` for capture group 1. 

@@ -11,7 +11,7 @@
 
 
 
-<title>R Notebook</title>
+<title>helper page</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1746,41 +1746,43 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">R Notebook</h1>
+<h1 class="title toc-ignore">helper page</h1>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a>
-Notebook. When you execute code within the notebook, the results appear
-beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within
-the chunk or by placing your cursor inside it and pressing
-<em>Cmd+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVjR3h2ZENoallYSnpLVnh1SXlCa2FYTndiR0Y1SUhSdloyZHNaU0JqYjJSbFhHNXdjbWx1ZENoellXMXdiR1VvTkRrc05pa3BYRzVnWUdBaWZRPT0gLS0+XG5cbmBgYHJcbnBsb3QoY2FycylcbiMgZGlzcGxheSB0b2dnbGUgY29kZVxucHJpbnQoc2FtcGxlKDQ5LDYpKVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuIyBkaXNwbGF5IHRvZ2dsZSBjb2RlXG5wcmludChzYW1wbGUoNDksNikpXG5gYGAifQ== -->
-<pre class="r"><code>plot(cars)
-# display toggle code
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVJeUJrYVhOd2JHRjVJSFJ2WjJkc1pTQmpiMlJsWEc1d2NtbHVkQ2h6WVcxd2JHVW9ORGtzTmlrcFhHNWdZR0FpZlE9PSAtLT5cblxuYGBgclxuIyBkaXNwbGF5IHRvZ2dsZSBjb2RlXG5wcmludChzYW1wbGUoNDksNikpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBkaXNwbGF5IHRvZ2dsZSBjb2RlXG5wcmludChzYW1wbGUoNDksNikpXG5gYGAifQ== -->
+<pre class="r"><code># display toggle code
 print(sample(49,6))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
-toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and
-output will be saved alongside it (click the <em>Preview</em> button or
-press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the
-editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
-run any R code chunks. Instead, the output of the chunk when it was last
-run in the editor is displayed.</p>
+<div id="replacements" class="section level1">
+<h1>replacements</h1>
+<p>you can upload a table (.csv) with replacements to apply to your
+transcript. the table has to be in the following format:</p>
+<pre><code>,find,replace
+samplefind1,dummyreplace1
+samplefind2,dummyreplace2
+findthis(captured),thisis\1
+\nan a at the beginning,\nbegins with b now
+</code></pre>
+<p>please mind that this 1st stage replacements are applied to the text
+as single character string, which means if you want to adress characters
+dependent on line beginnings or endings you have to adress these with
+<code>\n</code> in the table, and NOT with <code>^</code> or
+<code>$</code> like as for single line find/replacements. the rest is
+still pure regular expressions and capture groups are adressed as
+e.g. <code>\1</code> for capture group 1.</p>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KcGxvdChjYXJzKQojIGRpc3BsYXkgdG9nZ2xlIGNvZGUKcHJpbnQoc2FtcGxlKDQ5LDYpKQpgYGAKCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDbWQrT3B0aW9uK0kqLgoKV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDbWQrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4gCgpUaGUgcHJldmlldyBzaG93cyB5b3UgYSByZW5kZXJlZCBIVE1MIGNvcHkgb2YgdGhlIGNvbnRlbnRzIG9mIHRoZSBlZGl0b3IuIENvbnNlcXVlbnRseSwgdW5saWtlICpLbml0KiwgKlByZXZpZXcqIGRvZXMgbm90IHJ1biBhbnkgUiBjb2RlIGNodW5rcy4gSW5zdGVhZCwgdGhlIG91dHB1dCBvZiB0aGUgY2h1bmsgd2hlbiBpdCB3YXMgbGFzdCBydW4gaW4gdGhlIGVkaXRvciBpcyBkaXNwbGF5ZWQuCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiaGVscGVyIHBhZ2UiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQojIGRpc3BsYXkgdG9nZ2xlIGNvZGUKcHJpbnQoc2FtcGxlKDQ5LDYpKQpgYGAKCiMgcmVwbGFjZW1lbnRzCnlvdSBjYW4gdXBsb2FkIGEgdGFibGUgKC5jc3YpIHdpdGggcmVwbGFjZW1lbnRzIHRvIGFwcGx5IHRvIHlvdXIgdHJhbnNjcmlwdC4gdGhlIHRhYmxlIGhhcyB0byBiZSBpbiB0aGUgZm9sbG93aW5nIGZvcm1hdDoKCmBgYHt9CixmaW5kLHJlcGxhY2UKc2FtcGxlZmluZDEsZHVtbXlyZXBsYWNlMQpzYW1wbGVmaW5kMixkdW1teXJlcGxhY2UyCmZpbmR0aGlzKGNhcHR1cmVkKSx0aGlzaXNcMQpcbmFuIGEgYXQgdGhlIGJlZ2lubmluZyxcbmJlZ2lucyB3aXRoIGIgbm93CgpgYGAKCnBsZWFzZSBtaW5kIHRoYXQgdGhpcyAxc3Qgc3RhZ2UgcmVwbGFjZW1lbnRzIGFyZSBhcHBsaWVkIHRvIHRoZSB0ZXh0IGFzIHNpbmdsZSBjaGFyYWN0ZXIgc3RyaW5nLCB3aGljaCBtZWFucyBpZiB5b3Ugd2FudCB0byBhZHJlc3MgY2hhcmFjdGVycyBkZXBlbmRlbnQgb24gbGluZSBiZWdpbm5pbmdzIG9yIGVuZGluZ3MgeW91IGhhdmUgdG8gYWRyZXNzIHRoZXNlIHdpdGggYFxuYCBpbiB0aGUgdGFibGUsIGFuZCBOT1Qgd2l0aCBgXmAgb3IgYCRgIGxpa2UgYXMgZm9yIHNpbmdsZSBsaW5lIGZpbmQvcmVwbGFjZW1lbnRzLiB0aGUgcmVzdCBpcyBzdGlsbCBwdXJlIHJlZ3VsYXIgZXhwcmVzc2lvbnMgYW5kIGNhcHR1cmUgZ3JvdXBzIGFyZSBhZHJlc3NlZCBhcyBlLmcuIGBcMWAgZm9yIGNhcHR1cmUgZ3JvdXAgMS4g</div>
 
 
 

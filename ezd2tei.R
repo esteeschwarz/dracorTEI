@@ -223,18 +223,19 @@ parse_drama_text <- function(input_tx, output_file) {
       for(p in front.t){
         xml_add_child(xml_doc$front, "p", p)
       }
-      line.true<-"front"
+     line.true<-"front"
     }
-    
-    if (str_detect(line, "^@[^.]+\\.", )&!line.true%in%c("title","subtitle","author","front")) {
-      parts <- str_match(line, "^@([^.]+?)\\.(.*)")
+   # line<-"@Iwanette."
+    if (str_detect(line, "^@[^.]+\\.?", )&!line.true%in%c("title","subtitle","author","front")) {
+      parts <- str_match(line, "^@([^.]+?)\\.(.*)") #wks. wt transkribus
+      parts <- str_match(line, "^@([^.]*)(.*)") # > in some former ezd markedup texts, the . after the speaker was removed before sending to ezd.py
       speaker <- gsub("[@.]","",str_trim(parts[2]))
       speaker.id<-paste0(tolower(speaker))
       speaker.id<-gsub(" ","_",speaker.id)
       speaker.a<-append(speaker.a,speaker,after = k)
       speaker.a<-speaker.a[!is.na(speaker.a)]
       speaker.a<-gsub(" ","_",speaker.a)
-      text <- str_trim(parts[3])
+     # text <- str_trim(parts[3])
       line.true<-"speaker"
       # Traitement des numéros de page (150::)
       # text <- str_replace_all(text, "(\\d{1,4})::", "</p><pb n=\"\\1\"/><p>")
@@ -303,7 +304,7 @@ parse_drama_text <- function(input_tx, output_file) {
           str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
         # <pb n="11">[11]</pb>
         #        p <- xml_add_child(current_scene, "p")
-       # p <- xml_add_child(sp, "p")
+        p <- xml_add_child(sp, "p")
         write(processed,"debug.txt",append = T)
         
         xml_text(p) <- processed

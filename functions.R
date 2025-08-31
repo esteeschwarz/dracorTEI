@@ -1,4 +1,44 @@
-
+check_regex_dep<-function(repldf){
+  sampletx<-"just a random sample text"
+  tryCatch({
+  for (k in 1:length(repldf$find)){
+    
+      sampletx<-gsub(repldf$find[k],repldf$replace[k],sampletx)
+  }
+      return(repldf)
+    }, error = function(e) {
+      message<-paste0("your replacment table contains an error at row -",k,"-")
+    
+     return(message)
+    })
+  
+}
+check_regex <- function(repldf) {
+  sampletx <- "just a random sample text"
+  for (k in seq_along(repldf$find)) {
+    # Check 'find' pattern
+    find_ok <- tryCatch({
+      grepl(repldf$find[k], sampletx, perl = TRUE)
+      TRUE
+    }, error = function(e) {
+      return(FALSE)
+    })
+    if (!find_ok) {
+      return(list(success = FALSE, error = paste0("Regex error in 'find' at row ", k, ": ", repldf$find[k])))
+    }
+    # Check 'replace' pattern by running gsub
+    replace_ok <- tryCatch({
+      gsub(repldf$find[k], repldf$replace[k], sampletx, perl = TRUE)
+      TRUE
+    }, error = function(e) {
+      return(FALSE)
+    })
+    if (!replace_ok) {
+      return(list(success = FALSE, error = paste0("Regex error in 'replace' at row ", k, ": ", repldf$replace[k])))
+    }
+  }
+  list(success = TRUE, result = repldf)
+}
 guess_speaker<-function(t1,cast){
   # t1 is character
   ttemp<-tempfile("sp.txt")

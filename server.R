@@ -136,6 +136,24 @@ function(input, output, session) {
     file<-input$upload_repl$datapath
     repldf<-read.csv(file)
     print(repldf)
+    res <- check_regex(repldf)
+    if (!res$success) {
+      print("regex error...")
+      showNotification(res$error, type = "error")
+      output$proutput<- renderText(res$error)
+      
+    } else {
+      # proceed with res$result
+    print("regex okay...")
+    # replchk<-check_regex(repldf)
+    # if(typeof(replchk)=="character"){
+    #   print(replchk)
+    #   output$proutput<- renderText(replchk)
+    # }
+    # if(typeof(replchk)!="character"){
+    repldf<-res$result
+    output$proutput<- renderText("replacements loaded...")
+      
     repldf$replace<-gsub("\\\\n","\\\\\n",repldf$replace)
     # repldf$replace<-gsub("[\\\\]([1-9])","\\\\\\\\\1",repldf$replace)
     repldf$replace<-gsub("[\\]([1-9])","\\\\1",repldf$replace)
@@ -160,6 +178,7 @@ function(input, output, session) {
     t3<-clean.t(rv$t1,1,rv$repl)
     #t3
     rv$t1<-t3
+    }
   })
 #   observeEvent(input$upload_repl,{
 #     file<-input$upload_repl$datapath

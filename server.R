@@ -5,6 +5,7 @@ library(jsonlite)
 #library(diffobj)
 library(diffr)
 library(xml2)
+library(dplyr)
 #library(tools)
 # takes 9.40min to install packages on silver
 source("ezd2tei.R")

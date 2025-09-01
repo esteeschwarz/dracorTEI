@@ -1755,18 +1755,43 @@ display: none;
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVJeUJrYVhOd2JHRjVJSFJ2WjJkc1pTQmpiMlJsWEc1d2NtbHVkQ2h6WVcxd2JHVW9ORGtzTmlrcFhHNWdZR0FpZlE9PSAtLT5cblxuYGBgclxuIyBkaXNwbGF5IHRvZ2dsZSBjb2RlXG5wcmludChzYW1wbGUoNDksNikpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBkaXNwbGF5IHRvZ2dsZSBjb2RlXG5wcmludChzYW1wbGUoNDksNikpXG5gYGAifQ== -->
-<pre class="r"><code># display toggle code
-print(sample(49,6))</code></pre>
-<!-- rnb-source-end -->
+<pre><code>
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBkaXNwbGF5IHRvZ2dsZSBjb2RlXG5wcmludChzYW1wbGUoNDksNikpXG5gYGAifQ== --&gt;
+
+```r
+# display toggle code
+print(sample(49,6))
+```
+
+&lt;!-- rnb-source-end --&gt;</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<div id="replacements" class="section level1">
-<h1>replacements</h1>
-<p>you can upload a table (.csv) with replacements to apply to your
-transcript. the table has to be in the following format:</p>
-<pre><code>,find,replace
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBkaXNwbGF5IHRvZ2dsZSBjb2RlXG5wcmludChzYW1wbGUoNDksNikpXG5gYGBcbmBgYCJ9 -->
+<pre class="r"><code>```r
+# display toggle code
+print(sample(49,6))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+# upload transcript
+## raw
+you will first upload a transcript as .txt file which is raw text from your digitalisation OCR without any annotation, markup or such and the app will try to preprocess that and apply a basic markup (base: ezdrama) after you have input some information on author, title etc. and structural definitions (header/speaker declaration). if all goes well then you have next an annotated version of your raw text with basic markup which you can view in the `processed` tab. then you will trigger the TEI conversion by `create xml` and if lucky and your raw text was consistent in terms of stage directions, speaker introduction and act/scene declarations the xml looks good. if not, download the marked up text `download ezd-markup text`, correct/adapt to a constistent state. 
+
+## tagged
+upload this edited marked up text with `upload ezd-markup` and try again. dont apply speaker/header/title information again since it is already marked up in the text as you will see viewing the `processed` tab; just use the `create xml` button again.
+
+
+# replacements
+if you noticed repeated OCR errors in your transcript that you didnt correct in your transcribing (since much of these can be done automatically) you can upload a table (.csv) with global replacements to apply to your transcript. the table has to be in the following format and will be checked for regex errors before applied. best is to create this table directly in a texteditor and save as .csv but you can also create a table in numbers/excel and export as csv.
+
+```{}
+,find,replace
+Jch,Ich
 samplefind1,dummyreplace1
 samplefind2,dummyreplace2
 findthis(captured),thisis\1
@@ -1780,9 +1805,8 @@ dependent on line beginnings or endings you have to adress these with
 still pure regular expressions and capture groups are adressed as
 e.g. <code>\1</code> for capture group 1.</p>
 <!-- rnb-text-end -->
-</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiaGVscGVyIHBhZ2UiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQojIGRpc3BsYXkgdG9nZ2xlIGNvZGUKcHJpbnQoc2FtcGxlKDQ5LDYpKQpgYGAKCiMgcmVwbGFjZW1lbnRzCnlvdSBjYW4gdXBsb2FkIGEgdGFibGUgKC5jc3YpIHdpdGggcmVwbGFjZW1lbnRzIHRvIGFwcGx5IHRvIHlvdXIgdHJhbnNjcmlwdC4gdGhlIHRhYmxlIGhhcyB0byBiZSBpbiB0aGUgZm9sbG93aW5nIGZvcm1hdDoKCmBgYHt9CixmaW5kLHJlcGxhY2UKc2FtcGxlZmluZDEsZHVtbXlyZXBsYWNlMQpzYW1wbGVmaW5kMixkdW1teXJlcGxhY2UyCmZpbmR0aGlzKGNhcHR1cmVkKSx0aGlzaXNcMQpcbmFuIGEgYXQgdGhlIGJlZ2lubmluZyxcbmJlZ2lucyB3aXRoIGIgbm93CgpgYGAKCnBsZWFzZSBtaW5kIHRoYXQgdGhpcyAxc3Qgc3RhZ2UgcmVwbGFjZW1lbnRzIGFyZSBhcHBsaWVkIHRvIHRoZSB0ZXh0IGFzIHNpbmdsZSBjaGFyYWN0ZXIgc3RyaW5nLCB3aGljaCBtZWFucyBpZiB5b3Ugd2FudCB0byBhZHJlc3MgY2hhcmFjdGVycyBkZXBlbmRlbnQgb24gbGluZSBiZWdpbm5pbmdzIG9yIGVuZGluZ3MgeW91IGhhdmUgdG8gYWRyZXNzIHRoZXNlIHdpdGggYFxuYCBpbiB0aGUgdGFibGUsIGFuZCBOT1Qgd2l0aCBgXmAgb3IgYCRgIGxpa2UgYXMgZm9yIHNpbmdsZSBsaW5lIGZpbmQvcmVwbGFjZW1lbnRzLiB0aGUgcmVzdCBpcyBzdGlsbCBwdXJlIHJlZ3VsYXIgZXhwcmVzc2lvbnMgYW5kIGNhcHR1cmUgZ3JvdXBzIGFyZSBhZHJlc3NlZCBhcyBlLmcuIGBcMWAgZm9yIGNhcHR1cmUgZ3JvdXAgMS4g</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiaGVscGVyIHBhZ2UiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQojIGRpc3BsYXkgdG9nZ2xlIGNvZGUKcHJpbnQoc2FtcGxlKDQ5LDYpKQpgYGAKCiMgdXBsb2FkIHRyYW5zY3JpcHQKIyMgcmF3CnlvdSB3aWxsIGZpcnN0IHVwbG9hZCBhIHRyYW5zY3JpcHQgYXMgLnR4dCBmaWxlIHdoaWNoIGlzIHJhdyB0ZXh0IGZyb20geW91ciBkaWdpdGFsaXNhdGlvbiBPQ1Igd2l0aG91dCBhbnkgYW5ub3RhdGlvbiwgbWFya3VwIG9yIHN1Y2ggYW5kIHRoZSBhcHAgd2lsbCB0cnkgdG8gcHJlcHJvY2VzcyB0aGF0IGFuZCBhcHBseSBhIGJhc2ljIG1hcmt1cCAoYmFzZTogZXpkcmFtYSkgYWZ0ZXIgeW91IGhhdmUgaW5wdXQgc29tZSBpbmZvcm1hdGlvbiBvbiBhdXRob3IsIHRpdGxlIGV0Yy4gYW5kIHN0cnVjdHVyYWwgZGVmaW5pdGlvbnMgKGhlYWRlci9zcGVha2VyIGRlY2xhcmF0aW9uKS4gaWYgYWxsIGdvZXMgd2VsbCB0aGVuIHlvdSBoYXZlIG5leHQgYW4gYW5ub3RhdGVkIHZlcnNpb24gb2YgeW91ciByYXcgdGV4dCB3aXRoIGJhc2ljIG1hcmt1cCB3aGljaCB5b3UgY2FuIHZpZXcgaW4gdGhlIGBwcm9jZXNzZWRgIHRhYi4gdGhlbiB5b3Ugd2lsbCB0cmlnZ2VyIHRoZSBURUkgY29udmVyc2lvbiBieSBgY3JlYXRlIHhtbGAgYW5kIGlmIGx1Y2t5IGFuZCB5b3VyIHJhdyB0ZXh0IHdhcyBjb25zaXN0ZW50IGluIHRlcm1zIG9mIHN0YWdlIGRpcmVjdGlvbnMsIHNwZWFrZXIgaW50cm9kdWN0aW9uIGFuZCBhY3Qvc2NlbmUgZGVjbGFyYXRpb25zIHRoZSB4bWwgbG9va3MgZ29vZC4gaWYgbm90LCBkb3dubG9hZCB0aGUgbWFya2VkIHVwIHRleHQgYGRvd25sb2FkIGV6ZC1tYXJrdXAgdGV4dGAsIGNvcnJlY3QvYWRhcHQgdG8gYSBjb25zdGlzdGVudCBzdGF0ZS4gCgojIyB0YWdnZWQKdXBsb2FkIHRoaXMgZWRpdGVkIG1hcmtlZCB1cCB0ZXh0IHdpdGggYHVwbG9hZCBlemQtbWFya3VwYCBhbmQgdHJ5IGFnYWluLiBkb250IGFwcGx5IHNwZWFrZXIvaGVhZGVyL3RpdGxlIGluZm9ybWF0aW9uIGFnYWluIHNpbmNlIGl0IGlzIGFscmVhZHkgbWFya2VkIHVwIGluIHRoZSB0ZXh0IGFzIHlvdSB3aWxsIHNlZSB2aWV3aW5nIHRoZSBgcHJvY2Vzc2VkYCB0YWI7IGp1c3QgdXNlIHRoZSBgY3JlYXRlIHhtbGAgYnV0dG9uIGFnYWluLgoKCiMgcmVwbGFjZW1lbnRzCmlmIHlvdSBub3RpY2VkIHJlcGVhdGVkIE9DUiBlcnJvcnMgaW4geW91ciB0cmFuc2NyaXB0IHRoYXQgeW91IGRpZG50IGNvcnJlY3QgaW4geW91ciB0cmFuc2NyaWJpbmcgKHNpbmNlIG11Y2ggb2YgdGhlc2UgY2FuIGJlIGRvbmUgYXV0b21hdGljYWxseSkgeW91IGNhbiB1cGxvYWQgYSB0YWJsZSAoLmNzdikgd2l0aCBnbG9iYWwgcmVwbGFjZW1lbnRzIHRvIGFwcGx5IHRvIHlvdXIgdHJhbnNjcmlwdC4gdGhlIHRhYmxlIGhhcyB0byBiZSBpbiB0aGUgZm9sbG93aW5nIGZvcm1hdCBhbmQgd2lsbCBiZSBjaGVja2VkIGZvciByZWdleCBlcnJvcnMgYmVmb3JlIGFwcGxpZWQuIGJlc3QgaXMgdG8gY3JlYXRlIHRoaXMgdGFibGUgZGlyZWN0bHkgaW4gYSB0ZXh0ZWRpdG9yIGFuZCBzYXZlIGFzIC5jc3YgYnV0IHlvdSBjYW4gYWxzbyBjcmVhdGUgYSB0YWJsZSBpbiBudW1iZXJzL2V4Y2VsIGFuZCBleHBvcnQgYXMgY3N2LgoKYGBge30KLGZpbmQscmVwbGFjZQpKY2gsSWNoCnNhbXBsZWZpbmQxLGR1bW15cmVwbGFjZTEKc2FtcGxlZmluZDIsZHVtbXlyZXBsYWNlMgpmaW5kdGhpcyhjYXB0dXJlZCksdGhpc2lzXDEKXG5hbiBhIGF0IHRoZSBiZWdpbm5pbmcsXG5iZWdpbnMgd2l0aCBiIG5vdwoKYGBgCgpwbGVhc2UgbWluZCB0aGF0IHRoaXMgMXN0IHN0YWdlIHJlcGxhY2VtZW50cyBhcmUgYXBwbGllZCB0byB0aGUgdGV4dCBhcyBzaW5nbGUgY2hhcmFjdGVyIHN0cmluZywgd2hpY2ggbWVhbnMgaWYgeW91IHdhbnQgdG8gYWRyZXNzIGNoYXJhY3RlcnMgZGVwZW5kZW50IG9uIGxpbmUgYmVnaW5uaW5ncyBvciBlbmRpbmdzIHlvdSBoYXZlIHRvIGFkcmVzcyB0aGVzZSB3aXRoIGBcbmAgaW4gdGhlIHRhYmxlLCBhbmQgTk9UIHdpdGggYF5gIG9yIGAkYCBsaWtlIGFzIGZvciBzaW5nbGUgbGluZSBmaW5kL3JlcGxhY2VtZW50cy4gdGhlIHJlc3QgaXMgc3RpbGwgcHVyZSByZWd1bGFyIGV4cHJlc3Npb25zIGFuZCBjYXB0dXJlIGdyb3VwcyBhcmUgYWRyZXNzZWQgYXMgZS5nLiBgXDFgIGZvciBjYXB0dXJlIGdyb3VwIDEuIAoK</div>
 
 
 

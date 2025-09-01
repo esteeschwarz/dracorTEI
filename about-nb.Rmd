@@ -8,11 +8,20 @@ output: html_notebook
 print(sample(49,6))
 ```
 
+# upload transcript
+## raw
+you will first upload a transcript as .txt file which is raw text from your digitalisation OCR without any annotation, markup or such and the app will try to preprocess that and apply a basic markup (base: ezdrama) after you have input some information on author, title etc. and structural definitions (header/speaker declaration). if all goes well then you have next an annotated version of your raw text with basic markup which you can view in the `processed` tab. then you will trigger the TEI conversion by `create xml` and if lucky and your raw text was consistent in terms of stage directions, speaker introduction and act/scene declarations the xml looks good. if not, download the marked up text `download ezd-markup text`, correct/adapt to a constistent state. 
+
+## tagged
+upload this edited marked up text with `upload ezd-markup` and try again. dont apply speaker/header/title information again since it is already marked up in the text as you will see viewing the `processed` tab; just use the `create xml` button again.
+
+
 # replacements
-you can upload a table (.csv) with replacements to apply to your transcript. the table has to be in the following format:
+if you noticed repeated OCR errors in your transcript that you didnt correct in your transcribing (since much of these can be done automatically) you can upload a table (.csv) with global replacements to apply to your transcript. the table has to be in the following format and will be checked for regex errors before applied. best is to create this table directly in a texteditor and save as .csv but you can also create a table in numbers/excel and export as csv.
 
 ```{}
 ,find,replace
+Jch,Ich
 samplefind1,dummyreplace1
 samplefind2,dummyreplace2
 findthis(captured),thisis\1
@@ -21,3 +30,4 @@ findthis(captured),thisis\1
 ```
 
 please mind that this 1st stage replacements are applied to the text as single character string, which means if you want to adress characters dependent on line beginnings or endings you have to adress these with `\n` in the table, and NOT with `^` or `$` like as for single line find/replacements. the rest is still pure regular expressions and capture groups are adressed as e.g. `\1` for capture group 1. 
+

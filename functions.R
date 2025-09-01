@@ -44,7 +44,7 @@ guess_speaker<-function(t1,cast){
   ttemp<-tempfile("sp.txt")
   writeLines(t1,ttemp)
   t1<-readLines(ttemp)
-  t1<-readLines("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/breithaupt_renegat_exc.txt")
+ # t1<-readLines("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/breithaupt_renegat_exc.txt")
   m<-grep("^.{3,30}\\.$",t1)
   
   m2<-grepl("[)(,]",t1[m])
@@ -55,7 +55,10 @@ guess_speaker<-function(t1,cast){
   sp.cast<-get.castlist(t1,cast)$cast
   print(sp.cast)
  # sp.cast<-gsub("(%cast%|")
+  sp.cast<-gsub("%cast%|\\.|Personen","",sp.cast)
+  sp.cast<-sp.cast[2:length(sp.cast)]
   sp.guess<-sp.guess[sp.guess%in%sp.cast]
+  
   #sp.return<-paste0(sp.guess,collapse = ",")
   print(sp.guess)
   return(sp.guess)
@@ -231,7 +234,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   #t2<-t1
   t2[m2]<-paste0("## ",t2[m2])
   #return(t1)
-  return(list(vario=t1[m1],text=t2))
+  return(list(vario=c(t2[m1],t2[m2]),text=t2))
 }
 get.heads.dep<-function(t1,headx="(Akt|Act"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")

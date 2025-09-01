@@ -38,20 +38,11 @@
           <person sex="TODO" xml:id="orchan">
             <persName>Orchan</persName>
           </person>
-          <person sex="TODO" xml:id="der_tuerk">
-            <persName>Der Türk</persName>
-          </person>
           <person sex="TODO" xml:id="grandlove">
             <persName>Grandlove</persName>
           </person>
           <person sex="TODO" xml:id="therise">
             <persName>Therise</persName>
-          </person>
-          <person sex="TODO" xml:id="ein_tuerk">
-            <persName>Ein Türk</persName>
-          </person>
-          <person sex="TODO" xml:id="tuerk">
-            <persName>Türk</persName>
           </person>
         </listPerson>
       </particDesc>
@@ -67,7 +58,6 @@
         <castItem>Therise.</castItem>
         <castItem>Welwood.</castItem>
         <castItem>Einige Türken.</castItem>
-        <castItem>3::</castItem>
       </castList>
       <p>Auf der K. K. privilegirten Schaubühne zu Wien aufgeführet. Zu finden in Kraußens Buchladen nächst der kaiserl. könsgl. Burg. 1764.</p>
     </front>
@@ -85,7 +75,7 @@
           <sp who="#zapor">
             <speaker>Zapor</speaker>
             <p/>
-            <p>Mein Wohl? du scheust dich nicht, mir dieses noch zu sagen Und überfällst mich stets mit unverschämten Klagen? <pb n="4">[4]</pb></p>
+            <p>Mein Wohl? du scheust dich nicht, mir dieses noch zu sagen Und überfällst mich stets mit unverschämten Klagen? <pb n="3">[3]</pb></p>
           </sp>
           <sp who="#welwood">
             <speaker>Welwood</speaker>
@@ -115,7 +105,7 @@
           <sp who="#zapor">
             <speaker>Zapor</speaker>
             <p/>
-            <p>O hätt' es nicht für mich ein ewger Haß geschlossen, Er hätte mich gehört, als meine Thränen flossen, Denn welchen Vater giebts, dem nicht sein reuig Kind. Durch Thränen wahrer Noth Erbarmen abgewinnt? Ich flehte, seufzte, rang, mich wieder auszusöhnen Umsonst. Er hörte nicht und fruchtlos waren Thränen. Starr, wie ein Fels, stand er und unerweichlich da, <pb n="5">[5]</pb> Da war kein holder Blick, der auf mich niedersah= Da schlug kein Vaterherz, als nur den Sohn zu hassen. Blieb mir da andrer Trost, als der, ihn zu verlassen? Hätt er mich je geliebt, so hätt er meiner Flucht Durch Nachsicht, und Verzeihn ein Hinderniß gesucht.</p>
+            <p>O hätt' es nicht für mich ein ewger Haß geschlossen, Er hätte mich gehört, als meine Thränen flossen, Denn welchen Vater giebts, dem nicht sein reuig Kind. Durch Thränen wahrer Noth Erbarmen abgewinnt? Ich flehte, seufzte, rang, mich wieder auszusöhnen Umsonst. Er hörte nicht und fruchtlos waren Thränen. Starr, wie ein Fels, stand er und unerweichlich da, <pb n="4">[4]</pb> Da war kein holder Blick, der auf mich niedersah= Da schlug kein Vaterherz, als nur den Sohn zu hassen. Blieb mir da andrer Trost, als der, ihn zu verlassen? Hätt er mich je geliebt, so hätt er meiner Flucht Durch Nachsicht, und Verzeihn ein Hinderniß gesucht.</p>
           </sp>
           <sp who="#welwood">
             <speaker>Welwood</speaker>
@@ -125,7 +115,7 @@
           <sp who="#zapor">
             <speaker>Zapor</speaker>
             <p/>
-            <p>Die Pflicht die du mir zeigst, kann ich getrost verlachen, Des Menschen erste Pflicht ist die, sein Glück zu machen. <pb n="6">[6]</pb></p>
+            <p>Die Pflicht die du mir zeigst, kann ich getrost verlachen, Des Menschen erste Pflicht ist die, sein Glück zu machen. <pb n="5">[5]</pb></p>
           </sp>
           <sp who="#welwood">
             <speaker>Welwood</speaker>
@@ -135,12 +125,12 @@
           <sp who="#zapor">
             <speaker>Zapor</speaker>
             <p/>
-            <p>Was überhäufst du mich mit diesen eitlen Klagen Verändre dein Geschick, wo nicht, so lern es tragen. <pb n="7">[7]</pb> Hier lebt, wo Fremde stets ein gleiches Schicksal traf, Der Muselman beglückt, und nur der Christ als Sklav. Ich selbst erlag, wie du gleich elend, meinen Banden, Eh ich mein Glück erkannt, mein wahres Heil verstanden. Wie grausam, dacht ich oft, fährt das Geschick mir mit, Das, taub bey allem Flehn, mich tiefer niedertritt! So lang ich dies gedacht, da blieben meine Tage Nur eine einzige nie unterbrochne Klage. Ich klagte. Klagen trieb nur Orchan mehr zur Wuth, Stets wuchs mein Gram, und stets entfiel mir mehr der Muth Noch hofft ich und schon lang hatt ich nichts mehr zu hoffen Allein Zeit und Vernunft macht uns die Augen offen, Worüber Vorurtheil des Irrthums Vorhang zieht= Gestärkt vom äussern Schein, bis Traum und Blendwerk flieht Aus Uebereilung ist von mir noch nichts geschehen, Ich habe Grund, was ich beschlossen, einzugehen. Dort eil ich zu der Qual, und jeder, der sich Freund, Der sich mein Vater nennt, ist heimlich doch mein Feind Hier weis ich es gewiß, daß ich mein Glück empfange, Es krönet mich bereits, noch eh ich es verlange= Hier zeigt ein Paradies= und dort ein Abgrund sich. Sieh es, prüf meine Wahl, und nun verdamme mich. Grausamer! tadelst du, daß ich mein Glücke wähle?</p>
+            <p>Was überhäufst du mich mit diesen eitlen Klagen Verändre dein Geschick, wo nicht, so lern es tragen. <pb n="6">[6]</pb> Hier lebt, wo Fremde stets ein gleiches Schicksal traf, Der Muselman beglückt, und nur der Christ als Sklav. Ich selbst erlag, wie du gleich elend, meinen Banden, Eh ich mein Glück erkannt, mein wahres Heil verstanden. Wie grausam, dacht ich oft, fährt das Geschick mir mit, Das, taub bey allem Flehn, mich tiefer niedertritt! So lang ich dies gedacht, da blieben meine Tage Nur eine einzige nie unterbrochne Klage. Ich klagte. Klagen trieb nur Orchan mehr zur Wuth, Stets wuchs mein Gram, und stets entfiel mir mehr der Muth Noch hofft ich und schon lang hatt ich nichts mehr zu hoffen Allein Zeit und Vernunft macht uns die Augen offen, Worüber Vorurtheil des Irrthums Vorhang zieht= Gestärkt vom äussern Schein, bis Traum und Blendwerk flieht Aus Uebereilung ist von mir noch nichts geschehen, Ich habe Grund, was ich beschlossen, einzugehen. Dort eil ich zu der Qual, und jeder, der sich Freund, Der sich mein Vater nennt, ist heimlich doch mein Feind Hier weis ich es gewiß, daß ich mein Glück empfange, Es krönet mich bereits, noch eh ich es verlange= Hier zeigt ein Paradies= und dort ein Abgrund sich. Sieh es, prüf meine Wahl, und nun verdamme mich. Grausamer! tadelst du, daß ich mein Glücke wähle?</p>
           </sp>
           <sp who="#welwood">
             <speaker>Welwood</speaker>
             <p/>
-            <p>Welch ein Verführungsgeist verfinstert deine Seele! <pb n="8">[8]</pb></p>
+            <p>Welch ein Verführungsgeist verfinstert deine Seele! <pb n="7">[7]</pb></p>
           </sp>
           <sp who="#zapor">
             <speaker>Zapor</speaker>
@@ -150,7 +140,7 @@
           <sp who="#welwood">
             <speaker>Welwood</speaker>
             <p/>
-            <p>Was sagst du? ach! du eilst in dein Verderben. <pb n="9">[9]</pb></p>
+            <p>Was sagst du? ach! du eilst in dein Verderben. <pb n="8">[8]</pb> <pb n="9">[9]</pb></p>
           </sp>
           <sp who="#zapor">
             <speaker>Zapor</speaker>
@@ -297,17 +287,7 @@
         </div>
         <div type="scene">
           <head>Vierter Auftritt.</head>
-          <stage>Orchan, Zapor, ein Türk.</stage>
-          <sp who="#der_tuerk">
-            <speaker>Der Türk</speaker>
-            <p/>
-            <p>Herr, alles scheint, Da heute sich Zapor auf ewig uns vereint, Auch diesen heitern Tag verherrlichen zu müssen; * Einer ihrer gewöhnlichsten Schwüre: <pb n="17">[17]</pb> So eben hat der Sturm ein fremdes Schiff zerrissen. Ohnmächtig rangen sie bereits mit Flut und Tod, Allein wir endeten mitleidig ihre Noth, Und brachten sie ans Land, den Alten und die Schöne, Ein unglücksvolles Paar. Ich sah die traurge Scene Und das Gewühl der Angst, die dringende Gefahr, Wie in den Mienen Tod und Schrecken sichtbar war. Herr! ich gesteh es dir, wenn es nicht Christen wären, Die den Propheten schmähn, es flössen meine Zähren. Orchan <stage>zu Zapor.</stage> Wie glücklich sind wir, Freund. Sie mögen deine seyn; Warum besitz ich nicht die Welt, sie dir zu weihn! Zapor <stage>zu dem Türken.</stage> Hast du den Sklaven schon die Fessel zubereitet?</p>
-          </sp>
-          <sp who="#der_tuerk">
-            <speaker>Der Türk</speaker>
-            <p/>
-            <p>Von deiner Knechte Schaar geführet und begleitet Nahn sie bereits dem Thor. Mit Unmuth und mit Müh Trägt sich der Alte fort. Es wankt sein zitternd Knie. Es scheint, daß Leid und Gram ihn dem nicht fernen Grabe, Gram, Jahrelanger Gram schon zubereitet habe. Die Schöne, deren Reiz doch von dem Auge blitzt, Obgleich Melancholie tief in demselben sitzt, Lenkt seinen schwachen Tritt. Ihr Führer triumphiret. Und sie verstummt und seufzt. <pb n="18">[18]</pb></p>
-          </sp>
+          <stage>Orchan, Zapor, ein Türk. Der Türk. Herr, alles scheint, Da heute sich Zapor auf ewig uns vereint, Auch diesen heitern Tag verherrlichen zu müssen; * Einer ihrer gewöhnlichsten Schwüre: 17:: So eben hat der Sturm ein fremdes Schiff zerrissen. Ohnmächtig rangen sie bereits mit Flut und Tod, Allein wir endeten mitleidig ihre Noth, Und brachten sie ans Land, den Alten und die Schöne, Ein unglücksvolles Paar. Ich sah die traurge Scene Und das Gewühl der Angst, die dringende Gefahr, Wie in den Mienen Tod und Schrecken sichtbar war. Herr! ich gesteh es dir, wenn es nicht Christen wären, Die den Propheten schmähn, es flössen meine Zähren. Orchan (zu Zapor.) Wie glücklich sind wir, Freund. Sie mögen deine seyn; Warum besitz ich nicht die Welt, sie dir zu weihn! Zapor (zu dem Türken.) Hast du den Sklaven schon die Fessel zubereitet? Der Türk. Von deiner Knechte Schaar geführet und begleitet Nahn sie bereits dem Thor. Mit Unmuth und mit Müh Trägt sich der Alte fort. Es wankt sein zitternd Knie. Es scheint, daß Leid und Gram ihn dem nicht fernen Grabe, Gram, Jahrelanger Gram schon zubereitet habe. Die Schöne, deren Reiz doch von dem Auge blitzt, Obgleich Melancholie tief in demselben sitzt, Lenkt seinen schwachen Tritt. Ihr Führer triumphiret. Und sie verstummt und seufzt. 18::</stage>
           <sp who="#orchan">
             <speaker>Orchan</speaker>
             <p/>
@@ -334,8 +314,7 @@
           </sp>
         </div>
         <div type="scene">
-          <head>Zweyter Auftritt.</head>
-          <stage>Welwood, Zapor.</stage>
+          <head>Zweyter Auftritt. Welwood, Zapor.</head>
           <sp who="#welwood">
             <speaker>Welwood</speaker>
             <p/>
@@ -372,7 +351,7 @@
         </div>
         <div type="scene">
           <head>Vierter Auftritt.</head>
-          <stage>Zapor, Orchan. Orchan, (sagt zu einem Türken der mit ihm geommey ist.) Ja. Führe sie hieher. (Der Türk geht ab.)</stage>
+          <stage>Zapor, Orchan. Orchan. (sagt zu einem Türken der mit ihm geommey ist.) Ja. Führe sie hieher. (Der Türk geht ab.)</stage>
         </div>
         <div type="scene">
           <head>Fünfter Auftritt.</head>
@@ -429,9 +408,7 @@
           </sp>
         </div>
         <div type="scene">
-          <head>Sechster Auftritt.</head>
-          <stage>Orchan, Grandlove, Therise,</stage>
-          <stage>von einigen Türken geführet.</stage>
+          <head>Sechster Auftritt. Orchan, Grandlove, Therise, von einigen Türken geführet.</head>
           <sp who="#grandlove">
             <speaker>Grandlove</speaker>
             <p/>
@@ -775,7 +752,8 @@
           </sp>
         </div>
         <div type="scene">
-          <head>Zweyter Auftritt. Grandlove, Therise.</head>
+          <head>Zweyter Auftritt.</head>
+          <stage>Grandlove, Therise.</stage>
           <sp who="#grandlove">
             <speaker>Grandlove</speaker>
             <p/>
@@ -839,41 +817,21 @@
         </div>
         <div type="scene">
           <head>Dritter Auftritt.</head>
-          <stage>Grandlove, Therise, einige Türken.</stage>
-          <sp who="#ein_tuerk">
-            <speaker>Ein Türk</speaker>
+          <stage>Grandlove, Therise, einige Türken. Ein Türk. Elende, zittert nur, uns vor euch zu erblicken, Doch alles, was euch trift, verdanket euren Tücken, (zu Grandlove.) Orchan gebietet mir, du sollst gefangen seyn, Du solst mir folgen. Folg!</stage>
+          <sp who="#therise">
+            <speaker>Therise</speaker>
             <p/>
-            <p>Elende, zittert nur, uns vor euch zu erblicken, Doch alles, was euch trift, verdanket euren Tücken, <stage>zu Grandlove.</stage> Orchan gebietet mir, du sollst gefangen seyn, Du solst mir folgen. Folg!</p>
+            <p>Wohin? Zu neuer Pein? Barbar, bist du auch schon, wie er, versteinert worden? Ach könnt ihr weiter nichts, als fesseln und ermorden! Türk. Nein, Schöne, deine Noth und dieses Alten Schmerz, Ich will es dir gestehn, benahm mir längst das Herz, Doch ist Gehorsam Pflicht.</p>
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>
             <p/>
-            <p>Wohin? Zu neuer Pein? Barbar, bist du auch schon, wie er, versteinert worden? Ach könnt ihr weiter nichts, als fesseln und ermorden!</p>
-          </sp>
-          <sp who="#tuerk">
-            <speaker>Türk</speaker>
-            <p/>
-            <p>Nein, Schöne, deine Noth und dieses Alten Schmerz, Ich will es dir gestehn, benahm mir längst das Herz, Doch ist Gehorsam Pflicht.</p>
+            <p>Nicht aber bey Barbaren. Wo willst du mit ihm hin? <pb n="46">[46]</pb> Türk. Du wirst es bald erfahren.</p>
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>
             <p/>
-            <p>Nicht aber bey Barbaren. Wo willst du mit ihm hin? <pb n="46">[46]</pb></p>
-          </sp>
-          <sp who="#tuerk">
-            <speaker>Türk</speaker>
-            <p/>
-            <p>Du wirst es bald erfahren.</p>
-          </sp>
-          <sp who="#therise">
-            <speaker>Therise</speaker>
-            <p/>
-            <p>Ich seh es, Grausamel ihr wollet nur sein Blut. Entdecke wenigstens, was sparet Orchans Wuth Für ihn für Marter auf?</p>
-          </sp>
-          <sp who="#tuerk">
-            <speaker>Türk</speaker>
-            <p/>
-            <p>Kann ich dir dieses sagen, Und darf ich seinen Rath mich zu ergründen wagen? Ich bin ein Krieger. Dem ist Forschen keine Pflicht; Ich thu, was man befiehlt und untersuche nicht. <stage>zu Grandlove.</stage> Fort! du hast ihn getrotzt.</p>
+            <p>Ich seh es, Grausamel ihr wollet nur sein Blut. Entdecke wenigstens, was sparet Orchans Wuth Für ihn für Marter auf? Türk. Kann ich dir dieses sagen, Und darf ich seinen Rath mich zu ergründen wagen? Ich bin ein Krieger. Dem ist Forschen keine Pflicht; Ich thu, was man befiehlt und untersuche nicht. <stage>zu Grandlove.</stage> Fort! du hast ihn getrotzt.</p>
           </sp>
           <sp who="#grandlove">
             <speaker>Grandlove</speaker>
@@ -898,12 +856,7 @@
           <sp who="#therise">
             <speaker>Therise</speaker>
             <p/>
-            <p>Unmenschen! wenigstens würgt mich mit ihm zugleich.</p>
-          </sp>
-          <sp who="#tuerk">
-            <speaker>Türk</speaker>
-            <p/>
-            <p>Man halte sie zurück. Fort mit ihm! du entweich! <stage>Grandlove wird weggebracht.</stage></p>
+            <p>Unmenschen! wenigstens würgt mich mit ihm zugleich. Türk. Man halte sie zurück. Fort mit ihm! du entweich! <stage>Grandlove wird weggebracht.</stage></p>
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>
@@ -912,8 +865,7 @@
           </sp>
         </div>
         <div type="scene">
-          <head>Vierter Auftritt.</head>
-          <stage>Therise, Zapor.</stage>
+          <head>Vierter Auftritt. Therise, Zapor.</head>
           <sp who="#therise">
             <speaker>Therise</speaker>
             <p/>
@@ -1020,8 +972,7 @@
           </sp>
         </div>
         <div type="scene">
-          <head>Zweyter Auftritt.</head>
-          <stage>Grandlove, Welwood.</stage>
+          <head>Zweyter Auftritt. Grandlove, Welwood.</head>
           <sp who="#welwood">
             <speaker>Welwood</speaker>
             <p/>
@@ -1140,9 +1091,8 @@
           <sp who="#welwood">
             <speaker>Welwood</speaker>
             <p/>
-            <p>Mein Grandlov, laß uns hier beid unsern Schmerz vereinen, Dein Sohn, dein Edward ist — ach laß mich gehn und weinen. Dritter Auftrit.</p>
+            <p>Mein Grandlov, laß uns hier beid unsern Schmerz vereinen, Dein Sohn, dein Edward ist — ach laß mich gehn und weinen. Dritter Auftrit. Grandlove, Welwood, Therise.</p>
           </sp>
-          <stage>Grandlove, Welwood, Therise.</stage>
           <sp who="#therise">
             <speaker>Therise</speaker>
             <p/>
@@ -1307,8 +1257,7 @@
           </sp>
         </div>
         <div type="scene">
-          <head>Sechster Auftritt.</head>
-          <stage>Grandlove, Therise.</stage>
+          <head>Sechster Auftritt. Grandlove, Therise.</head>
           <sp who="#grandlove">
             <speaker>Grandlove</speaker>
             <p/>
@@ -1348,8 +1297,7 @@
           </sp>
         </div>
         <div type="scene">
-          <head>Zweyter Auftritt.</head>
-          <stage>Zapor, Welwood. Zapor, (als er ihn kommen sieht.) Ach nun ist alles klar!</stage>
+          <head>Zweyter Auftritt. Zapor, Welwood. Zapor, (als er ihn kommen sieht.) Ach nun ist alles klar!</head>
           <sp who="#welwood">
             <speaker>Welwood</speaker>
             <p/>
@@ -1470,12 +1418,12 @@
           <sp who="#zapor">
             <speaker>Zapor</speaker>
             <p/>
-            <p>Laß ab, Entsetzlicher! Laß ab, ich sterbe schon, Ich bin genug entseelt.</p>
+            <p>Laß ab, Entsetzlicher! Laß ab, ichsterbe schon, Ich bin genug entselt.</p>
           </sp>
           <sp who="#grandlove">
             <speaker>Grandlove</speaker>
             <p/>
-            <p>O mein geliebter Sohn! -- Ich kann nicht mehr! -- Die Welt zerfließt vor meinen Blicken Tief hin ins Leere! GOtt! welch nie gefühlt Entzücken Strömt durch mein Herz! -- o Glück! -- Wie selig ist der Tod! -- Ich höre Harmonien. -- Mein Mitler und mein GOtt, Nimm meine Seele auf <stage>er stirbt</stage></p>
+            <p>O mein geliebter Sohn! -- Ichkann nichtmehr! -- Die Welt zerfließt vor meinen Blicken Tief hin ins Leere! GOtt! welch nie gefühlt Entzücken Strömt durch mein Herz! -- o Glück! -- Wie selig ist der Tod! -- Ich höre Harmonien. -- Mein Mitler und mein GOtt, Nimm meine Seele auf <stage>er stirbt</stage></p>
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>
@@ -1490,7 +1438,7 @@
           <sp who="#zapor">
             <speaker>Zapor</speaker>
             <p/>
-            <p>Wo ist mein Vater! ach ein Unmensch schlug ihn nieder Wo such ich ihn? wer giebt mir meinen Vater wieder? Mir, der ich ohne GOtt und ohne Vater bin? Wo soll ich hin? Zu wem? o GOtt! wo soll ich hin! -- <pb n="79">[79]</pb> Dem Himmel sey gedankt! ich seh den Vater wieder. Doch welch ein Storm von Blut rauscht hinter ihm danieder! Welch Schrecken zieht mit ihm, welch fürchterliches Heer, Welch Schwarm von Furien braust hinter ihm daher! Was zischet ihr mich an! mit welchen grimgen Blicken! Rachgeister, seyd ihr hier mich mit euch fortzurücken Hin an den Ort der Qual, wo endeloser Schmerz, Wo die Verzweiflung heult? Da ist es, nehmt mein Herz! Zerreist, zerfleischet es! Ich wills euch selbst gebieten. -- Doch ach Entsetzliche! hört einmal auf zu wüthen! Entfernet euch! Laßt ihn nur machen, den ich schlug, Laßt ab! zu meiner Qual bleibt schon mein Vater gnug, Er rächt allein genug mein schreckliches Verbrechen; -- Doch seht! er starrt zurück, er zittert, es zu rächen! <stage>er wird ein wenig ruhig, fängt aber gleich wieder an.</stage> Was fühl ich! Bin ich noch? Ich bin vermaledeyt, Ein Fluch! — Nein gegen dies ist Hölle Seligkeit. Du, Todter! rufst dein Blut. Ja, ja ich will erblassen, Will mich vernichten! Dann mußt du mir Ruhe lassen, Dann seh ich dich nicht mehr! <stage>er läuft nach dem Dolche, sich zu erstechen.</stage> Therise. <stage>sucht ihn zu verhindern.</stage> Er tödtet sich! o GOtt! Halt ein! <pb n="80">[80]</pb></p>
+            <p>Wo ist mein Vater! ach ein Unmensch schlug ihn nieder Wo such ich ihn? wer giebt mir meinen Vater wieder? Mir, der ich ohne GOtt und ohne Väter bin? Wo soll ich hin? Zu wem? o GOtt! wo soll ich hin! -- <pb n="79">[79]</pb> Dem Himmel sey gedankt! ich seh den Vater wieder. Doch welch ein Storm von Blut rauscht hinter ihm danieder! Welch Schrecken zieht mit ihm, welch fürchterliches Heer, Welch Schwarm von Furien braust hinter ihm daher! Was zischet ihr mich an! mit welchen grimgen Blicken! Rachgeister, seyd ihr hier mich mit euch fortzurücken Hin an den Ort der Qual, wo endeloser Schmerz, Wo die Verzweiflung heult? Da ist es, nehmt mein Herz! Zerreist, zerfleischet es! Ich wills euch selbst gebieten. -- Doch ach Entsetzliche! hört einmal auf zu wüthen! Entfernet euch! Laßt ihn nur machen, den ich schlug, Laßt ab! zu meiner Qual bleibt schon mein Vater gnug, Er rächt allein genug mein schreckliches Verbrechen; -- Doch seht! er starrt zurück, er zittert, es zu rächen! <stage>er wird ein wenig ruhig, fängt aber gleich wieder an.</stage> Was fühl ich! Bin ich noch? Ich bin vermaledeyt, Ein Fluch! — Nein gegen dies ist Hölle Seligkeit. Du, Todter! rufst dein Blut. Ja, ja ich will erblassen, Will mich vernichten! Dann mußt du mir Ruhe lassen, Dann seh ich dich nicht mehr! <stage>er läuft nach dem Dolche, sich zu erstechen.</stage> Therise. <stage>sucht ihn zu verhindern.</stage> Er tödtet sich! o GOtt! Halt ein! <pb n="80">[80]</pb></p>
           </sp>
           <sp who="#zapor">
             <speaker>Zapor</speaker>

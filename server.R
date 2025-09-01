@@ -248,7 +248,7 @@ function(input, output, session) {
                  paste(rv$t3, collapse = "\n"))
       )
     })
-    output$proutput <- renderText("markup transcript fetched...\n")
+    output$proutput <- renderText("markup transcript uploaded\n")
   })
   # Observe the submit button for fetching the transcript
   observeEvent(input$submit.doc, {
@@ -281,6 +281,8 @@ function(input, output, session) {
   
   # Observe the submit button for processing act headers
   observeEvent(input$submit.h, {
+    output$proutput <- renderText("processing headers...\n")
+    
     vario.1 <- input$h1
     vario.2<-input$h2
     print("getting H1")
@@ -293,7 +295,7 @@ function(input, output, session) {
     rv$h2.sf<-vario.2
     writeLines(rv$t2,"www/ezdmarkup.txt")
     # Update the UI with the processed act headers
-    output$proutput <- renderText(paste("level 1 headers found:\n",paste(rv$heads, collapse = "\n"),collapse = "\n"))
+    output$proutput <- renderText(paste("level 1/2 headers found:\n",paste(rv$heads, collapse = "\n"),collapse = "\n"))
     output$processed <- renderUI({
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
@@ -352,6 +354,8 @@ function(input, output, session) {
                                        "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
   })
   observeEvent(input$submit.xml, {
+    output$proutput <- renderText("processing ezd > TEI...\n")
+    
     xml.t<-transform.ezd(rv$t3,output_file)
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
    # xml.test<-list.files(".")
@@ -364,6 +368,8 @@ function(input, output, session) {
   #  valid<-validate_tei(output_file,"dracor-scheme.rng") # not on M7, cant install jing
     #t2<-xml.t
    # print(valid$ok)
+    output$proutput <- renderText("ezd > TEI processed...\n")
+    
     output$processed <- renderUI({
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",

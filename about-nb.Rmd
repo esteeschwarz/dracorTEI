@@ -34,6 +34,7 @@ please mind that this 1st stage replacements are applied to the text as single c
 
 # limitations
 - its not yet possible to recognize/switch to "lyrics/songs/poems" instead prose text like in ezdrama
-- the save-settings option is very dangerous by now, it simply overwrites existing id's since i did use it just for my testings
+- the save-settings option is very dangerous by now, it simply overwrites existing id's since i did use it just for my testings. best would be for now to load a setup by ID and check if that ID has content, if not, can save at
+- title, subtitle, author settings are not saved, minor TODO
 
 ----

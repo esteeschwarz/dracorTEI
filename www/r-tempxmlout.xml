@@ -38,11 +38,20 @@
           <person sex="TODO" xml:id="orchan">
             <persName>Orchan</persName>
           </person>
+          <person sex="TODO" xml:id="der_tuerk">
+            <persName>Der Türk</persName>
+          </person>
           <person sex="TODO" xml:id="grandlove">
             <persName>Grandlove</persName>
           </person>
           <person sex="TODO" xml:id="therise">
             <persName>Therise</persName>
+          </person>
+          <person sex="TODO" xml:id="ein_tuerk">
+            <persName>Ein Türk</persName>
+          </person>
+          <person sex="TODO" xml:id="tuerk">
+            <persName>Türk</persName>
           </person>
         </listPerson>
       </particDesc>
@@ -245,7 +254,15 @@
         </div>
         <div type="scene">
           <head>Vierter Auftritt.</head>
-          <stage>Orchan, Zapor, ein Türk. Der Türk. Herr, alles scheint, Da heute sich Zapor auf ewig uns vereint, Auch diesen heitern Tag verherrlichen zu müssen; * Einer ihrer gewöhnlichsten Schwüre: 17:: So eben hat der Sturm ein fremdes Schiff zerrissen. Ohnmächtig rangen sie bereits mit Flut und Tod, Allein wir endeten mitleidig ihre Noth, Und brachten sie ans Land, den Alten und die Schöne, Ein unglücksvolles Paar. Ich sah die traurge Scene Und das Gewühl der Angst, die dringende Gefahr, Wie in den Mienen Tod und Schrecken sichtbar war. Herr! ich gesteh es dir, wenn es nicht Christen wären, Die den Propheten schmähn, es flössen meine Zähren. Orchan (zu Zapor.) Wie glücklich sind wir, Freund. Sie mögen deine seyn; Warum besitz ich nicht die Welt, sie dir zu weihn! Zapor (zu dem Türken.) Hast du den Sklaven schon die Fessel zubereitet? Der Türk. Von deiner Knechte Schaar geführet und begleitet Nahn sie bereits dem Thor. Mit Unmuth und mit Müh Trägt sich der Alte fort. Es wankt sein zitternd Knie. Es scheint, daß Leid und Gram ihn dem nicht fernen Grabe, Gram, Jahrelanger Gram schon zubereitet habe. Die Schöne, deren Reiz doch von dem Auge blitzt, Obgleich Melancholie tief in demselben sitzt, Lenkt seinen schwachen Tritt. Ihr Führer triumphiret. Und sie verstummt und seufzt. 18::</stage>
+          <stage>Orchan, Zapor, ein Türk.</stage>
+          <sp who="#der_tuerk">
+            <speaker>Der Türk</speaker>
+            <p>Herr, alles scheint, Da heute sich Zapor auf ewig uns vereint, Auch diesen heitern Tag verherrlichen zu müssen; * Einer ihrer gewöhnlichsten Schwüre: <pb n="17">[17]</pb> So eben hat der Sturm ein fremdes Schiff zerrissen. Ohnmächtig rangen sie bereits mit Flut und Tod, Allein wir endeten mitleidig ihre Noth, Und brachten sie ans Land, den Alten und die Schöne, Ein unglücksvolles Paar. Ich sah die traurge Scene Und das Gewühl der Angst, die dringende Gefahr, Wie in den Mienen Tod und Schrecken sichtbar war. Herr! ich gesteh es dir, wenn es nicht Christen wären, Die den Propheten schmähn, es flössen meine Zähren. Orchan <stage>zu Zapor.</stage> Wie glücklich sind wir, Freund. Sie mögen deine seyn; Warum besitz ich nicht die Welt, sie dir zu weihn! Zapor <stage>zu dem Türken.</stage> Hast du den Sklaven schon die Fessel zubereitet?</p>
+          </sp>
+          <sp who="#der_tuerk">
+            <speaker>Der Türk</speaker>
+            <p>Von deiner Knechte Schaar geführet und begleitet Nahn sie bereits dem Thor. Mit Unmuth und mit Müh Trägt sich der Alte fort. Es wankt sein zitternd Knie. Es scheint, daß Leid und Gram ihn dem nicht fernen Grabe, Gram, Jahrelanger Gram schon zubereitet habe. Die Schöne, deren Reiz doch von dem Auge blitzt, Obgleich Melancholie tief in demselben sitzt, Lenkt seinen schwachen Tritt. Ihr Führer triumphiret. Und sie verstummt und seufzt. <pb n="18">[18]</pb></p>
+          </sp>
           <sp who="#orchan">
             <speaker>Orchan</speaker>
             <p>Du scheinst dadurch gerühret. Unedel ist ein Herz, das über einen Feind Des großen Mahomets aus niederm Mitleid weint. Zu elend wird er nie. Doch komm und laß uns gehen, Und unserem Zapor des Himmels Gunst erflehen. Du folge bald, Zapor. Eil am Altar zu gehn. Der Iman wartet schon. Man jauchzt, man will dich sehn. Um die Moschee wühlt das freudigste Gedränge, Erfüll die Hoffnungen von der entzückten Menge, Dein Glücke, meinen Stolz.</p>
@@ -678,18 +695,34 @@
         </div>
         <div type="scene">
           <head>Dritter Auftritt.</head>
-          <stage>Grandlove, Therise, einige Türken. Ein Türk. Elende, zittert nur, uns vor euch zu erblicken, Doch alles, was euch trift, verdanket euren Tücken, (zu Grandlove.) Orchan gebietet mir, du sollst gefangen seyn, Du solst mir folgen. Folg!</stage>
-          <sp who="#therise">
-            <speaker>Therise</speaker>
-            <p>Wohin? Zu neuer Pein? Barbar, bist du auch schon, wie er, versteinert worden? Ach könnt ihr weiter nichts, als fesseln und ermorden! Türk. Nein, Schöne, deine Noth und dieses Alten Schmerz, Ich will es dir gestehn, benahm mir längst das Herz, Doch ist Gehorsam Pflicht.</p>
+          <stage>Grandlove, Therise, einige Türken.</stage>
+          <sp who="#ein_tuerk">
+            <speaker>Ein Türk</speaker>
+            <p>Elende, zittert nur, uns vor euch zu erblicken, Doch alles, was euch trift, verdanket euren Tücken, <stage>zu Grandlove.</stage> Orchan gebietet mir, du sollst gefangen seyn, Du solst mir folgen. Folg!</p>
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>
-            <p>Nicht aber bey Barbaren. Wo willst du mit ihm hin? <pb n="46">[46]</pb> Türk. Du wirst es bald erfahren.</p>
+            <p>Wohin? Zu neuer Pein? Barbar, bist du auch schon, wie er, versteinert worden? Ach könnt ihr weiter nichts, als fesseln und ermorden!</p>
+          </sp>
+          <sp who="#tuerk">
+            <speaker>Türk</speaker>
+            <p>Nein, Schöne, deine Noth und dieses Alten Schmerz, Ich will es dir gestehn, benahm mir längst das Herz, Doch ist Gehorsam Pflicht.</p>
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>
-            <p>Ich seh es, Grausamel ihr wollet nur sein Blut. Entdecke wenigstens, was sparet Orchans Wuth Für ihn für Marter auf? Türk. Kann ich dir dieses sagen, Und darf ich seinen Rath mich zu ergründen wagen? Ich bin ein Krieger. Dem ist Forschen keine Pflicht; Ich thu, was man befiehlt und untersuche nicht. <stage>zu Grandlove.</stage> Fort! du hast ihn getrotzt.</p>
+            <p>Nicht aber bey Barbaren. Wo willst du mit ihm hin? <pb n="46">[46]</pb></p>
+          </sp>
+          <sp who="#tuerk">
+            <speaker>Türk</speaker>
+            <p>Du wirst es bald erfahren.</p>
+          </sp>
+          <sp who="#therise">
+            <speaker>Therise</speaker>
+            <p>Ich seh es, Grausamel ihr wollet nur sein Blut. Entdecke wenigstens, was sparet Orchans Wuth Für ihn für Marter auf?</p>
+          </sp>
+          <sp who="#tuerk">
+            <speaker>Türk</speaker>
+            <p>Kann ich dir dieses sagen, Und darf ich seinen Rath mich zu ergründen wagen? Ich bin ein Krieger. Dem ist Forschen keine Pflicht; Ich thu, was man befiehlt und untersuche nicht. <stage>zu Grandlove.</stage> Fort! du hast ihn getrotzt.</p>
           </sp>
           <sp who="#grandlove">
             <speaker>Grandlove</speaker>
@@ -709,7 +742,11 @@
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>
-            <p>Unmenschen! wenigstens würgt mich mit ihm zugleich. Türk. Man halte sie zurück. Fort mit ihm! du entweich! <stage>Grandlove wird weggebracht.</stage></p>
+            <p>Unmenschen! wenigstens würgt mich mit ihm zugleich.</p>
+          </sp>
+          <sp who="#tuerk">
+            <speaker>Türk</speaker>
+            <p>Man halte sie zurück. Fort mit ihm! du entweich! <stage>Grandlove wird weggebracht.</stage></p>
           </sp>
           <sp who="#therise">
             <speaker>Therise</speaker>

@@ -234,7 +234,9 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   #t2<-t1
   t2[m2]<-paste0("## ",t2[m2])
   #return(t1)
-  return(list(vario=c(t2[m1],t2[m2]),text=t2))
+  vario<-c(t2[m1],t2[m2])
+           print(vario)
+  return(list(vario=vario,text=t2))
 }
 get.heads.dep<-function(t1,headx="(Akt|Act"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")

@@ -440,12 +440,12 @@ function(input, output, session) {
     t <- get.heads.s(rv$t1, vario.1,vario.2)  # Use the transcript stored in reactiveValues
     rv$t2 <- t$text  # Store the updated text in reactiveValues
     rv$heads <- t$vario  # Store the act headers in reactiveValues
-    heads<-data.frame(found=1:length(rv$heads),head=rv$heads)
+   # heads<-data.frame(found=1:length(rv$heads),head=rv$heads)
     rv$h1.sf<-vario.1
     rv$h2.sf<-vario.2
     # heads$h1<-rv$h1.sf
     # heads$h2=rv$h2.sf
-    print(heads)
+    print(rv$heads)
     
     writeLines(rv$t2,"www/ezdmarkup.txt")
     # Update the UI with the processed act headers
@@ -462,7 +462,7 @@ function(input, output, session) {
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
         tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
-                 paste(heads, collapse = "\n"))
+                 paste(rv$heads, collapse = "\n"))
       )
     })
     # output$pr_progress<-renderDT(
@@ -515,8 +515,17 @@ function(input, output, session) {
                  paste(rv$t3, collapse = "\n"))
       )
     })
-    output$proutput<- renderText(paste("SPEAKERS found:\n",paste(rv$speaker,collapse = "\n"),
-                                       "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
+    output$pr_progress<-renderUI({
+      div(
+        style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
+        tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
+                 paste("SPEAKERS found:\n",paste(rv$speaker,collapse = "\n"),
+                       "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
+      )
+    })
+    
+    # output$proutput<- renderText(paste("SPEAKERS found:\n",paste(rv$speaker,collapse = "\n"),
+    #                                    "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
   })
   observeEvent(input$submit.xml, {
     output$proutput <- renderText("processing ezd > TEI...\n")

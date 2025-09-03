@@ -102,7 +102,11 @@ Ich schwörs. War dieser Schwur vonnöthen? Der Feind von Mahomet sey ewig auch 
 @Orchan.
 Genug. Nun hast du mich vergnügt.
 ## Vierter Auftritt.
-$Orchan, Zapor, ein Türk. Der Türk. Herr, alles scheint, Da heute sich Zapor auf ewig uns vereint, Auch diesen heitern Tag verherrlichen zu müssen; * Einer ihrer gewöhnlichsten Schwüre:   17:: So eben hat der Sturm ein fremdes Schiff zerrissen. Ohnmächtig rangen sie bereits mit Flut und Tod, Allein wir endeten mitleidig ihre Noth, Und brachten sie ans Land, den Alten und die Schöne, Ein unglücksvolles Paar. Ich sah die traurge Scene Und das Gewühl der Angst, die dringende Gefahr, Wie in den Mienen Tod und Schrecken sichtbar war. Herr! ich gesteh es dir, wenn es nicht Christen wären, Die den Propheten schmähn, es flössen meine Zähren. Orchan (zu Zapor.) Wie glücklich sind wir, Freund. Sie mögen deine seyn; Warum besitz ich nicht die Welt, sie dir zu weihn! Zapor (zu dem Türken.) Hast du den Sklaven schon die Fessel zubereitet? Der Türk. Von deiner Knechte Schaar geführet und begleitet Nahn sie bereits dem Thor. Mit Unmuth und mit Müh Trägt sich der Alte fort. Es wankt sein zitternd Knie. Es scheint, daß Leid und Gram ihn dem nicht fernen Grabe, Gram, Jahrelanger Gram schon zubereitet habe. Die Schöne, deren Reiz doch von dem Auge blitzt, Obgleich Melancholie tief in demselben sitzt, Lenkt seinen schwachen Tritt. Ihr Führer triumphiret. Und sie verstummt und seufzt.   18::
+$Orchan, Zapor, ein Türk.
+@Der Türk.
+Herr, alles scheint, Da heute sich Zapor auf ewig uns vereint, Auch diesen heitern Tag verherrlichen zu müssen; * Einer ihrer gewöhnlichsten Schwüre:   17:: So eben hat der Sturm ein fremdes Schiff zerrissen. Ohnmächtig rangen sie bereits mit Flut und Tod, Allein wir endeten mitleidig ihre Noth, Und brachten sie ans Land, den Alten und die Schöne, Ein unglücksvolles Paar. Ich sah die traurge Scene Und das Gewühl der Angst, die dringende Gefahr, Wie in den Mienen Tod und Schrecken sichtbar war. Herr! ich gesteh es dir, wenn es nicht Christen wären, Die den Propheten schmähn, es flössen meine Zähren. Orchan (zu Zapor.) Wie glücklich sind wir, Freund. Sie mögen deine seyn; Warum besitz ich nicht die Welt, sie dir zu weihn! Zapor (zu dem Türken.) Hast du den Sklaven schon die Fessel zubereitet?
+@Der Türk.
+Von deiner Knechte Schaar geführet und begleitet Nahn sie bereits dem Thor. Mit Unmuth und mit Müh Trägt sich der Alte fort. Es wankt sein zitternd Knie. Es scheint, daß Leid und Gram ihn dem nicht fernen Grabe, Gram, Jahrelanger Gram schon zubereitet habe. Die Schöne, deren Reiz doch von dem Auge blitzt, Obgleich Melancholie tief in demselben sitzt, Lenkt seinen schwachen Tritt. Ihr Führer triumphiret. Und sie verstummt und seufzt.   18::
 @Orchan.
 Du scheinst dadurch gerühret. Unedel ist ein Herz, das über einen Feind Des großen Mahomets aus niederm Mitleid weint. Zu elend wird er nie. Doch komm und laß uns gehen, Und unserem Zapor des Himmels Gunst erflehen. Du folge bald, Zapor. Eil am Altar zu gehn. Der Iman wartet schon. Man jauchzt, man will dich sehn. Um die Moschee wühlt das freudigste Gedränge, Erfüll die Hoffnungen von der entzückten Menge, Dein Glücke, meinen Stolz.
 ## Fünfter Auftritt.
@@ -315,13 +319,21 @@ Ich hör ein wild Geräusch. Man kömmt. Soll unsre Noth --
 @Therise.
 Was will der Barbar hier? O GOtt! Er bringt den Tod.
 ## Dritter Auftritt.
-$Grandlove, Therise, einige Türken. Ein Türk. Elende, zittert nur, uns vor euch zu erblicken, Doch alles, was euch trift, verdanket euren Tücken, (zu Grandlove.) Orchan gebietet mir, du sollst gefangen seyn, Du solst mir folgen. Folg!
+$Grandlove, Therise, einige Türken.
+@Ein Türk.
+Elende, zittert nur, uns vor euch zu erblicken, Doch alles, was euch trift, verdanket euren Tücken, (zu Grandlove.) Orchan gebietet mir, du sollst gefangen seyn, Du solst mir folgen. Folg!
 @Therise.
-Wohin? Zu neuer Pein? Barbar, bist du auch schon, wie er, versteinert worden? Ach könnt ihr weiter nichts, als fesseln und ermorden! Türk. Nein, Schöne, deine Noth und dieses Alten Schmerz, Ich will es dir gestehn, benahm mir längst das Herz, Doch ist Gehorsam Pflicht.
+Wohin? Zu neuer Pein? Barbar, bist du auch schon, wie er, versteinert worden? Ach könnt ihr weiter nichts, als fesseln und ermorden!
+@Türk.
+Nein, Schöne, deine Noth und dieses Alten Schmerz, Ich will es dir gestehn, benahm mir längst das Herz, Doch ist Gehorsam Pflicht.
 @Therise.
-Nicht aber bey Barbaren. Wo willst du mit ihm hin?   46:: Türk. Du wirst es bald erfahren.
+Nicht aber bey Barbaren. Wo willst du mit ihm hin?   46::
+@Türk.
+Du wirst es bald erfahren.
 @Therise.
-Ich seh es, Grausamel ihr wollet nur sein Blut. Entdecke wenigstens, was sparet Orchans Wuth Für ihn für Marter auf? Türk. Kann ich dir dieses sagen, Und darf ich seinen Rath mich zu ergründen wagen? Ich bin ein Krieger. Dem ist Forschen keine Pflicht; Ich thu, was man befiehlt und untersuche nicht. (zu Grandlove.) Fort! du hast ihn getrotzt.
+Ich seh es, Grausamel ihr wollet nur sein Blut. Entdecke wenigstens, was sparet Orchans Wuth Für ihn für Marter auf?
+@Türk.
+Kann ich dir dieses sagen, Und darf ich seinen Rath mich zu ergründen wagen? Ich bin ein Krieger. Dem ist Forschen keine Pflicht; Ich thu, was man befiehlt und untersuche nicht. (zu Grandlove.) Fort! du hast ihn getrotzt.
 @Grandlove.
 Soll ich dafür erblassen, Daß ich mich nicht von ihm zum Wahn verführen lassen, So reißt mich, Mörder, nur zu meinem Tode hin, Ich habe so kein Glück, da ich ohn' Edward bin! (sie greifen ihn.)
 @Therise.
@@ -331,7 +343,9 @@ O meine Theureste, sey ruhig, lebe hier. Mein Leid vollbracht zu sehn, dies Glü
 @Therise.
 Ich soll es sehn, daß man dich hier in Fesseln lege! Der Türk, (zu den andern.) Eilt, ihr Geschrey macht sonst noch Mitleid in euch rege. (sie fesseln Grandlove.)
 @Therise.
-Unmenschen! wenigstens würgt mich mit ihm zugleich. Türk. Man halte sie zurück. Fort mit ihm! du entweich! (Grandlove wird weggebracht.)
+Unmenschen! wenigstens würgt mich mit ihm zugleich.
+@Türk.
+Man halte sie zurück. Fort mit ihm! du entweich! (Grandlove wird weggebracht.)
 @Therise.
 GOtt! kann die Hölle selbst wohl ungerechter quälen! (Sie steht ein wenig still, dann läuft sie aus Angst nach der andern Seite, wo ihr Zapor begegnet, dem sie zu Fuße fällt.)
 ## Vierter Auftritt. Therise, Zapor.

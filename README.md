@@ -1,4 +1,7 @@
 # 15317.info
+> the dracorTEI app is outsourced from here and is developed further at: <https://github.com/esteeschwarz/dracorTEI>   
+
+## about
 essai to transform raw transkribus transkript source (via API) from transkribus collection to complete dracor TEI.   
 test app [here](https://ada-sub.dh-index.org/shiny/work/essais/dracorTEI/).
 
@@ -13,3 +16,4 @@ to test, open server.R in R and run app. theres only one play (iwanette) in the 
 - in the moment and for own purpose the text source is fetched directly from transkribus, so still to integrate is an option to read raw transcript from file.
 - option to save all play meta (author, title, subtitle), in the moment only speaker names and heading level 1/2 declaration scheme is saved.
 - refine xml for html escapes
+

@@ -293,6 +293,7 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
   for (l in 1:length(lines)){
     line<-lines[l]
     cast<-cast[!is.na(cast)]
+    
     if(str_detect(line,paste0("^",cast,".?$"),)){
       parts<-str_match(line,"\\^(.*)")
       parts
@@ -343,6 +344,8 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
 # t6
 get.speakers<-function(t1,sp){
   sp01<-unlist(strsplit(sp,","))
+  sp01<-sp01[!is.na(sp01)]
+  sp01<-sp01[sp01!=""]
   sp1<-paste0("(",paste0(sp01,collapse = "|"),")")
   sp2<-paste0(sp01,".")
   print(sp1)

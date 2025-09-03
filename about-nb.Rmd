@@ -19,7 +19,6 @@ upload this edited marked up text with `upload ezd-markup` and try again. dont a
 # replacements
 if you noticed repeated OCR errors in your transcript that you didnt correct in your transcribing (since much of these can be done automatically) you can upload a table (.csv) with global replacements to apply to your transcript. the table has to be in the following format and will be checked for regex errors before applied. best is to create this table directly in a texteditor and save as .csv but you can also create a table in numbers/excel and export as csv.
 
-
 ```{}
 ,find,replace
 Jch,Ich
@@ -32,9 +31,3 @@ findthis(captured),thisis\1
 
 please mind that this 1st stage replacements are applied to the text as single character string, which means if you want to adress characters dependent on line beginnings or endings you have to adress these with `\n` in the table, and NOT with `^` or `$` like as for single line find/replacements. the rest is still pure regular expressions and capture groups are adressed as e.g. `\1` for capture group 1. 
 
-# limitations
-- its not yet possible to recognize/switch to "lyrics/songs/poems" instead prose text like in ezdrama
-- the save-settings option is very dangerous by now, it simply overwrites existing id's since i did use it just for my testings. best would be for now to load a setup by ID and check if that ID has content, if not, can save at
-- title, subtitle, author settings are not saved, minor TODO
-
-----

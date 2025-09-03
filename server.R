@@ -6,14 +6,19 @@ library(jsonlite)
 library(diffr)
 library(xml2)
 library(dplyr)
+library(DT)
 #library(tools)
 # takes 9.40min to install packages on silver
 source("ezd2tei.R")
 source("functions.R")
+load("default-values.RData")
 #sp.default<-"Iwanette,Golowin,Wolsey,Stormond,Bender"
 transcript<-"iwanette"
-output_file<-"www/r-tempxmlout.xml"
+output_file_s_www<-"r-tempxmlout.xml"
+output_file<-paste0("www/",output_file_s_www)
+
 output_file_ezd<-"www/ezdmarkup.txt"
+output_file_pb<-"www/r-tempxmlout_pb.xml"
 # Load defaults when app starts
 observe({
   # Load default speaker names from database
@@ -43,12 +48,152 @@ function(input, output, session) {
     sp.sf = "",
     id.sf = NULL,
     cast = NULL,
-    nb.tags = list()
+    nb.tags = list(),
+    selected_id = NULL,
+    df = defaults,
+    title = NULL,
+    subtitle = NULL,
+    author = NULL
+    
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
   rv$repl<-repldf
   
+  
+
+  #ui <- fluidPage(
+   # titlePanel("Dataframe Dropdown with Save Functionality"),
+    
+    # Update dropdown choices when dataframe changes
+    observe({
+      updatePickerInput(
+        session,
+        "id_select",
+        choices = c("Create new..." = "new", rv$df$id)
+      )
+    })
+    
+    # Update name input when selection changes
+    observeEvent(input$id_select, {
+      if (input$id_select != "new" && !is.null(input$id_select)) {
+        selected_row <- rv$df[rv$df$id == input$id_select, ]
+       # updateTextInput(session, "cast", value = selected_row$cast)
+        rv$selected_id <- input$id_select
+      } else {
+        updateTextInput(session, "cast", value = "empty")
+        rv$selected_id <- NULL
+      }
+    })
+    
+    # Save to existing ID
+    observeEvent(input$save_btn, {
+      req(input$id_select, input$id_select != "new")
+      print("saving...")
+      row_to_save<-c(input$id_select,input$h1,input$h2,input$speaker,input$cast,input$author,input$title,input$subtitle)
+      print(row_to_save)
+      print(rv$df$id)
+      print(rv$df)
+      id=input$id_select
+      # Update the dataframe
+      defaults<-data.frame(rv$df)
+      defaults[id,] <- row_to_save
+      print(defaults)
+      save(defaults,file="default-values.RData")
+      
+      showNotification("Data saved successfully!", type = "message")
+      
+      # Your save routine would go here, e.g.:
+      # saveRDS(rv$df, "data.rds")
+      # write.csv(rv$df, "data.csv", row.names = FALSE)
+    })
+    observeEvent(input$load_btn, {
+      req(input$id_select)
+      id<-input$id_select
+      print(id)
+      cat("observe load...\n")
+      print(rv$df[id,"speaker"])
+     # print(input$id.defaults.load)
+    #  print(head(defaults))
+      print(rv$df$speaker[id])
+      updateTextInput(session, "speaker", value = rv$df[id,"speaker"])
+      updateTextInput(session, "title", value = rv$df[id,"title"])
+      updateTextInput(session, "subtitle", value = rv$df[id,"subtitle"])
+      updateTextInput(session, "author", value = rv$df[id,"author"])
+      
+      updateTextInput(session, "h1", value = rv$df[id,"h1"])
+      updateTextInput(session, "h2", value = rv$df[id,"h2"])
+      updateTextInput(session, "cast", value = rv$df[id,"cast"])
+      rv$sp.sf<-rv$df[id,"speaker"]
+      rv$h1.sf<-rv$df[id,"h1"]
+      rv$h2.sf<-rv$df[id,"h2"]
+      rv$cast<-rv$df[id,"cast"]
+      rv$author<-rv$df[id,"author"]
+      rv$title<-rv$df[id,"title"]
+      rv$subtitle<-rv$df[id,"subtitle"]
+      print(rv$df)
+      showNotification("Data loaded successfully!", type = "message")
+      
+      # Your save routine would go here, e.g.:
+      # saveRDS(rv$df, "data.rds")
+      # write.csv(rv$df, "data.csv", row.names = FALSE)
+    })
+    
+    # Create new ID
+    observeEvent(input$new_btn, {
+      req(input$id_select)
+      
+      # Generate new ID (you can customize this logic)
+      new_id <- sprintf("%03d", as.numeric(max(rv$df$id)) + 1)
+      new_id <- as.numeric(max(rv$df$id)) + 1
+      
+      print(new_id)
+      print("new id created")
+      # Add new row to dataframe
+      new_row <- c(id=new_id,h1 = input$h1,h2 = input$h2,speaker = input$speaker,cast = input$cast,
+                   author = input$author,title = input$title,subtitle = input$subtitle)
+      new_row <- c(id=new_id,h1 = NA,h2 = NA,speaker = NA,cast = NA,
+                   author = NA,title = NA,subtitle = NA)
+      print(new_row)
+      rv$df <- rbind(rv$df, new_row)
+      print("rbind done")
+      # Update selection to the new ID
+      updatePickerInput(session, "id_select", selected = new_id)
+      print(rv$df)
+      showNotification(paste("New ID", new_id, "created!"), type = "message")
+      
+      # Your save routine would go here
+    })
+    
+    # Refresh data (optional - if you want to reset or reload from source)
+    observeEvent(input$refresh_btn, {
+      rv$df <- defaults
+      updateTextInput(session, "cast", value = "")
+      updatePickerInput(session, "id_select", selected = "new")
+      showNotification("Data refreshed!", type = "message")
+    })
+    
+    # Display the dataframe
+    # output$data_table <- renderDT({
+    #   datatable(
+    #     rv$defaults,
+    #     options = list(
+    #       pageLength = 10,
+    #       autoWidth = TRUE
+    #     ),
+    #     selection = 'none'
+    #   )
+    # })
+    # 
+    # Debug output (optional)
+    output$debug_output <- renderPrint({
+      cat("Selected ID:", input$id_select, "\n")
+      cat("Current name input:", input$cast, "\n")
+      cat("Dataframe dimensions:", dim(rv$df), "\n")
+    })
+  
+  
+
   output$md_html <- renderUI({
     md_file <- "about-md.md"
     html <- markdown::markdownToHTML(md_file, fragment.only = TRUE)
@@ -101,27 +246,31 @@ function(input, output, session) {
     content=function(file){writeLines(readLines(output_file_ezd),file)}
   )
   observeEvent(input$defaults.save,{
-    rv$id.sf<-input$id.defaults.save
-    rv$sp.sf<-input$speaker
-    rv$h1.sf<-input$h1
-    rv$h2.sf<-input$h2
-    rv$cast<-input$cast
-#    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
-    #rvdf<-c(id=1,bla1="zwei")
-    #rvdf[["id"]]
-    rvdf<-c(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
-    cat("observe sf...\n")
-    print(rvdf)
-    save_defaults(rvdf)
+    req(input$id_select)
+    
+    save(rv$df,file="default-values.RData")
+#     
+#     rv$id.sf<-input$id.defaults.save
+#     rv$sp.sf<-input$speaker
+#     rv$h1.sf<-input$h1
+#     rv$h2.sf<-input$h2
+#     rv$cast<-input$cast
+# #    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
+#     #rvdf<-c(id=1,bla1="zwei")
+#     #rvdf[["id"]]
+#     rvdf<-c(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
+#     cat("observe sf...\n")
+#     print(rvdf)
+#     save_defaults(rvdf)
     updateTextInput(session, "id.defaults.save", value = "settings saved...")
-    # defaults$h1[4]<-".ufzug"
+#     # defaults$h1[4]<-".ufzug"
      #defaults$h2[4]<-".uftritt"
     # defaults$cast<-"Personen."
   #    save(defaults,file = "default-values.RData")
   })
   observeEvent(input$defaults.load,{
     defaults<-load_defaults(input$id.defaults.load)
-    cat("oberserve load...\n")
+    cat("observe load...\n")
     print(input$id.defaults.load)
     print(head(defaults))
     updateTextInput(session, "speaker", value = defaults$speaker)
@@ -291,11 +440,17 @@ function(input, output, session) {
     t <- get.heads.s(rv$t1, vario.1,vario.2)  # Use the transcript stored in reactiveValues
     rv$t2 <- t$text  # Store the updated text in reactiveValues
     rv$heads <- t$vario  # Store the act headers in reactiveValues
+    heads<-data.frame(found=1:length(rv$heads),head=rv$heads)
     rv$h1.sf<-vario.1
     rv$h2.sf<-vario.2
+    # heads$h1<-rv$h1.sf
+    # heads$h2=rv$h2.sf
+    print(heads)
+    
     writeLines(rv$t2,"www/ezdmarkup.txt")
     # Update the UI with the processed act headers
-    output$proutput <- renderText(paste("level 1/2 headers found:\n",paste(rv$heads, collapse = "\n"),collapse = "\n"))
+   # output$proutput <- renderText(paste("level 1/2 headers found:\n",paste(rv$heads, collapse = "\n"),collapse = "\n"))
+    #output$proutput<-renderDT(rv$heads)
     output$processed <- renderUI({
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
@@ -303,6 +458,16 @@ function(input, output, session) {
                  paste(rv$t2, collapse = "\n"))
       )
     })
+    output$pr_progress<-renderUI({
+      div(
+        style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
+        tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
+                 paste(heads, collapse = "\n"))
+      )
+    })
+    # output$pr_progress<-renderDT(
+    #   iris
+    #   )
   })
   observeEvent(input$guess.sp, {
     print("guess speakers")
@@ -317,7 +482,7 @@ function(input, output, session) {
     #t <- get.speakers(t3, vario)  # Use the transcript stored in reactiveValues
     print(rv$cast)
     # t <- get.speakers(rv$t2, vario)  # Use the transcript stored in reactiveValues
-    t4 <- get.castlist(rv$t2,input$cast)
+    t4 <- get.castlist(rv$t2,rv$cast)
     t4<-t4$lines
     print("got cast...")
     t5<-get.front(t4)
@@ -382,7 +547,8 @@ function(input, output, session) {
      # style="width:100%; height:100%;",
       tags$iframe(
 #        src = paste0("data:application/xml;base64,", b64),
-       src = "r-tempxmlout.xml",
+       # src = "r-tempxmlout.xml",
+        src = output_file_s_www,
         style="width:100%; height:100vH; border:none;"
       )
     })

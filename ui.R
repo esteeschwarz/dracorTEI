@@ -1,5 +1,6 @@
 library(shiny)
 library(diffr)
+library(shinyWidgets)
 
 #css<-readtext("render.css")$text
 # Define UI for application
@@ -86,19 +87,32 @@ fluidPage(
         ""
       ),
      
+     helpText("Enter speaker names separated by commas, then click the button to process them."),
      
       actionButton("submit.sp", "Process Names"),
+     actionButton("compare", "compare processed", class = "btn-primary", icon = icon("code-compare")),
+     downloadButton("downloadEZD","downdload ezd-markup text"),
+     
       hr(),
-      helpText("Enter speaker names separated by commas, then click the button to process them."),
-    textInput("id.defaults.save","ID to save settings"),
-    actionButton("defaults.save","save settings"),
-    textInput("id.defaults.load","load settings from ID"),
-    actionButton("defaults.load","load settings"),
-    actionButton("compare", "Compare Texts", class = "btn-primary", icon = icon("code-compare")),
-    
+     pickerInput(
+       "id_select",
+       "Select ID:",
+       choices = NULL,
+       options = list(
+         `live-search` = TRUE,
+         `actions-box` = TRUE
+       )
+     ),
+  #  textInput("id.defaults.save","ID to save settings"),
+    actionButton("load_btn", "Load from Selected ID", class = "btn-primary"),
+    actionButton("save_btn", "Save to Selected ID", class = "btn-primary"),
+    actionButton("new_btn", "Create New ID", class = "btn-success"),
+   # actionButton("defaults.save","save settings"),
+  #  textInput("id.defaults.load","load settings from ID"),
+   # actionButton("defaults.load","load settings"),
+    hr(),
     actionButton("submit.xml", "create XML"),
     downloadButton("downloadXML","downdload .xml"),
-    downloadButton("downloadEZD","downdload ezd-markup text"),
     hr(),
     helpText("if you satisfied with the preprocessed text, start transformation.")
   ),
@@ -108,8 +122,9 @@ fluidPage(
       
       tabPanel("progress",
       h4("processing"),
-      verbatimTextOutput("pr-progress"),
-                ),
+      #verbatimTextOutput("pr_progress"),
+      uiOutput("pr_progress"),
+      ),
       tabPanel("raw",
                h4("raw text"),
                

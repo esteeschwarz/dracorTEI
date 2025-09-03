@@ -282,7 +282,7 @@ parse_drama_text <- function(input_tx, output_file) {
         xml_add_child(sp, "speaker", speaker)
         write(speaker.id,"debug.txt",append = T)
         
-        p <- xml_add_child(sp, "p")
+       # p <- xml_add_child(sp, "p") #### this critical
         #xml_text(p) <- text
         write("<p>","debug.txt",append = T)
         
@@ -329,10 +329,14 @@ parse_drama_text <- function(input_tx, output_file) {
     if (str_trim(line) != ""&!line.true%in%c("stage","speaker","act","scene","author","title","subtitle","personal","front")) {
       #write(processed,"debug.txt",append = T)
       
+      
       if (!is.null(current_scene)) {
         # Appliquer les mêmes transformations que pour le texte des personnages
         processed <- line %>%
+        #NOTE.15363: this is reasonable to display the pagebreak with pagenumber, but creates TEI errors 
+          #(not structural, but from the scheme)... the next variant does tags the pagebreaks without pagenumber text
           str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"{cright[\\1]{cleft/pb{cright") %>%
+          #str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"/{cright") %>%
           str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
         # <pb n="11">[11]</pb>
         #        p <- xml_add_child(current_scene, "p")
@@ -355,9 +359,9 @@ parse_drama_text <- function(input_tx, output_file) {
     xml_add_child(person,"persName",speaker.a[sp])
   }
   write(speaker.a,"debug.txt",append = T)
-  
- # xml_text(xml_doc$body)
+  #xmltemp_pb<-tempfile("temppb.xml")
   xmltemp<-tempfile("temp.xml")
+  
   # Écrire le fichier XML de sortie
   write_xml(xml_doc$doc, xmltemp)
   # xmltx<-readLines(output_file)
@@ -365,8 +369,10 @@ parse_drama_text <- function(input_tx, output_file) {
   # xmltx<-gsub("\\{cright",">",xmltx)
   # writeLines(xmltx,xmltemp)
   # 
-  library(XML)
+  #write_xml(xml_doc$doc, xmltemp)
   
+  library(XML)
+  #finalise.xml<-function(xmltemp,output_file){
   doc  <- xmlParse(xmltemp, useInternalNodes = TRUE, encoding = "UTF-8")
   root <- xmlRoot(doc)
   
@@ -384,7 +390,10 @@ parse_drama_text <- function(input_tx, output_file) {
   
  # validate_tei(output_file,"dracor-scheme.rng")
   
+#}
 
+#finalise.xml(xmltemp_pb,output_file)
+#finalise.xml(xmltemp,output_file = output_file)
 }
 #output_file<-"testheaders.xml" # in server.R
 #input_tx<-readLines("ezdmarkup.txt")

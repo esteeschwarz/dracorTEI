@@ -31,3 +31,5 @@ findthis(captured),thisis\1
 
 please mind that this 1st stage replacements are applied to the text as single character string, which means if you want to adress characters dependent on line beginnings or endings you have to adress these with `\n` in the table, and NOT with `^` or `$` like as for single line find/replacements. the rest is still pure regular expressions and capture groups are adressed as e.g. `\1` for capture group 1. 
 
+## globalisation
+in the speaker/segmentation configuration you can insert if you found yet globalised regex formula for recognising speaker/headers which will concanated by | in the process.

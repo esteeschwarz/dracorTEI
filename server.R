@@ -54,9 +54,9 @@ function(input, output, session) {
     nb.tags = list(),
     selected_id = NULL,
     df = defaults,
-    title = NULL,
-    subtitle = NULL,
-    author = NULL,
+    title = "",
+    subtitle = "",
+    author = "",
     h1.set = FALSE,
     ezd = "no text processed",
     copyrighted = TRUE,
@@ -598,10 +598,30 @@ function(input, output, session) {
     #                                    "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
   })
   observeEvent(input$submit.xml, {
-#    output$proutput <- renderText("processing ezd > TEI...\n")
+    author<-rv$author
+    title<-rv$title
+    subtitle<-rv$subtitle
+    meta<-list(author=author,title=title,subtitle=subtitle)
+    #    output$proutput <- renderText("processing ezd > TEI...\n")
     showNotification("transform ezd > TEI...", type = "message")
-    
-    xml.t<-transform.ezd(rv$t3,output_file)
+  #   output_text <- capture.output({
+  #     print("Starting process...")
+  #     Sys.sleep(1)
+  #     print("Step 1 complete")
+  #     Sys.sleep(1)
+  #     print("Step 2 complete")
+  #     xml.t<-transform.ezd(rv$t3,output_file,meta)
+  #     print("finished...")
+  #   })
+  #   
+  #   # Update the reactive value
+  #   console_text(paste(output_text, collapse = "\n"))
+  # 
+  # 
+  # output$pr_progress <- renderText({
+  #   console_text()
+  # })
+    xml.t<-transform.ezd(rv$t3,output_file,meta)
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
    # xml.test<-list.files(".")
   # xml.str<-paste0("<div>",paste0(xml.test),"</div>")

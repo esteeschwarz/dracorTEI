@@ -124,8 +124,8 @@ fluidPage(
       
       tabPanel("progress",
       h4("processing"),
-      #verbatimTextOutput("pr_progress"),
-      uiOutput("pr_progress"),
+     # verbatimTextOutput("pr_progress")
+       uiOutput("pr_progress")
       ),
       tabPanel("raw",
                h4("raw text"),

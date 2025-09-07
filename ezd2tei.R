@@ -24,7 +24,7 @@ validate_tei <- function(xmlfile, schema = "schema.rng") {
 # validate_tei("testheaders.xml","dracor-scheme.rng")
 
 # Initialiser un nouveau document XML
-create_tei_document <- function() {
+create_tei_document <- function(meta) {
   doc <- xml_new_document()
   # root <- xml_root(doc)
   # 
@@ -52,11 +52,18 @@ create_tei_document <- function() {
   fileDesc <- xml_add_child(teiHeader, "fileDesc")
   
   # Titre et auteur
+  author<-meta$author
+  title<-meta$title
+  subtitle<-meta$subtitle
+  cat(author,title,subtitle,"\n")
   titleStmt <- xml_add_child(fileDesc, "titleStmt")
   ### 15305.TODO > globalise!
-  title<-xml_add_child(titleStmt, "title", "Der Tod Abels", type = "main")
-  subtitle<-xml_add_child(titleStmt, "title", "Ein Trauerspiel", type = "sub")
-  author<-xml_add_child(titleStmt, "author", "Margarete Klopstock")
+  # title<-xml_add_child(titleStmt, "title", "Der Tod Abels", type = "main")
+  # subtitle<-xml_add_child(titleStmt, "title", "Ein Trauerspiel", type = "sub")
+  # author<-xml_add_child(titleStmt, "author", "Margarete Klopstock")
+  title<-xml_add_child(titleStmt, "title", title, type = "main")
+  subtitle<-xml_add_child(titleStmt, "title", subtitle, type = "sub")
+  author<-xml_add_child(titleStmt, "author", author)
   #########################################################
   # Section de publication
   publicationStmt <- xml_add_child(fileDesc, "publicationStmt")
@@ -105,7 +112,7 @@ create_tei_document <- function() {
 #input_file<-"ezdmarkup.txt"
 #input_tx<-readLines("ezdmarkup.txt")
 
-parse_drama_text <- function(input_tx, output_file) {
+parse_drama_text <- function(input_tx, output_file,meta) {
   # Lire le fichier d'entrée
   lines<-input_tx
   #  lines <- readLines(input_file, encoding = "UTF-8")
@@ -118,7 +125,7 @@ parse_drama_text <- function(input_tx, output_file) {
   # Initialiser le document XML
   #xml_doc <- create_tei_document()
   # Initialiser le document XML
-  xml_doc <- create_tei_document()
+  xml_doc <- create_tei_document(meta)
   
   # Variables d'état pour suivre la structure
   current_act <- NULL

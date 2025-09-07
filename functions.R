@@ -343,14 +343,14 @@ clean.t<-function(t,r,repldf){
   t3<-gsub("%spknl%|%cast%","",t3)
   return(t3)
 }
-transform.ezd<-function(ezd,output_file){
+transform.ezd<-function(ezd,output_file,meta){
   #ezdtemp<-tempfile("ezd.txt")
   #writeLines(ezd,ezdtemp)
   #xmlout<-tempfile("xmlout.xml")
   #xmlout<-"r-tempxmlout.xml"
   xmlout<-output_file
   #writeLines(ezd,"ezdmarkup.txt")
-  parse_drama_text(ezd,xmlout)
+  parse_drama_text(ezd,xmlout,meta)
   return(readLines(xmlout))
 }
 ### preprocess raw text
@@ -412,6 +412,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   n.all<-c(numer.s,numer.c,numer.dc,numer.tu,numer.x,numer.tu.x)
   n.all<-unique(n.all)
   numer.all<-paste0("\\b",n.all,"\\b",collapse = "|")
+  numer.all<-paste0(n.all,collapse = "|")
   length(numer.all)
   return(numer.all)
   }
@@ -432,11 +433,14 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
 # global from metadf
   # imp: ^[^a-zA-Z][ \t]{1,}?F.RSTE.+(AKT)\.?$
   regx.1<-paste0("^[ \t]{0,}?(",numer.all,").+(",h1.all,")\\.?$")
-  #print(regx.1)
+  regx.1<-paste0("^([ \t]{0,})?(",numer.all,").+?(",h1.all,")\\.?(.+)?$")
+  
+  print(regx.1)
   regx.2<-paste0("^.+?",numer,".+(",headx.2,")\\.")
   regx.2<-paste0("^+?",numer,".+(",headx.2,")\\.")
   regx.2<-paste0("^[ \t]{1,}?(",numer.all,").+(",h2.all,")\\.?$")
   #print(regx.2)
+  #m1<-grep("1\\. AKT",t1)
   m1<-grep(regx.1,t1)
   ifelse(length(m1)==0,return(get.heads.2(t1,h1.all,h2.all,numer.all)),print("heads found with M1"))
   print("should not print after heads with M1")
@@ -584,7 +588,7 @@ get.speakers<-function(t1,sp){
   sp01<-sp01[!is.na(sp01)]
   sp01<-sp01[sp01!=""]
   sp01<-gsub("([).(])","\\\\\\1",sp01)
-  sp01
+  sp01<-c(sp01,toupper(sp01))
   sp1<-paste0("(",paste0(sp01,collapse = "|"),")")
   sp2<-paste0(sp01,".")
   print(sp1)
@@ -605,6 +609,7 @@ get.speakers<-function(t1,sp){
   ### 15371.critical### TO FIX !!!!########
   t2[m2]<-gsub(regx2,"@\\2%spknl%\\\n\\3",t2[m2]) # this wks in editor
   print(m2)
+  print(t2[m2])
   #########################################
   t2
   sp2

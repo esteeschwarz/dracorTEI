@@ -1,12 +1,15 @@
 library(R.utils)
 library(fuzzyjoin)
+library(stringi)
 #library(Hmisc)
-get.str.dist<-function(t1,sp.cast){
-  sp1<-c("Billing","Katrine Stockmann","dummyNO")
+get.str.dist<-function(t1,sp.cast,sp.guess){
+ # sp1<-c("Billing","Katrine Stockmann","dummyNO")
   sp1<-unique(unlist(strsplit(sp.cast," ")))
-  x<-data.frame(id=1,cast=sp1)
+  sp1<-sp1[!is.na(sp1)]
+  sp.guess<-sp.guess[!is.na(sp.guess)]
+  x<-data.frame(id=1,cast=sp.guess)
   #y<-data.frame(id=2,cast=names(sp1))
-  y<-data.frame(id=2,cast=sp.cast)
+  y<-data.frame(id=2,cast=sp1)
   x$cast<-gsub("^[ \t]{1,}[ \t.]$","",x$cast)
   get.m<-function(dist,met,mode){
     x$cast<-gsub("^[ \t]{1,}[ \t.]$","",x$cast)
@@ -14,12 +17,30 @@ get.str.dist<-function(t1,sp.cast){
     y$cast<-gsub("^[ \t]{1,50}(.+)[ \t.]?$","\\1",y$cast)
     y$cast<-gsub("^[ \t]{1,}[ \t.]$","",y$cast)
     j1<-stringdist_join(x,y,max_dist = dist,by="cast",mode = mode,method = met,distance_col = "dist",ignore_case = T)
+    ms<-j1$cast.x%in%j1$cast.y
+    j1$dist[ms]<-j1$dist[ms]+(sd(j1$dist)*3) # score higher if
     #j1<-stringdist(sp1,sp.cast,method = "jw")
     j1
     l1<-list()
     x<-j1$cast.y[1]
     x
-    s2<-lapply(j1$cast.y, function(x){
+    ### new
+    tj<-table(j1$cast.y)
+    j1$fd<-NA
+    for(k in names(tj)){
+      r<-j1$cast.y==k
+      j1$fd[r]<-j1$dist[r]/tj[k]
+    }
+    j1
+    mj<-mean(j1$fd)
+    sj<-sd(j1$fd)
+    sj
+    sel<-j1$fd<=mj
+    print("freq based stringdist...")
+    print(j1$cast.y[sel])
+    
+    ##############
+      s2<-lapply(j1$cast.y, function(x){
       
       s4<-sum(j1$dist[j1$cast.y==x])
       l1[[x]]<-s4
@@ -57,10 +78,12 @@ get.str.dist<-function(t1,sp.cast){
     print(j1)
     print(y$cast[!y$cast%in%j2])
     #print(j2)
-    return(s2)
+    return(list(s3=s2,sel=j1$cast.y[sel]))
   }
   s3<-get.m(1000,"lv","left")
-  s3<-s3*10
+  f.sel<-s3$sel
+  s3_sf<-s3
+  s3<-s3$s3*10
   m1<-mean(s3)
   length(s3)
   sd1<-sd(s3)
@@ -74,6 +97,8 @@ get.str.dist<-function(t1,sp.cast){
   wmax<-which.max(s3)
   s3[wmin]
   s3[wmax]
+  ##########
+  
   ##########
   ### THIS >
   m4<-s3>=m1 # greater or equal to mean string distance 
@@ -114,6 +139,7 @@ get.str.dist<-function(t1,sp.cast){
   l2<-l1[!m7]
   l3<-c(l2,l1[m7][m8])
   l3
+  return(f.sel)
 }
 
 check_regex_dep<-function(repldf){
@@ -173,9 +199,24 @@ guess_speaker<-function(t1,cast){
   
   m2<-grepl("[)(,]",t1[m])
   m<-m[!m2]
-  sp.guess<-unique(t1[m])
+  m3<-grep("[A-Z]{3,30}",t1)
+  spc<-stri_extract_all_regex(t1,"[A-Z]{3,30}")
+  spc<-unlist(spc)
+  print("capital speakers...")
+  print(spc)
+  spc.t<-table(spc)
+  mspc<-mean(spc.t)
+  sdspc<-sd(spc.t)
+  sdselect<-mspc-sdspc
+  sp.sel<-spc.t[spc.t>sdselect]
+  print("speaker table mean - sd")
+  print(sp.sel)
+
+  sp.guess<-t1[m] # NOT apply unique(): the more occurences the higher the stringdist score
+  sp.guess<-c(sp.guess,sp.sel)
   sp.guess<-gsub("[@.]","",sp.guess)
-  sp.guess
+  l<-length(sp.guess)
+  cat("speakers guesses length:",l,"\n")
   #t4<-paste0("^(", paste0(t4$cast,collapse = "|"), ").?$")
   #t4
  # cast<-"ROLLELISTE"
@@ -189,7 +230,7 @@ guess_speaker<-function(t1,cast){
   c7<-gsub(",","",c7)
   c7<-gsub("%cast%","",c7)
  # c7<-c(c7,paste0(c7,":?\\.?"))
-  spx<-get.str.dist(t1,c7)
+  spx<-get.str.dist(t1,c7,sp.guess)
   l3<-spx
 #  l3<-get.str.dist(sp.cast)
   l3<-unique(l3)
@@ -529,13 +570,14 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
     line<-lines[l]
     cast<-cast[!is.na(cast)]
     
-    if(str_detect(line,paste0("^",cast,".?$"),)){
+    if(str_detect(line,paste0("^[ \t]{0,}",cast,".?$"),)){
       parts<-str_match(line,"\\^?(.*)")
       parts
       write(parts,"debug.txt",append = T)
       desc<-parts[2]
       desc
       r<-l:length(lines)
+      print("chk $# in castlist following lines")
       m<-str_detect(lines[r],"^[$#]",) # only if h1 already applied!
       mw<-which(m)
       mw<-mw[1]
@@ -561,6 +603,7 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
     desc
     r<-l:length(lines)
     m<-str_detect(lines[r],"^[$#]",)
+    print("getcast m")
     mw<-which(m)
     mw<-mw[1]-1
     mw<-l:r[mw]
@@ -583,7 +626,9 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
  #t1<-t5
  #sp<-vario
  #sp
-get.speakers<-function(t1,sp){
+get.speakers<-function(t1,sp,rswitch=F){
+  regx1<-sp
+  regx2<-sp
   sp01<-unlist(strsplit(sp,","))
   sp01<-sp01[!is.na(sp01)]
   sp01<-sp01[sp01!=""]
@@ -593,9 +638,11 @@ get.speakers<-function(t1,sp){
   sp2<-paste0(sp01,".")
   print(sp1)
   #regx<-paste0("^.+?",sp1,"\\.")
+  if(!rswitch){
   regx1<-paste0("^",sp1,"\\.?$")
   regx2<-paste0("^(",sp1,"\\.?)( .+)?$")
   print(regx2)
+  }
   m<-grep(regx1,t1)
   
   print(length(m))
@@ -607,7 +654,10 @@ get.speakers<-function(t1,sp){
   m2<-grep(regx2,t1)
   cat("\rm2:",m2)
   ### 15371.critical### TO FIX !!!!########
-  t2[m2]<-gsub(regx2,"@\\2%spknl%\\\n\\3",t2[m2]) # this wks in editor
+  if(!rswitch)
+    t2[m2]<-gsub(regx2,"@\\2%spknl%\\\n\\3",t2[m2]) # this wks in editor
+  
+  t2[m2]<-paste0("@",t2[m2],"%spknl%") # this wks in editor
   print(m2)
   print(t2[m2])
   #########################################

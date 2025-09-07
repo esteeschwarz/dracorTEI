@@ -6,6 +6,7 @@ library(jsonlite)
 library(diffr)
 library(xml2)
 library(dplyr)
+library(shinycssloaders)
 #library(DT)
 #library(tools)
 # takes 9.40min to install packages on silver
@@ -38,7 +39,7 @@ function(input, output, session) {
   copyrighted<-TRUE
   copyvc<-!copyrighted
   rv <- reactiveValues(
-    t1 = "input docname...",
+    t1 = "%empty%input docname...",
     repl = NULL,
     t2 = NULL,
     t3 = NULL,
@@ -61,7 +62,8 @@ function(input, output, session) {
     ezd = "no text processed",
     copyrighted = TRUE,
     copyvc = copyvc,
-    xmlout = "you have not yet created an xml file or it is copyrighted"
+    xmlout = "you have not yet created an xml file or it is copyrighted",
+    b64 = jsonlite::base64_enc(charToRaw("<p>no content yet</p>"))
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
@@ -436,6 +438,7 @@ function(input, output, session) {
     #t3
     #t3<-clean.t(t3,1,rv$repl)
     #t3
+    rv$t1<-"%ezd%"
     rv$t3<-t4
     output$processed <- renderUI({
       div(
@@ -538,8 +541,10 @@ function(input, output, session) {
     updateTextInput(session, "speaker", value = paste0(sp.guess,collapse = ","))
   })
   #################################
+  
     observeEvent(input$submit.sp, {
     vario <- input$speaker
+    rswitch<-input$rswitch
     req(rv$h1.set)
     showNotification("processing speakers...", type = "message")
     
@@ -552,7 +557,7 @@ function(input, output, session) {
     print("got cast...")
     t5<-get.front(t4)
     print("got front...")
-    t6 <- get.speakers(t5, vario)# Use the transcript stored in reactiveValues
+    t6 <- get.speakers(t5, vario,rswitch)# Use the transcript stored in reactiveValues
     t2 <- t6  # Store the updated text in reactiveValues
     #t2<-t4
     print("got speakers...")
@@ -629,7 +634,8 @@ function(input, output, session) {
     #print("----- xmlstr ------")
    # print(xml.str)
    b64 <- jsonlite::base64_enc(charToRaw(xml.str))
-    rv$xmlout<-b64
+    rv$b64<-b64
+    rv$xmlout<-xml.t
     
   #  valid<-validate_tei(output_file,"dracor-scheme.rng") # not on M7, cant install jing
     #t2<-xml.t
@@ -648,7 +654,7 @@ function(input, output, session) {
    # div(id="xml",
      # style="width:100%; height:100%;",
       tags$iframe(
-       src = paste0("data:application/xml;base64,", rv$xmlout),
+       src = paste0("data:application/xml;base64,", rv$b64),
        # src = paste0("data:text/html,", rv$xmlout),
        
        # src = "r-tempxmlout.xml",
@@ -660,9 +666,16 @@ function(input, output, session) {
   })
   
  observeEvent(input$compare, {
-    text1 <- rv$t1
-    text1<-paste0(text1,collapse = " ")
-    text2 <- paste0(rv$t3,collapse = "<nl>")
+    
+    ifelse(rv$t1=="%ezd%",text1<-rv$t3,
+           text1 <- paste0(rv$t1,collapse = " "))
+   print(text1)
+   
+    #text2 <- paste0(rv$t3,collapse = "<nl>")
+   doc<-read_xml(output_file)
+   texts <- xml_text(xml_find_all(doc, "//text()"))
+   
+    text2 <- texts
     tempapi<-tempfile("api.txt")
     writeLines(text1,tempapi)
     tempproc<-tempfile("proc.txt")
@@ -671,7 +684,7 @@ function(input, output, session) {
     # lines1 <- unlist(strsplit(text1, "\n"))
     # lines2 <- unlist(strsplit(text2, "\n"))
     # 
-?    renderDiffr
+#?    renderDiffr
     tryCatch(({
       output$diff_output <- renderDiffr({
        # input$compare
@@ -686,8 +699,8 @@ function(input, output, session) {
           diffr(
             file1 = tempapi,
             file2 = tempproc,
-            before = "Original",
-            after = "Corrected",
+            before = "uploaded",
+            after = "processed",
             contextSize = 3,
             wordWrap = TRUE
           )

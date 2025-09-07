@@ -1,10 +1,12 @@
 library(shiny)
 library(diffr)
 library(shinyWidgets)
+library(shinycssloaders)
 
 #css<-readtext("render.css")$text
 # Define UI for application
 fluidPage(
+  
   tags$style(HTML("
     .scrollable-sidebar {
       height: 80vh; /* Set the height of the sidebar */
@@ -90,7 +92,7 @@ fluidPage(
       ),
      
      helpText("Enter speaker names separated by commas, then click the button to process them."),
-     
+     switchInput("rswitch","regex",value = FALSE,"ON","OFF"),
       actionButton("submit.sp", "Process Names"),
      actionButton("compare", "compare processed", class = "btn-primary", icon = icon("code-compare")),
      downloadButton("downloadEZD","downdload ezd-markup text"),
@@ -125,8 +127,9 @@ fluidPage(
       tabPanel("progress",
       h4("processing"),
      # verbatimTextOutput("pr_progress")
-       uiOutput("pr_progress")
-      ),
+     #withSpinner(verbatimTextOutput("spinner")),
+     withSpinner(uiOutput("pr_progress")
+      )),
       tabPanel("raw",
                h4("raw text"),
                
@@ -134,7 +137,7 @@ fluidPage(
       tabPanel("processed",
               h4("output"),
               
-      uiOutput("processed")
+      withSpinner(uiOutput("processed"))
       ),
       tabPanel("render",h4("rendered xml view"),
                uiOutput("xmlrendered")
@@ -142,7 +145,7 @@ fluidPage(
       tabPanel("diff",
       div(class = "diff-container",
           h4("diff compare"),
-          diffrOutput("diff_output")
+          withSpinner(diffrOutput("diff_output"))
       )),
       tabPanel("about",
                htmlOutput("md_html")

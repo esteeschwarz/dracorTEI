@@ -63,7 +63,8 @@ function(input, output, session) {
     copyrighted = TRUE,
     copyvc = copyvc,
     xmlout = "you have not yet created an xml file or it is copyrighted",
-    b64 = jsonlite::base64_enc(charToRaw("<p>no content yet</p>"))
+    b64 = jsonlite::base64_enc(charToRaw("<p>no content yet</p>")),
+    xmlprocessed = F
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
@@ -642,7 +643,7 @@ function(input, output, session) {
    # print(valid$ok)
 #    output$proutput <- renderText("ezd > TEI processed...\n")
     showNotification("TEI process finished...", type = "message")
-    
+    rv$xmlprocessed<-T
     output$processed <- renderUI({
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
@@ -666,9 +667,9 @@ function(input, output, session) {
   })
   
  observeEvent(input$compare, {
-    
+    req(rv$xmlprocessed,rv$xmlprocessed==TRUE)
     ifelse(rv$t1=="%ezd%",text1<-rv$t3,
-           text1 <- paste0(rv$t1,collapse = " "))
+           text1 <- rv$t1)
    print(text1)
    
     #text2 <- paste0(rv$t3,collapse = "<nl>")

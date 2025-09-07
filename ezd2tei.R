@@ -200,6 +200,7 @@ parse_drama_text <- function(input_tx, output_file) {
     }
     if(str_detect(line,"@front",)){
       parts<-str_match(line,"(@front(.+?) )(.+)")
+      print("detecting @front")
       print(parts)
       lp<-length(parts)-1
       for(part in parts[2:lp]){
@@ -228,6 +229,9 @@ parse_drama_text <- function(input_tx, output_file) {
       for(p in front.t){
         xml_add_child(xml_doc$front, "p", p)
       }
+      print("front added...")
+      write(paste0(length(front.t)," lines to @front added"),"debug.txt",append = T)
+      
      line.true<-"front"
     }
    # line<-"@Iwanette."
@@ -291,9 +295,15 @@ parse_drama_text <- function(input_tx, output_file) {
    # parts
     speaker.a
     # 2. Didascalies de bloc ($)
+    print("check single stage")
+    write("single<stage>","debug.txt",append = T)
+    write(line,"debug.txt",append = T)
+    
     if (str_detect(line, "^\\$")) {
+      print("single stage detected")
       stage_content <- gsub("[$]","",str_trim(str_sub(line, 2)))
       if (!is.null(current_scene)) {
+        print("current scene not NULL")
         xml_add_child(current_scene, "stage", stage_content)
         write("<stage>","debug.txt",append = T)
         
@@ -377,7 +387,7 @@ parse_drama_text <- function(input_tx, output_file) {
   root <- xmlRoot(doc)
   
   # add PIs before the root element (order matters: stylesheet first, then model)
-  addSibling(root, newXMLPINode("xml-stylesheet", 'type="text/css" href="tei.css"'), after = FALSE)
+  addSibling(root, newXMLPINode("xml-stylesheet", 'type="text/css" href="https://ada-sub.dh-index.org/school/api/css/shiny/dracortei.css"'), after = FALSE)
   addSibling(root, newXMLPINode("xml-model",
                                 'href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"'),
              after = FALSE)
@@ -387,6 +397,7 @@ parse_drama_text <- function(input_tx, output_file) {
   xmltx<-gsub("\\{cleft","<",xmltx)
   xmltx<-gsub("\\{cright",">",xmltx)
   writeLines(xmltx,output_file)
+  cat("xml written to:",output_file)
   
  # validate_tei(output_file,"dracor-scheme.rng")
   

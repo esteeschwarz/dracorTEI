@@ -34,4 +34,5 @@ please mind that this 1st stage replacements are applied to the text as single c
 in the speaker/segmentation configuration you can insert if you found yet globalised regex formula for recognising speaker/headers which will concanated by | in the process.
 
 ## limitations
-its not yet possible to markup verse (\<l> in the TEI), the standard text tag applied is \<p>.
+- its not yet possible to markup verse (\<l> in the TEI), the standard text tag applied is \<p>.
+- problem with headers like `ANDEN AKT, SCENE 1` which dont ezd tag the second part so theres no divs for the scenes created. we'll fix that...

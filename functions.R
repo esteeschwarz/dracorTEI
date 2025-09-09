@@ -377,6 +377,14 @@ clean.t<-function(t,r,repldf){
   for(r in 1:length(repldf$id)){
     t2<-gsub(repldf$string1[r],repldf$string2[r],t2,perl = T)
   }
+  ### close open <stages>
+  parts <- str_match(t2,"(\\([^)]+?[^)](?=[@%$#]))")
+  print(parts)
+  t2<-gsub("(\\([^)]+?[^)](?=[@%$#]))","\\1)",t2,perl = T)
+  t2<-gsub("\n\\)",")\n",t2)
+  parts <- str_match(t2,"(\\([^)]+?[^)](?=[@%$#]))")
+  print(parts)
+  ###
   writeLines(t2,txtemp)
   
   t3<-readLines(txtemp)
@@ -480,6 +488,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   regx.2<-paste0("^.+?",numer,".+(",headx.2,")\\.")
   regx.2<-paste0("^+?",numer,".+(",headx.2,")\\.")
   regx.2<-paste0("^[ \t]{1,}?(",numer.all,").+(",h2.all,")\\.?$")
+  regx.2<-paste0("^([ \t]{1,})?(",numer.all,").+?(",h2.all,")\\.?(.+)?$")
   #print(regx.2)
   #m1<-grep("1\\. AKT",t1)
   m1<-grep(regx.1,t1)
@@ -490,19 +499,32 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
  # t2[m1]<-paste0("# ",t2[m1])
   ### 15372.NOTE: the shakespeare-ingentingen contains AKT definitions at each scene, so the <div> element is always created anew. this maybe okay for the library and of editorial perspective, but for the dracor scheme its not a way since it messes up the network and speech distribution.
   
-  t2[m1]<-paste0("# ",t2[m1],"%hnl%")
-  m3<-duplicated(t2[m1])
-  print("duplicated act") ### > is never run
-  print(m3)
-  t2[m1][m3]<-"" # duplicated ACT definitions are deleted
+  #########################################################
+  t2[m1]<-paste0("# ",t2[m1],"%hnl%") #out
+#  ^([ \t]{0,})?(",numer.all,").+?(",h1.all,")\\.?(.+)?$
+  # t2[m1]<-gsub(regx.1,"# \\2 \\3%hnl%\\4",t2[m1],perl = T) #in
   m2<-grep(regx.2,t1)
   #t2<-t1
 #  t2[m2]<-paste0("## ",t2[m2])
-  t2[m2]<-paste0("## ",t2[m2],"%hnl%")
-  #return(t1)
+  m3<-m2%in%m1
+  #if (m2!=m1)
+    t2[m2][!m3]<-paste0("## ",t2[m2],"%hnl%") #out
+  # t2[m2]<-gsub(regx.2,"## \\2 \\3%hnl%\\4",t2[m2],perl = T) #in
+  #########################################################
   vario<-c(t2[m1],t2[m2])
   h1<-t2[m1]
-  h2<-t2[m2]
+  h2<-t2[m2]  
+  m3<-duplicated(t2[m1])
+  print("duplicated act") ### > is never run
+  print(m3)
+  ### 15373.double act issue, no scene divisions
+  #t3<-get.heads.2(t2,h1.all,h2.all,numer.all)
+  #t2<-t3$text
+  # t2[m1][m3]<-"" # duplicated ACT definitions are deleted
+  #return(t1)
+  # vario<-c(t2[m1],t2[m2])
+  # h1<-t2[m1]
+  # h2<-t2[m2]
     #       print(h1[1:10])
      #      print(h2[1:10])
   
@@ -576,6 +598,11 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
       write(parts,"debug.txt",append = T)
       desc<-parts[2]
       desc
+      parts<-str_match(line,"(\\^?)(.*)")
+      parts
+      if(parts[2]=="")
+        lines[l]<-paste0("^",parts[3])
+      
       r<-l:length(lines)
       print("chk $# in castlist following lines")
       m<-str_detect(lines[r],"^[$#]",) # only if h1 already applied!
@@ -626,7 +653,7 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
  #t1<-t5
  #sp<-vario
  #sp
-get.speakers<-function(t1,sp,rswitch=F){
+get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   regx1<-sp
   regx2<-sp
   sp01<-unlist(strsplit(sp,","))
@@ -680,8 +707,9 @@ get.speakers<-function(t1,sp,rswitch=F){
   })
   l2<-l2[!is.na(l2)]
   l2<-unlist(l2)
-  t2[m]<-paste0("@",l2,"%spknl%")
-  
+  #critical out
+  #t2[m]<-paste0("@",l2,"%spknl%")
+  ###############################
   t2[m]
   #t2<-gsub("%cast%","",t2)
   print(crit.sp)
@@ -722,9 +750,20 @@ get.speakers<-function(t1,sp,rswitch=F){
   # })  
   crit.m<-length(m)-sum(!crit)
   print(crit.m)
-  
+  m2<-t2==""
+  t2<-t2[!m2]
+  m2<-is.na(t2)
+  t2<-t2[!m2]
+  t2<-gsub("^@@","@",t2)
+  t2<-gsub("^[ \t]{1,}","",t2)
+ # t2<-gsub("(\\([^)]+?[^)](?=[@%$#]))","\\1)")
   #return(t1)
-  #writeLines(t2,"ezdmarkup.txt")
+  print(copyrighted)
+  mode(copyrighted)<-"logical"
+  print(mode(copyrighted))
+  print("get.speakers() finished...")
+  if(!copyrighted)
+    writeLines(t2,paste0(Sys.getenv("GIT_TOP"),"/test/temp/ezdmarkup.txt"))
   return(list(vario=t1[m][crit],text=t2,eval=crit.sp))
   
 }

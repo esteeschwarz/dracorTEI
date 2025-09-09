@@ -548,7 +548,7 @@ function(input, output, session) {
     rswitch<-input$rswitch
     req(rv$h1.set)
     showNotification("processing speakers...", type = "message")
-    
+    copyrighted<-rv$copyrighted
     print("getting speaker")
     #t <- get.speakers(t3, vario)  # Use the transcript stored in reactiveValues
     print(rv$cast)
@@ -558,7 +558,7 @@ function(input, output, session) {
     print("got cast...")
     t5<-get.front(t4)
     print("got front...")
-    t6 <- get.speakers(t5, vario,rswitch)# Use the transcript stored in reactiveValues
+    t6 <- get.speakers(t5, vario,rswitch,copyrighted)# Use the transcript stored in reactiveValues
     t2 <- t6  # Store the updated text in reactiveValues
     #t2<-t4
     print("got speakers...")

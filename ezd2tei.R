@@ -118,6 +118,9 @@ parse_drama_text <- function(input_tx, output_file,meta) {
   #  lines <- readLines(input_file, encoding = "UTF-8")
   lines<-lines[!is.na(lines)]
   lines<-lines[lines!=""&lines!=" "&lines!="  "]
+  lines<-gsub("^[ ]{0,}","",lines)
+  lines<-gsub("[ ]{2,}"," ",lines)
+
   #lines<-gsub("\\^","!personal!",lines)
   # write("start parse---","debug.txt",append = T)
   #write(paste0(length(lines)," lines to process..."),"debug.txt",append = T)
@@ -145,10 +148,14 @@ parse_drama_text <- function(input_tx, output_file,meta) {
     # ?str_detect
     line.true<-""
     line<-lines[k]
-    line<-gsub("^[ ]{1,5}","",line)
-    line<-gsub("[ ]{1,5}$","",line)
-    line<-gsub("[ ]{2,10}"," ",line)
+    line<-gsub("^[ ]{1,}","",line)
+    line<-gsub("[ ]{1,}$","",line)
+    line<-gsub("[ ]{2,}"," ",line)
     line
+    print(line)
+    if(line=="")
+      break
+    
     write(k,"debug.txt",append = T)
     if(str_detect(line,"\\^",)){
       parts<-str_match(line,"\\^(.*)")
@@ -176,7 +183,7 @@ parse_drama_text <- function(input_tx, output_file,meta) {
       line.true<-"personal"
       write(castlist.t,"debug.txt",append = T)
       xml_text(xml_doc$castList)
-      write_xml(xml_doc$doc,"cstest.xml")
+     # write_xml(xml_doc$doc,"cstest.xml")
     }
     
     if(str_detect(line,"^@title",)){
@@ -303,9 +310,11 @@ parse_drama_text <- function(input_tx, output_file,meta) {
     speaker.a
     # 2. Didascalies de bloc ($)
     print("check single stage")
+    print(k)
     write("single<stage>","debug.txt",append = T)
+    write(k,"debug.txt",append = T)
     write(line,"debug.txt",append = T)
-    
+    if(!is.na(line)){
     if (str_detect(line, "^\\$")) {
       print("single stage detected")
       stage_content <- gsub("[$]","",str_trim(str_sub(line, 2)))
@@ -317,6 +326,24 @@ parse_drama_text <- function(input_tx, output_file,meta) {
       }
       text<-""
       line.true<-"stage"
+    }
+      if (str_detect(line, "^\\(")) {
+        
+        print("starting stage detected")
+        print(k)
+        parts <- str_match(line, "^[ ]{0,}\\((.+)\\)(.+)") #wks. wt transkribus
+        stage_content <- parts[2]
+        text<-parts[3]
+        if (!is.null(current_scene)) {
+          print("current scene not NULL")
+          xml_add_child(current_scene, "stage", stage_content)
+          write("<stage>","debug.txt",append = T)
+          
+        }
+        #text<-""
+        line<-text
+        line.true<-"p"
+      }
     }
     # 3. Actes (#)
     if (str_detect(line, "^[#]{1}[^#]")) {

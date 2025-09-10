@@ -2,6 +2,7 @@ library(R.utils)
 library(fuzzyjoin)
 library(stringi)
 #library(Hmisc)
+is.system<-Sys.getenv("SYS")
 get.str.dist<-function(t1,sp.cast,sp.guess){
  # sp1<-c("Billing","Katrine Stockmann","dummyNO")
   sp1<-unique(unlist(strsplit(sp.cast," ")))
@@ -185,8 +186,8 @@ check_regex <- function(repldf) {
 }
 #t1<-t11
 #cast<-c2
-cast<-"Medvirkende:"
-cast<-"ROLLELISTE"
+#cast<-"Medvirkende:"
+#cast<-"ROLLELISTE"
 
 
 guess_speaker<-function(t1,cast){
@@ -224,6 +225,8 @@ guess_speaker<-function(t1,cast){
   #sp.cast<-get.castlist(t1,cast)$cast
   c5<-get.castlist(t1,cast)
   c5
+  if(sum(unlist(grepl("^ERR:", c5$cast)))>0)
+    return("ERR: no castlist provided...")
   c6<-gsub("[*\\)\\(]","",c5$cast)
   c7<-unique(unlist(strsplit(c6," ")))
   c7<-unique(unlist(strsplit(c7,"/")))
@@ -358,7 +361,7 @@ return(t3)
 r<-F
 #t<-t3
 r<-F
-clean.t<-function(t,r,repldf){
+clean.t<-function(t,range,repldf,h1.first){
   txtemp<-tempfile("txraw.txt")
   writeLines(t,txtemp)
   library(readtext)
@@ -368,14 +371,14 @@ clean.t<-function(t,r,repldf){
   # repldf<-metadf$repl
   repldf
   #repldf[11,]
-  if(sum(r)>0)
-    repldf<-repldf[repldf$id==r,]
+  if(sum(range)>0)
+    repldf<-repldf[repldf$id==range,]
   repldf
   #r<-11
   m1<-grepl("%cast%",t2)
   print(m1)
-  for(r in 1:length(repldf$id)){
-    t2<-gsub(repldf$string1[r],repldf$string2[r],t2,perl = T)
+  for(id in 1:length(repldf$id)){
+    t2<-gsub(repldf$string1[id],repldf$string2[id],t2,perl = T)
   }
   ### close open <stages>
   parts <- str_match(t2,"(\\([^)]+?[^)](?=[@%$#]))")
@@ -389,17 +392,39 @@ clean.t<-function(t,r,repldf){
   
   t3<-readLines(txtemp)
   t3[1:150]
-  t3<-gsub("%spknl%|%cast%","",t3)
+  if(range!=1){
+    print("clean.t over F")
+    t3<-gsub("%spknl%|%cast%","",t3)
+  mh1<-grep("^#{1}",t3)
+  print(mh1)
+  r<-1:mh1
+  ma<-grep("^@",t3[r])
+  
+  mb<-grep("author|front|title|subtitle",t3[ma])
+  mc<-ma[mb]
+  
+  
+  rmc<-r%in%mc
+  r<-r[!rmc]
+  print(r)
+  if(length(r)>0)
+    t3[r]<-gsub("^@[ ]{0,}","",t3[r])
+  }
+  t3<-gsub("^@[ \t]{0,}","@",t3)
+  t3<-gsub("^#[ \t]{0,}","#",t3)
+  t3<-gsub("^\\$[ \t]{0,}","$",t3)
+  t3<-gsub("^\\^[ \t]{0,}","^",t3)
+  
   return(t3)
 }
-transform.ezd<-function(ezd,output_file,meta){
+transform.ezd<-function(ezd,output_file,meta,h1.first){
   #ezdtemp<-tempfile("ezd.txt")
   #writeLines(ezd,ezdtemp)
   #xmlout<-tempfile("xmlout.xml")
   #xmlout<-"r-tempxmlout.xml"
   xmlout<-output_file
   #writeLines(ezd,"ezdmarkup.txt")
-  parse_drama_text(ezd,xmlout,meta)
+  parse_drama_text(ezd,xmlout,meta,h1.first)
   return(readLines(xmlout))
 }
 ### preprocess raw text
@@ -439,13 +464,14 @@ vario<-gsub("%","",vario)
 vario
 t2[m4]<-gsub("%","",t2[m4])
 t2
-return(list(text=t2,vario=vario))
+return(list(text=t2,vario=vario,h1.first=m5[1]))
 }
 get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")
   #  ifelse(level==1,headx<-headx.1,headx<-headx.2)
   # ifelse(level==1,ph<-"#",ph<-"##")
   numer<-metadf$cardinal
+  #########################
   do.caps<-function(numer){
   numer.s<-unlist(strsplit(numer,"\\|"))
   numer.s<-gsub("[)(]","",numer.s)
@@ -454,14 +480,15 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   numer.c<-capitalize(numer.s)
   numer.x<-gsub("[A-ZВ-Ш]",".",numer.c)
   numer.x
-  numer.dc<-decapitalize(numer.s)
+ # numer.dc<-decapitalize(numer.s)
   
   numer.tu<-toupper(numer.s)
   numer.tu.x<-toupper(numer.x)
-  n.all<-c(numer.s,numer.c,numer.dc,numer.tu,numer.x,numer.tu.x)
+ # n.all<-c(numer.s,numer.c,numer.dc,numer.tu,numer.x,numer.tu.x)
+  n.all<-c(numer.s,numer.c,numer.tu,numer.x,numer.tu.x)
   n.all<-unique(n.all)
-  numer.all<-paste0("\\b",n.all,"\\b",collapse = "|")
-  numer.all<-paste0(n.all,collapse = "|")
+  numer.all<-paste0("\\b",n.all,"",collapse = "|")
+ # numer.all<-paste0(n.all,collapse = "|")
   length(numer.all)
   return(numer.all)
   }
@@ -491,10 +518,10 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   regx.2<-paste0("^([ \t]{1,})?(",numer.all,").+?(",h2.all,")\\.?(.+)?$")
   #print(regx.2)
   #m1<-grep("1\\. AKT",t1)
-  m1<-grep(regx.1,t1)
+  m1<-grep(regx.1,t1,perl = T)
   ifelse(length(m1)==0,return(get.heads.2(t1,h1.all,h2.all,numer.all)),print("heads found with M1"))
   print("should not print after heads with M1")
-  t1
+  t1[1:50]
   t2<-t1
  # t2[m1]<-paste0("# ",t2[m1])
   ### 15372.NOTE: the shakespeare-ingentingen contains AKT definitions at each scene, so the <div> element is always created anew. this maybe okay for the library and of editorial perspective, but for the dracor scheme its not a way since it messes up the network and speech distribution.
@@ -528,7 +555,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
     #       print(h1[1:10])
      #      print(h2[1:10])
   
-           return(list(vario=vario,text=t2))
+           return(list(vario=vario,text=t2,h1.first=m1[1]))
 }
 get.heads.dep<-function(t1,headx="(Akt|Act"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")
@@ -583,7 +610,7 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
  # line<-lines[l]
  # line
  # lines[1:150]
- #lines<-t1
+# lines<-t1
 # l<-47
 #cast<-"Medvirkende"
 # cast
@@ -591,7 +618,7 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
   for (l in 1:length(lines)){
     line<-lines[l]
     cast<-cast[!is.na(cast)]
-    
+   # print(cast)
     if(str_detect(line,paste0("^[ \t]{0,}",cast,".?$"),)){
       parts<-str_match(line,"\\^?(.*)")
       parts
@@ -607,10 +634,11 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
       print("chk $# in castlist following lines")
       m<-str_detect(lines[r],"^[$#]",) # only if h1 already applied!
       mw<-which(m)
+     
+      if(sum(m)==0)
+        return("you have to apply scene segmentation before speaker recognition...")
       mw<-mw[1]
       print(mw)
-      if(is.na(mw))
-        break("you have to apply scene segmentation before speaker recognition...")
       mw<-l:r[mw-1]
       mw
       lines[mw]<-paste0(lines[mw],"%cast%")
@@ -645,6 +673,10 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
   }
   }
    lines[1:100]
+   ifelse(exists("mw"),
+     print("returning from get.castlist()..."),
+     return(list(lines=lines,cast="ERR: no cast definition provided")))
+  # mw
   return(list(lines=lines,cast=lines[mw]))
  }
  #lines[1:150]
@@ -758,11 +790,12 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   t2<-gsub("^[ \t]{1,}","",t2)
  # t2<-gsub("(\\([^)]+?[^)](?=[@%$#]))","\\1)")
   #return(t1)
+  # print(copyrighted)
+  # mode(copyrighted)<-"logical"
+  # print(mode(copyrighted))
   print(copyrighted)
-  mode(copyrighted)<-"logical"
-  print(mode(copyrighted))
   print("get.speakers() finished...")
-  if(!copyrighted)
+  if(is.system=="lapsi")
     writeLines(t2,paste0(Sys.getenv("GIT_TOP"),"/test/temp/ezdmarkup.txt"))
   return(list(vario=t1[m][crit],text=t2,eval=crit.sp))
   

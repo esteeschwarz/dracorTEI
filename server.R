@@ -64,7 +64,8 @@ function(input, output, session) {
     copyvc = copyvc,
     xmlout = "you have not yet created an xml file or it is copyrighted",
     b64 = jsonlite::base64_enc(charToRaw("<p>no content yet</p>")),
-    xmlprocessed = F
+    xmlprocessed = F,
+    h1.first = NULL
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
@@ -371,7 +372,7 @@ function(input, output, session) {
     colnames(repl2)[2:3]<-c("string1","string2")
     print(head(repl2))
     rv$repl<-repl2
-    t3<-clean.t(rv$t1,1,rv$repl)
+    t3<-clean.t(rv$t1,1,rv$repl,NULL)
     #t3
     rv$t1<-t3
     }
@@ -413,7 +414,7 @@ function(input, output, session) {
     print(t4)
     t3<-repl.um(t4)
     t3
-    t3<-clean.t(t3,1,rv$repl)
+    t3<-clean.t(t3,1,rv$repl,NULL)
     t3
     rv$t1<-t3
     output$apidoc <- renderUI({
@@ -467,7 +468,7 @@ function(input, output, session) {
     t4
     t3<-repl.um(t4)
     t3
-    t3<-clean.t(t3,1,rv$repl)
+    t3<-clean.t(t3,1,rv$repl,NULL)
     t3
     #rv$t3<-clean.t(t1,2)
     rv$t1<-t3
@@ -501,6 +502,7 @@ function(input, output, session) {
    # heads<-data.frame(found=1:length(rv$heads),head=rv$heads)
     rv$h1.sf<-vario.1
     rv$h2.sf<-vario.2
+    rv$h1.first<-t$h1.first
     # heads$h1<-rv$h1.sf
     # heads$h2=rv$h2.sf
     print(rv$heads)
@@ -547,6 +549,8 @@ function(input, output, session) {
     vario <- input$speaker
     rswitch<-input$rswitch
     req(rv$h1.set)
+    req(rv$h1.first,!is.null(rv$h1.first))
+    h1.first<-rv$h1.first
     showNotification("processing speakers...", type = "message")
     copyrighted<-rv$copyrighted
     print("getting speaker")
@@ -554,7 +558,12 @@ function(input, output, session) {
     print(rv$cast)
     # t <- get.speakers(rv$t2, vario)  # Use the transcript stored in reactiveValues
     t4 <- get.castlist(rv$t2,rv$cast)
+    if(sum(unlist(grepl("^ERR:", t4$cast)))>0){
+      showNotification("ERROR: no castlist provided, no speaker processed...", type = "message")
+      return()
+    }
     t4<-t4$lines
+      
     print("got cast...")
     t5<-get.front(t4)
     print("got front...")
@@ -574,7 +583,7 @@ function(input, output, session) {
     sp6<-gsub("%front%","",t2$text)
    # sp6<-gsub("%hnl%","",t2$text)
     # sp6<-t2$text
-    t3<-clean.t(sp6,F,rv$repl)
+    t3<-clean.t(sp6,F,rv$repl,h1.first)
     t3<-gsub("%hnl%","",t3)
     t3<-gsub("^\\((.+)\\)$","$\\1",t3)
     print("clean.t...")
@@ -607,6 +616,7 @@ function(input, output, session) {
     author<-rv$author
     title<-rv$title
     subtitle<-rv$subtitle
+    h1.first<-rv$h1.first
     meta<-list(author=author,title=title,subtitle=subtitle)
     #    output$proutput <- renderText("processing ezd > TEI...\n")
     showNotification("transform ezd > TEI...", type = "message")
@@ -627,7 +637,7 @@ function(input, output, session) {
   # output$pr_progress <- renderText({
   #   console_text()
   # })
-    xml.t<-transform.ezd(rv$t3,output_file,meta)
+    xml.t<-transform.ezd(rv$t3,output_file,meta,h1.first)
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
    # xml.test<-list.files(".")
   # xml.str<-paste0("<div>",paste0(xml.test),"</div>")

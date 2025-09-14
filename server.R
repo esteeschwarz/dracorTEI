@@ -1,11 +1,11 @@
 library(shiny)
-library(readr)
-library(httr)
-library(jsonlite)
+#library(readr)
+#library(httr)
+#library(jsonlite)
 #library(diffobj)
 library(diffr)
-library(xml2)
-library(dplyr)
+#library(xml2)
+#library(dplyr)
 library(shinycssloaders)
 #library(DT)
 #library(tools)
@@ -86,30 +86,33 @@ function(input, output, session) {
   
   #ui <- fluidPage(
    # titlePanel("Dataframe Dropdown with Save Functionality"),
-  observe({
-    updatePickerInput(
-     # copyvc<-!rv$copyrighted
-      
-      session,
-      "copy",
-      choices = c(rv$copyrighted,rv$copyvc)
-    )
-  }) 
-  observeEvent(input$copy, {
-    rv$copyrighted<-input$copy
-    print(rv$copyrighted)
-    copyrighted<-rv$copyrighted
-    print(copyrighted)
-    copyvc<-ifelse(copyrighted,FALSE,TRUE)
-    print(copyvc)
-    rv$copyvc<-copyvc
-  })
+  # observe({
+  #   updatePickerInput(
+  #    # copyvc<-!rv$copyrighted
+  #     
+  #     session,
+  #     "copy",
+  #     choices = c(rv$copyrighted,rv$copyvc)
+  #   )
+  # }) 
+  # observeEvent(input$copy, {
+  #   rv$copyrighted<-input$copy
+  #   print(rv$copyrighted)
+  #   copyrighted<-rv$copyrighted
+  #   print(copyrighted)
+  #   copyvc<-ifelse(copyrighted,FALSE,TRUE)
+  #   print(copyvc)
+  #   rv$copyvc<-copyvc
+  # })
     # Update dropdown choices when dataframe changes
     observe({
+      choices <- setNames(rv$df$id, paste0(rv$df$id," - ", rv$df$author))
+      choices <- c("Create new..." = "new", choices)
+  
       updatePickerInput(
         session,
         "id_select",
-        choices = c("Create new..." = "new", rv$df$id)
+        choices = choices
       )
     })
     
@@ -129,7 +132,7 @@ function(input, output, session) {
     observeEvent(input$save_btn, {
       req(input$id_select, input$id_select != "new")
       print("saving...")
-      row_to_save<-c(input$id_select,input$h1,input$h2,input$speaker,input$cast,input$author,input$title,input$subtitle,input$copy)
+      row_to_save<-c(input$id_select,input$h1,input$h2,input$speaker,input$cast,input$author,input$title,input$subtitle,TRUE)
       print(row_to_save)
       print(rv$df$id)
       print(rv$df)
@@ -149,21 +152,24 @@ function(input, output, session) {
     observeEvent(input$load_btn, {
       req(input$id_select)
       id<-input$id_select
+      ###########################
+      defaults<-load_defaults(id)
+      ###########################
       print(id)
       cat("observe load...\n")
-      print(rv$df[id,"speaker"])
+#      print(rv$df[id,"speaker"])
      # print(input$id.defaults.load)
     #  print(head(defaults))
-      print(rv$df$speaker[id])
-      updateTextInput(session, "speaker", value = rv$df[id,"speaker"])
-      updateTextInput(session, "title", value = rv$df[id,"title"])
-      updateTextInput(session, "subtitle", value = rv$df[id,"subtitle"])
-      updateTextInput(session, "author", value = rv$df[id,"author"])
-      
-      updateTextInput(session, "h1", value = rv$df[id,"h1"])
-      updateTextInput(session, "h2", value = rv$df[id,"h2"])
-      updateTextInput(session, "cast", value = rv$df[id,"cast"])
-      updateTextInput(session, "copy", value = rv$df[id,"copyrighted"])
+      print(defaults$speaker[id])
+      ################################################################
+      updateTextInput(session, "speaker", value = defaults[id,"speaker"])
+      updateTextInput(session, "title", value = defaults[id,"title"])
+      updateTextInput(session, "subtitle", value = defaults[id,"subtitle"])
+      updateTextInput(session, "author", value = defaults[id,"author"])
+      updateTextInput(session, "h1", value = defaults[id,"h1"])
+      updateTextInput(session, "h2", value = defaults[id,"h2"])
+      updateTextInput(session, "cast", value = defaults[id,"cast"])
+     # updateTextInput(session, "copy", value = defaults[id,"copyrighted"])
       rv$sp.sf<-rv$df[id,"speaker"]
       rv$h1.sf<-rv$df[id,"h1"]
       rv$h2.sf<-rv$df[id,"h2"]
@@ -431,6 +437,10 @@ function(input, output, session) {
   observeEvent(input$upload_ezd,{
     output$proutput <- renderText("processing...\n")
     file<-input$upload_ezd
+    updateTextInput(session, "speaker", value = "")
+    updateTextInput(session, "h1", value = "")
+    updateTextInput(session, "h2", value = "")
+    updateTextInput(session, "cast", value = "")    
     # ext<-tools::file_ext(file$datapath)
     # req(file)
     # validate(need(ext=="txt","please upload a plain text file"))
@@ -637,7 +647,8 @@ function(input, output, session) {
   # output$pr_progress <- renderText({
   #   console_text()
   # })
-    xml.t<-transform.ezd(rv$t3,output_file,meta,h1.first)
+    xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
+    xml.t<-xml.f$xml
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
    # xml.test<-list.files(".")
   # xml.str<-paste0("<div>",paste0(xml.test),"</div>")
@@ -652,7 +663,8 @@ function(input, output, session) {
     #t2<-xml.t
    # print(valid$ok)
 #    output$proutput <- renderText("ezd > TEI processed...\n")
-    showNotification("TEI process finished...", type = "message")
+    message<-xml.f$message
+    showNotification(message, type = "message")
     rv$xmlprocessed<-T
     output$processed <- renderUI({
       div(
@@ -680,8 +692,9 @@ function(input, output, session) {
     req(rv$xmlprocessed,rv$xmlprocessed==TRUE)
     ifelse(rv$t1=="%ezd%",text1<-rv$t3,
            text1 <- rv$t1)
-   print(text1)
-   
+   #print(text1)
+    text1<-gsub("^[ ]{1,}","",text1)
+    text1<-text1[text1!=""]
     #text2 <- paste0(rv$t3,collapse = "<nl>")
    doc<-read_xml(output_file)
    texts <- xml_text(xml_find_all(doc, "//text()"))

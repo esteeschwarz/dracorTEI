@@ -133,6 +133,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
   # Variables d'état pour suivre la structure
   current_act <- NULL
   current_scene <- NULL
+  sp.act<-F
   #line<-lines[length(lines)-2]
   speaker.a<-array()
   speaker.b<-array()
@@ -161,6 +162,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       parts<-str_match(line,"\\^(.*)")
       write(parts,"debug.txt",append = T)
       current_scene <- NULL
+      sp.act<-F
       
       desc<-parts[2]
       r<-k:length(lines)
@@ -194,6 +196,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       line.true<-"title"
       write(xml_text(xml_doc$title),"debug.txt",append = T)
       current_scene <- NULL
+      sp.act<-F
       
       parts
     }
@@ -204,6 +207,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       line.true<-"subtitle"
       write(xml_text(xml_doc$subtitle),"debug.txt",append = T)
       current_scene <- NULL
+      sp.act<-F
       
     }
     xml_text(xml_doc$subtitle)
@@ -217,6 +221,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       write(xml_text(xml_doc$author),"debug.txt",append = T)
       parts 
       current_scene <- NULL
+      sp.act<-F
       
     }
     #line<-"@front: nnn"
@@ -224,6 +229,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       #parts<-str_match(line,"(@front(.+?) )(.+)")
       parts<-str_match(line,"(@front.+?)[ \t]{0,}(.+)?")
       print("detecting @front")
+      
       print(parts)
       lp<-length(parts)-1
       for(part in parts[2:lp]){
@@ -232,16 +238,28 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
         print(line)
       }
       line
-      
-      p4<-parts[4]
+      print(parts)
+      parts<-unlist(parts)
+      parts<-parts[!is.na(parts)]
+      parts<-gsub("@front[.:]{0,}","",parts)
+      parts<-unique(parts)
+      p4<-parts[1]
       n<-unlist(strsplit(parts[2],"-"))
       p1<-
         n<-n[n!=""]
-      r<-k:length(lines)
-      m<-str_detect(lines[r],"[\\^$#]",)
+      l.next<-k+1
+      r<-l.next:length(lines)
+#      m<-str_detect(lines[r],"[\\^$#@]",)
+      m<-grepl("[$#@^]",lines[r])
       mw<-which(m)
-      lines[k:(r[mw[1]-1])]
-      mw<-k:(r[mw[1]-1])
+      cat("lines from",l.next,"til mark:",mw,"\n")
+      r1<-r[mw][1]
+      print(r1)
+      ifelse(r1>l.next,msg<-paste0("front following lines:",r1),msg<-"no lines til next markup")
+      print(msg)
+
+      lines[l.next:(r1)]
+      ifelse(r1>l.next,mw<-l.next:(r[mw[1]-1]),mw<-k)
       #      mw<-(k+1):r[mw]
       lines[mw]
       front.r<-mw
@@ -255,6 +273,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       print("front added...")
       write(paste0(length(front.t)," lines to @front added"),"debug.txt",append = T)
       current_scene <- NULL
+      sp.act<-F
       
      line.true<-"front"
     }
@@ -309,7 +328,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
         sp <- xml_add_child(current_scene, "sp", who = paste0("#", speaker.id))
         xml_add_child(sp, "speaker", speaker)
         # write(speaker.id,"debug.txt",append = T)
-        
+        sp.act<-T
        # p <- xml_add_child(sp, "p") #### this critical
         #xml_text(p) <- text
         # write("<p>","debug.txt",append = T)
@@ -331,7 +350,9 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       stage_content <- gsub("[$]","",str_trim(str_sub(line, 2)))
       if (!is.null(current_scene)) {
         print("current scene not NULL")
-        xml_add_child(current_scene, "stage", stage_content)
+        ifelse(!sp.act,
+        xml_add_child(current_scene, "stage", stage_content),
+        xml_add_child(sp, "stage", stage_content))
         write("<stage>","debug.txt",append = T)
         
       }
@@ -366,6 +387,8 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       current_act <- xml_add_child(xml_doc$body, "div", type = "act")
       xml_add_child(current_act, "head", act_title)
       current_scene <- NULL
+      sp.act<-F
+      
       ifelse(sum(str_detect(lines, "^[#]{2}"))>0,scenes.t<-T,current_scene<-current_act)
       text<-""
       line.true<-"act"
@@ -383,6 +406,8 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       }
       text<-""
       line.true<-"scene"
+      sp.act<-F
+      
     }
     # 5. Texte continu
     if (str_trim(line) != ""&!line.true%in%c("stage","speaker","act","scene","author","title","subtitle","personal","front")) {
@@ -404,6 +429,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
         
         xml_text(p) <- processed
         line.true<-"p"
+        sp.act<-F # reset <sp> after inserting <p>
         
       }
     }

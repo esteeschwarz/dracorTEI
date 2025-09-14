@@ -61,5 +61,5 @@ docs/_build/
 .vscode/
 **/.DS_Store
 #**/*.lwp
-**/default-values.RData
+#./default-values.RData # not wks, always synced
 **/debug.txt

@@ -1,54 +1,187 @@
 library(R.utils)
 library(fuzzyjoin)
 library(stringi)
+library(stringr)
+#library(shiny)
+library(readr)
+library(httr)
+library(jsonlite)
+#library(diffobj)
+#library(diffr)
+library(xml2)
+library(dplyr)
+library(pbapply)
+#library(shinycssloaders)
+
 #library(Hmisc)
 is.system<-Sys.getenv("SYS")
+
 get.str.dist<-function(t1,sp.cast,sp.guess){
  # sp1<-c("Billing","Katrine Stockmann","dummyNO")
   sp1<-unique(unlist(strsplit(sp.cast," ")))
   sp1<-sp1[!is.na(sp1)]
   sp.guess<-sp.guess[!is.na(sp.guess)]
+  cat("text tokens for guess speaker:\n")
+ # print(sp.guess)
+#  m<-grep("[^a-zA-ZöäüÖÄÜß]",sp.guess)
+  ut<-stri_extract_all_regex(sp.guess,"[^a-zA-ZöäüÖÄÜß.]")
+  ut<-stri_extract_all_regex(sp.guess,"[^\\p{L}]")
+  ut<-gsub("([)([\\]?!^$*.])","\\\\\\1",unlist(ut),perl = T)
+  ut<-ut[!is.na(ut)]
+ # ut<-ut[ut!="."]
+  print(unique(ut))
+  ut<-unique(ut)
+  #  print(sp.guess[m])
   x<-data.frame(id=1,cast=sp.guess)
   #y<-data.frame(id=2,cast=names(sp1))
   y<-data.frame(id=2,cast=sp1)
   x$cast<-gsub("^[ \t]{1,}[ \t.]$","",x$cast)
+  x$cast<-gsub("^[ \t]{1,}[ \t.]$","",x$cast,perl = T)
+  ############# #15381.TODO: remove stopwords and VP!
+ # print(x$cast)
+  for (k in 1:length(ut)){
+    cat("\rut:",k,"of",length(ut))
+    regx<-ut[k]
+    #print(regx)
+   # m<-grep(regx,x$cast)
+    #print(x$cast[m])
+    # tryCatch({
+    x$cast<-gsub(regx,"",x$cast,perl = T)
+    y$cast<-gsub(regx,"",y$cast,perl = T)
+    # },error = function(e) {
+    #  message<-"invalid regex"
+    #  return(message)
+    #   
+    # }
+    # )
+  }
+  cat("\n")
+ # print(unique(x$cast))
+  
   get.m<-function(dist,met,mode){
-    x$cast<-gsub("^[ \t]{1,}[ \t.]$","",x$cast)
+   # x$cast<-gsub("[.:#@\\-;?/)\\]\\[!(]","",x$cast,perl=T)
     x$cast<-gsub("%cast%","",x$cast)
+    mna<-x$cast==""|is.na(x$cast)
+    x<-x[!mna,]
+    rm(mna)
     y$cast<-gsub("^[ \t]{1,50}(.+)[ \t.]?$","\\1",y$cast)
     y$cast<-gsub("^[ \t]{1,}[ \t.]$","",y$cast)
+    mna<-y$cast==""|is.na(y$cast)
+    y<-y[!mna,]
     j1<-stringdist_join(x,y,max_dist = dist,by="cast",mode = mode,method = met,distance_col = "dist",ignore_case = T)
     ms<-j1$cast.x%in%j1$cast.y
-    j1$dist[ms]<-j1$dist[ms]+(sd(j1$dist)*3) # score higher if
+   # cat("ms:",ms,"\n")
+    j1$dist.m<-mean(j1$dist)*j1$dist
+    
+    ################################################
+    dist.s<-pblapply(unique(j1$cast.x), function(x){
+      
+      regx<-paste0("(^",x,"[.:,]{0,1} [(]{1})|(^",x,"[.:]{0,1}$)")
+      m<-length(grep(regx,t1))
+      
+    })
+    dist.s<-unlist(dist.s)
+    tj<-table(x$cast)
+    j1$single<-1
+    j1$f<-1
+    
+    a1<-letters
+    a2<-letters[c(5,7,2,3,10)]
+    #a2%in%a1
+    #match(a2,a1)
+    m<-match(a2,a1)
+    m<-m[!is.na(m)]
+    m
+    #a2[m]
+    a1[m]<-paste0(a2,"*")
+    a1
+    print(length(names(tj)))
+    df<-data.frame(tx=names(tj),cx=unique(j1$cast.x))
+    df<-df[order(df$tx,df$cx),]
+   # print(df)
+    print(length(unique(j1$cast.x)))
+    t.sel<-match(names(tj),j1$cast.x)
+    t.sel<-t.sel[!is.na(t.sel)]
+    print(length(t.sel))
+    j1$f[t.sel]<-tj
+    # for(k in names(tj)){
+    #   r<-j1$cast.x==k
+    #   j1$f[r]<-tj[k]
+    #   # j1$fd[r]<-j1$dist.m[r]/tj[k]
+    #   #  j1$fd<-j1$dist.m/j1$f
+    #  # j1$fd<-j1$dist.m/j1$f
+    # }
+    j1$single[t.sel]<-dist.s
+    cat("looop\n")
+    uc<-unique(j1$cast.x)
+    luc<-length(uc)
+    # for(k in 1:luc){
+    #   cat("\r",k,"of",luc)
+    #   
+    #   r<-j1$cast.x==uc[k]
+    #   j1$single<-dist.s[k]
+    # }
+    cat("\nendloop\n")
+    j1$dist.s<-j1$dist-j1$single-j1$f
+    j1$dist.m<-mean(j1$dist.s,na.rm=T)*j1$dist.s
+    cat("mean:",mean(j1$dist.s,na.rm=T),"median:",median(j1$dist.s,na.rm=T),"sd:",sd(j1$dist.s,na.rm = T),"\n")
+  #  j1$dist[ms]<-j1$dist[ms]+(sd(j1$dist)*3) # score higher if
+    j1$dist.m[ms]<-j1$dist.m[ms]-sd(j1$dist,na.rm = T) # score higher if
     #j1<-stringdist(sp1,sp.cast,method = "jw")
     j1
     l1<-list()
-    x<-j1$cast.y[1]
-    x
+    # x<-j1$cast.y[1]
+    # x
     ### new
-    tj<-table(j1$cast.y)
-    j1$fd<-NA
-    for(k in names(tj)){
-      r<-j1$cast.y==k
-      j1$fd[r]<-j1$dist[r]/tj[k]
-    }
+    # tj<-table(x$cast)
+   # print(tj)
+    # j1$fd<-NA
+    # j1$f<-NA
+    j1$fd<-j1$dist.m/j1$f
+
+    # for(k in names(tj)){
+    #   r<-j1$cast.x==k
+    #   j1$f[r]<-tj[k]
+    #   # j1$fd[r]<-j1$dist.m[r]/tj[k]
+    # #  j1$fd<-j1$dist.m/j1$f
+    #   j1$fd<-j1$dist.m/j1$f
+    # }
     j1
-    mj<-mean(j1$fd)
-    sj<-sd(j1$fd)
-    sj
-    sel<-j1$fd<=mj
-    print("freq based stringdist...")
-    print(j1$cast.y[sel])
+    j1<-j1[order(j1$fd),]
     
+    ### sd range factor
+    fsd<-1.2
+    ###################
+    
+    mj<-mean(j1$fd,na.rm=T)
+    sj<-sd(j1$fd,na.rm = T)
+    cat("j1$fd - mean:",mj,"median:",median(j1$fd,na.rm = T),"sd:",sj,"\n")
+    
+    sd.f<-sj*fsd
+    sdc<-c((mj-sd.f):(mj+sd.f))
+    m.sel<-mj-sd.f
+    #m.sel<-0
+    #fd.sel<-mean(j1$fd[sel])
+    cat("j1$fd - mean:",mj,"median:",median(j1$fd,na.rm = T),"sd:",sj,"selector:",m.sel,"\n")
+    
+    sdmin<-min(sdc)
+    sdmax<-max(sdc)
+    sel<-j1$fd<=(mj-sd.f)
+    sel<-j1$fd<=m.sel
+    # sel<-j1$fd<=sdmax|j1$fd>=sdmin
+    print("freq based stringdist...")
+    sp.sel<-unique(j1$cast.x[sel])
+    sp.sel<-unique(head(j1$cast.x[sel],150))
+    return(sp.sel)    
     ##############
       s2<-lapply(j1$cast.y, function(x){
       
-      s4<-sum(j1$dist[j1$cast.y==x])
+      s4<-sum(j1$dist[j1$cast.y==x],na.rm = T)
       l1[[x]]<-s4
       return(l1)
     })
     s2<-unlist(s2)
-    print(s2)
+   # print(s2)
     print(mean(s2))
     print(sd(s2))
     m1<-mean(s2)
@@ -70,18 +203,23 @@ get.str.dist<-function(t1,sp.cast,sp.guess){
     #y$cast[!y$cast%in%s2[s4]]
     
     #j3<-unique(j1$cast.y[min(s1)<=j1$dist|j1$dist>=max(s1)])
-    sd(j1$dist)
+    fsd<-2
+    sd.f<-sd(j1$dist)*fsd
     s1<-c((mean(j1$dist)-sd(j1$dist)):mean(j1$dist)+sd(j1$dist))
+    s1<-c((mean(j1$fd)-sd.f):mean(j1$fd)+sd.f) # values within fsd*standard deviation
     s1<-c(min(s1):max(s1))
     s1
-    j2<-unique(j1$cast.y[min(s1)<=j1$dist|j1$dist>=max(s1)])
+    j2<-unique(j1$cast.y[min(s1)<=j1$fd|j1$fd>=max(s1)])
+    j2<-unique(j1$cast.y[min(s1)<=j1$fd|j1$fd<=max(s1)])
     #??stringdist_join
+    #j3<-j1[order(j1$fd),]
     print(j1)
     print(y$cast[!y$cast%in%j2])
     #print(j2)
     return(list(s3=s2,sel=j1$cast.y[sel]))
   }
   s3<-get.m(1000,"lv","left")
+  return(head(s3,20))
   f.sel<-s3$sel
   s3_sf<-s3
   s3<-s3$s3*10
@@ -189,42 +327,61 @@ check_regex <- function(repldf) {
 #cast<-"Medvirkende:"
 #cast<-"ROLLELISTE"
 
-
+#t2<-t1$text
 guess_speaker<-function(t1,cast){
   # t1 is character
   ttemp<-tempfile("sp.txt")
   writeLines(t1,ttemp)
-  t1<-readLines(ttemp)
+  t2<-readLines(ttemp)
  # t1<-readLines("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/breithaupt_renegat_exc.txt")
-  m<-grep("^.{3,30}\\.$",t1)
-  
-  m2<-grepl("[)(,]",t1[m])
+  m<-grep("^.{3,30}[\\.:]?$",t2)
+  t2[m]
+  m2<-grepl("[)(,]",t2[m])
   m<-m[!m2]
-  m3<-grep("[A-Z]{3,30}",t1)
-  spc<-stri_extract_all_regex(t1,"[A-Z]{3,30}")
+  sp.whl<-t2[m]
+  m3<-grep("[A-Z]{3,30}",t2) # catching capitalised speaker
+  spc<-stri_extract_all_regex(t2,"[A-Z]{3,30}")
   spc<-unlist(spc)
+  spc<-c(sp.whl,spc)
+  print(cast)
+  if(cast=="empty"){
+    mc<-grep("^\\^",t2)
+    parts<-str_match(t2[mc[1]],"^\\^(.*)")
+    cast<-parts[,2]
+    if(is.na(cast)){
+      mc<-grep("^Personen",t2)
+      parts<-str_match(t2[mc[1]],"^(Personen.*)")
+      cast<-parts[,2]
+      if(is.na(cast))
+        return("ERR: no castlist provided or tagged...")
+      
+    }
+      print(cast)
+    
+  }
+  print(cast)
   print("capital speakers...")
-  print(spc)
+ # print(spc)
   spc.t<-table(spc)
   mspc<-mean(spc.t)
   sdspc<-sd(spc.t)
   sdselect<-mspc-sdspc
   sp.sel<-spc.t[spc.t>sdselect]
   print("speaker table mean - sd")
-  print(sp.sel)
+  #print(sp.sel)
 
-  sp.guess<-t1[m] # NOT apply unique(): the more occurences the higher the stringdist score
-  sp.guess<-c(sp.guess,sp.sel)
-  sp.guess<-gsub("[@.]","",sp.guess)
+  #sp.guess<-t2[m] # NOT apply unique(): the more occurences the higher the stringdist score
+  #sp.guess<-c(sp.guess,sp.sel)
+  sp.guess<-gsub("[@.]","",names(sp.sel))
   l<-length(sp.guess)
-  cat("speakers guesses length:",l,"\n")
-  #t4<-paste0("^(", paste0(t4$cast,collapse = "|"), ").?$")
-  #t4
- # cast<-"ROLLELISTE"
+  cat("capital and wholeline speakers guesses length:",l,"\n")
+  ### guess by wholeline
+  
 
-  #sp.cast<-get.castlist(t1,cast)$cast
-  c5<-get.castlist(t1,cast)
-  c5
+  
+  #  c5<-get.castlist(t1$text,cast)
+  c5<-get.castlist(t2,cast)
+  c5$lines
   if(sum(unlist(grepl("^ERR:", c5$cast)))>0)
     return("ERR: no castlist provided...")
   c6<-gsub("[*\\)\\(]","",c5$cast)
@@ -232,22 +389,109 @@ guess_speaker<-function(t1,cast){
   c7<-unique(unlist(strsplit(c7,"/")))
   c7<-gsub(",","",c7)
   c7<-gsub("%cast%","",c7)
- # c7<-c(c7,paste0(c7,":?\\.?"))
-  spx<-get.str.dist(t1,c7,sp.guess)
+  m<-grepl(cast,c7)
+  c7<-c7[!m]
+  sp.from.cast<-c7
+  
+  
+  #c6<-gsub("[*\\)\\(]","",sp.guess)
+  c7<-unlist(strsplit(c5$lines," "))
+  c7<-unlist(strsplit(c7,"/"))
+  c7<-gsub(",","",c7)
+  c7<-gsub("%cast%","",c7)
+  c7
+  sp.from.text<-c7
+  spx<-get.str.dist(t1,sp.from.cast,sp.from.text)
   l3<-spx
 #  l3<-get.str.dist(sp.cast)
   l3<-unique(l3)
-  print(sp.cast<-c6)
- # sp.cast<-gsub("(%cast%|")
-  sp.cast<-gsub(paste0("%cast%|\\.|",cast),"",sp.cast)
-  sp.cast<-sp.cast[2:length(sp.cast)]
-  sp.cast
-  sp.guess<-sp.guess[sp.guess%in%sp.cast]
-  sp.guess
-  #sp.return<-paste0(sp.guess,collapse = ",")
-  print(l3)
+  l3<-l3[!is.na(l3)]
+  m<-grepl(cast,l3)
+  l3<-l3[!m]
+  l3
+ #  print(sp.cast<-c6)
+ # # sp.cast<-gsub("(%cast%|")
+ #  sp.cast<-gsub(paste0("%cast%|\\.|",cast),"",sp.cast)
+ #  sp.cast<-sp.cast[2:length(sp.cast)]
+ #  sp.cast
+ #  sp.guess<-sp.guess[sp.guess%in%sp.cast]
+ #  sp.guess
+ #  #sp.return<-paste0(sp.guess,collapse = ",")
+ # print(l3)
   return(l3)
   
+}
+#lines<-t1$text
+#cx<-get.castlist(t1$text,cast)
+#cx$lines
+#cx$cast
+#c1<-guess_speaker(t1$text,cast)
+get.castlist<-function(lines,cast){
+  for (l in 1:length(lines)){
+    line<-lines[l]
+    cast<-cast[!is.na(cast)]
+    # print(cast)
+    line
+    if(str_detect(line,paste0("^[ \t]{0,}\\^?",cast,".?$"),)){
+      parts<-str_match(line,"\\^?(.*)")
+      parts
+      write(parts,"debug.txt",append = T)
+      desc<-parts[2]
+      desc
+      parts<-str_match(line,"(\\^?)(.*)")
+      parts
+      if(parts[2]=="")
+        lines[l]<-paste0("^",parts[3])
+      
+      r<-l:length(lines)
+      print("chk $# in castlist following lines")
+      m<-str_detect(lines[r],"^[$#]",) # only if h1 already applied!
+      mw<-which(m)
+      
+      if(sum(m)==0)
+        return("you have to apply scene segmentation before speaker recognition...")
+      mw<-mw[1]
+      print(mw)
+      mw<-l:r[mw-1]
+      mw
+      lines[mw]<-paste0(lines[mw],"%cast%")
+      lines[mw]<-gsub("%spknl%","",lines[mw])
+      write(mw,"debug.txt",append = T)
+      m2<-str_detect(lines[mw],"^@",)
+      sum(m2)
+      lines[mw[m2]]
+      lines[mw[m2]]<-gsub("@|%spknl%","",lines[mw[m2]])
+    }
+    lines[1:40]
+    if(str_detect(line,"\\^",)){
+      parts<-str_match(line,"\\^(.*)")
+      parts
+      write(parts,"debug.txt",append = T)
+      desc<-parts[2]
+      desc
+      r<-l:length(lines)
+      m<-str_detect(lines[r],"^[$#]",)
+      print("getcast m")
+      mw<-which(m)
+      mw<-mw[1]-1
+      mw<-l:r[mw]
+      print(lines[mw])
+      lines[mw]<-paste0(lines[mw],"%cast%")
+      lines[mw]<-gsub("%spknl%","",lines[mw])
+      write(mw,"debug.txt",append = T)
+      m2<-str_detect(lines[mw],"^@",)
+      sum(m2)
+      lines[mw[m2]]
+      lines[mw[m2]]<-gsub("@|%spknl%","",lines[mw[m2]])
+    }
+  }
+  lines[1:40]
+  lines[mw]
+  ifelse(exists("mw"),
+         print("returning from get.castlist()..."),
+         return(list(lines=lines,cast="ERR: no cast definition provided")))
+  # mw
+  return(list(lines=lines,cast=lines[mw]))
 }
 
 extract_head_nodes <- function(html_file) {
@@ -304,11 +548,10 @@ load_defaults <- function(id=F) {
     print(idx)
     cat("----\n")
     return(defaults[idx,])
-    # For demonstration, returning a mock default value
     return("Character1, Character2, Narrator, Chorus")
   }, error = function(e) {
     # Fallback default if database is unavailable
-    defaults<-data.frame(id=1,cast="Personal.",h1="Act|Akt|Handlung|.ufzug",h2="Szene|Scene|.uftritt",speaker="Stormond,Iwanette,Golowin,Bender,Wolsey")
+    defaults<-data.frame(id=1,cast="Personen.",h1="Act|Akt|Handlung|.ufzug",h2="Szene|Scene|.uftritt",speaker="")
     return(defaults[idx,])
     return("Speaker1, Speaker2, Speaker3")
   })
@@ -417,6 +660,35 @@ clean.t<-function(t,range,repldf,h1.first){
   
   return(t3)
 }
+####
+check_regex_cp <- function(repldf) {
+  sampletx <- "just a random sample text"
+  for (k in seq_along(repldf$find)) {
+    # Check 'find' pattern
+    find_ok <- tryCatch({
+      grepl(repldf$find[k], sampletx, perl = TRUE)
+      TRUE
+    }, error = function(e) {
+      return(FALSE)
+    })
+    if (!find_ok) {
+      return(list(success = FALSE, error = paste0("Regex error in 'find' at row ", k, ": ", repldf$find[k])))
+    }
+    # Check 'replace' pattern by running gsub
+    replace_ok <- tryCatch({
+      gsub(repldf$find[k], repldf$replace[k], sampletx, perl = TRUE)
+      TRUE
+    }, error = function(e) {
+      return(FALSE)
+    })
+    if (!replace_ok) {
+      return(list(success = FALSE, error = paste0("Regex error in 'replace' at row ", k, ": ", repldf$replace[k])))
+    }
+  }
+  list(success = TRUE, result = repldf)
+}
+
+####
 transform.ezd<-function(ezd,output_file,meta,h1.first){
   #ezdtemp<-tempfile("ezd.txt")
   #writeLines(ezd,ezdtemp)
@@ -424,8 +696,15 @@ transform.ezd<-function(ezd,output_file,meta,h1.first){
   #xmlout<-"r-tempxmlout.xml"
   xmlout<-output_file
   #writeLines(ezd,"ezdmarkup.txt")
+  tryCatch({
   parse_drama_text(ezd,xmlout,meta,h1.first)
-  return(readLines(xmlout))
+  return(list(xml=readLines(xmlout),message="successfully transformed to TEI..."))
+  
+}, error = function(e) {
+  message<-paste0("ERR: something went wrong...")
+  
+  return(message)
+})
 }
 ### preprocess raw text
 headx.1<-"Aufzug"
@@ -435,11 +714,11 @@ metadf<-read.csv("lx/metadf-mlx.csv")
 
 
 
-get.heads.2<-function(t1,h1.all,h2.all,numer.all){
+get.heads.2<-function(t1,vario,h1.all,h2.all,numer.all){
 m1<-grep(h1.all,t1)
 m2<-grep(h2.all,t1)
 m3<-grep(numer.all,t1)
-t1[m3]
+#t1[m3]
 #numer.all
 ma<-c(m1,m2)
 m1x<-m3%in%ma
@@ -466,6 +745,41 @@ t2[m4]<-gsub("%","",t2[m4])
 t2
 return(list(text=t2,vario=vario,h1.first=m5[1]))
 }
+get.heads.3<-function(t1,vario,h1.all,h2.all,numer.all){
+  m0<-grep(paste0(vario,collapse = "|"),t1)
+  m1<-grep(h1.all,t1[m0])
+  m2<-grep(h2.all,t1[m0])
+  m3<-grep(numer.all,t1[m0])
+  #t1[m3]
+  #numer.all
+  ma<-c(m0[m1],m0[m2])
+  m3<-m0[m3]
+  m1x<-m3%in%ma
+  vario[m3][m1x]
+  h3<-t1[m3][m1x]
+  htemp<-tempfile("heads.txt")
+  t2<-t1
+  t2[m3][m1x]<-gsub("#","%#% ",t2[m3][m1x])
+#  t2[m3][m1x]<-paste0("%#% ",t2[m3][m1x])
+  t2[m3][m1x]<-gsub(", ","\n%##% ",t2[m3][m1x]) # seperate ACT from scene declaration
+  writeLines(t2,htemp)
+  t2<-readLines(htemp)
+  #t2[m3][m1x]
+  m4<-grep("%#+%",t2)
+  m5<-grep("%#%",t2)
+  m6<-duplicated(t2[m5])
+  print("remove duplicated acts...")
+  print(m6)
+ # t2[m5][m6]<-"removed"
+  vario<-t2[m4]
+  vario
+  vario<-gsub("%","",vario)
+  vario
+  t2[m4]<-gsub("%","",t2[m4])
+  t2
+  return(list(text=t2,vario=vario,h1.first=m5[1]))
+}
+
 get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")
   #  ifelse(level==1,headx<-headx.1,headx<-headx.2)
@@ -503,47 +817,178 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   h1.all<-do.caps(h1)
   h2.all<-do.caps(h2)
   h1.all
-  numer<-paste0(numer,collapse = "|")
+  numer<-paste0(numer,paste0(1:20,"."),collapse = "|")
   regx.1<-paste0("^.+?",numer,".+(",headx.1,")\\.")
   regx.1<-paste0("^+?",numer,".+(",headx.1,")\\.")
 # global from metadf
   # imp: ^[^a-zA-Z][ \t]{1,}?F.RSTE.+(AKT)\.?$
   regx.1<-paste0("^[ \t]{0,}?(",numer.all,").+(",h1.all,")\\.?$")
-  regx.1<-paste0("^([ \t]{0,})?(",numer.all,").+?(",h1.all,")\\.?(.+)?$")
+  regx.1<-paste0("^([ \t]{0,}[^#] ?)?(",numer.all,").+?(",h1.all,")\\.?(.+)?$")
+  regx.1<-paste0("^([ \t]{0,}#?)?((",numer.all,").+?(",h1.all,")\\.?(.+)?)$")
+  ######### 15377.header issue
+  regx.1<-paste0("((","^([ \t]{0,}#?)?((",numer.all,")?(.+?)(",h1.all,")\\.?(.+)?)$",")|(",headx.1,"))( [0-20])?")
+  ### TEST
+  #parts<-
+  ###
   
-  print(regx.1)
-  regx.2<-paste0("^.+?",numer,".+(",headx.2,")\\.")
-  regx.2<-paste0("^+?",numer,".+(",headx.2,")\\.")
-  regx.2<-paste0("^[ \t]{1,}?(",numer.all,").+(",h2.all,")\\.?$")
-  regx.2<-paste0("^([ \t]{1,})?(",numer.all,").+?(",h2.all,")\\.?(.+)?$")
+  regx.2<-paste0("((","^([ \t]{0,}#?)?((",numer.all,")?.+?(",h2.all,")\\.?(.+)?)$",")|(",headx.2,"))( [0-20])?")
+  tx<-c("1. Akt","Act 1","  Act 1","none","First Act","First Scene","Second Scene","Scene 2","dummy 1")
+  #m1<-grep(regx.b,tx,perl = T)
+#  regx.a<-paste0("^([ ]{0,})?(",numer.all,")?.+?(",h1.all,").+?([0-20])?$")
+  #headx.1
+ # regx.1<-paste0("^([ ]{0,}|[0-20])? ?(",numer.all,")? ?(",h1.all,") ?([0-20])?$|(",headx.1,")")
+  # parts1<-str_match(t1,regx.1)
+  # parts1
+  #regx.2<-paste0("^([ ]{0,}|[0-20])? ?(",numer.all,")? ?(",h2.all,") ?([0-20])?$|(",headx.2,")")
+  # parts2<-str_match(t1,regx.2)
+  # parts2
+  # 
+  #tx
+ # m1<-grep(regx.a,tx,perl = T)
+#  tx[m1]
+  #print(regx.1)
+  m1<-grep(regx.1,t1,perl = T)
+  ############################
+  # regx.2<-paste0("^.+?",numer,".+(",headx.2,")\\.")
+  # regx.2<-paste0("^+?",numer,".+(",headx.2,")\\.")
+  # regx.2<-paste0("^[ \t]{1,}?(",numer.all,").+(",h2.all,")\\.?$")
+  # regx.2<-paste0("^([ \t]{1,})?(",numer.all,").+?(",h2.all,")\\.?(.+)?$")
+  # regx.2<-paste0("((","^([ \t]{0,}#?)?((",numer.all,").+?(",h2.all,")\\.?(.+)?)$",")|(",headx.2,"))( [0-20])?")
+  regx.2
   #print(regx.2)
   #m1<-grep("1\\. AKT",t1)
+  t1
   m1<-grep(regx.1,t1,perl = T)
+  h1.first<-m1[1]
+  m2<-grep(regx.2,t1,perl = T)
+  m1c<-grep("#",t1[m1])
+  #parts[223,]
   ifelse(length(m1)==0,return(get.heads.2(t1,h1.all,h2.all,numer.all)),print("heads found with M1"))
-  print("should not print after heads with M1")
+  print("should print after heads found with M1")
   t1[1:50]
   t2<-t1
  # t2[m1]<-paste0("# ",t2[m1])
   ### 15372.NOTE: the shakespeare-ingentingen contains AKT definitions at each scene, so the <div> element is always created anew. this maybe okay for the library and of editorial perspective, but for the dracor scheme its not a way since it messes up the network and speech distribution.
   
   #########################################################
-  t2[m1]<-paste0("# ",t2[m1],"%hnl%") #out
+  ### chk if already marked up
+  # m12<-grepl("^#",t2[m1])
+  # m1<-m1[!m12]
+  parts<-str_match(t2,regx.1)
+  parts
+  mna<-is.na(parts[,1])
+  print(parts[!mna,])
+  t2[which(!mna)]
+  mw<-which(!mna)
+  rm(mna)
+  h1<-parts[mw,1]
+  h1
+  h1c<-grepl("#",parts[mw,1])
+  mw<-mw[!h1c]
+  
+  #h1[is.na(h1)]<-""
+  #h1<-h1[!is.na(h1),]
+  cat("h1: ",h1,"\n")
+  cat("h1 after removing #-tagged:",t2[mw],"\n")
+  #h1<-lapply(h1,function(x){paste0(x,collapse = " ")})
+  #h1c<-
+#  h2<-t2[m2]  
+  #mna
+  ### 1538.act-in-text issue.
+  rm.na<-function(parts,mw){
+  cl.1<-c(6)
+  cl.2<-c(10)
+  cl.3<-11
+  cl.out<-c(10,11)
+  cl1<-is.na(parts[,6]) # 6=NA&10:12=NA 
+  cl2<-is.na(parts[,10])
+ # cl3<-is.na(parts[,cl.3])
+  print(mw)
+  print(which(!cl1))
+  mw4<-mw[mw%in%c(which(!cl1),which(!cl2))]
+  print(mw4)
+  # print(which(!cl2))
+  # mw4<-mw4[mw4%in%which(cl2)]
+  # print(mw4)
+ # mw<-mw4[!mw4%in%which(cl3)]
+  mw<-mw4
+  print(mw)
+  print(t2[mw])
+  h1<-parts[mw,1]
+  return(list(mw=mw,h=h1))
+  }
+  mw.sel<-rm.na(parts,mw)
+  mw<-mw.sel$mw
+  h1<-mw.sel$h
+  #mw<-mw[mw%in%m.out]
+  ############################
+  t2[mw]<-paste0("#",parts[mw,1]) #15375.marked up header issue
+  rm(mw)
+  vario<-h1
+ # t2[m1]<-paste0("# ",t2[m1],"%hnl%") #out
 #  ^([ \t]{0,})?(",numer.all,").+?(",h1.all,")\\.?(.+)?$
   # t2[m1]<-gsub(regx.1,"# \\2 \\3%hnl%\\4",t2[m1],perl = T) #in
-  m2<-grep(regx.2,t1)
+  # m2<-grep(regx.2,t1)
+  t2[m2]
+  parts2<-str_match(t2,regx.2)
+  mna<-is.na(parts2[,1])
+  parts2[!mna,1]
+  #parts[!mna,3:length(parts[1,])]
+  mw<-which(!mna)
+  h2c<-grepl("#",parts2[mw,1])
+  mw<-mw[!h2c]
+  if(length(mw)>0){
+    mw.sel<-rm.na(parts2,mw)
+    mw<-mw.sel$mw
+    h2<-mw.sel$h
+    vario<-c(h1,h2)
+    t2[mw]<-paste0("##",parts2[mw,1]) #15375.marked up header issue
+    
+  }
+  if(length(mw)==0){
+  t.sep<-get.heads.3(t2,vario,h1.all,h2.all,numer.all)  
+  vario<-t.sep$vario
+  t2<-t.sep$text
+  h1.first<-t.sep$h1.first
+  }
+  
+#  h2<-parts2[mw,1]
+  #cat("h2:",h2,"\n")
+  print("noprint?")
+  
+  #m3<-m2%in%m1
+  
+  #h1[is.na(h1)]<-""
+  #h1<-h1[!is.na(h1),]
+  #h1
+  #t2[which(!mna)]
+#  h2<-parts[!mna,1]
+  # h2<-parts[!mna,3:length(parts[1,])]
+  # h2[is.na(h2)]<-""
+  # h2<-h2[!is.na(h2)]
+  # h2<-unlist(lapply(h2,function(x){paste(x,collapse = " ")}))
+  # #h2<-parts[!mna,length(parts[1,])]
+  
+ # wma<-which(!mna)
+  #t2[wma]
+  #wma
+  #m22<-grepl("^#",t2[wma])
+  #wma<-wma[!m22]
   #t2<-t1
 #  t2[m2]<-paste0("## ",t2[m2])
-  m3<-m2%in%m1
+  #m3<-m2%in%m1
   #if (m2!=m1)
-    t2[m2][!m3]<-paste0("## ",t2[m2],"%hnl%") #out
+  # t2[mw]<-paste0("##",parts2[mw,1]) #15375.marked up header issue
+#    t2[m2][!m3]<-paste0("## ",t2[m2][!m3],"%hnl%") #out
   # t2[m2]<-gsub(regx.2,"## \\2 \\3%hnl%\\4",t2[m2],perl = T) #in
   #########################################################
-  vario<-c(t2[m1],t2[m2])
-  h1<-t2[m1]
-  h2<-t2[m2]  
-  m3<-duplicated(t2[m1])
-  print("duplicated act") ### > is never run
-  print(m3)
+  #vario<-c(h1,h2)
+  cat("\rvario:",vario)
+  # h1<-t2[m1]
+  # h2<-t2[m2]  
+#  m3<-duplicated(t2[m1])
+ # print("duplicated act") ### > is never run
+  #print(m3)
   ### 15373.double act issue, no scene divisions
   #t3<-get.heads.2(t2,h1.all,h2.all,numer.all)
   #t2<-t3$text
@@ -555,7 +1000,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
     #       print(h1[1:10])
      #      print(h2[1:10])
   
-           return(list(vario=vario,text=t2,h1.first=m1[1]))
+           return(list(vario=vario,text=t2,h1.first=h1.first))
 }
 get.heads.dep<-function(t1,headx="(Akt|Act"){
   numer<-c("(Erst|Zweyt|Zweit|Dritt|Viert|Fünfte|Fuenft|Sechs|Sieben|Acht|Neun|Zehn|Elf|Zwoelf|Zwölf|Dreizehn|Dreyzehn)")
@@ -577,8 +1022,10 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
 # # cast<-"Personen."
 # lines[1:100]
 # line<-lines[k]
+# lines<-t1
 #line
  l<-89
+ 
  get.front<-function(lines){
   for (l in 1:length(lines)){
     line<-lines[l]
@@ -593,8 +1040,12 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
       mw<-r1:mw
       lines[mw]
       lines[mw]<-paste0(lines[mw],"%front%")
+      
       m2<-grepl("^@",lines[mw])
-      lines[mw]<-gsub("@","",lines[mw])
+      print(lines[mw])
+      ### 15377.critical out
+      #lines[mw]<-gsub("@","",lines[mw])
+      ##################################
       #castlist.t<-lines[mw]
       #castlist.t
    }
@@ -605,86 +1056,29 @@ get.heads.dep<-function(t1,headx="(Akt|Act"){
  l<-97
 #line<-lines[l]
 # cast<-"Personal"
- # lines<-t2
+ #lines<-t1
  # t2[1:100]
  # line<-lines[l]
  # line
  # lines[1:150]
-# lines<-t1
-# l<-47
+ #lines<-t1$text
+ l<-5
 #cast<-"Medvirkende"
 # cast
- get.castlist<-function(lines,cast){
-  for (l in 1:length(lines)){
-    line<-lines[l]
-    cast<-cast[!is.na(cast)]
-   # print(cast)
-    if(str_detect(line,paste0("^[ \t]{0,}",cast,".?$"),)){
-      parts<-str_match(line,"\\^?(.*)")
-      parts
-      write(parts,"debug.txt",append = T)
-      desc<-parts[2]
-      desc
-      parts<-str_match(line,"(\\^?)(.*)")
-      parts
-      if(parts[2]=="")
-        lines[l]<-paste0("^",parts[3])
-      
-      r<-l:length(lines)
-      print("chk $# in castlist following lines")
-      m<-str_detect(lines[r],"^[$#]",) # only if h1 already applied!
-      mw<-which(m)
-     
-      if(sum(m)==0)
-        return("you have to apply scene segmentation before speaker recognition...")
-      mw<-mw[1]
-      print(mw)
-      mw<-l:r[mw-1]
-      mw
-      lines[mw]<-paste0(lines[mw],"%cast%")
-      lines[mw]<-gsub("%spknl%","",lines[mw])
-      write(mw,"debug.txt",append = T)
-      m2<-str_detect(lines[mw],"^@",)
-      sum(m2)
-      lines[mw[m2]]
-      lines[mw[m2]]<-gsub("@|%spknl%","",lines[mw[m2]])
-    }
-    lines[1:100]
-    if(str_detect(line,"\\^",)){
-    parts<-str_match(line,"\\^(.*)")
-    parts
-    write(parts,"debug.txt",append = T)
-    desc<-parts[2]
-    desc
-    r<-l:length(lines)
-    m<-str_detect(lines[r],"^[$#]",)
-    print("getcast m")
-    mw<-which(m)
-    mw<-mw[1]-1
-    mw<-l:r[mw]
-    print(lines[mw])
-    lines[mw]<-paste0(lines[mw],"%cast%")
-    lines[mw]<-gsub("%spknl%","",lines[mw])
-    write(mw,"debug.txt",append = T)
-    m2<-str_detect(lines[mw],"^@",)
-    sum(m2)
-    lines[mw[m2]]
-    lines[mw[m2]]<-gsub("@|%spknl%","",lines[mw[m2]])
-  }
-  }
-   lines[1:100]
-   ifelse(exists("mw"),
-     print("returning from get.castlist()..."),
-     return(list(lines=lines,cast="ERR: no cast definition provided")))
-  # mw
-  return(list(lines=lines,cast=lines[mw]))
- }
- #lines[1:150]
-# t6<-get.castlist(text)
-# t6
+# t1
+ #lines
+# lines[1:150]
+#c5<-get.castlist(t1$text,cast)
+# t1$text
+# c5$lines
+# c5$cast
+ # t6
  #t1<-t5
  #sp<-vario
- #sp
+# sp<-spx
+ rswitch<-F
+ copyrighted<-F
+# t1<-t5
 get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   regx1<-sp
   regx2<-sp
@@ -698,27 +1092,29 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   print(sp1)
   #regx<-paste0("^.+?",sp1,"\\.")
   if(!rswitch){
-  regx1<-paste0("^",sp1,"\\.?$")
+  regx1<-paste0("^",sp1,"[.:]{0,1}$")
   regx2<-paste0("^(",sp1,"\\.?)( .+)?$")
   print(regx2)
   }
-  m<-grep(regx1,t1)
+  m1<-grep(regx1,t1)
   
-  print(length(m))
-  cat("\rm1",m)
+  print(length(m1))
+  cat("\rm1:",m1)
 #  parts<-str_match(t1[m],regx)
   #spk<-parts[1]
   #print(spk)
   t2<-t1
   m2<-grep(regx2,t1)
   cat("\rm2:",m2)
+  regx2
   ### 15371.critical### TO FIX !!!!########
   if(!rswitch)
     t2[m2]<-gsub(regx2,"@\\2%spknl%\\\n\\3",t2[m2]) # this wks in editor
-  
-  t2[m2]<-paste0("@",t2[m2],"%spknl%") # this wks in editor
+  t2
+  t2[m1]<-paste0("@",t2[m1],"%spknl%") # this wks in editor
   print(m2)
   print(t2[m2])
+  print(t2[m1])
   #########################################
   t2
   sp2

@@ -155,7 +155,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     line
     print(line)
     if(line=="")
-      break
+      next
     
     # write(k,"debug.txt",append = T)
     if(str_detect(line,"\\^",)){
@@ -228,25 +228,31 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     if(str_detect(line,"@front",)){
       #parts<-str_match(line,"(@front(.+?) )(.+)")
       parts<-str_match(line,"(@front.+?)[ \t]{0,}(.+)?")
+      parts<-str_match(line,"(@front)(.+?)[ \t]{0,}(.+)?")
       print("detecting @front")
       
       print(parts)
-      lp<-length(parts)-1
-      for(part in parts[2:lp]){
-        print(part)
-        line<-gsub(part,"",line)
+      lp<-length(parts)
+      if(sum(!is.na(parts)==0))
+        next
+      print(lp)
+#      for(part in parts[2:lp]){
+ #       print(part)
+        print("@front parts...> line = ")
+        # line<-gsub(part,"",line)
+        line<-parts[4]
         print(line)
-      }
+  #    }
       line
-      print(parts)
+      #print(parts)
       parts<-unlist(parts)
       parts<-parts[!is.na(parts)]
-      parts<-gsub("@front[.:]{0,}","",parts)
-      parts<-unique(parts)
-      p4<-parts[1]
+      #parts<-gsub("@front[.:]{0,}","",parts)
+      #parts<-unique(parts)
+      p4<-parts[2]
+      p4<-gsub("@front[.:]{0,}","",p4)
       n<-unlist(strsplit(parts[2],"-"))
-      p1<-
-        n<-n[n!=""]
+      #p1<-n<-n[n!=""]
       l.next<-k+1
       r<-l.next:length(lines)
 #      m<-str_detect(lines[r],"[\\^$#@]",)
@@ -348,8 +354,8 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     if (str_detect(line, "^\\$")) {
       print("single stage detected")
       stage_content <- gsub("[$]","",str_trim(str_sub(line, 2)))
-      if (!is.null(current_scene)) {
-        print("current scene not NULL")
+      if (!is.null(current_scene)|line.true=="personal") {
+        print("current scene not NULL or front location")
         ifelse(!sp.act,
         xml_add_child(current_scene, "stage", stage_content),
         xml_add_child(sp, "stage", stage_content))

@@ -886,10 +886,12 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   h1c<-grepl("#",parts[mw,1])
   mw<-mw[!h1c]
   
+  
   #h1[is.na(h1)]<-""
   #h1<-h1[!is.na(h1),]
   cat("h1: ",h1,"\n")
-  cat("h1 after removing #-tagged:",t2[mw],"\n")
+  cat("h1 after removing #-tagged:")
+  print(t2[mw])
   #h1<-lapply(h1,function(x){paste0(x,collapse = " ")})
   #h1c<-
 #  h2<-t2[m2]  
@@ -902,10 +904,18 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   cl.out<-c(10,11)
   cl1<-is.na(parts[,6]) # 6=NA&10:12=NA 
   cl2<-is.na(parts[,10])
- # cl3<-is.na(parts[,cl.3])
+  cl3<-10000
+  if(length(parts[1,])>10)
+     cl3<-which(!is.na(parts[,11]))
+  cl4<-is.na(parts[,8])
+  cl5<-is.na(parts[,9])
+  cl4<-sum(cl4)>1
+  print("rm.na")
   print(mw)
   print(which(!cl1))
-  mw4<-mw[mw%in%c(which(!cl1),which(!cl2))]
+  print(which(!cl2))
+  print(cl3)
+  mw4<-mw[mw%in%c(which(!cl1),which(!cl2),cl3)&mw%in%c(cl4,cl5)]
   print(mw4)
   # print(which(!cl2))
   # mw4<-mw4[mw4%in%which(cl2)]

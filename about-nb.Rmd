@@ -35,4 +35,6 @@ in the speaker/segmentation configuration you can insert if you found yet global
 
 ## limitations
 - its not yet possible to markup verse (\<l> in the TEI), the standard text tag applied is \<p>.
-- problem with headers like `ANDEN AKT, SCENE 1` which dont ezd tag the second part so theres no divs for the scenes created. we'll fix that...
+- problem with headers like `ANDEN AKT, SCENE 1` which dont ezd tag the second part so theres no divs for the scenes created. we'll fix that... / fixed.
+
+-----

@@ -228,7 +228,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     if(str_detect(line,"@front",)){
       #parts<-str_match(line,"(@front(.+?) )(.+)")
       parts<-str_match(line,"(@front.+?)[ \t]{0,}(.+)?")
-      parts<-str_match(line,"(@front)(.+?)[ \t]{0,}(.+)?")
+      parts<-str_match(line,"(@front[.:, ]{0,})(.+?\\b)[ \t]{0,}(.+)?")
       print("detecting @front")
       
       print(parts)
@@ -240,18 +240,19 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
  #       print(part)
         print("@front parts...> line = ")
         # line<-gsub(part,"",line)
-        line<-parts[4]
-        print(line)
+        line.rest<-parts[4]
+        print(line.rest)
   #    }
-      line
+      #line
       #print(parts)
-      parts<-unlist(parts)
-      parts<-parts[!is.na(parts)]
+     # parts<-unlist(parts)
+     # parts<-parts[!is.na(parts)]
       #parts<-gsub("@front[.:]{0,}","",parts)
       #parts<-unique(parts)
-      p4<-parts[2]
-      p4<-gsub("@front[.:]{0,}","",p4)
-      n<-unlist(strsplit(parts[2],"-"))
+      p3<-parts[3]
+      p3<-paste0("FRONT: ",p3,line.rest)
+     # p4<-gsub("@front[.:]{0,}","",p4)
+     # n<-unlist(strsplit(parts[2],"-"))
       #p1<-n<-n[n!=""]
       l.next<-k+1
       r<-l.next:length(lines)
@@ -270,7 +271,9 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       lines[mw]
       front.r<-mw
       front.t<-lines[front.r]
-      front.t[1]<-p4
+      front.t<-c(p3,line.rest,front.t) # useless since all linebreaks are removed before
+      front.t<-p3
+     # front.t[1]<-p3
       #      front.t<-paste0(front.t,collapse = "\n")
       #      castList<-xml_find_all(xml_doc$,"//castList")
       for(p in front.t){

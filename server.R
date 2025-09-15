@@ -14,6 +14,8 @@ library(shinycssloaders)
 source("ezd2tei.R")
 source("functions.R")
 load("default-values.RData")
+# SNC:
+# 15383.1.lapsi
 #sp.default<-"Iwanette,Golowin,Wolsey,Stormond,Bender"
 transcript<-"iwanette"
 output_file_s_www<-"r-tempxmlout.xml"
@@ -23,6 +25,9 @@ output_file_ezd<-"www/ezdmarkup.txt"
 output_file_ezd<-tempfile("ezdmarkup.txt")
 output_file_pb<-"www/r-tempxmlout_pb.xml"
 output_dracor<-paste0(Sys.getenv("GIT_TOP"),"/ulysses/work/dracor")
+is.system<-Sys.getenv("SYS")
+target<-is.system
+
 # Load defaults when app starts
 # observe({
 #   # Load default speaker names from database
@@ -87,7 +92,7 @@ function(input, output, session) {
   })
   
   #ui <- fluidPage(
-   # titlePanel("Dataframe Dropdown with Save Functionality"),
+  # titlePanel("Dataframe Dropdown with Save Functionality"),
   # observe({
   #   updatePickerInput(
   #    # copyvc<-!rv$copyrighted
@@ -106,147 +111,147 @@ function(input, output, session) {
   #   print(copyvc)
   #   rv$copyvc<-copyvc
   # })
-    # Update dropdown choices when dataframe changes
-    observe({
-      choices <- setNames(rv$df$id, paste0(rv$df$id," - ", rv$df$author))
-      choices <- c("Create new..." = "new", choices)
+  # Update dropdown choices when dataframe changes
+  observe({
+    choices <- setNames(rv$df$id, paste0(rv$df$id," - ", rv$df$author))
+    choices <- c("Create new..." = "new", choices)
+    
+    updatePickerInput(
+      session,
+      "id_select",
+      choices = choices
+    )
+  })
   
-      updatePickerInput(
-        session,
-        "id_select",
-        choices = choices
-      )
-    })
+  # Update name input when selection changes
+  observeEvent(input$id_select, {
+    if (input$id_select != "new" && !is.null(input$id_select)) {
+      selected_row <- rv$df[rv$df$id == input$id_select, ]
+      # updateTextInput(session, "cast", value = selected_row$cast)
+      rv$selected_id <- input$id_select
+    } else {
+      updateTextInput(session, "cast", value = "empty")
+      rv$selected_id <- NULL
+    }
+  })
+  
+  # Save to existing ID
+  observeEvent(input$save_btn, {
+    req(input$id_select, input$id_select != "new")
+    print("saving...")
+    row_to_save<-c(input$id_select,input$h1,input$h2,input$speaker,input$cast,input$author,input$title,input$subtitle,TRUE)
+    print(row_to_save)
+    print(rv$df$id)
+    print(rv$df)
+    id=input$id_select
+    # Update the dataframe
+    defaults<-data.frame(rv$df)
+    defaults[id,] <- row_to_save
+    print(defaults)
+    save(defaults,file="default-values.RData")
     
-    # Update name input when selection changes
-    observeEvent(input$id_select, {
-      if (input$id_select != "new" && !is.null(input$id_select)) {
-        selected_row <- rv$df[rv$df$id == input$id_select, ]
-       # updateTextInput(session, "cast", value = selected_row$cast)
-        rv$selected_id <- input$id_select
-      } else {
-        updateTextInput(session, "cast", value = "empty")
-        rv$selected_id <- NULL
-      }
-    })
+    showNotification("Data saved successfully!", type = "message")
     
-    # Save to existing ID
-    observeEvent(input$save_btn, {
-      req(input$id_select, input$id_select != "new")
-      print("saving...")
-      row_to_save<-c(input$id_select,input$h1,input$h2,input$speaker,input$cast,input$author,input$title,input$subtitle,TRUE)
-      print(row_to_save)
-      print(rv$df$id)
-      print(rv$df)
-      id=input$id_select
-      # Update the dataframe
-      defaults<-data.frame(rv$df)
-      defaults[id,] <- row_to_save
-      print(defaults)
-      save(defaults,file="default-values.RData")
-      
-      showNotification("Data saved successfully!", type = "message")
-      
-      # Your save routine would go here, e.g.:
-      # saveRDS(rv$df, "data.rds")
-      # write.csv(rv$df, "data.csv", row.names = FALSE)
-    })
-    observeEvent(input$load_btn, {
-      req(input$id_select)
-      id<-input$id_select
-      ###########################
-      defaults<-load_defaults(id)
-      ###########################
-      print(id)
-      cat("observe load...\n")
-#      print(rv$df[id,"speaker"])
-     # print(input$id.defaults.load)
+    # Your save routine would go here, e.g.:
+    # saveRDS(rv$df, "data.rds")
+    # write.csv(rv$df, "data.csv", row.names = FALSE)
+  })
+  observeEvent(input$load_btn, {
+    req(input$id_select)
+    id<-input$id_select
+    ###########################
+    defaults<-load_defaults(id)
+    ###########################
+    print(id)
+    cat("observe load...\n")
+    #      print(rv$df[id,"speaker"])
+    # print(input$id.defaults.load)
     #  print(head(defaults))
-      print(defaults$speaker[id])
-      ################################################################
-      updateTextInput(session, "speaker", value = defaults[id,"speaker"])
-      updateTextInput(session, "title", value = defaults[id,"title"])
-      updateTextInput(session, "subtitle", value = defaults[id,"subtitle"])
-      updateTextInput(session, "author", value = defaults[id,"author"])
-      updateTextInput(session, "h1", value = defaults[id,"h1"])
-      updateTextInput(session, "h2", value = defaults[id,"h2"])
-      updateTextInput(session, "cast", value = defaults[id,"cast"])
-     # updateTextInput(session, "copy", value = defaults[id,"copyrighted"])
-      rv$sp.sf<-rv$df[id,"speaker"]
-      rv$h1.sf<-rv$df[id,"h1"]
-      rv$h2.sf<-rv$df[id,"h2"]
-      rv$cast<-rv$df[id,"cast"]
-      rv$author<-rv$df[id,"author"]
-      rv$title<-rv$df[id,"title"]
-      rv$subtitle<-rv$df[id,"subtitle"]
-      rv$copyrighted<-rv$df[id,"copyrighted"]
-      print(rv$df)
-      showNotification("Data loaded successfully!", type = "message")
-      
-      # Your save routine would go here, e.g.:
-      # saveRDS(rv$df, "data.rds")
-      # write.csv(rv$df, "data.csv", row.names = FALSE)
-    })
+    print(defaults$speaker[id])
+    ################################################################
+    updateTextInput(session, "speaker", value = defaults[id,"speaker"])
+    updateTextInput(session, "title", value = defaults[id,"title"])
+    updateTextInput(session, "subtitle", value = defaults[id,"subtitle"])
+    updateTextInput(session, "author", value = defaults[id,"author"])
+    updateTextInput(session, "h1", value = defaults[id,"h1"])
+    updateTextInput(session, "h2", value = defaults[id,"h2"])
+    updateTextInput(session, "cast", value = defaults[id,"cast"])
+    # updateTextInput(session, "copy", value = defaults[id,"copyrighted"])
+    rv$sp.sf<-rv$df[id,"speaker"]
+    rv$h1.sf<-rv$df[id,"h1"]
+    rv$h2.sf<-rv$df[id,"h2"]
+    rv$cast<-rv$df[id,"cast"]
+    rv$author<-rv$df[id,"author"]
+    rv$title<-rv$df[id,"title"]
+    rv$subtitle<-rv$df[id,"subtitle"]
+    rv$copyrighted<-rv$df[id,"copyrighted"]
+    print(rv$df)
+    showNotification("Data loaded successfully!", type = "message")
     
-    # Create new ID
-    observeEvent(input$new_btn, {
-      req(input$id_select)
-      
-      # Generate new ID (you can customize this logic)
-      new_id <- sprintf("%03d", as.numeric(max(rv$df$id)) + 1)
-      new_id <- as.numeric(max(rv$df$id)) + 1
-      
-      print(new_id)
-      print("new id created")
-      # Add new row to dataframe
-      new_row <- c(id=new_id,h1 = input$h1,h2 = input$h2,speaker = input$speaker,cast = input$cast,
-                   author = input$author,title = input$title,subtitle = input$subtitle)
-      new_row <- c(id=new_id,h1 = NA,h2 = NA,speaker = NA,cast = NA,
-                   author = NA,title = NA,subtitle = NA,copyrighted=TRUE)
-      print(new_row)
-      ldf<-length(rv$df)
-      ln<-length(new_row)
-      if(ln>ldf)
-        rv$df<-cbind(rv$df,copyrighted=new_row[length(new_row)])
-      rv$df <- rbind(rv$df, new_row)
-      print("rbind done")
-      # Update selection to the new ID
-      updatePickerInput(session, "id_select", selected = new_id)
-      print(rv$df)
-      showNotification(paste("New ID", new_id, "created!"), type = "message")
-      
-      # Your save routine would go here
-    })
+    # Your save routine would go here, e.g.:
+    # saveRDS(rv$df, "data.rds")
+    # write.csv(rv$df, "data.csv", row.names = FALSE)
+  })
+  
+  # Create new ID
+  observeEvent(input$new_btn, {
+    req(input$id_select)
     
-    # Refresh data (optional - if you want to reset or reload from source)
-    observeEvent(input$refresh_btn, {
-      rv$df <- defaults
-      updateTextInput(session, "cast", value = "")
-      updatePickerInput(session, "id_select", selected = "new")
-      showNotification("Data refreshed!", type = "message")
-    })
+    # Generate new ID (you can customize this logic)
+    new_id <- sprintf("%03d", as.numeric(max(rv$df$id)) + 1)
+    new_id <- as.numeric(max(rv$df$id)) + 1
     
-    # Display the dataframe
-    # output$data_table <- renderDT({
-    #   datatable(
-    #     rv$defaults,
-    #     options = list(
-    #       pageLength = 10,
-    #       autoWidth = TRUE
-    #     ),
-    #     selection = 'none'
-    #   )
-    # })
-    # 
-    # Debug output (optional)
-    output$debug_output <- renderPrint({
-      cat("Selected ID:", input$id_select, "\n")
-      cat("Current name input:", input$cast, "\n")
-      cat("Dataframe dimensions:", dim(rv$df), "\n")
-    })
+    print(new_id)
+    print("new id created")
+    # Add new row to dataframe
+    new_row <- c(id=new_id,h1 = input$h1,h2 = input$h2,speaker = input$speaker,cast = input$cast,
+                 author = input$author,title = input$title,subtitle = input$subtitle)
+    new_row <- c(id=new_id,h1 = NA,h2 = NA,speaker = NA,cast = NA,
+                 author = NA,title = NA,subtitle = NA,copyrighted=TRUE)
+    print(new_row)
+    ldf<-length(rv$df)
+    ln<-length(new_row)
+    if(ln>ldf)
+      rv$df<-cbind(rv$df,copyrighted=new_row[length(new_row)])
+    rv$df <- rbind(rv$df, new_row)
+    print("rbind done")
+    # Update selection to the new ID
+    updatePickerInput(session, "id_select", selected = new_id)
+    print(rv$df)
+    showNotification(paste("New ID", new_id, "created!"), type = "message")
+    
+    # Your save routine would go here
+  })
+  
+  # Refresh data (optional - if you want to reset or reload from source)
+  observeEvent(input$refresh_btn, {
+    rv$df <- defaults
+    updateTextInput(session, "cast", value = "")
+    updatePickerInput(session, "id_select", selected = "new")
+    showNotification("Data refreshed!", type = "message")
+  })
+  
+  # Display the dataframe
+  # output$data_table <- renderDT({
+  #   datatable(
+  #     rv$defaults,
+  #     options = list(
+  #       pageLength = 10,
+  #       autoWidth = TRUE
+  #     ),
+  #     selection = 'none'
+  #   )
+  # })
+  # 
+  # Debug output (optional)
+  output$debug_output <- renderPrint({
+    cat("Selected ID:", input$id_select, "\n")
+    cat("Current name input:", input$cast, "\n")
+    cat("Dataframe dimensions:", dim(rv$df), "\n")
+  })
   
   
-
+  
   output$md_html <- renderUI({
     md_file <- "about-md.md"
     html <- markdown::markdownToHTML(md_file, fragment.only = TRUE)
@@ -266,10 +271,10 @@ function(input, output, session) {
     html_file <- tempfile(fileext = ".nb.html")
     html_file <- "www/about-nb.html"
     rmarkdown::render(rmd_file, output_file = html_file, output_format = "html_notebook", quiet = TRUE)
-#    html <- paste(readLines(html_file, warn = FALSE), collapse = "\n")
+    #    html <- paste(readLines(html_file, warn = FALSE), collapse = "\n")
     #html <- paste(readLines(, warn = FALSE), collapse = "\n")
     tags$iframe(
- #     src = paste0("data:application/xml;base64,", html),
+      #     src = paste0("data:application/xml;base64,", html),
       src = "about-nb.nb.html",
       style="width:100%; height:100vH; border:none;"
     )
@@ -281,7 +286,7 @@ function(input, output, session) {
     # rv$nb.tags<-nodes
     # #rv$nb.tags$link<-all.link
     #all.scr[1]
-   # HTML(html)
+    # HTML(html)
   })
   # output$dynamic_head <- renderUI({
   #   deps<-rv$nb.tags
@@ -303,24 +308,24 @@ function(input, output, session) {
     req(input$id_select)
     
     save(rv$df,file="default-values.RData")
-#     
-#     rv$id.sf<-input$id.defaults.save
-#     rv$sp.sf<-input$speaker
-#     rv$h1.sf<-input$h1
-#     rv$h2.sf<-input$h2
-#     rv$cast<-input$cast
-# #    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
-#     #rvdf<-c(id=1,bla1="zwei")
-#     #rvdf[["id"]]
-#     rvdf<-c(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
-#     cat("observe sf...\n")
-#     print(rvdf)
-#     save_defaults(rvdf)
+    #     
+    #     rv$id.sf<-input$id.defaults.save
+    #     rv$sp.sf<-input$speaker
+    #     rv$h1.sf<-input$h1
+    #     rv$h2.sf<-input$h2
+    #     rv$cast<-input$cast
+    # #    rvdf<-data.frame(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
+    #     #rvdf<-c(id=1,bla1="zwei")
+    #     #rvdf[["id"]]
+    #     rvdf<-c(id=rv$id.sf,h1=rv$h1.sf,h2=rv$h2.sf,speaker=rv$sp.sf,cast=rv$cast)
+    #     cat("observe sf...\n")
+    #     print(rvdf)
+    #     save_defaults(rvdf)
     updateTextInput(session, "id.defaults.save", value = "settings saved...")
-#     # defaults$h1[4]<-".ufzug"
-     #defaults$h2[4]<-".uftritt"
+    #     # defaults$h1[4]<-".ufzug"
+    #defaults$h2[4]<-".uftritt"
     # defaults$cast<-"Personen."
-  #    save(defaults,file = "default-values.RData")
+    #    save(defaults,file = "default-values.RData")
   })
   observeEvent(input$defaults.load,{
     defaults<-load_defaults(input$id.defaults.load)
@@ -348,65 +353,65 @@ function(input, output, session) {
       
     } else {
       # proceed with res$result
-    print("regex okay...")
-    # replchk<-check_regex(repldf)
-    # if(typeof(replchk)=="character"){
-    #   print(replchk)
-    #   output$proutput<- renderText(replchk)
-    # }
-    # if(typeof(replchk)!="character"){
-    repldf<-res$result
-    output$proutput<- renderText("replacements loaded...")
-    showNotification("replacements loaded...", type = "message")
-    
-    repldf$replace<-gsub("\\\\n","\\\\\n",repldf$replace)
-    # repldf$replace<-gsub("[\\\\]([1-9])","\\\\\\\\\1",repldf$replace)
-    repldf$replace<-gsub("[\\]([1-9])","\\\\1",repldf$replace)
-    #  repldf$replace<-gsub("W","dummy",repldf$replace)
-    
-    print(repldf$replace)
-    #    rv$repl<-repldf
-    # metadf<-fromJSON("repldf.json",flatten = T)
-    repl1<-rv$repl
-    print(colnames(repl1)[1:3])
-    print(head(repl1))
-    repldf$id<-1
-    mode(repl1$id)<-"double"
-    mode(repl1$string1)<-"character"
-    mode(repl1$string2)<-"character"    
-    colnames(repl1)[2:3]<-c("find","replace")
-    
-    repl2<-bind_rows(repldf,repl1[,1:3])
-    colnames(repl2)[2:3]<-c("string1","string2")
-    print(head(repl2))
-    rv$repl<-repl2
-    t3<-clean.t(rv$t1,1,rv$repl,NULL)
-    #t3
-    rv$t1<-t3
+      print("regex okay...")
+      # replchk<-check_regex(repldf)
+      # if(typeof(replchk)=="character"){
+      #   print(replchk)
+      #   output$proutput<- renderText(replchk)
+      # }
+      # if(typeof(replchk)!="character"){
+      repldf<-res$result
+      output$proutput<- renderText("replacements loaded...")
+      showNotification("replacements loaded...", type = "message")
+      
+      repldf$replace<-gsub("\\\\n","\\\\\n",repldf$replace)
+      # repldf$replace<-gsub("[\\\\]([1-9])","\\\\\\\\\1",repldf$replace)
+      repldf$replace<-gsub("[\\]([1-9])","\\\\1",repldf$replace)
+      #  repldf$replace<-gsub("W","dummy",repldf$replace)
+      
+      print(repldf$replace)
+      #    rv$repl<-repldf
+      # metadf<-fromJSON("repldf.json",flatten = T)
+      repl1<-rv$repl
+      print(colnames(repl1)[1:3])
+      print(head(repl1))
+      repldf$id<-1
+      mode(repl1$id)<-"double"
+      mode(repl1$string1)<-"character"
+      mode(repl1$string2)<-"character"    
+      colnames(repl1)[2:3]<-c("find","replace")
+      
+      repl2<-bind_rows(repldf,repl1[,1:3])
+      colnames(repl2)[2:3]<-c("string1","string2")
+      print(head(repl2))
+      rv$repl<-repl2
+      t3<-clean.t(rv$t1,1,rv$repl,NULL)
+      #t3
+      rv$t1<-t3
     }
   })
-#   observeEvent(input$upload_repl,{
-#     file<-input$upload_repl$datapath
-#     repldf<-read.csv(file)
-#     print(head(repldf))
-# #    rv$repl<-repldf
-#     # metadf<-fromJSON("repldf.json",flatten = T)
-#     repl1<-rv$repl
-#     print(colnames(repl1)[1:3])
-#     print(head(repl1))
-#     repldf$id<-1
-#     mode(repl1$id)<-"double"
-#     mode(repl1$string1)<-"character"
-#     mode(repl1$string2)<-"character"    
-#     colnames(repl1)[2:3]<-c("find","replace")
-#     
-#     repl2<-bind_rows(repl1[,1:3],repldf)
-#     colnames(repl2)[2:3]<-c("string1","string2")
-#     print(head(repl2))
-#     rv$repl<-repl2
-#   })
+  #   observeEvent(input$upload_repl,{
+  #     file<-input$upload_repl$datapath
+  #     repldf<-read.csv(file)
+  #     print(head(repldf))
+  # #    rv$repl<-repldf
+  #     # metadf<-fromJSON("repldf.json",flatten = T)
+  #     repl1<-rv$repl
+  #     print(colnames(repl1)[1:3])
+  #     print(head(repl1))
+  #     repldf$id<-1
+  #     mode(repl1$id)<-"double"
+  #     mode(repl1$string1)<-"character"
+  #     mode(repl1$string2)<-"character"    
+  #     colnames(repl1)[2:3]<-c("find","replace")
+  #     
+  #     repl2<-bind_rows(repl1[,1:3],repldf)
+  #     colnames(repl2)[2:3]<-c("string1","string2")
+  #     print(head(repl2))
+  #     rv$repl<-repl2
+  #   })
   #test
- # repldf<-read.csv("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/repldf.csv")
+  # repldf<-read.csv("~/Documents/GitHub/ETCRA5_dd23/bgltr/ocr/actuel/breithaupt/repldf.csv")
   # mode(repl1$id)<-"double"
   # mode(repl1$string1)<-"character"
   # mode(repl1$string2)<-"character"
@@ -448,7 +453,7 @@ function(input, output, session) {
     # validate(need(ext=="txt","please upload a plain text file"))
     t4<-readLines(file$datapath)
     #print(t4)
-   # t3<-repl.um(t4)
+    # t3<-repl.um(t4)
     #t3
     #t3<-clean.t(t3,1,rv$repl)
     #t3
@@ -494,14 +499,14 @@ function(input, output, session) {
     })
     showNotification("transcript fetched...", type = "message")
     
-#    output$proutput <- renderText("transcript fetched...\n")
+    #    output$proutput <- renderText("transcript fetched...\n")
     
   })
   
   # Observe the submit button for processing act headers
   observeEvent(input$submit.h, {
     showNotification("processing headers...", type = "message")
-#    output$proutput <- renderText("processing headers...\n")
+    #    output$proutput <- renderText("processing headers...\n")
     
     vario.1 <- input$h1
     vario.2<-input$h2
@@ -511,7 +516,7 @@ function(input, output, session) {
     t <- get.heads.s(rv$t1, vario.1,vario.2)  # Use the transcript stored in reactiveValues
     rv$t2 <- t$text  # Store the updated text in reactiveValues
     rv$heads <- t$vario  # Store the act headers in reactiveValues
-   # heads<-data.frame(found=1:length(rv$heads),head=rv$heads)
+    # heads<-data.frame(found=1:length(rv$heads),head=rv$heads)
     rv$h1.sf<-vario.1
     rv$h2.sf<-vario.2
     rv$h1.first<-t$h1.first
@@ -522,9 +527,9 @@ function(input, output, session) {
       rv$h1.set<-TRUE
       rv$ezd<-rv$t2
     }
-   # writeLines(rv$t2,"www/ezdmarkup.txt")
+    # writeLines(rv$t2,"www/ezdmarkup.txt")
     # Update the UI with the processed act headers
-   # output$proutput <- renderText(paste("level 1/2 headers found:\n",paste(rv$heads, collapse = "\n"),collapse = "\n"))
+    # output$proutput <- renderText(paste("level 1/2 headers found:\n",paste(rv$heads, collapse = "\n"),collapse = "\n"))
     #output$proutput<-renderDT(rv$heads)
     output$processed <- renderUI({
       div(
@@ -557,7 +562,7 @@ function(input, output, session) {
   })
   #################################
   
-    observeEvent(input$submit.sp, {
+  observeEvent(input$submit.sp, {
     vario <- input$speaker
     rswitch<-input$rswitch
     req(rv$h1.set)
@@ -575,7 +580,7 @@ function(input, output, session) {
       return()
     }
     t4<-t4$lines
-      
+    
     print("got cast...")
     t5<-get.front(t4)
     print("got front...")
@@ -590,19 +595,19 @@ function(input, output, session) {
     rv$speaker.crit<-rv$speaker.crit[!is.na(rv$speaker.crit)]
     rv$sp.sf<-input$speaker
     # Update the UI with the processed act headers
-   # output$acts <- renderText(paste(rv$heads, collapse = "\n"))
+    # output$acts <- renderText(paste(rv$heads, collapse = "\n"))
     ### remove linebreaks
     sp6<-gsub("%front%","",t2$text)
-   # sp6<-gsub("%hnl%","",t2$text)
+    # sp6<-gsub("%hnl%","",t2$text)
     # sp6<-t2$text
     t3<-clean.t(sp6,F,rv$repl,h1.first)
     t3<-gsub("%hnl%","",t3)
     t3<-gsub("^\\((.+)\\)$","$\\1",t3)
     print("clean.t...")
-   # t3<-get.front(t3)
+    # t3<-get.front(t3)
     rv$t3<-t3
     rv$ezd<-t3
-   # writeLines(rv$t3,"www/ezdmarkup.txt")
+    # writeLines(rv$t3,"www/ezdmarkup.txt")
     
     output$processed <- renderUI({
       div(
@@ -632,42 +637,42 @@ function(input, output, session) {
     meta<-list(author=author,title=title,subtitle=subtitle)
     #    output$proutput <- renderText("processing ezd > TEI...\n")
     showNotification("transform ezd > TEI...", type = "message")
-  #   output_text <- capture.output({
-  #     print("Starting process...")
-  #     Sys.sleep(1)
-  #     print("Step 1 complete")
-  #     Sys.sleep(1)
-  #     print("Step 2 complete")
-  #     xml.t<-transform.ezd(rv$t3,output_file,meta)
-  #     print("finished...")
-  #   })
-  #   
-  #   # Update the reactive value
-  #   console_text(paste(output_text, collapse = "\n"))
-  # 
-  # 
-  # output$pr_progress <- renderText({
-  #   console_text()
-  # })
+    #   output_text <- capture.output({
+    #     print("Starting process...")
+    #     Sys.sleep(1)
+    #     print("Step 1 complete")
+    #     Sys.sleep(1)
+    #     print("Step 2 complete")
+    #     xml.t<-transform.ezd(rv$t3,output_file,meta)
+    #     print("finished...")
+    #   })
+    #   
+    #   # Update the reactive value
+    #   console_text(paste(output_text, collapse = "\n"))
+    # 
+    # 
+    # output$pr_progress <- renderText({
+    #   console_text()
+    # })
     xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     xml.t<-xml.f$xml
     push.dracor("localhost",xml.t,"files","preview")
     
-   # writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
+    # writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
-   # xml.test<-list.files(".")
-  # xml.str<-paste0("<div>",paste0(xml.test),"</div>")
-     xml.str<-paste0(xml.t,collapse = "")
+    # xml.test<-list.files(".")
+    # xml.str<-paste0("<div>",paste0(xml.test),"</div>")
+    xml.str<-paste0(xml.t,collapse = "")
     #print("----- xmlstr ------")
-   # print(xml.str)
-   b64 <- jsonlite::base64_enc(charToRaw(xml.str))
+    # print(xml.str)
+    b64 <- jsonlite::base64_enc(charToRaw(xml.str))
     rv$b64<-b64
     rv$xmlout<-xml.t
     
-  #  valid<-validate_tei(output_file,"dracor-scheme.rng") # not on M7, cant install jing
+    #  valid<-validate_tei(output_file,"dracor-scheme.rng") # not on M7, cant install jing
     #t2<-xml.t
-   # print(valid$ok)
-#    output$proutput <- renderText("ezd > TEI processed...\n")
+    # print(valid$ok)
+    #    output$proutput <- renderText("ezd > TEI processed...\n")
     message<-xml.f$message
     showNotification(message, type = "message")
     rv$xmlprocessed<-T
@@ -679,13 +684,13 @@ function(input, output, session) {
       )
     })
     output$xmlrendered <- renderUI({
-   # div(id="xml",
-     # style="width:100%; height:100%;",
+      # div(id="xml",
+      # style="width:100%; height:100%;",
       tags$iframe(
-       src = paste0("data:application/xml;base64,", rv$b64),
-       # src = paste0("data:text/html,", rv$xmlout),
-       
-       # src = "r-tempxmlout.xml",
+        src = paste0("data:application/xml;base64,", rv$b64),
+        # src = paste0("data:text/html,", rv$xmlout),
+        
+        # src = "r-tempxmlout.xml",
         # src = output_file_s_www, # this wks.
         # src = output_file,
         style="width:100%; height:100vH; border:none;"
@@ -693,17 +698,17 @@ function(input, output, session) {
     })
   })
   
- observeEvent(input$compare, {
+  observeEvent(input$compare, {
     req(rv$xmlprocessed,rv$xmlprocessed==TRUE)
     ifelse(rv$t1=="%ezd%",text1<-rv$t3,
            text1 <- rv$t1)
-   #print(text1)
+    #print(text1)
     text1<-gsub("^[ ]{1,}","",text1)
     text1<-text1[text1!=""]
     #text2 <- paste0(rv$t3,collapse = "<nl>")
-   doc<-read_xml(output_file)
-   texts <- xml_text(xml_find_all(doc, "//text()"))
-   
+    doc<-read_xml(output_file)
+    texts <- xml_text(xml_find_all(doc, "//text()"))
+    
     text2 <- texts
     tempapi<-tempfile("api.txt")
     writeLines(text1,tempapi)
@@ -713,10 +718,10 @@ function(input, output, session) {
     # lines1 <- unlist(strsplit(text1, "\n"))
     # lines2 <- unlist(strsplit(text2, "\n"))
     # 
-#?    renderDiffr
+    #?    renderDiffr
     tryCatch(({
       output$diff_output <- renderDiffr({
-       # input$compare
+        # input$compare
         #text1 <- rv$t1
         #text2 <- rv$t3
         # tempapi<-tempfile("api.txt")
@@ -738,17 +743,17 @@ function(input, output, session) {
       })
     }))
   })
-    # Create diff object
-    # tryCatch({
-    #   diff <- diffobj::diffChr(
-    #     lines1, 
-    #     lines2,
-    #     mode = "sidebyside",
-    #     format = "html",
-    #     #contextSize = input$context_size,
-    #     style = list(html.output = "page")
-    #   )
-    #   
+  # Create diff object
+  # tryCatch({
+  #   diff <- diffobj::diffChr(
+  #     lines1, 
+  #     lines2,
+  #     mode = "sidebyside",
+  #     format = "html",
+  #     #contextSize = input$context_size,
+  #     style = list(html.output = "page")
+  #   )
+  #   
   #     # Convert to HTML
   #     htmltools::HTML(as.character(diff))
   #   }, error = function(e) {
@@ -780,7 +785,7 @@ function(input, output, session) {
   # })
   observeEvent(input$tabset, {
     if (input$tabset == "dracor_preview") {
-     
+      
       shinyjs::addClass("iframe-navbar","showing")
       #shinyjs::toggle("iframe-navbar")
       # Insert the fullscreen iframe
@@ -810,12 +815,12 @@ function(input, output, session) {
         src = "http://localhost:8088/files/preview"
       )
     )
-   # shinyjs::addClass("iframe-navbar","showing")
+    # shinyjs::addClass("iframe-navbar","showing")
     shinyjs::show("iframe-navbar")
-
-
+    
+    
   })
-
+  
   # Handle return to app
   observeEvent(input$`back-to-app`, {
     # Remove the iframe
@@ -824,17 +829,18 @@ function(input, output, session) {
     # Hide the navbar
     shinyjs::hide("iframe-navbar")
     
-   
+    
     # Switch back to the first tab
-   # updateTabsetPanel(session, "mainTabs", selected = "progress")
+    # updateTabsetPanel(session, "mainTabs", selected = "progress")
   })
   ### init dracor preview.xml to clean db from previous play
   observe ({
     xml.t<-readLines("samplepreview.xml")
+    target<-Sys.getenv("SYS")
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
-    push.dracor("localhost",xml.t,"files","preview")
-
+    push.dracor(target,xml.t,"files","preview")
+    
   })
   
 }

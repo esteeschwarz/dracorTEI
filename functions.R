@@ -818,6 +818,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   h2.all<-do.caps(h2)
   h1.all
   numer<-paste0(numer,paste0(1:20,"."),collapse = "|")
+  numer<-paste0(numer,paste0(c("I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV"),"[.]{0,}"),collapse = "|")
   regx.1<-paste0("^.+?",numer,".+(",headx.1,")\\.")
   regx.1<-paste0("^+?",numer,".+(",headx.1,")\\.")
 # global from metadf
@@ -902,27 +903,44 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   cl.2<-c(10)
   cl.3<-11
   cl.out<-c(10,11)
-  cl1<-is.na(parts[,6]) # 6=NA&10:12=NA 
-  cl2<-is.na(parts[,10])
-  cl3<-10000
-  ### > this messes up the act-scene-1-line segmentation! parts[6] is not NA! 
+  cl1<-is.na(parts[,1]) # 6=NA&10:12=NA 
+  cl10<-is.na(parts[,10])
+  cl3<-100
+  ### > this messes up the act-scene-1-line segmentation! parts[6] is not NA!
+  print(" sum !is.na(parts[,11])")
+  print("---------- WTF ----------------")
+  print(sum(!is.na(parts[,11])))
   if(length(parts[1,])>10)
-     cl3<-which(!is.na(parts[,11]))
-  cl4<-is.na(parts[,8])
-  cl5<-is.na(parts[,9])
-  cl4<-sum(cl4)>1
+     cl11<-which(!is.na(parts[,11]))
+  cl8<-is.na(parts[,8])
+  cl9<-is.na(parts[,9])
+  cl6<-is.na(parts[,6])
+#  cl4<-sum(cl4)>1
+ # cl4<-sum(cl4)>1
   print("rm.na")
   print(mw)
   print(which(!cl1))
-  print(which(!cl2))
+  print(which(!cl6))
   print(cl3)
-  mw4<-mw[mw%in%c(which(!cl1),which(!cl2),cl3)&mw%in%c(cl4,cl5)]
+  #print(which(!cl4))
+  #print(which(!cl5))
+  ###################################
+  mw4<-mw[mw%in%which(!cl1)] # ground
+  mw5<-mw4[mw4%in%which(cl8)&mw4%in%(which(!cl10))] 
+  # THIS wks with: ^Erste Handlung | forste akt scene 1 
   print(mw4)
+  # for IBSEN:
+  if(length(mw5)<2)
+    mw5<-mw4[mw4%in%which(!cl6)]
+  #wks, assuming a minimum count of 2 regular acts found
+  #critical, thats why not 1: if a normal line begins as ^Akt as first string
+  ###################################
+  #print(mw5)
   # print(which(!cl2))
   # mw4<-mw4[mw4%in%which(cl2)]
   # print(mw4)
  # mw<-mw4[!mw4%in%which(cl3)]
-  mw<-mw4
+  mw<-mw5
   print(mw)
   print(t2[mw])
   h1<-parts[mw,1]

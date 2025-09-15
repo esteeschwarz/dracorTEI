@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://ada-sub.dh-index.org/school/api/css/shiny/dracortei.css"?>
+<?xml-model href="https://dracor.org/schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="insertID" xml:lang="ger">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Hamlet</title>
+        <title type="sub">A tragedy</title>
+        <author>William S</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher xml:id="dracor">DraCor</publisher>
+        <idno type="URL">https://dracor.org</idno>
+        <availability>
+          <licence>
+            <ab>CC0 1.0</ab>
+            <ref target="https://creativecommons.org/publicdomain/zero/1.0/">Licence</ref>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl type="digitalSource">
+          <name>ENTER SOURCE NAME HERE</name>
+          <idno type="URL">ENTER SOURCE URL HERE</idno>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person sex="TODO" xml:id="ham.">
+            <persName>Ham:</persName>
+          </person>
+          <person sex="TODO" xml:id="egg.">
+            <persName>Egg:</persName>
+          </person>
+          <person sex="TODO" xml:id="vikings_.singing..">
+            <persName>Vikings (singing):</persName>
+          </person>
+        </listPerson>
+      </particDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <castList>
+        <head>Personen</head>
+        <castItem>Ham</castItem>
+        <castItem>Egg</castItem>
+        <castItem>Vikings</castItem>
+      </castList>
+      <p>FRONT: samplefrom https://github.com/dracor-org/ezdrama</p>
+    </front>
+    <body>
+      <div type="act">
+        <head>Act 1</head>
+        <div type="scene">
+          <head>Scene 1</head>
+          <sp who="#ham.">
+            <speaker>Ham:</speaker>
+            <p>Lovely Spam!</p>
+          </sp>
+          <sp who="#egg.">
+            <speaker>Egg:</speaker>
+            <p>Wonderful Spam!</p>
+          </sp>
+        </div>
+        <div type="scene">
+          <head>Scene 2</head>
+          <stage>Enter Vikings</stage>
+          <sp who="#ham.">
+            <speaker>Ham:</speaker>
+            <p>Egg, Spam!</p>
+            <p>Sausage, and Bacon!</p>
+          </sp>
+          <sp who="#vikings_.singing..">
+            <speaker>Vikings (singing):</speaker>
+            <p>~Spam, Spam,<stage>o!</stage></p>
+            <p>Spam, Spam, <stage>loud</stage></p>
+            <p>Spam, Spam, <stage>quiet</stage></p>
+            <p>Spam, and Spam</p>
+          </sp>
+        </div>
+      </div>
+      <div type="act">
+        <head>Act 2</head>
+        <div type="scene">
+          <head>scene 1</head>
+          <stage>Enter Vikinger</stage>
+          <sp who="#ham.">
+            <speaker>Ham:</speaker>
+            <p>Egg, Spam!</p>
+            <p>Sausage, and Bacon!</p>
+          </sp>
+          <stage>The end</stage>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -2,10 +2,12 @@ library(shiny)
 library(diffr)
 library(shinyWidgets)
 library(shinycssloaders)
+library(shinyjs)
 
 #css<-readtext("render.css")$text
 # Define UI for application
 fluidPage(
+  useShinyjs(),  # Enable shinyjs for UI manipulation
   
   tags$style(HTML("
     .scrollable-sidebar {
@@ -20,14 +22,44 @@ fluidPage(
       # Dynamically insert dependencies
       uiOutput("dynamic_head"),
     tags$style(HTML('
-     /* .td.code.replace.after {
-       white-space: pre !important;
-        overflow-x: auto !important;
-      }*/
-      /*td[class~="code"][class~="replace"][class~="after"] {
-  white-space: pre !important;
-        overflow-x: auto !important;
-      }*/ /*wks!*/
+    .fullscreen-iframe {
+        position: fixed;
+        display: inline;
+        top: 50px;
+        left: 0;
+        width: 100vw;
+        height: 95vh;
+        z-index: 10000;
+        background: white;
+        border: none;
+      }
+      .iframe-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: #f8f9fa;
+        padding: 10px 20px;
+        z-index: 10000;
+        border-bottom: 1px solid #dee2e6;
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .hidden {
+        display: none;
+      }
+      .showing {
+        display: flex;
+      }
+      #main-content {
+        transition: all 0.3s ease;
+      }
+      .blurred {
+        filter: blur(5px);
+        pointer-events: none;
+      }
       .diff-container { 
         border: 1px solid #ddd; 
         border-radius: 5px; 
@@ -50,7 +82,13 @@ fluidPage(
       }
     ')),
   # tags$style(HTML(css)),
-
+  div(
+    id = "iframe-navbar",
+    #   class = "iframe-navbar hidden",
+    class = "iframe-navbar",
+    h4("External Content Viewer", style = "margin: 0;"),
+    actionButton("back-to-app", "Return to App", class = "btn-primary btn-sm")
+  ),
   # Application title
   titlePanel("dracor TEI refactoring"),
   
@@ -147,6 +185,20 @@ fluidPage(
           h4("diff compare"),
           withSpinner(diffrOutput("diff_output"))
       )),
+     tabPanel(
+       "dracor_preview",
+      # h2("External Content Viewer"),
+       #p("Click the button below to view external content in full-screen mode."),
+       actionButton("view-external", "view dracor preview", class = "btn-success"),
+      # br(), br(),
+       # div(
+       #   id = "preview-container",
+       #   style = "border: 1px solid #ddd; padding: 10px; border-radius: 5px;",
+       #   
+       #   h4("Content Preview"),
+       #   htmlOutput("framePreview")
+       # )
+     ),
       tabPanel("about",
                htmlOutput("md_html")
       ),

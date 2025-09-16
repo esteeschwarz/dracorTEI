@@ -777,7 +777,7 @@ get.heads.3<-function(t1,vario,h1.all,h2.all,numer.all){
   vario
   t2[m4]<-gsub("%","",t2[m4])
   t2
-  return(list(text=t2,vario=vario,h1.first=m5[1]))
+  return(list(text=t2,vario=vario,h1.first=m5[1],mw=m4))
 }
 
 get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
@@ -941,6 +941,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   # print(mw4)
  # mw<-mw4[!mw4%in%which(cl3)]
   mw<-mw5
+  # 15384.still header issue wt iwanette
   print(mw)
   print(t2[mw])
   h1<-parts[mw,1]
@@ -985,7 +986,10 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   }
   # this critical > mw always 0 if found # in vario!
   if(length(mw)==0){
-  t.sep<-get.heads.3(t2,vario,h1.all,h2.all,numer.all)  
+  ####################################################
+#  t.sep<-get.heads.3(t2,vario,h1.all,h2.all,numer.all)  
+  t.sep<-get.heads.3(t1,vario,h1.all,h2.all,numer.all) #15384.this wks wt iwanette!
+  ####################################################
   vario<-t.sep$vario
   t2<-t.sep$text
   h1.first<-t.sep$h1.first

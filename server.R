@@ -27,7 +27,10 @@ output_file_pb<-"www/r-tempxmlout_pb.xml"
 output_dracor<-paste0(Sys.getenv("GIT_TOP"),"/ulysses/work/dracor")
 is.system<-Sys.getenv("SYS")
 target<-is.system
-
+dracorapitarget<-Sys.getenv("dracorapitarget")
+dracorframetarget<-Sys.getenv("dracorframetarget")
+if(dracorframetarget=="")
+  dracorframetarget<-"https://dracor.dh-index.org"
 # Load defaults when app starts
 # observe({
 #   # Load default speaker names from database
@@ -349,7 +352,7 @@ function(input, output, session) {
     if (!res$success) {
       print("regex error...")
       showNotification(res$error, type = "error")
-      output$proutput<- renderText(res$error)
+     # output$proutput<- renderText(res$error)
       
     } else {
       # proceed with res$result
@@ -361,7 +364,7 @@ function(input, output, session) {
       # }
       # if(typeof(replchk)!="character"){
       repldf<-res$result
-      output$proutput<- renderText("replacements loaded...")
+     # output$proutput<- renderText("replacements loaded...")
       showNotification("replacements loaded...", type = "message")
       
       repldf$replace<-gsub("\\\\n","\\\\\n",repldf$replace)
@@ -418,7 +421,7 @@ function(input, output, session) {
   observeEvent(input$upload_tr,{
     showNotification("processing transcript...", type = "message")
     
-    output$proutput <- renderText("processing...\n")
+   # output$proutput <- renderText("processing...\n")
     file<-input$upload_tr
     # ext<-tools::file_ext(file$datapath)
     # req(file)
@@ -439,10 +442,10 @@ function(input, output, session) {
     })
     showNotification("transcript loaded...", type = "message")
     
-    output$proutput <- renderText("transcript fetched...\n")
+   # output$proutput <- renderText("transcript fetched...\n")
   })
   observeEvent(input$upload_ezd,{
-    output$proutput <- renderText("processing...\n")
+    #output$proutput <- renderText("processing...\n")
     file<-input$upload_ezd
     updateTextInput(session, "speaker", value = "")
     updateTextInput(session, "h1", value = "")
@@ -468,14 +471,14 @@ function(input, output, session) {
     })
     showNotification("ezd markup transcript loaded...", type = "message")
     
-    output$proutput <- renderText("markup transcript uploaded\n")
+   # output$proutput <- renderText("markup transcript uploaded\n")
   })
   # Observe the submit button for fetching the transcript
   observeEvent(input$submit.doc, {
     showNotification("fetching transcript from transkribus DB...", type = "message")
     
     output$apidoc <- renderUI({ div(tags$pre("Processing...")) })  # Show a loading message
-    output$proutput <- renderText("processing...\n")
+   # output$proutput <- renderText("processing...\n")
     
     # Fetch the transcript
     transcript <- input$transcript
@@ -557,7 +560,14 @@ function(input, output, session) {
     
     sp.guess<-guess_speaker(rv$t2,input$cast)
     rv$sp.guess<-sp.guess
-    output$proutput<- renderText(paste("SPEAKERS guessed:\n",paste(sp.guess,collapse = "\n")))
+    output$pr_progress<-renderUI({
+      div(
+        style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
+        tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
+                 paste("SPEAKERS guessed:\n",paste(rv$sp.guess,collapse = "\n")))
+      )
+    })
+   # output$proutput<- renderText(paste("SPEAKERS guessed:\n",paste(sp.guess,collapse = "\n")))
     updateTextInput(session, "speaker", value = paste0(sp.guess,collapse = ","))
   })
   #################################
@@ -634,6 +644,7 @@ function(input, output, session) {
     title<-rv$title
     subtitle<-rv$subtitle
     h1.first<-rv$h1.first
+    dracorapitarget<-Sys.getenv("dracorapitarget")
     meta<-list(author=author,title=title,subtitle=subtitle)
     #    output$proutput <- renderText("processing ezd > TEI...\n")
     showNotification("transform ezd > TEI...", type = "message")
@@ -656,7 +667,7 @@ function(input, output, session) {
     # })
     xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     xml.t<-xml.f$xml
-    push.dracor("localhost",xml.t,"files","preview")
+    push.dracor(dracorapitarget,xml.t,"files","preview")
     
     # writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
@@ -769,7 +780,7 @@ function(input, output, session) {
   #   diff_result()
   # })
   # Initialize the outputs
-  output$proutput<- renderText("configure variables left...")
+  #output$proutput<- renderText("configure variables left...")
   output$acts <- renderText(paste(rv$heads, collapse = "\n"))
   output$apidoc <- renderUI({
     div(
@@ -795,7 +806,7 @@ function(input, output, session) {
         ui = tags$iframe(
           id = "fullscreen-iframe",
           class = "fullscreen-iframe",
-          src = "http://localhost:8088/files/preview"
+          src = paste0(dracorframetarget,"/files/preview")
         )
       )
       
@@ -812,7 +823,7 @@ function(input, output, session) {
       ui = tags$iframe(
         id = "fullscreen-iframe",
         class = "fullscreen-iframe",
-        src = "http://localhost:8088/files/preview"
+        src = paste0(dracorframetarget,"/files/preview")
       )
     )
     # shinyjs::addClass("iframe-navbar","showing")
@@ -836,11 +847,16 @@ function(input, output, session) {
   ### init dracor preview.xml to clean db from previous play
   observe ({
     xml.t<-readLines("samplepreview.xml")
-    target<-Sys.getenv("SYS")
+    dracorapitarget<-Sys.getenv("dracorapitarget")
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
-    push.dracor(target,xml.t,"files","preview")
-    
+    tryCatch({
+      push.dracor(dracorapitarget,xml.t,"files","preview")
+    },error = function(e){
+      #    showNotification("sample pushdracor failed...", type = "message")
+      
+      return("pushdracor failed...")
+    })
   })
   
 }

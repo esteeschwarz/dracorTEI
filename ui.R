@@ -159,7 +159,7 @@ fluidPage(
     helpText("if you satisfied with the preprocessed text, start transformation.")
   ),
   mainPanel(
-    verbatimTextOutput("proutput"),
+   # verbatimTextOutput("proutput"),
     tabsetPanel(id="tabset",
       
       tabPanel("progress",

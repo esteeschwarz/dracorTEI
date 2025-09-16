@@ -907,9 +907,9 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   cl10<-is.na(parts[,10])
   cl3<-100
   ### > this messes up the act-scene-1-line segmentation! parts[6] is not NA!
-  print(" sum !is.na(parts[,11])")
+  #print(" sum !is.na(parts[,11])")
   print("---------- WTF ----------------")
-  print(sum(!is.na(parts[,11])))
+  #print(sum(!is.na(parts[,11])))
   if(length(parts[1,])>10)
      cl11<-which(!is.na(parts[,11]))
   cl8<-is.na(parts[,8])
@@ -956,11 +956,12 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   #mw<-mw[mw%in%m.out]
   ############################
   t2[mw]<-paste0("#",parts[mw,1]) #15375.marked up header issue
-  rm(mw)
   vario<-h1
   print("vario-h1")
   print(vario)
- # t2[m1]<-paste0("# ",t2[m1],"%hnl%") #out
+  print(t2[mw])
+  rm(mw)
+  # t2[m1]<-paste0("# ",t2[m1],"%hnl%") #out
 #  ^([ \t]{0,})?(",numer.all,").+?(",h1.all,")\\.?(.+)?$
   # t2[m1]<-gsub(regx.1,"# \\2 \\3%hnl%\\4",t2[m1],perl = T) #in
   # m2<-grep(regx.2,t1)
@@ -978,14 +979,16 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   print(t2[mw])
   if(length(mw)>0){
     mw.sel<-rm.na(parts2,mw)
-    mw<-mw.sel$mw
+    mw.na<-mw.sel$mw
     h2<-mw.sel$h
     vario<-c(h1,h2)
     t2[mw]<-paste0("##",parts2[mw,1]) #15375.marked up header issue
     
   }
   # this critical > mw always 0 if found # in vario!
-  if(length(mw)==0){
+  #if(length(mw.na)==0){
+  print(length(mw))
+    if(length(mw)==0){
   ####################################################
 #  t.sep<-get.heads.3(t2,vario,h1.all,h2.all,numer.all)  
   t.sep<-get.heads.3(t1,vario,h1.all,h2.all,numer.all) #15384.this wks wt iwanette!
@@ -1243,7 +1246,7 @@ push.dracor<-function(target,xml,corpusname,playname){
   
   #target<-"mini12"
   #target<-"localhost"
-  apibase<- paste0("http://",target,":8088/api/v1/")
+  apibase<- paste0(target,":8088/api/v1/")
   #apibase<- "http://localhost:8088/api/v1/"
   
   # endpoint<-"info"

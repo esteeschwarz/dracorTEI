@@ -882,16 +882,16 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   t2[which(!mna)]
   mw<-which(!mna)
   rm(mna)
-  h1<-parts[mw,1]
-  h1
+  h1.1<-parts[mw,1]
+  h1.1
   h1c<-grepl("#",parts[mw,1])
   #mw<-mw[!h1c]
   
   
   #h1[is.na(h1)]<-""
   #h1<-h1[!is.na(h1),]
-  cat("h1: ",h1,"\n")
-  cat("h1 after removing #-tagged:\n")
+  cat("h1: ",h1.1,"\n")
+ # cat("h1 after removing #-tagged:\n")
   print(t2[mw])
   #h1<-lapply(h1,function(x){paste0(x,collapse = " ")})
   #h1c<-
@@ -899,10 +899,12 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   #mna
   ### 1538.act-in-text issue.
   rm.na<-function(parts,mw){
-  cl.1<-c(6)
-  cl.2<-c(10)
-  cl.3<-11
-  cl.out<-c(10,11)
+  print("---- parts ----")
+  print(parts[mw,])
+ # cl.1<-c(6)
+#  cl.2<-c(10)
+ # cl.3<-11
+  #cl.out<-c(10,11)
   cl1<-is.na(parts[,1]) # 6=NA&10:12=NA 
   cl10<-is.na(parts[,10])
   cl3<-100
@@ -927,7 +929,9 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   ###################################
   mw4<-mw[mw%in%which(!cl1)] # ground
   mw5<-mw4[mw4%in%which(cl8)&mw4%in%(which(!cl10))] 
-  mw5<-mw4[mw4%in%which(cl8)&mw4%in%(which(cl10))] 
+  mw5<-mw4[mw4%in%which(cl8)&mw4%in%(which(cl10))]
+  mw5<-mw5[mw5%in%which(!cl6)]
+  
   # THIS wks with: ^Erste Handlung | forste akt scene 1 
   print(mw4)
   # for IBSEN:
@@ -950,24 +954,32 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   }
   ### VIP! check if now is empty!
   mw.sel<-rm.na(parts,mw)
-  mw.na<-mw.sel$mw
+  mw.na<-mw.sel$mw # stayed in headers after cleanup
   h1<-mw.sel$h
   ifelse(length(mw.na)<1,mw<-mw,mw<-mw.na)
-  ifelse(length(mw.na)<1,vario<-h1,vario<-mw.sel$h)
+  ifelse(length(mw.na)<1,vario<-h1.1,vario<-mw.sel$h)
   #mw<-mw[mw%in%m.out]
   ############################
-  t2[mw]<-paste0("#",parts[mw,1]) #15375.marked up header issue
-  t2[mw]<-gsub("##","#",t2[mw])
-  vario<-h1
+  t2[mw]<-paste0("# ",parts[mw,1]) #15375.marked up header issue
+  t2[mw]<-gsub("#[ ]{0,}#","# ",t2[mw])
+ # t1<-t2
+  #vario<-h1
   print("vario-h1")
   print(vario)
   print(t2[mw])
-  rm(mw)
+  #rm(mw)
   # t2[m1]<-paste0("# ",t2[m1],"%hnl%") #out
 #  ^([ \t]{0,})?(",numer.all,").+?(",h1.all,")\\.?(.+)?$
   # t2[m1]<-gsub(regx.1,"# \\2 \\3%hnl%\\4",t2[m1],perl = T) #in
   # m2<-grep(regx.2,t1)
   t2[m2]
+  print("chk for remaining trash in t1")
+  # m3<-t1[m1]%in%parts[mw,1]
+  # t2[m1]<-t2[m1][!m3]
+  rm(mw)
+  #print(t2[m1][m3])
+  ############################
+  ### header 2
   parts2<-str_match(t2,regx.2)
   mna<-is.na(parts2[,1])
   parts2[!mna,1]
@@ -976,17 +988,27 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   mw<-which(!mna)
   h2c<-grepl("#",parts2[mw,1])
   mw<-mw[!h2c]
-  print("mw in t2 after removing # headers")
+  print("h2 mw in t2 after removing # headers")
+  # 15385.here #TODO: iwanette tags {scene} in text! 
   print(mw)
   print(t2[mw])
   if(length(mw)>0){
     mw.sel<-rm.na(parts2,mw)
     mw.na<-mw.sel$mw
     h2<-mw.sel$h
+    print("h2----")
+    print(h2)
     vario<-c(h1,h2)
-    t2[mw]<-paste0("##",parts2[mw,1]) #15375.marked up header issue
-    
+   # t2[mw]<-paste0("## ",parts2[mw,1]) #15375.marked up header issue
+    print("tagged h2")
+    print(t2[mw.na])
   }
+  print("chk h2 for remaining trash in t1")
+  # m3<-t1[m2]%in%t2[mw]
+  # print(t1[m2][m3])
+  # ifelse(sum(!m3)==length(mw),print("no h2 replacements"),t2[mw]<-paste0("## ",parts2[mw,1]))
+  print("removed trash")
+  print(t2[mw])
   # this critical > mw always 0 if found # in vario!
   #if(length(mw.na)==0){
   print(length(mw))
@@ -1272,7 +1294,7 @@ push.dracor<-function(target,xml,corpusname,playname){
   xml.t<-paste0(xml,collapse = "\n")
   data <- xml.t # or JSON string
   headers <- c("Content-Type" = "application/xml")
-  credentials <- authenticate("admin", "")
+  credentials <- authenticate("admin", password)
   
   if (!is.null(data) && !is.null(headers) && !is.null(credentials)) {
     response <- PUT(request_url, body = data, add_headers(.headers = headers), credentials)

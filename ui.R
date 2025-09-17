@@ -190,6 +190,11 @@ fluidPage(
       # h2("External Content Viewer"),
        #p("Click the button below to view external content in full-screen mode."),
        actionButton("view-external", "view dracor preview", class = "btn-success"),
+      br(),br(),
+       p("if your processed play is copyrighted and should not be available to download for others, click the flush DB button."),
+       actionButton("flushdb", "flush preview file in DB", class = "btn-success"),
+       verbatimTextOutput("flushnotice")
+      
       # br(), br(),
        # div(
        #   id = "preview-container",

@@ -75,7 +75,9 @@ function(input, output, session) {
     xmlout = "you have not yet created an xml file or it is copyrighted",
     b64 = jsonlite::base64_enc(charToRaw("<p>no content yet</p>")),
     xmlprocessed = F,
-    h1.first = NULL
+    h1.first = NULL,
+    xml.t = readLines("samplepreview.xml"),
+    dracorapitarget = Sys.getenv("dracorapitarget")
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
@@ -667,7 +669,9 @@ function(input, output, session) {
     # })
     xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     xml.t<-xml.f$xml
-    push.dracor(dracorapitarget,xml.t,"files","preview")
+    rv$xml.t<-xml.t
+    rv$dracorapitarget<-dracorapitarget
+    # push.dracor(dracorapitarget,xml.t,"files","preview")
     
     # writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
@@ -796,6 +800,7 @@ function(input, output, session) {
   # })
   observeEvent(input$tabset, {
     if (input$tabset == "dracor_preview") {
+      push.dracor(rv$dracorapitarget,rv$xml.t,"test","preview")
       
       shinyjs::addClass("iframe-navbar","showing")
       #shinyjs::toggle("iframe-navbar")
@@ -806,7 +811,7 @@ function(input, output, session) {
         ui = tags$iframe(
           id = "fullscreen-iframe",
           class = "fullscreen-iframe",
-          src = paste0(dracorframetarget,"/files/preview")
+          src = paste0(dracorframetarget,"/test/preview")
         )
       )
       
@@ -814,6 +819,8 @@ function(input, output, session) {
   })
   observeEvent(input$`view-external`, {
     # Show the iframe navbar
+   # push.dracor(rv$dracorapitarget,rv$xml.t,"test","preview")
+    
     shinyjs::addClass("iframe-navbar","showing")
     #shinyjs::toggle("iframe-navbar")
     # Insert the fullscreen iframe
@@ -823,11 +830,20 @@ function(input, output, session) {
       ui = tags$iframe(
         id = "fullscreen-iframe",
         class = "fullscreen-iframe",
-        src = paste0(dracorframetarget,"/files/preview")
+        src = paste0(dracorframetarget,"/test/preview")
       )
     )
     # shinyjs::addClass("iframe-navbar","showing")
     shinyjs::show("iframe-navbar")
+    
+    
+  })
+  observeEvent(input$flushdb, {
+    # Show the iframe navbar
+    xml.t<-readLines("samplepreview.xml")
+    push.dracor(rv$dracorapitarget,xml.t,"test","preview")
+    showNotification("processed file flushed from DB", type = "warning")
+    
     
     
   })
@@ -851,7 +867,7 @@ function(input, output, session) {
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
     tryCatch({
-      push.dracor(dracorapitarget,xml.t,"files","preview")
+      push.dracor(dracorapitarget,xml.t,"test","preview")
     },error = function(e){
       #    showNotification("sample pushdracor failed...", type = "message")
       

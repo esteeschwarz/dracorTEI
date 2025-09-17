@@ -811,7 +811,7 @@ function(input, output, session) {
         ui = tags$iframe(
           id = "fullscreen-iframe",
           class = "fullscreen-iframe",
-          src = paste0(dracorframetarget,"/test/preview")
+          src = paste0(dracorframetarget,"/teipreview/preview")
         )
       )
       
@@ -830,7 +830,7 @@ function(input, output, session) {
       ui = tags$iframe(
         id = "fullscreen-iframe",
         class = "fullscreen-iframe",
-        src = paste0(dracorframetarget,"/test/preview")
+        src = paste0(dracorframetarget,"/teipreview/preview")
       )
     )
     # shinyjs::addClass("iframe-navbar","showing")
@@ -841,7 +841,7 @@ function(input, output, session) {
   observeEvent(input$flushdb, {
     # Show the iframe navbar
     xml.t<-readLines("samplepreview.xml")
-    push.dracor(rv$dracorapitarget,xml.t,"test","preview")
+    push.dracor(rv$dracorapitarget,xml.t,"teipreview","preview")
     showNotification("processed file flushed from DB", type = "warning")
     
     
@@ -867,7 +867,7 @@ function(input, output, session) {
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
     tryCatch({
-      push.dracor(dracorapitarget,xml.t,"test","preview")
+      push.dracor(dracorapitarget,xml.t,"teipreview","preview")
     },error = function(e){
       #    showNotification("sample pushdracor failed...", type = "message")
       

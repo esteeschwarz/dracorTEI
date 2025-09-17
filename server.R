@@ -800,7 +800,7 @@ function(input, output, session) {
   # })
   observeEvent(input$tabset, {
     if (input$tabset == "dracor_preview") {
-      push.dracor(rv$dracorapitarget,rv$xml.t,"test","preview")
+      push.dracor(rv$dracorapitarget,rv$xml.t,"teipreview","preview")
       
       shinyjs::addClass("iframe-navbar","showing")
       #shinyjs::toggle("iframe-navbar")

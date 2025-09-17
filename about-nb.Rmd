@@ -11,6 +11,7 @@ print(sample(49,6))
 # upload transcript
 ## please note:
 if you process copyrighted material which is not to be made available in the provided dracor preview (which allows for downloading the text) you must reload the app once after finish you work here, this will overwrite the database content of the preview.xml on the dracor side with sample content. keep that in mind...
+
 ## raw
 you will first upload a transcript as .txt file which is raw text from your digitalisation OCR without any annotation, markup or such and the app will try to preprocess that and apply a basic markup (base: ezdrama) after you have input some information on author, title etc. and structural definitions (header/speaker declaration). if all goes well then you have next an annotated version of your raw text with basic markup which you can view in the `processed` tab. then you will trigger the TEI conversion by `create xml` and if lucky and your raw text was consistent in terms of stage directions, speaker introduction and act/scene declarations the xml looks good. if not, download the marked up text `download ezd-markup text`, correct/adapt to a constistent state. 
 

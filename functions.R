@@ -760,7 +760,8 @@ get.heads.3<-function(t1,vario,h1.all,h2.all,numer.all){
   htemp<-tempfile("heads.txt")
   t2<-t1
   t2[m3][m1x]<-gsub("#","%#% ",t2[m3][m1x])
-#  t2[m3][m1x]<-paste0("%#% ",t2[m3][m1x])
+  t2[m3][m1x]<-paste0("%#%",t2[m3][m1x])
+  #  t2[m3][m1x]<-paste0("%#% ",t2[m3][m1x])
   t2[m3][m1x]<-gsub(", ","\n%##% ",t2[m3][m1x]) # seperate ACT from scene declaration
   writeLines(t2,htemp)
   t2<-readLines(htemp)
@@ -817,6 +818,8 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   h1.all<-do.caps(h1)
   h2.all<-do.caps(h2)
   h1.all
+  rm(h1)
+  rm(h2)
   numer<-paste0(numer,paste0(1:20,"."),collapse = "|")
   numer<-paste0(numer,paste0(c("I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV"),"[.]{0,}"),collapse = "|")
   regx.1<-paste0("^.+?",numer,".+(",headx.1,")\\.")
@@ -1013,6 +1016,10 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   #if(length(mw.na)==0){
   print(length(mw))
     if(length(mw)==0){
+      print("M3-----")
+      #print(h1)
+     # print(h2)
+      print(vario)
   ####################################################
 #  t.sep<-get.heads.3(t2,vario,h1.all,h2.all,numer.all)  
   t.sep<-get.heads.3(t1,vario,h1.all,h2.all,numer.all) #15384.this wks wt iwanette!

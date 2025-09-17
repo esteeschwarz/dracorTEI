@@ -885,13 +885,13 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   h1<-parts[mw,1]
   h1
   h1c<-grepl("#",parts[mw,1])
-  mw<-mw[!h1c]
+  #mw<-mw[!h1c]
   
   
   #h1[is.na(h1)]<-""
   #h1<-h1[!is.na(h1),]
   cat("h1: ",h1,"\n")
-  cat("h1 after removing #-tagged:")
+  cat("h1 after removing #-tagged:\n")
   print(t2[mw])
   #h1<-lapply(h1,function(x){paste0(x,collapse = " ")})
   #h1c<-
@@ -927,6 +927,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   ###################################
   mw4<-mw[mw%in%which(!cl1)] # ground
   mw5<-mw4[mw4%in%which(cl8)&mw4%in%(which(!cl10))] 
+  mw5<-mw4[mw4%in%which(cl8)&mw4%in%(which(cl10))] 
   # THIS wks with: ^Erste Handlung | forste akt scene 1 
   print(mw4)
   # for IBSEN:
@@ -956,6 +957,7 @@ get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){
   #mw<-mw[mw%in%m.out]
   ############################
   t2[mw]<-paste0("#",parts[mw,1]) #15375.marked up header issue
+  t2[mw]<-gsub("##","#",t2[mw])
   vario<-h1
   print("vario-h1")
   print(vario)

@@ -1,0 +1,18 @@
+Erste Handlung.
+Zweyte Handlung.
+FØRSTE AKT
+Vierter Auftritt
+                               FØRSTE AKT
+FØRSTE AKT, SCENE 1
+Erfier Aufzug 
+1. AKT. ANKOMST
+Erster Auftritt
+Erste Szene
+Akt I, Szene I
+from here on, nothing should be marked
+@train: 7 Act s, 5 Scene s
+this Act should not be marked
+und der aufzug auch nicht.
+and this Scene also not.
+diese nicht Handlung.
+diese Handlung.

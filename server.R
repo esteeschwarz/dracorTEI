@@ -518,7 +518,8 @@ function(input, output, session) {
     print("getting H1")
     print(vario.1)
     print(vario.2)
-    t <- get.heads.s(rv$t1, vario.1,vario.2)  # Use the transcript stored in reactiveValues
+    # t <- get.heads.s(rv$t1, vario.1,vario.2)  # Use the transcript stored in reactiveValues
+    t <- get.heads.4(rv$t1, vario.1,vario.2)  # Use the transcript stored in reactiveValues
     rv$t2 <- t$text  # Store the updated text in reactiveValues
     rv$heads <- t$vario  # Store the act headers in reactiveValues
     # heads<-data.frame(found=1:length(rv$heads),head=rv$heads)

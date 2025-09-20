@@ -707,10 +707,10 @@ transform.ezd<-function(ezd,output_file,meta,h1.first){
 })
 }
 ### preprocess raw text
-headx.1<-"Aufzug"
-headx.2<-"Auftritt"
+#headx.1<-"Aufzug"
+#headx.2<-"Auftritt"
 #t1<-t3
-metadf<-read.csv("lx/metadf-mlx.csv")
+#metadf<-read.csv("lx/metadf-mlx.csv")
 
 
 
@@ -779,6 +779,113 @@ get.heads.3<-function(t1,vario,h1.all,h2.all,numer.all){
   t2[m4]<-gsub("%","",t2[m4])
   t2
   return(list(text=t2,vario=vario,h1.first=m5[1],mw=m4))
+}
+get.heads.4<-function(t1,headx.1="Act,Handlung,Akt,Aufzug",headx.2="Scene,Szene,Auftritt"){
+  library(stringr)
+  txt<-t1
+  
+  # txt <- readLines("exc-all-H.txt", encoding = "UTF-8")
+  # metadf$cardinal
+  metadf<-read.csv("lx/metadf-mlx-02.csv")
+  numer<-c(metadf$cardinal,1:20,c(paste0(1:20,"\\.")))
+  numer
+  h1<-unlist(strsplit(headx.1,","))
+  h2<-unlist(strsplit(headx.2,","))
+  ord_group<-paste0("(?:",paste0(unique(numer),collapse = "|"),")")
+  ord_group
+  h1
+  h2
+  act_tokens<-paste0("(?:",paste0(c(h1,unique(metadf$h1)),collapse  = "|"),")")
+  scene_tokens<-paste0("(?:",paste0(c(h2,unique(metadf$h2)),collapse = "|"),")")
+  act_tokens
+  scene_tokens
+  #act_tokens <- "(?:handlung|aufzug|akt|act)"
+  #scene_tokens <- "(?:szene|scene|auftritt)"
+  act_anchor    <- paste0("^\\s*(?:(?:\\d+\\.)|(?:[IVXLCDM]+)|", ord_group, ")?\\s*", act_tokens, "\\b[\\s\\.,:;\\-–—]*$")
+  scene_anchor  <- paste0("^\\s*(?:(?:\\d+\\.)|(?:[IVXLCDM]+)|", ord_group, ")?\\s*", scene_tokens, "\\b[\\s\\.,:;\\-–—]*$")
+  combined_scene <- paste0("^\\s*(?:(?:\\d+\\.)|(?:[IVXLCDM]+)|", ord_group, ")?\\s*", act_tokens, "\\b.*\\b", scene_tokens, "\\b")
+  combined_title <- paste0("^\\s*(?:(?:\\d+\\.)|(?:[IVXLCDM]+)|", ord_group, ")?\\s*", act_tokens, "\\b.*[A-Za-zÄÖÜÆØÅäöüßæøå].*$")
+  
+  act_re   <- regex(act_anchor, ignore_case = TRUE)
+  #act_re[[1]]
+  scene_re <- regex(scene_anchor, ignore_case = TRUE)
+  combined_scene_re <- regex(combined_scene, ignore_case = TRUE)
+  combined_title_re <- regex(combined_title, ignore_case = TRUE)
+  
+  scene_loc_re <- regex(paste0("\\b", scene_tokens, "\\b"), ignore_case = TRUE)
+  # m1<-grep(combined_scene_re,t1)
+  # m2<-grep(combined_title_re,t1)
+  # m3<-grep(act_re,t1)
+  # m4<-grep(scene_re,t1)
+  # m5<-c(m1,m2,m3,m4)
+  # m5<-unique(m5)
+  m1<-which(str_detect(t1,combined_scene_re))
+  m1
+  #act_re[[1]]
+  m2<-which(str_detect(t1,combined_title_re))
+  m3<-which(str_detect(t1,act_re))
+  m3
+  sum(m3)
+  m4<-which(str_detect(t1,scene_re))
+  m5<-c(m1,m2,m3,m4)
+  m5<-unique(m5)
+  # sum(m4)
+  # sum(m1)
+  # t1
+  # m2<-grep(combined_title_re,t1)
+  # m3<-grep(act_re,t1)
+  # m4<-grep(scene_re,t1)
+  # m5<-c(m1,m2,m3,m4)
+  # m5
+  # sum(m5)
+  #lines<-txt[m5]
+  #line<-t1[6]
+  tag_line <- function(line) {
+    if (str_detect(line, combined_scene_re)) {
+      m <- str_locate(line, scene_loc_re)
+      act_part <- str_trim(str_sub(line, 1, m[1,1] - 1))
+      scene_part <- str_trim(str_sub(line, m[1,1], str_length(line)))
+      return(c(paste0("# ", act_part), paste0("## ", scene_part)))
+    } else if (str_detect(line, combined_title_re)) {
+      # split after first act token
+      parts <- str_split_fixed(line, paste0("\\b(?:",act_tokens,")\\b"), 2)
+      parts
+      act_part <- paste0(str_trim(parts[1]))  # keep the act token
+      title_part <- str_trim(parts[2])
+      return(c(paste0("# ", act_part)))
+    } else if (str_detect(line, act_re)) {
+      return(paste0("# ", str_trim(line)))
+    } else if (str_detect(line, scene_re)) {
+      return(paste0("## ", str_trim(line)))
+    } else {
+      return(line)
+    }
+  }
+  m5<-m5[order(m5)]
+  txt[m5]
+  #tagged <- unlist(lapply(txt[m5], tag_line))
+  tagged <- lapply(txt[m5], tag_line)
+  replace_with_list <- function(vec, pos, vals_list) {
+    
+    stopifnot(length(pos) == length(vals_list))
+    
+    offset <- 0
+    for (i in seq_along(pos)) {
+      p <- pos[i] + offset
+      v <- vals_list[[i]]
+      # Remove the element at position p, insert v at p
+      vec <- append(vec[-p], v, after = p - 1)
+      # Update offset for next insertion
+      offset <- offset + length(v) - 1
+    }
+    vec
+  }
+  #txm<-txt
+  txm<-replace_with_list(txt,m5,tagged)
+  vario<-unlist(tagged)
+  print(vario)
+  h1.first<-grep("[#]{1}",txm)[1]
+  return(list(text=txm,vario=vario,h1.first=h1.first))
 }
 
 get.heads.s<-function(t1,headx.1="(Akt|Act|Handlung)",headx.2="(Szene|Scene)"){

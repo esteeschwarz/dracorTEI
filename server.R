@@ -77,7 +77,8 @@ function(input, output, session) {
     xmlprocessed = F,
     h1.first = NULL,
     xml.t = readLines("samplepreview.xml"),
-    dracorapitarget = Sys.getenv("dracorapitarget")
+    dracorapitarget = Sys.getenv("dracorapitarget"),
+    is.prose=T
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
@@ -388,7 +389,7 @@ function(input, output, session) {
       
       repl2<-bind_rows(repldf,repl1[,1:3])
       colnames(repl2)[2:3]<-c("string1","string2")
-      print(head(repl2))
+      print(repl2)
       rv$repl<-repl2
       t3<-clean.t(rv$t1,1,rv$repl,NULL)
       #t3
@@ -617,7 +618,7 @@ function(input, output, session) {
     t3<-clean.t(sp6,F,rv$repl,h1.first)
     t3<-gsub("%hnl%","",t3)
     t3<-gsub("^\\((.+)\\)$","$\\1",t3)
-    print("clean.t...")
+    print("clean.t F in submit.sp..")
     # t3<-get.front(t3)
     rv$t3<-t3
     rv$ezd<-t3

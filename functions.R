@@ -604,18 +604,50 @@ return(t3)
 r<-F
 #t<-t3
 r<-F
+#t1<-readLines(source)
+apply.verse<-function(t1){
+  mi<-grep("%~",t1)
+  mo<-grep("%o~",t1)
+  mo1<-mo-1
+  lc<-length(mi)-length(mo1)
+  #lc<-length(mi)-3
+  length(mo1)
+  mil<-tail(mi,lc)
+  print(mil)
+    if(length(mo1)<length(mi))
+      mo1<-c(mo1,length(t1))
+  r1<-data.frame(li=mi,lo=mo1)
+  print(r1)
+  for(k in 1:length(r1$li)){
+    r2<-r1$li[k]:r1$lo[k]
+    t1[r2]<-paste0(t1[r2],"%verse%")
+  }
+  return(t1)
+}
+#tx
+#tx<-apply.verse(t1)
+#is.prose<-F
 clean.t<-function(t,range,repldf,h1.first){
   txtemp<-tempfile("txraw.txt")
-  writeLines(t,txtemp)
-  library(readtext)
-  t2<-readtext(txtemp)$text
+  
+  # writeLines(t,txtemp)
+  # library(readtext)
+  # t2<-readtext(txtemp)$text
   # metadf<-read.table("metadf.csv",sep = "\t")
   # metadf<-fromJSON("repldf.json",flatten = T)
   # repldf<-metadf$repl
   repldf
   #repldf[11,]
-  if(sum(range)>0)
+  if(sum(range)>0){
+    print("clean.t id=1")
+    
     repldf<-repldf[repldf$id==range,]
+  }
+  if(range!=1)
+    t<-apply.verse(t)
+  writeLines(t,txtemp)
+  library(readtext)
+  t2<-readtext(txtemp)$text
   repldf
   #r<-11
   m1<-grepl("%cast%",t2)
@@ -657,6 +689,17 @@ clean.t<-function(t,range,repldf,h1.first){
   t3<-gsub("^#[ \t]{0,}","#",t3)
   t3<-gsub("^\\$[ \t]{0,}","$",t3)
   t3<-gsub("^\\^[ \t]{0,}","^",t3)
+  
+  ### prose/verse
+  mt<-grepl("^[@\\$^\\(0-9#]",t3)
+  t3[mt]<-gsub("%verse%","",t3[mt])
+  m<-t3=="%verse%"
+  sum(m)
+  t3[m]<-""
+  t3
+  m<-grep("%verse%",t3)
+  t3[m]<-paste0("%~",gsub("%verse%","",t3[m]))
+  
   
   return(t3)
 }

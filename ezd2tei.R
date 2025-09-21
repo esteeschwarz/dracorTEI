@@ -133,6 +133,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
   # Variables d'état pour suivre la structure
   current_act <- NULL
   current_scene <- NULL
+ # is.prose<-T
   sp.act<-F
   #line<-lines[length(lines)-2]
   speaker.a<-array()
@@ -354,6 +355,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     # write(line,"debug.txt",append = T)
     cat(k,line,"@325\n")
     # if(!is.na(line)){
+    ### 15392.TODO: adapt to "%" of ezdrama!
     if (str_detect(line, "^\\$")) {
       print("single stage detected")
       stage_content <- gsub("[$]","",str_trim(str_sub(line, 2)))
@@ -433,12 +435,15 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
           str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
         # <pb n="11">[11]</pb>
         #        p <- xml_add_child(current_scene, "p")
-        p <- xml_add_child(sp, "p")
+        ### prose switch
+        is.verse<-grepl("^%~",line)
+        ifelse(!is.verse,p <- xml_add_child(sp, "p"),p <- xml_add_child(sp, "l"))
         # write(processed,"debug.txt",append = T)
-        
+        processed<-gsub("(%~|%o~)","",processed)
         xml_text(p) <- processed
         line.true<-"p"
-        sp.act<-F # reset <sp> after inserting <p>
+        if(!is.verse)
+          sp.act<-F # reset <sp> after inserting <p>
         
       }
     }

@@ -96,7 +96,7 @@ fluidPage(
   sidebarLayout(
     sidebarPanel(
       class = "scrollable-sidebar",  # Apply the custom CSS class
-      helpText("SNC:15307.save issue.2.3.4"),
+      helpText("SNC:15392.v0.1.1"),
       h4("CONFIGURATION"),
       helpText("get transcript file..."),
       textInput("transcript","transcript from transkribus db","iwanette"),

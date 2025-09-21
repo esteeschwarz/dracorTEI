@@ -529,7 +529,8 @@ function(input, output, session) {
     # heads$h1<-rv$h1.sf
     # heads$h2=rv$h2.sf
     print(rv$heads)
-    if(length(rv$heads)>0){
+    # if(length(rv$heads)>0){
+    if(!is.null(t$h1.first)){
       rv$h1.set<-TRUE
       rv$ezd<-rv$t2
     }
@@ -633,9 +634,10 @@ function(input, output, session) {
       div(
         style = "height: 70vh; overflow-y: auto; background: #f8f8f8; padding: 10px;",
         tags$pre(style = "white-space: pre-wrap; word-wrap: break-word; font-family: monospace;",
-                 paste("SPEAKERS found:\n",paste(rv$speaker,collapse = "\n"),
-                       "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
-      )
+                 paste("SPEAKERS processed. You can now create the XML.\n")
+                       # paste(rv$speaker,collapse = "\n"),
+                       # "\ncritical lines:\n",paste(rv$speaker.crit,collapse = "\n")))
+      ))
     })
     showNotification("speaker processed...", type = "message")
     

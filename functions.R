@@ -885,6 +885,7 @@ get.heads.4<-function(t1,headx.1="Act,Handlung,Akt,Aufzug",headx.2="Scene,Szene,
   vario<-unlist(tagged)
   print(vario)
   h1.first<-grep("[#]{1}",txm)[1]
+  print(h1.first)
   return(list(text=txm,vario=vario,h1.first=h1.first))
 }
 
@@ -1291,6 +1292,8 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   m2<-grep(regx2,t1)
   cat("\rm2:",m2)
   regx2
+  msc<-unique(c(m1,m2))
+  sp.eval<-t2[msc]
   ### 15371.critical### TO FIX !!!!########
   if(!rswitch)
     t2[m2]<-gsub(regx2,"@\\2%spknl%\\\n\\3",t2[m2]) # this wks in editor
@@ -1299,6 +1302,8 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   print(m2)
   print(t2[m2])
   print(t2[m1])
+ 
+  
   #########################################
   t2
   sp2
@@ -1368,6 +1373,7 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   t2<-t2[!m2]
   t2<-gsub("^@@","@",t2)
   t2<-gsub("^[ \t]{1,}","",t2)
+  
  # t2<-gsub("(\\([^)]+?[^)](?=[@%$#]))","\\1)")
   #return(t1)
   # print(copyrighted)
@@ -1375,9 +1381,12 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   # print(mode(copyrighted))
   print(copyrighted)
   print("get.speakers() finished...")
+  vario<-stri_split_regex(sp.eval," ",simplify = T)[,1]
+  vario<-unique(vario)
   if(is.system=="lapsi")
     writeLines(t2,paste0(Sys.getenv("GIT_TOP"),"/test/temp/ezdmarkup.txt"))
-  return(list(vario=t1[m][crit],text=t2,eval=crit.sp))
+  print(unique(sp.eval))
+  return(list(vario=vario,text=t2,eval=crit.sp))
   
 }
 push.dracor<-function(target,xml,corpusname,playname){

@@ -604,7 +604,7 @@ return(t3)
 r<-F
 #t<-t3
 r<-F
-t1<-readLines(source)
+#t1<-readLines(source)
 apply.verse<-function(t1){
   mi<-grep("^~",t1)
   #mi<-c(mi,167)

@@ -3,7 +3,7 @@ library(diffr)
 library(shinyWidgets)
 library(shinycssloaders)
 library(shinyjs)
-
+version<-"SNC:15392.2.v0.1.2a"
 #css<-readtext("render.css")$text
 # Define UI for application
 fluidPage(
@@ -96,7 +96,7 @@ fluidPage(
   sidebarLayout(
     sidebarPanel(
       class = "scrollable-sidebar",  # Apply the custom CSS class
-      helpText("SNC:15392.v0.1.1"),
+      helpText(version),
       h4("CONFIGURATION"),
       helpText("get transcript file..."),
       textInput("transcript","transcript from transkribus db","iwanette"),

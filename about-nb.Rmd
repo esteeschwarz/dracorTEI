@@ -51,13 +51,13 @@ in the speaker/segmentation configuration you can insert if you found yet global
 ```{r, eval=F}
 Ham:
 we will now sing a song
-%~and the haifish
+~and the haifish
 he has teeth
 and he shows them not
-%o~now how was that song?
+~now how was that song?
 ```
 
-- as you see you have to introduce verse with `%~` in your transcript and exit verse with `%o~` again.
+- as you see you have to switch from verse to prose in your transcript and exit verse with `~`. If you just set `~` once at the beginning, then the whole play with treated as verse drama.
 
 
 ----

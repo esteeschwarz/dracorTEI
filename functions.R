@@ -613,8 +613,13 @@ apply.verse<-function(t1){
     z1<-mi[seq(1, length(mi), by = 2)]
   if(length(mi)>1){
     z2<-mi[seq(2, length(mi), by = 2)]
+    write("apply verse, z1,z2","debug.txt",append = T)
+    
+    write(z1,"debug.txt",append = T)
+    
   z2<-c(z2,length(t1))
   z2<-z2-1
+  write(z2,"debug.txt",append = T)
   for(k in 1:length(z1)){
     r<-z1[k]:z2[k]
     #ifelse(k<length(mi),r<-mi[k]:mi[k+1],r<-mi[k]:length(t1))
@@ -722,8 +727,8 @@ clean.t<-function(t,range,repldf,h1.first){
   t3
   m<-grep("%verse%",t3)
   t3[m]<-paste0("%~",gsub("%verse%","",t3[m]))
-  
-  
+  if(is.system=="lapsi")
+    writeLines(t3,paste0(Sys.getenv("GIT_TOP"),"/test/temp/ezdmarkup_clean.txt"))
   return(t3)
 }
 ####
@@ -1450,7 +1455,7 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   vario<-stri_split_regex(sp.eval," ",simplify = T)[,1]
   vario<-unique(vario)
   if(is.system=="lapsi")
-    writeLines(t2,paste0(Sys.getenv("GIT_TOP"),"/test/temp/ezdmarkup.txt"))
+    writeLines(t2,paste0(Sys.getenv("GIT_TOP"),"/test/temp/ezdmarkup_sp.txt"))
   print(unique(sp.eval))
   return(list(vario=vario,text=t2,eval=crit.sp))
   

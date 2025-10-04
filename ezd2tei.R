@@ -140,6 +140,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
   speaker.b<-array()
   speaker.ids<-array()
   scenes.t<-F
+  is.verse<-F
   # Traiter chaque ligne
   #line<-l1
  # k<-39 # only for test
@@ -149,6 +150,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     # 1. Gestion des personnages (@)
     # ?str_detect
     line.true<-""
+    is.verse<-F
     line<-lines[k]
     line<-gsub("^[ ]{1,}","",line)
     line<-gsub("[ ]{1,}$","",line)

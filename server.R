@@ -720,7 +720,8 @@ function(input, output, session) {
   })
   
   observeEvent(input$compare, {
-    req(rv$xmlprocessed,rv$xmlprocessed==TRUE)
+   # req(rv$xmlprocessed,rv$xmlprocessed==TRUE)
+    print("compare...")
     ifelse(rv$t1=="%ezd%",text1<-rv$t3,
            text1 <- rv$t1)
     #print(text1)
@@ -728,9 +729,11 @@ function(input, output, session) {
     text1<-text1[text1!=""]
     #text2 <- paste0(rv$t3,collapse = "<nl>")
     doc<-read_xml(output_file)
+    #doc<-read_xml(rv$xml.t)
     texts <- xml_text(xml_find_all(doc, "//text()"))
     
     text2 <- texts
+    print(head(text2))
     tempapi<-tempfile("api.txt")
     writeLines(text1,tempapi)
     tempproc<-tempfile("proc.txt")

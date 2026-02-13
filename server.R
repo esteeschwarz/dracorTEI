@@ -655,8 +655,10 @@ function(input, output, session) {
     #   console_text()
     # })
     xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
+    print(xml.f)
     xml.t<-xml.f$xml
-    push.dracor("localhost",xml.t,"files","preview")
+    # if(is.system!="lapsi")
+      push.dracor("localhost",xml.t,"files","preview")
     
     # writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
@@ -839,7 +841,8 @@ function(input, output, session) {
     target<-Sys.getenv("SYS")
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
-    push.dracor(target,xml.t,"files","preview")
+    if(is.system!="lapsi")
+      push.dracor(target,xml.t,"files","preview")
     
   })
   

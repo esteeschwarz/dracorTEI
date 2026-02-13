@@ -1,5 +1,6 @@
 library(R.utils)
-library(fuzzyjoin)
+#library(fuzzyjoin) # deprecated!, archive: https://cran.r-project.org/src/contrib/Archive/fuzzyjoin/
+#library(powerjoin)
 library(stringi)
 library(stringr)
 #library(shiny)
@@ -686,8 +687,10 @@ clean.t<-function(t,range,repldf,h1.first){
   ### close open <stages>
   parts <- str_match(t2,"(\\([^)]+?[^)](?=[@%$#]))")
   print(parts)
-  t2<-gsub("(\\([^)]+?[^)](?=[@%$#]))","\\1)",t2,perl = T)
-  t2<-gsub("\n\\)",")\n",t2)
+ # t2<-gsub("(\\([^)]+?[^)](?=[@%$#]))","\\1)",t2,perl = T)
+  t2<-gsub("(\\([^)]+?)(\n)","\\1 ",t2,perl = T)
+
+#  t2<-gsub("\n\\)",")\n",t2)
   parts <- str_match(t2,"(\\([^)]+?[^)](?=[@%$#]))")
   print(parts)
   ###
@@ -1461,7 +1464,6 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   
 }
 push.dracor<-function(target,xml,corpusname,playname){
-  
   #target<-"mini12"
   #target<-"localhost"
   apibase<- paste0(target,":8088/api/v1/")
@@ -1490,7 +1492,8 @@ push.dracor<-function(target,xml,corpusname,playname){
   headers <- c("Content-Type" = "application/xml")
   credentials <- authenticate("admin", password)
   
-  if (!is.null(data) && !is.null(headers) && !is.null(credentials)) {
+  if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="lapsi"
+) {
     response <- PUT(request_url, body = data, add_headers(.headers = headers), credentials)
     cat(sprintf("Executed PUT request. Server returned status code: %d\n", status_code(response)))
     r<-return(status_code(response))

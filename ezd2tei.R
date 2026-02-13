@@ -120,6 +120,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
   lines<-lines[lines!=""&lines!=" "&lines!="  "]
   lines<-gsub("^[ ]{0,}","",lines)
   lines<-gsub("[ ]{2,}"," ",lines)
+  lines<-c(lines,"!end!")
 
   #lines<-gsub("\\^","!personal!",lines)
   # write("start parse---","debug.txt",append = T)
@@ -159,6 +160,11 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     print(line)
     if(line=="")
       next
+    if(line=="!end!"){
+      line.true<-"fin"
+      sp.act<-F
+      line<-""
+    }
     
     # write(k,"debug.txt",append = T)
     if(str_detect(line,"\\^",)){
@@ -292,7 +298,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
    # line<-"@Iwanette."
     #if (str_detect(line, "^@[^.]+\\.?", )&!line.true%in%c("title","subtitle","author","front")) {
       
-    if (str_detect(line, "^@[^.]+\\.?", )&!line.true%in%c("title","subtitle","author","front")) {
+    if (str_detect(line, "^@[^.]+\\.?", )&!line.true%in%c("title","subtitle","author","front","fin")) {
       parts <- str_match(line, "^@([^.]+?)\\.(.*)") #wks. wt transkribus
       parts <- str_match(line, "^@([^.]*)(.*)") # > in some former ezd markedup texts, the . after the speaker was removed before sending to ezd.py
       speaker <- gsub("[@.]","",str_trim(parts[2]))
@@ -357,10 +363,9 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
     # write(line,"debug.txt",append = T)
     cat(k,line,"@325\n")
     # if(!is.na(line)){
-    ### 15392.TODO: adapt to "%" of ezdrama!
-    if (str_detect(line, "^\\$")) {
+    if (str_detect(line, "(^\\$)|(^\\(.+\\) *$)")) {
       print("single stage detected")
-      stage_content <- gsub("[$]","",str_trim(str_sub(line, 2)))
+      stage_content <- gsub("[$)(]","",str_trim(str_sub(line, 2)))
       if (!is.null(current_scene)|line.true=="personal") {
         print("current scene not NULL or front location")
         ifelse(!sp.act,
@@ -448,6 +453,11 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
           sp.act<-F # reset <sp> after inserting <p>
         
       }
+      # todo @@lastline
+      # if (str_detect(line, "^!end!")) {
+      #   sp.act<-F
+      #   line<-""
+      # }
     }
   }
   speaker.a<-unique(speaker.a)

@@ -672,8 +672,10 @@ function(input, output, session) {
     #   console_text()
     # })
     xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
+    print(xml.f)
     xml.t<-xml.f$xml
-    rv$xml.t<-xml.t
+    # if(is.system!="lapsi")
+      rv$xml.t<-xml.t
     rv$dracorapitarget<-dracorapitarget
     # push.dracor(dracorapitarget,xml.t,"files","preview")
     
@@ -870,6 +872,9 @@ function(input, output, session) {
     dracorapitarget<-Sys.getenv("dracorapitarget")
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
+    #if(is.system!="lapsi")
+      push.dracor(target,xml.t,"files","preview")
+    
     tryCatch({
       push.dracor(dracorapitarget,xml.t,"teipreview","preview")
     },error = function(e){

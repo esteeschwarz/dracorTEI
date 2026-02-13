@@ -677,9 +677,9 @@ function(input, output, session) {
     # if(is.system!="lapsi")
       rv$xml.t<-xml.t
     rv$dracorapitarget<-dracorapitarget
-    # push.dracor(dracorapitarget,xml.t,"files","preview")
+    push.dracor(dracorapitarget,xml.t,"files","preview")
     
-    # writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
+    #writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
     # xml.test<-list.files(".")
     # xml.str<-paste0("<div>",paste0(xml.test),"</div>")

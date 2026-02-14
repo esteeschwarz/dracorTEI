@@ -677,7 +677,7 @@ function(input, output, session) {
     # if(is.system!="lapsi")
       rv$xml.t<-xml.t
     rv$dracorapitarget<-dracorapitarget
-    push.dracor(dracorapitarget,xml.t,"files","preview")
+    srv.res<-push.dracor(dracorapitarget,xml.t,"files","preview")
     
     #writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
@@ -696,6 +696,7 @@ function(input, output, session) {
     #    output$proutput <- renderText("ezd > TEI processed...\n")
     message<-xml.f$message
     showNotification(message, type = "message")
+    showNotification(srv.res, type = "message")
     rv$xmlprocessed<-T
     output$processed <- renderUI({
       div(

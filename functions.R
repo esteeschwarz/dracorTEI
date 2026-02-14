@@ -1496,7 +1496,7 @@ push.dracor<-function(target,xml,corpusname,playname){
   "title": "testdracor",
   "repository": "https://github.com/dracor-org/testdracor"
 }'
-curl<-paste0(apibase,"/corpora")
+curl<-paste0(apibase,"corpora")
 chead<-c("Content-Type" = "application/json")
 cres<-POST(curl,body=tdata,add_headers(.headers=chead),credentials)
   if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="lapsi"

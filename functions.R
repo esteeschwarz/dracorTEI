@@ -12,6 +12,7 @@ library(jsonlite)
 library(xml2)
 library(dplyr)
 library(pbapply)
+library(diffmatchpatch)
 #library(shinycssloaders)
 
 #library(Hmisc)
@@ -1352,7 +1353,7 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   #regx<-paste0("^.+?",sp1,"\\.")
   if(!rswitch){
   regx1<-paste0("^",sp1,"[.:]{0,1}$")
-  regx2<-paste0("^(",sp1,"\\.?)( .+)?$")
+  regx2<-paste0("^(",sp1,"\\.?)( [^a-zA-Z])?$")
   print(regx2)
   }
   m1<-grep(regx1,t1)
@@ -1498,7 +1499,10 @@ push.dracor<-function(target,xml,corpusname,playname){
 }'
 curl<-paste0(apibase,"corpora")
 chead<-c("Content-Type" = "application/json")
+if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="lapsi"){
+    
 cres<-POST(curl,body=tdata,add_headers(.headers=chead),credentials)
+}
   if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="lapsi"
 ) {
     response <- PUT(request_url, body = data, add_headers(.headers = headers), credentials)
@@ -1506,3 +1510,95 @@ cres<-POST(curl,body=tdata,add_headers(.headers=chead),credentials)
     r<-return(status_code(response))
   }
 }
+
+######
+diff.compare<-function(text,xml){
+  # library(diffmatchpatch)
+  # library(readtext)
+  # library(xml2)
+  # dfolder<-"~/Documents/GitHub/temp"
+  # f<-list.files(dfolder,full.names = T)
+  # f
+  # #t1<-readtext("www/goue_iwanette_ezd.txt")$text
+  # #t1<-readLines(f)
+  # #t2<-xml_text(read_xml("www/r-tempxmlout.xml"))
+  # #t1<-readtext(f[5])$text
+  # #t2<-xml_text(read_xml(f[4]))
+  # t1<-readLines(f[5])
+  # #t2<-xml_text(read_xml(f[4]))
+  # text1<-t1
+  # text1<-readLines(text)
+  text1<-text
+  #?read_xml()
+  doc<-read_xml(paste0(xml,collapse = ""))
+  # print("compare...")
+  # text1<-gsub("^[ ]{1,}","",text1)
+  # text1<-text1[text1!=""]
+  #text2 <- paste0(rv$t3,collapse = "<nl>")
+#  doc<-read_xml(f[4])
+  
+#  doc<-read_xml(xml)
+  #doc<-read_xml(rv$xml.t)
+  texts <- xml_text(xml_find_all(doc, "//text()"))
+  
+  text2 <- texts
+  print(head(text2))
+  tempapi<-tempfile("api.txt")
+  writeLines(text1,tempapi)
+  t1<-paste0(text1,collapse = "\n")
+  t2<-paste0(text2,collapse = "\n")
+  l2<-length(unlist(strsplit(t2,"")))
+  dmp_options(diff_timeout=20)
+  # chunks, cluster
+  
+  l.df<-l2
+  vector <- 1:l.df
+  vec <- 1:l.df
+  chunk_size <- 1000  # Example chunk size
+  split_into_chunks <- function(vec, chunk_size) {
+    split(vec, ceiling(seq_along(vec) / chunk_size))
+  }
+  chunks <- split_into_chunks(vector, chunk_size)
+  #s<-chunks[[1]][1]
+  #e<-chunks[[1]][length(chunks[[1]])]
+  #t11<-stri_sub(t1,1,1000)
+  #t22<-stri_sub(t2,1,1000)
+  # ?diff_make()
+  p1<-"dreimalschärzer\nkater"
+  p2<-"dreymalschwarzer köter"
+  dx<-diff_make(p1,p2)
+  dx<-diff_to_html(dx)
+  #dx<-as.character(dx)
+  writeLines(dx,"www/tdiff.html")
+  #d <- diffmatchpatch::diff_make(t11,t22)
+  #dhtm<-diff_to_html(as.character(d))
+  dhtm<-"<h1>diff render</h1><hr>"
+  for(k in chunks){
+    #print(k)
+    s<-k[1]
+    e<-k[length(k)]
+    t11<-stri_sub(t1,s,e)
+    t22<-stri_sub(t2,s,e)
+    d <- diffmatchpatch::diff_make(t11,t22)
+    #d <- diffmatchpatch::diff_make("../www/goue_iwanette_ezd.txt", "../www/r-tempout.xml")
+    dhtm2<-diff_to_html(d)
+    dhtm<-paste0(dhtm,dhtm2)
+    
+  }
+  htmtemp<-tempfile("x.html")
+  dhtm<-gsub("&para;","#nl#",dhtm)
+  
+#  write(dhtm,htmtemp)
+  difft<-read_html("diff-template.html")
+#  difft<-read_html(paste0(dhtm,collapse = ""))
+  diffht2<-read_html(paste0(dhtm,collapse = ""))
+  b1<-xml_find_all(difft,"//body")
+  b2<-xml_find_all(diffht2,"//body")
+  xml_replace(b1,b2)
+  write_html(difft,htmtemp)
+  write_html(difft,"www/diff.html")
+  diffsend<-readLines(htmtemp,encoding = "UTF-8")
+  return(diffsend)
+}
+
+

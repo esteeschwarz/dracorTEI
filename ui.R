@@ -164,10 +164,11 @@ fluidPage(
       
       tabPanel("progress",
       h4("processing"),
+      uiOutput("pr_progress")
      # verbatimTextOutput("pr_progress")
      #withSpinner(verbatimTextOutput("spinner")),
-     withSpinner(uiOutput("pr_progress")
-      )),
+     # withSpinner(uiOutput("pr_progress")
+      ),
       tabPanel("raw",
                h4("raw text"),
                
@@ -183,7 +184,7 @@ fluidPage(
       tabPanel("diff",
       div(class = "diff-container",
           h4("diff compare"),
-          withSpinner(diffrOutput("diff_output"))
+          withSpinner(uiOutput("diff_output"))
       )),
      tabPanel(
        "dracor_preview",

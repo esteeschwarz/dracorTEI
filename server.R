@@ -78,7 +78,8 @@ function(input, output, session) {
     h1.first = NULL,
     xml.t = readLines("samplepreview.xml"),
     dracorapitarget = Sys.getenv("dracorapitarget"),
-    is.prose=T
+    is.prose=T,
+    xml.c = jsonlite::base64_enc(charToRaw("<p>no content yet</p>"))
   )
   metadf<-fromJSON("repldf.json",flatten = T)
   repldf<-metadf$repl
@@ -684,6 +685,7 @@ function(input, output, session) {
     # xml.test<-list.files(".")
     # xml.str<-paste0("<div>",paste0(xml.test),"</div>")
     xml.str<-paste0(xml.t,collapse = "")
+    writeLines(xml.t,"www/tempout.xml")
     #print("----- xmlstr ------")
     # print(xml.str)
     b64 <- jsonlite::base64_enc(charToRaw(xml.str))
@@ -728,45 +730,71 @@ function(input, output, session) {
     #print(text1)
     text1<-gsub("^[ ]{1,}","",text1)
     text1<-text1[text1!=""]
-    #text2 <- paste0(rv$t3,collapse = "<nl>")
-    doc<-read_xml(output_file)
+    # text2 <- paste0(rv$t3,collapse = "<nl>")
+    text2<-rv$xml.t
+    #doc<-read_xml(output_file)
     #doc<-read_xml(rv$xml.t)
-    texts <- xml_text(xml_find_all(doc, "//text()"))
+    #texts <- xml_text(xml_find_all(doc, "//text()"))
     
-    text2 <- texts
-    print(head(text2))
+    #text2 <- texts
+    #print(head(text2))
     tempapi<-tempfile("api.txt")
     writeLines(text1,tempapi)
-    tempproc<-tempfile("proc.txt")
-    writeLines(text2,tempproc)
+    #tempproc<-tempfile("proc.txt")
+    #writeLines(text2,tempproc)
+    diffhtm<-diff.compare(text1,text2)
+    # diffhtm<-diff.compare(tempapi,output_file)
+    print(head(diffhtm))
+    diffhtm<-paste0(diffhtm,collapse = "")
+    b64 <- jsonlite::base64_enc(charToRaw(diffhtm))
+    rv$xml.c<-b64
+    print(stri_sub(diffhtm,1,200))
+    
     # Split into lines for better diff display
     # lines1 <- unlist(strsplit(text1, "\n"))
     # lines2 <- unlist(strsplit(text2, "\n"))
     # 
+   # temphtm<-tempfile("diff.html")
+    #writeLines(text2,tempproc)
     #?    renderDiffr
-    tryCatch(({
-      output$diff_output <- renderDiffr({
-        # input$compare
-        #text1 <- rv$t1
-        #text2 <- rv$t3
-        # tempapi<-tempfile("api.txt")
-        # writeLines(rv$t1,tempapi)
-        # tempproc<-tempfile("proc.txt")
-        # writeLines(rv$t3,tempproc)
-        # div(id="diff",style="width:100%;height:100vH;",
-        isolate({
-          diffr(
-            file1 = tempapi,
-            file2 = tempproc,
-            before = "uploaded",
-            after = "processed",
-            contextSize = 3,
-            wordWrap = TRUE
-          )
-        })
-        # )
+  #  write_html(diffhtm,"www/diff.html")
+    # tryCatch(({
+      # output$diff_output <- renderDiffr({
+      #   # input$compare
+      #   #text1 <- rv$t1
+      #   #text2 <- rv$t3
+      #   # tempapi<-tempfile("api.txt")
+      #   # writeLines(rv$t1,tempapi)
+      #   # tempproc<-tempfile("proc.txt")
+      #   # writeLines(rv$t3,tempproc)
+      #   # div(id="diff",style="width:100%;height:100vH;",
+      #   isolate({
+      #     diffr(
+      #       file1 = tempapi,
+      #       file2 = tempproc,
+      #       before = "uploaded",
+      #       after = "processed",
+      #       contextSize = 3,
+      #       wordWrap = TRUE
+      #     )
+      #   })
+      #   # )
+      # })
+      output$diff_output <- renderUI({
+        # div(id="xml",
+        # style="width:100%; height:100%;",
+        tags$iframe(
+          #src = paste0("data:application/xml;base64,", rv$b64),
+          # src = paste0("data:text/html,", rv$xmlout),
+          #src = paste0("data:application/xml;base64,", b64),
+          src = "diff.html",
+           # src = rv$xml.c,
+          # src = output_file_s_www, # this wks.
+          # src = output_file,
+          style="width:100%; height:100vH; border:none;"
+        )
       })
-    }))
+    # }))
   })
   # Create diff object
   # tryCatch({

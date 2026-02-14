@@ -3,7 +3,7 @@ library(diffr)
 library(shinyWidgets)
 library(shinycssloaders)
 library(shinyjs)
-version<-"SNC:15392.2.v0.1.2a"
+version<-"SNC:16081.1.v0.1.2b"
 #css<-readtext("render.css")$text
 # Define UI for application
 fluidPage(

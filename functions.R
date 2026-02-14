@@ -1491,7 +1491,14 @@ push.dracor<-function(target,xml,corpusname,playname){
   data <- xml.t # or JSON string
   headers <- c("Content-Type" = "application/xml")
   credentials <- authenticate("admin", password)
-  
+  tdata<-'{
+  "name": "files",
+  "title": "testdracor",
+  "repository": "https://github.com/dracor-org/testdracor"
+}'
+curl<-paste0(apibase,"/corpora")
+chead<-c("Content-Type" = "application/json")
+cres<-POST(curl,body=tdata,add_headers(.headers=chead),credentials)
   if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="lapsi"
 ) {
     response <- PUT(request_url, body = data, add_headers(.headers = headers), credentials)

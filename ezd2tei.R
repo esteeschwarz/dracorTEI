@@ -436,9 +436,10 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
         # Appliquer les mêmes transformations que pour le texte des personnages
         processed <- line %>%
         #NOTE.15363: this is reasonable to display the pagebreak with pagenumber, but creates TEI errors 
-          #(not structural, but from the scheme)... the next variant does tags the pagebreaks without pagenumber text
+          #(not structural, but from the scheme)... the next variant does tags the pagebreaks with pagenumber text
           str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"{cright[\\1]{cleft/pb{cright") %>%
           #str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"/{cright") %>%
+          str_replace_all('<pb="(\\d{1,4})"/>', "{cleftpb n=\"\\1\"{cright[\\1]{cleft/pb{cright") %>%
           str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
         # <pb n="11">[11]</pb>
         #        p <- xml_add_child(current_scene, "p")

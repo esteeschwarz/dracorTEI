@@ -31,6 +31,7 @@ dracorapitarget<-Sys.getenv("dracorapitarget")
 dracorframetarget<-Sys.getenv("dracorframetarget")
 if(dracorframetarget=="")
   dracorframetarget<-"https://dracor.dh-index.org"
+dcorpus<-"testdracor"
 # Load defaults when app starts
 # observe({
 #   # Load default speaker names from database
@@ -678,7 +679,7 @@ function(input, output, session) {
     # if(is.system!="lapsi")
       rv$xml.t<-xml.t
     rv$dracorapitarget<-dracorapitarget
-    srv.res<-push.dracor(dracorapitarget,xml.t,"files","preview")
+    srv.res<-push.dracor(dracorapitarget,xml.t,dcorpus,"preview")
     
     #writeLines(xml.t,paste0(output_dracor,"/dracortei.xml"))
     xml.test<-c("<p>testxmlrender</p>","<h1>head1</h1><p><stage>stages</stage>paragraph</p>")
@@ -838,7 +839,7 @@ function(input, output, session) {
   # })
   observeEvent(input$tabset, {
     if (input$tabset == "dracor_preview") {
-      push.dracor(rv$dracorapitarget,rv$xml.t,"teipreview","preview")
+      push.dracor(rv$dracorapitarget,rv$xml.t,dcorpus,"preview")
       
       shinyjs::addClass("iframe-navbar","showing")
       #shinyjs::toggle("iframe-navbar")
@@ -849,7 +850,7 @@ function(input, output, session) {
         ui = tags$iframe(
           id = "fullscreen-iframe",
           class = "fullscreen-iframe",
-          src = paste0(dracorframetarget,"/teipreview/preview")
+          src = paste0(dracorframetarget,dcorpus,"/preview")
         )
       )
       
@@ -868,7 +869,7 @@ function(input, output, session) {
       ui = tags$iframe(
         id = "fullscreen-iframe",
         class = "fullscreen-iframe",
-        src = paste0(dracorframetarget,"/teipreview/preview")
+        src = paste0(dracorframetarget,dcorpus,"/preview")
       )
     )
     # shinyjs::addClass("iframe-navbar","showing")
@@ -879,7 +880,7 @@ function(input, output, session) {
   observeEvent(input$flushdb, {
     # Show the iframe navbar
     xml.t<-readLines("samplepreview.xml")
-    push.dracor(rv$dracorapitarget,xml.t,"teipreview","preview")
+    push.dracor(rv$dracorapitarget,xml.t,dcorpus,"preview")
     showNotification("processed file flushed from DB", type = "warning")
     
     
@@ -905,10 +906,10 @@ function(input, output, session) {
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
     #if(is.system!="lapsi")
-      push.dracor(target,xml.t,"files","preview")
+      push.dracor(target,xml.t,dcorpus,"preview")
     
     tryCatch({
-      push.dracor(dracorapitarget,xml.t,"teipreview","preview")
+      push.dracor(dracorapitarget,xml.t,dcorpus,"preview")
     },error = function(e){
       #    showNotification("sample pushdracor failed...", type = "message")
       

@@ -1529,6 +1529,8 @@ diff.compare<-function(text,xml){
   # text1<-t1
   # text1<-readLines(text)
   text1<-text
+  text1<-gsub("<pb .+/>","",text1)
+  
   #?read_xml()
   doc<-read_xml(paste0(xml,collapse = ""))
   # print("compare...")
@@ -1548,6 +1550,8 @@ diff.compare<-function(text,xml){
   t1<-paste0(text1,collapse = "\n")
   t2<-paste0(text2,collapse = "\n")
   l2<-length(unlist(strsplit(t2,"")))
+  l1<-length(unlist(strsplit(t1,"")))
+  
   dmp_options(diff_timeout=20)
   # chunks, cluster
   
@@ -1559,6 +1563,9 @@ diff.compare<-function(text,xml){
     split(vec, ceiling(seq_along(vec) / chunk_size))
   }
   chunks <- split_into_chunks(vector, chunk_size)
+  lc<-length(chunks)
+  l1c<-l1/lc
+  chunks.2 <- split_into_chunks(1:l1,l1c )
   #s<-chunks[[1]][1]
   #e<-chunks[[1]][length(chunks[[1]])]
   #t11<-stri_sub(t1,1,1000)
@@ -1576,14 +1583,16 @@ diff.compare<-function(text,xml){
   #d <- diffmatchpatch::diff_make(t11,t22)
   #dhtm<-diff_to_html(as.character(d))
   dhtm<-"<h1>diff render</h1><hr>"
-  dtemp<-tempfile("x.html")
-  for(k in chunks){
-    print(k[1])
-    s<-k[1]
-    e<-k[length(k)]
+  dtemp<-tempfile("x.txt")
+  for(k in 1:length(chunks)){
+    #print(k[1])
+    s<-chunks[[k]][1]
+    e<-chunks[[k]][length(chunks[[k]])]
+    s2<-chunks.2[[k]][1]
+    e2<-chunks.2[[k]][length(chunks.2[[k]])]
     t11<-stri_sub(t1,s,e)
-    t22<-stri_sub(t2,s,e)
-    d <- diffmatchpatch::diff_make(t11,t22)
+    t22<-stri_sub(t2,s2,e2)
+    d <- diffmatchpatch::diff_make(t11,t22,checklines = F)
     #d <- diffmatchpatch::diff_make("../www/goue_iwanette_ezd.txt", "../www/r-tempout.xml")
     dhtm2<-diff_to_html(d)
     writeLines(dhtm2,dtemp)

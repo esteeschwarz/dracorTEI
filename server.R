@@ -31,7 +31,7 @@ dracorapitarget<-Sys.getenv("dracorapitarget")
 dracorframetarget<-Sys.getenv("dracorframetarget")
 if(dracorframetarget=="")
   dracorframetarget<-"https://dracor.dh-index.org"
-dcorpus<-"testdracor"
+dcorpus<-"files"
 # Load defaults when app starts
 # observe({
 #   # Load default speaker names from database

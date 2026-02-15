@@ -1592,7 +1592,7 @@ diff.compare<-function(text,xml){
 #    writeLines(dhtm2,dtemp)
  #   dhtm2<-readLines(dtemp)
     
-    dhtm2<-gsub("&para;","#nl#",dhtm2)
+    dhtm2<-gsub("&para;","",dhtm2)
     
     dhtm<-paste0(dhtm,dhtm2)
     

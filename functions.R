@@ -776,9 +776,9 @@ transform.ezd<-function(ezd,output_file,meta,h1.first){
   return(list(xml=readLines(xmlout),message="successfully transformed to TEI..."))
   
 }, error = function(e) {
-  message<-paste0("ERR: something went wrong...")
-  
-  return(message)
+  message<-paste0("ERR: TEI > something went wrong. using template...")
+  xml.default<-list(xml=readLines("www/default.xml"),message="TEI failed. using default template...")
+  return(xml.default)
 })
 }
 ### preprocess raw text
@@ -1568,13 +1568,17 @@ diff.compare<-function(text,xml){
   p2<-"dreymalschwarzer köter"
   dx<-diff_make(p1,p2)
   dx<-diff_to_html(dx)
+  g<-'<del style="background:#ffe6e6;">hkeit, weniger das, was ich&para;<br>Ihnen schuldig bin, erhalten hat.&para;<br>Stormond.&para;<br>Aber, wenn dieses ist, warum suchten Sie den&para;<br>Umgang verschiedener meines Geschlechts, denen ich&para;<br>eben d...'
+  gsub("&para;","#nl#",g)
+  
   #dx<-as.character(dx)
   writeLines(dx,"www/tdiff.html")
   #d <- diffmatchpatch::diff_make(t11,t22)
   #dhtm<-diff_to_html(as.character(d))
   dhtm<-"<h1>diff render</h1><hr>"
+  dtemp<-tempfile("x.html")
   for(k in chunks){
-    #print(k)
+    print(k[1])
     s<-k[1]
     e<-k[length(k)]
     t11<-stri_sub(t1,s,e)
@@ -1582,11 +1586,19 @@ diff.compare<-function(text,xml){
     d <- diffmatchpatch::diff_make(t11,t22)
     #d <- diffmatchpatch::diff_make("../www/goue_iwanette_ezd.txt", "../www/r-tempout.xml")
     dhtm2<-diff_to_html(d)
+    writeLines(dhtm2,dtemp)
+    writeLines(dhtm2,"www/27.html")
+    dhtm2<-readtext(dtemp,encoding = "utf-8")$text
+#    writeLines(dhtm2,dtemp)
+ #   dhtm2<-readLines(dtemp)
+    
+    dhtm2<-gsub("&para;","#nl#",dhtm2)
+    
     dhtm<-paste0(dhtm,dhtm2)
     
   }
   htmtemp<-tempfile("x.html")
-  dhtm<-gsub("&para;","#nl#",dhtm)
+  # dhtm<-gsub("&para;","#nl#",dhtm)
   
 #  write(dhtm,htmtemp)
   difft<-read_html("diff-template.html")

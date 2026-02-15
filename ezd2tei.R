@@ -115,11 +115,19 @@ create_tei_document <- function(meta) {
 parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
   # Lire le fichier d'entrée
   lines<-input_tx
-  #  lines <- readLines(input_file, encoding = "UTF-8")
+  ltemp<-tempfile("x.txt")
+  print("parsedrama...")
+#  lines <- readtext(input_file, encoding = "UTF-8")
   lines<-lines[!is.na(lines)]
   lines<-lines[lines!=""&lines!=" "&lines!="  "]
   lines<-gsub("^[ ]{0,}","",lines)
   lines<-gsub("[ ]{2,}"," ",lines)
+  writeLines(lines,ltemp)
+  print(lines)
+  lines<-readtext(ltemp,encoding = "utf-8")$text
+  lines<-gsub("(\\{cright)\n([^@#$~^])","\\1\\2",lines)
+  writeLines(lines,ltemp)
+  lines<-readLines(ltemp)
   lines<-c(lines,"!end!")
 
   #lines<-gsub("\\^","!personal!",lines)
@@ -439,7 +447,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
           #(not structural, but from the scheme)... the next variant does tags the pagebreaks with pagenumber text
           str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"{cright[\\1]{cleft/pb{cright") %>%
           #str_replace_all("(\\d{1,4})::", "{cleftpb n=\"\\1\"/{cright") %>%
-          str_replace_all('<pb="(\\d{1,4})"/>', "{cleftpb n=\"\\1\"{cright[\\1]{cleft/pb{cright") %>%
+          str_replace_all('<pb="(\\d{1,4})"/>\n', "{cleftpb n=\"\\1\"{cright[\\1]{cleft/pb{cright") %>%
           str_replace_all("\\(([^)]+)\\)", "{cleftstage{cright\\1{cleft/stage{cright")
         # <pb n="11">[11]</pb>
         #        p <- xml_add_child(current_scene, "p")

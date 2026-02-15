@@ -1,0 +1,34 @@
+@front sample from https://github.com/dracor-org/ezdrama
+@title Hamlet 
+@subtitle A tragedy
+@author William S
+^Personen
+Ham
+Egg
+Vikings
+ADMIN
+#Act 1
+##Scene 1
+@Ham: 
+Lovely Spam! 
+@Egg: 
+Wonderful Spam!
+##Scene 2
+$Enter Vikings
+@Ham: 
+Egg, Spam! 
+Sausage, and Bacon! 
+@Vikings (singing):
+~Spam, Spam,(o!) 
+Spam, Spam, (loud) 
+Spam, Spam, (quiet) 
+Spam, and Spam
+#Act 2
+##scene 1
+$Enter Vikinger
+@Ham: 
+Egg, Spam! 
+Sausage, and Bacon! 
+@ADMIN
+somtehing during TEI building went wrong. you are seeing the standard template. Try again...
+$The end

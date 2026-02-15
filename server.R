@@ -26,7 +26,7 @@ output_file_ezd<-tempfile("ezdmarkup.txt")
 output_file_pb<-"www/r-tempxmlout_pb.xml"
 output_dracor<-paste0(Sys.getenv("GIT_TOP"),"/ulysses/work/dracor")
 is.system<-Sys.getenv("SYS")
-target<-is.system
+#target<-is.system
 dracorapitarget<-Sys.getenv("dracorapitarget")
 dracorframetarget<-Sys.getenv("dracorframetarget")
 if(dracorframetarget=="")
@@ -906,7 +906,7 @@ function(input, output, session) {
     # xml.f<-transform.ezd(rv$t3,output_file,meta,h1.first)
     # xml.t<-xml.f$xml
     #if(is.system!="lapsi")
-      push.dracor(target,xml.t,dcorpus,"preview")
+     # push.dracor(dracorapitarget,xml.t,dcorpus,"preview")
     
     tryCatch({
       push.dracor(dracorapitarget,xml.t,dcorpus,"preview")

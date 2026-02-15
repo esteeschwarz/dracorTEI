@@ -1486,7 +1486,7 @@ push.dracor<-function(target,xml,corpusname,playname){
   # headers
   ##############################################
   request_url = paste0(apibase,"corpora/",corpusname,"/plays/",playname,"/tei")
-  request_url
+  print(request_url)
   #  xml.t<-readLines(paste0(Sys.getenv("GIT_TOP"),"/ulysses/work/dracor/dracortei.xml"))
   xml.t<-paste0(xml,collapse = "\n")
   data <- xml.t # or JSON string
@@ -1499,11 +1499,11 @@ push.dracor<-function(target,xml,corpusname,playname){
 }'
 curl<-paste0(apibase,"corpora")
 chead<-c("Content-Type" = "application/json")
-if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="lapsi"){
+if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="NO"){
     
 cres<-POST(curl,body=tdata,add_headers(.headers=chead),credentials)
 }
-  if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="lapsi"
+  if (!is.null(data) && !is.null(headers) && !is.null(credentials) && is.system!="NO"
 ) {
     response <- PUT(request_url, body = data, add_headers(.headers = headers), credentials)
     cat(sprintf("Executed PUT request. Server returned status code: %d\n", status_code(response)))

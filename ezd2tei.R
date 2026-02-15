@@ -125,7 +125,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
   writeLines(lines,ltemp)
   print(lines)
   lines<-readtext(ltemp,encoding = "utf-8")$text
-  lines<-gsub("(\\{cright)\n([^@#$~^])","\\1\\2",lines)
+  lines<-gsub("(\\{cright)\n([^@#$~%^])","\\1\\2",lines)
   writeLines(lines,ltemp)
   lines<-readLines(ltemp)
   lines<-c(lines,"!end!")

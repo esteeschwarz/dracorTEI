@@ -850,7 +850,7 @@ function(input, output, session) {
         ui = tags$iframe(
           id = "fullscreen-iframe",
           class = "fullscreen-iframe",
-          src = paste0(dracorframetarget,dcorpus,"/preview")
+          src = paste(dracorframetarget,dcorpus,"preview",sep = "/")
         )
       )
       
@@ -869,7 +869,7 @@ function(input, output, session) {
       ui = tags$iframe(
         id = "fullscreen-iframe",
         class = "fullscreen-iframe",
-        src = paste0(dracorframetarget,dcorpus,"/preview")
+        src = paste(dracorframetarget,dcorpus,"preview",sep = "/")
       )
     )
     # shinyjs::addClass("iframe-navbar","showing")

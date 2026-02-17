@@ -601,6 +601,7 @@ function(input, output, session) {
     print("got cast...")
     t5<-get.front(t4)
     print("got front...")
+    source("functions.R")
     t6 <- get.speakers(t5, vario,rswitch,copyrighted)# Use the transcript stored in reactiveValues
     t2 <- t6  # Store the updated text in reactiveValues
     #t2<-t4

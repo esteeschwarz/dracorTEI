@@ -440,7 +440,7 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
       #write(processed,"debug.txt",append = T)
       
       
-      if (!is.null(current_scene)) {
+      if (!is.null(current_scene)|line.true=="l") {
         # Appliquer les mêmes transformations que pour le texte des personnages
         processed <- line %>%
         #NOTE.15363: this is reasonable to display the pagebreak with pagenumber, but creates TEI errors 
@@ -453,14 +453,18 @@ parse_drama_text <- function(input_tx, output_file,meta,h1.first) {
         #        p <- xml_add_child(current_scene, "p")
         ### prose switch
         is.verse<-grepl("^%~",line)
+        if(is.verse)
+          print("switch to verse, debug...")
+        print(is.verse)
+        print(dim(sp))
         ifelse(!is.verse,p <- xml_add_child(sp, "p"),p <- xml_add_child(sp, "l"))
         # write(processed,"debug.txt",append = T)
+        print(is.verse)
         processed<-gsub("(%~|%o~)","",processed)
         xml_text(p) <- processed
         line.true<-"p"
-        if(!is.verse)
-          sp.act<-F # reset <sp> after inserting <p>
-        
+        ifelse(!is.verse,sp.act<-F,line.true<-"l") # reset <sp> after inserting <p>
+        print("line inserted...")
       }
       # todo @@lastline
       # if (str_detect(line, "^!end!")) {

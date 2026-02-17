@@ -771,6 +771,7 @@ transform.ezd<-function(ezd,output_file,meta,h1.first){
   #xmlout<-"r-tempxmlout.xml"
   xmlout<-output_file
   #writeLines(ezd,"ezdmarkup.txt")
+  source("ezd2tei.R")
   tryCatch({
   parse_drama_text(ezd,xmlout,meta,h1.first)
   return(list(xml=readLines(xmlout),message="successfully transformed to TEI..."))
@@ -1409,8 +1410,20 @@ get.speakers<-function(t1,sp,rswitch=F,copyrighted){
   print(wc)
   ### find speakerstages (introduction at scene head)
   #m2<-grepl(sp1,t1) #all speaker occurences in text
-  regx<-paste0("^",sp1,", \\(.+\\.?\\)$")
+  regx<-paste0("^(",sp1,")[,.] (\\(.+\\.?\\))$")
+  parts <- str_match(t2,regx) #wks. wt transkribus
+  
   m2<-grep(regx,t2)
+  parts <- str_match(t2[m2],regx) #wks. wt transkribus
+  print("speaker with stages...")
+  print(length(m2))
+  
+  print(parts)
+  # 16084.renegat speaker stages
+  # t2[m2]<-paste0("@",parts[2],"%spknl%\\\n",parts[4])
+  t2[m2]<-paste0("@",parts[,2],"%spknl% ",parts[,4])
+  print(t2[m2])
+#  t2[m2]<-paste0("@",t2[m1],"%spknl% ") # this wks in editor
   tx<-"Orchan, (zu Therise.)"
   #sp1<-"Orchan|Zapor|Welwood"
   mreg<-paste0("(",sp1,"), (\\(.+\\.?\\))") # extract stage in speakerline
